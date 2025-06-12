@@ -7,7 +7,7 @@
 # define XED_ENC_PATTERNS_H
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -398,24 +398,4 @@ void xed_encode_instruction_emit_pattern_202(xed_encoder_request_t* xes);
 void xed_encode_instruction_emit_pattern_203(xed_encoder_request_t* xes);
 void xed_encode_instruction_emit_pattern_204(xed_encoder_request_t* xes);
 void xed_encode_instruction_emit_pattern_205(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_206(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_207(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_208(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_209(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_210(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_211(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_212(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_213(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_214(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_215(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_216(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_217(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_218(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_219(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_220(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_221(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_222(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_223(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_224(xed_encoder_request_t* xes);
-void xed_encode_instruction_emit_pattern_225(xed_encoder_request_t* xes);
 #endif

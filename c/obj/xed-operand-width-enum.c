@@ -96,6 +96,7 @@ static const name_table_xed_operand_width_enum_t name_array_xed_operand_width_en
 {"VAR", XED_OPERAND_WIDTH_VAR},
 {"BND32", XED_OPERAND_WIDTH_BND32},
 {"BND64", XED_OPERAND_WIDTH_BND64},
+{"WRD", XED_OPERAND_WIDTH_WRD},
 {"PMMSZ16", XED_OPERAND_WIDTH_PMMSZ16},
 {"PMMSZ32", XED_OPERAND_WIDTH_PMMSZ32},
 {"QQ", XED_OPERAND_WIDTH_QQ},
@@ -110,10 +111,8 @@ static const name_table_xed_operand_width_enum_t name_array_xed_operand_width_en
 {"YQ", XED_OPERAND_WIDTH_YQ},
 {"YPS", XED_OPERAND_WIDTH_YPS},
 {"YPD", XED_OPERAND_WIDTH_YPD},
-{"ZBF16", XED_OPERAND_WIDTH_ZBF16},
 {"VV", XED_OPERAND_WIDTH_VV},
 {"ZV", XED_OPERAND_WIDTH_ZV},
-{"WRD", XED_OPERAND_WIDTH_WRD},
 {"MSKW", XED_OPERAND_WIDTH_MSKW},
 {"ZMSKW", XED_OPERAND_WIDTH_ZMSKW},
 {"ZF32", XED_OPERAND_WIDTH_ZF32},
@@ -131,6 +130,7 @@ static const name_table_xed_operand_width_enum_t name_array_xed_operand_width_en
 {"ZU32", XED_OPERAND_WIDTH_ZU32},
 {"ZU64", XED_OPERAND_WIDTH_ZU64},
 {"ZU128", XED_OPERAND_WIDTH_ZU128},
+{"ZBF16", XED_OPERAND_WIDTH_ZBF16},
 {"M384", XED_OPERAND_WIDTH_M384},
 {"PTR", XED_OPERAND_WIDTH_PTR},
 {"TMEMROW", XED_OPERAND_WIDTH_TMEMROW},
@@ -141,6 +141,13 @@ static const name_table_xed_operand_width_enum_t name_array_xed_operand_width_en
 {"Z2F16", XED_OPERAND_WIDTH_Z2F16},
 {"YU", XED_OPERAND_WIDTH_YU},
 {"ZD0", XED_OPERAND_WIDTH_ZD0},
+{"Z2I16", XED_OPERAND_WIDTH_Z2I16},
+{"Z2U16", XED_OPERAND_WIDTH_Z2U16},
+{"ZHF8", XED_OPERAND_WIDTH_ZHF8},
+{"ZBF8", XED_OPERAND_WIDTH_ZBF8},
+{"Z4U8", XED_OPERAND_WIDTH_Z4U8},
+{"Z4I8", XED_OPERAND_WIDTH_Z4I8},
+{"Z2I8", XED_OPERAND_WIDTH_Z2I8},
 {"LAST", XED_OPERAND_WIDTH_LAST},
 {0, XED_OPERAND_WIDTH_LAST},
 };
@@ -262,6 +269,7 @@ Here is a skeleton switch statement embedded in a comment
   case XED_OPERAND_WIDTH_VAR:
   case XED_OPERAND_WIDTH_BND32:
   case XED_OPERAND_WIDTH_BND64:
+  case XED_OPERAND_WIDTH_WRD:
   case XED_OPERAND_WIDTH_PMMSZ16:
   case XED_OPERAND_WIDTH_PMMSZ32:
   case XED_OPERAND_WIDTH_QQ:
@@ -276,10 +284,8 @@ Here is a skeleton switch statement embedded in a comment
   case XED_OPERAND_WIDTH_YQ:
   case XED_OPERAND_WIDTH_YPS:
   case XED_OPERAND_WIDTH_YPD:
-  case XED_OPERAND_WIDTH_ZBF16:
   case XED_OPERAND_WIDTH_VV:
   case XED_OPERAND_WIDTH_ZV:
-  case XED_OPERAND_WIDTH_WRD:
   case XED_OPERAND_WIDTH_MSKW:
   case XED_OPERAND_WIDTH_ZMSKW:
   case XED_OPERAND_WIDTH_ZF32:
@@ -297,6 +303,7 @@ Here is a skeleton switch statement embedded in a comment
   case XED_OPERAND_WIDTH_ZU32:
   case XED_OPERAND_WIDTH_ZU64:
   case XED_OPERAND_WIDTH_ZU128:
+  case XED_OPERAND_WIDTH_ZBF16:
   case XED_OPERAND_WIDTH_M384:
   case XED_OPERAND_WIDTH_PTR:
   case XED_OPERAND_WIDTH_TMEMROW:
@@ -307,6 +314,13 @@ Here is a skeleton switch statement embedded in a comment
   case XED_OPERAND_WIDTH_Z2F16:
   case XED_OPERAND_WIDTH_YU:
   case XED_OPERAND_WIDTH_ZD0:
+  case XED_OPERAND_WIDTH_Z2I16:
+  case XED_OPERAND_WIDTH_Z2U16:
+  case XED_OPERAND_WIDTH_ZHF8:
+  case XED_OPERAND_WIDTH_ZBF8:
+  case XED_OPERAND_WIDTH_Z4U8:
+  case XED_OPERAND_WIDTH_Z4I8:
+  case XED_OPERAND_WIDTH_Z2I8:
   case XED_OPERAND_WIDTH_LAST:
   default:
      xed_assert(0);

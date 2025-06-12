@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -935,8 +935,8 @@ const xed3_find_func_t xed3_phash_vv0_map_legacy_map2[256] = {
 /*opcode 0x87*/ (xed3_find_func_t)0,
 /*opcode 0x88*/ (xed3_find_func_t)0,
 /*opcode 0x89*/ (xed3_find_func_t)0,
-/*opcode 0x8a*/ (xed3_find_func_t)0,
-/*opcode 0x8b*/ (xed3_find_func_t)0,
+/*opcode 0x8a*/ xed3_phash_find_maplegacy_map2_opcode0x8a_vv0,
+/*opcode 0x8b*/ xed3_phash_find_maplegacy_map2_opcode0x8b_vv0,
 /*opcode 0x8c*/ (xed3_find_func_t)0,
 /*opcode 0x8d*/ (xed3_find_func_t)0,
 /*opcode 0x8e*/ (xed3_find_func_t)0,

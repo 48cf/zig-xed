@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -25,6 +25,11 @@ END_LEGAL */
 #include "xed-encode-private.h"
 #include "xed-enc-operand-lu.h"
 #include "xed-operand-accessors.h"
+xed_uint32_t xed_encode_nonterminal_ESIZE_8_BITS_BIND(xed_encoder_request_t* xes)
+{
+(void)xes;
+return 1;
+}
 xed_uint32_t xed_encode_nonterminal_ESIZE_4_BITS_BIND(xed_encoder_request_t* xes)
 {
 (void)xes;
@@ -61,81 +66,6 @@ xed_uint32_t xed_encode_nonterminal_NELEM_QUARTERMEM_BIND(xed_encoder_request_t*
 return 1;
 }
 xed_uint32_t xed_encode_nonterminal_NELEM_EIGHTHMEM_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_READER_BYTE_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_READER_WORD_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_D_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_Q_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_BYTE_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_WORD_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_TUPLE1_BYTE_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_TUPLE1_WORD_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_SCALAR_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_TUPLE1_SUBDWORD_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_READER_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_READER_SUBDWORD_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_SUBDWORD_BIND(xed_encoder_request_t* xes)
 {
 (void)xes;
 return 1;
@@ -189,12 +119,7 @@ else{
     return 1;
 }
 }
-xed_uint32_t xed_encode_nonterminal_NELEM_TUPLE1_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_NELEM_GSCAT_BIND(xed_encoder_request_t* xes)
+xed_uint32_t xed_encode_nonterminal_NELEM_ONE_BIND(xed_encoder_request_t* xes)
 {
 (void)xes;
 return 1;
@@ -475,6 +400,11 @@ else{
     return 0;
 }
 }
+xed_uint32_t xed_encode_nonterminal_NELEM_TUPLE1_4X_BIND(xed_encoder_request_t* xes)
+{
+(void)xes;
+return 1;
+}
 xed_uint32_t xed_encode_nonterminal_NELEM_QUARTER_BIND(xed_encoder_request_t* xes)
 {
 (void)xes;
@@ -560,34 +490,33 @@ else{
 }
 xed_uint32_t xed_encode_nonterminal_EVAPX_SCC_BIND(xed_encoder_request_t* xes)
 {
-typedef struct { xed_int8_t evvspace ;xed_int8_t mask ;xed_int8_t scc ;xed_int8_t vexdest4;} lu_entry_t;
+typedef struct { xed_int8_t evvspace ;xed_int8_t vexdest210 ;xed_int8_t vexdest3;} lu_entry_t;
 static const lu_entry_t lu_table[16] = {
-/*h(0)=0 VEXDEST4=0 MASK=0  ->	FB SCC=8 value=0x8 	FB EVVSPACE=2 value=0x2*/ {2,-1,8,-1},
-/*h(1)=1 VEXDEST4=0 MASK=1  ->	FB SCC=9 value=0x9 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0*/ {2,0,9,-1},
-/*h(2)=2 VEXDEST4=0 MASK=2  ->	FB SCC=10 value=0xa 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0*/ {2,0,10,-1},
-/*h(3)=3 VEXDEST4=0 MASK=3  ->	FB SCC=11 value=0xb 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0*/ {2,0,11,-1},
-/*h(4)=4 VEXDEST4=0 MASK=4  ->	FB SCC=12 value=0xc 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0*/ {2,0,12,-1},
-/*h(5)=5 VEXDEST4=0 MASK=5  ->	FB SCC=13 value=0xd 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0*/ {2,0,13,-1},
-/*h(6)=6 VEXDEST4=0 MASK=6  ->	FB SCC=14 value=0xe 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0*/ {2,0,14,-1},
-/*h(7)=7 VEXDEST4=0 MASK=7  ->	FB SCC=15 value=0xf 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0*/ {2,0,15,-1},
-/*h(8)=8 VEXDEST4=1 MASK=0  ->	FB SCC=0 value=0x0 	FB EVVSPACE=2 value=0x2 	FB VEXDEST4=0 value=0x0*/ {2,-1,0,0},
-/*h(9)=9 VEXDEST4=1 MASK=1  ->	FB SCC=1 value=0x1 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0 	FB VEXDEST4=0 value=0x0*/ {2,0,1,0},
-/*h(10)=10 VEXDEST4=1 MASK=2  ->	FB SCC=2 value=0x2 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0 	FB VEXDEST4=0 value=0x0*/ {2,0,2,0},
-/*h(11)=11 VEXDEST4=1 MASK=3  ->	FB SCC=3 value=0x3 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0 	FB VEXDEST4=0 value=0x0*/ {2,0,3,0},
-/*h(12)=12 VEXDEST4=1 MASK=4  ->	FB SCC=4 value=0x4 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0 	FB VEXDEST4=0 value=0x0*/ {2,0,4,0},
-/*h(13)=13 VEXDEST4=1 MASK=5  ->	FB SCC=5 value=0x5 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0 	FB VEXDEST4=0 value=0x0*/ {2,0,5,0},
-/*h(14)=14 VEXDEST4=1 MASK=6  ->	FB SCC=6 value=0x6 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0 	FB VEXDEST4=0 value=0x0*/ {2,0,6,0},
-/*h(15)=15 VEXDEST4=1 MASK=7  ->	FB SCC=7 value=0x7 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0 	FB VEXDEST4=0 value=0x0*/ {2,0,7,0}
+/*h(0)=0 DFV=0  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=0 value=0x0 	FB EVVSPACE=2 value=0x2*/ {2,0,0},
+/*h(1)=1 DFV=1  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=1 value=0x1 	FB EVVSPACE=2 value=0x2*/ {2,1,0},
+/*h(2)=2 DFV=2  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=2 value=0x2 	FB EVVSPACE=2 value=0x2*/ {2,2,0},
+/*h(3)=3 DFV=3  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=3 value=0x3 	FB EVVSPACE=2 value=0x2*/ {2,3,0},
+/*h(4)=4 DFV=4  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=4 value=0x4 	FB EVVSPACE=2 value=0x2*/ {2,4,0},
+/*h(5)=5 DFV=5  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=5 value=0x5 	FB EVVSPACE=2 value=0x2*/ {2,5,0},
+/*h(6)=6 DFV=6  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=6 value=0x6 	FB EVVSPACE=2 value=0x2*/ {2,6,0},
+/*h(7)=7 DFV=7  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=7 value=0x7 	FB EVVSPACE=2 value=0x2*/ {2,7,0},
+/*h(8)=8 DFV=8  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=0 value=0x0 	FB EVVSPACE=2 value=0x2*/ {2,0,1},
+/*h(9)=9 DFV=9  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=1 value=0x1 	FB EVVSPACE=2 value=0x2*/ {2,1,1},
+/*h(10)=10 DFV=10  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=2 value=0x2 	FB EVVSPACE=2 value=0x2*/ {2,2,1},
+/*h(11)=11 DFV=11  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=3 value=0x3 	FB EVVSPACE=2 value=0x2*/ {2,3,1},
+/*h(12)=12 DFV=12  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=4 value=0x4 	FB EVVSPACE=2 value=0x2*/ {2,4,1},
+/*h(13)=13 DFV=13  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=5 value=0x5 	FB EVVSPACE=2 value=0x2*/ {2,5,1},
+/*h(14)=14 DFV=14  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=6 value=0x6 	FB EVVSPACE=2 value=0x2*/ {2,6,1},
+/*h(15)=15 DFV=15  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=7 value=0x7 	FB EVVSPACE=2 value=0x2*/ {2,7,1}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
-key = xed_enc_lu_MASK_VEXDEST4(xes);
+key = xed_enc_lu_DFV(xes);
 hidx = key - 0;
 if(hidx <= 15) {
     xed3_operand_set_evvspace(xes,lu_table[hidx].evvspace);
-    if(lu_table[hidx].mask >= 0) xed3_operand_set_mask(xes,lu_table[hidx].mask);
-    xed3_operand_set_scc(xes,lu_table[hidx].scc);
-    if(lu_table[hidx].vexdest4 >= 0) xed3_operand_set_vexdest4(xes,lu_table[hidx].vexdest4);
+    xed3_operand_set_vexdest210(xes,lu_table[hidx].vexdest210);
+    xed3_operand_set_vexdest3(xes,lu_table[hidx].vexdest3);
     return 1;
 }
 else{
@@ -2980,6 +2909,74 @@ xed_uint64_t hidx = 0;
 xed3_operand_set_outreg(xes,arg_reg);
 key = xed_enc_lu_EASZ_OUTREG(xes);
 hidx = (t.u64 = 2654435769  * key, u.u64 = t.s.lo32 * 3ULL, u.s.hi32);
+if(lu_table[hidx].key == key) {
+    xed3_operand_set_has_egpr(xes,lu_table[hidx].has_egpr);
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_Ar26(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct {xed_uint32_t key; xed_int8_t has_egpr;} lu_entry_t;
+static const lu_entry_t lu_table[4] = {
+/*empty slot1 */ {0,0},
+/*h(499)=1 OUTREG=XED_REG_R26 EASZ=3  ->	FB HAS_EGPR=1 value=0x1*/ {499, 1},
+/*h(370)=2 OUTREG=XED_REG_R26D EASZ=2  ->	FB HAS_EGPR=1 value=0x1*/ {370, 1},
+/*h(241)=3 OUTREG=XED_REG_R26W EASZ=1  ->	FB HAS_EGPR=1 value=0x1*/ {241, 1}
+};
+xed_union64_t t;
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_EASZ_OUTREG(xes);
+hidx = (t.u64 = 2654435769  * key,  t.s.lo32 >> (32-2));
+if(lu_table[hidx].key == key) {
+    xed3_operand_set_has_egpr(xes,lu_table[hidx].has_egpr);
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_Ar27(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct {xed_uint32_t key; xed_int8_t has_egpr;} lu_entry_t;
+static const lu_entry_t lu_table[3] = {
+/*h(374)=0 OUTREG=XED_REG_R27D EASZ=2  ->	FB HAS_EGPR=1 value=0x1*/ {374, 1},
+/*h(245)=1 OUTREG=XED_REG_R27W EASZ=1  ->	FB HAS_EGPR=1 value=0x1*/ {245, 1},
+/*h(503)=2 OUTREG=XED_REG_R27 EASZ=3  ->	FB HAS_EGPR=1 value=0x1*/ {503, 1}
+};
+xed_union64_t t, u;
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_EASZ_OUTREG(xes);
+hidx = (t.u64 = 2654435769  * key, u.u64 = t.s.lo32 * 3ULL, u.s.hi32);
+if(lu_table[hidx].key == key) {
+    xed3_operand_set_has_egpr(xes,lu_table[hidx].has_egpr);
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_Ar28(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct {xed_uint32_t key; xed_int8_t has_egpr;} lu_entry_t;
+static const lu_entry_t lu_table[4] = {
+/*empty slot1 */ {0,0},
+/*h(507)=1 OUTREG=XED_REG_R28 EASZ=3  ->	FB HAS_EGPR=1 value=0x1*/ {507, 1},
+/*h(378)=2 OUTREG=XED_REG_R28D EASZ=2  ->	FB HAS_EGPR=1 value=0x1*/ {378, 1},
+/*h(249)=3 OUTREG=XED_REG_R28W EASZ=1  ->	FB HAS_EGPR=1 value=0x1*/ {249, 1}
+};
+xed_union64_t t;
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_EASZ_OUTREG(xes);
+hidx = (t.u64 = 2654435769  * key,  t.s.lo32 >> (32-2));
 if(lu_table[hidx].key == key) {
     xed3_operand_set_has_egpr(xes,lu_table[hidx].has_egpr);
     return 1;

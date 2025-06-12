@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -154,14 +154,6 @@ xed_encode_order[33][1]=XED_OPERAND_REG0;
 xed_encode_order[33][2]=XED_OPERAND_REG1;
 xed_encode_order[33][3]=XED_OPERAND_IMM0;
 xed_encode_order_limit[33]=4;
-xed_encode_order[34][0]=XED_OPERAND_REG0;
-xed_encode_order[34][1]=XED_OPERAND_IMM0;
-xed_encode_order[34][2]=XED_OPERAND_REG1;
-xed_encode_order_limit[34]=3;
-xed_encode_order[35][0]=XED_OPERAND_MEM0;
-xed_encode_order[35][1]=XED_OPERAND_IMM0;
-xed_encode_order[35][2]=XED_OPERAND_REG0;
-xed_encode_order_limit[35]=3;
-xed_encode_order[36][0]=XED_OPERAND_ABSBR;
-xed_encode_order_limit[36]=1;
+xed_encode_order[34][0]=XED_OPERAND_ABSBR;
+xed_encode_order_limit[34]=1;
 }

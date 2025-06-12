@@ -28,6 +28,7 @@ static const name_table_xed_operand_enum_t name_array_xed_operand_enum_t[] = {
 {"DEFAULT_SEG", XED_OPERAND_DEFAULT_SEG},
 {"DF32", XED_OPERAND_DF32},
 {"DF64", XED_OPERAND_DF64},
+{"DFV", XED_OPERAND_DFV},
 {"DISP", XED_OPERAND_DISP},
 {"DISP_WIDTH", XED_OPERAND_DISP_WIDTH},
 {"DUMMY", XED_OPERAND_DUMMY},
@@ -35,6 +36,7 @@ static const name_table_xed_operand_enum_t name_array_xed_operand_enum_t[] = {
 {"ELEMENT_SIZE", XED_OPERAND_ELEMENT_SIZE},
 {"ENCODER_PREFERRED", XED_OPERAND_ENCODER_PREFERRED},
 {"ENCODE_FORCE", XED_OPERAND_ENCODE_FORCE},
+{"ENC_DELETE", XED_OPERAND_ENC_DELETE},
 {"EOSZ", XED_OPERAND_EOSZ},
 {"ERROR", XED_OPERAND_ERROR},
 {"ESRC", XED_OPERAND_ESRC},
@@ -67,7 +69,6 @@ static const name_table_xed_operand_enum_t name_array_xed_operand_enum_t[] = {
 {"MOD", XED_OPERAND_MOD},
 {"MODE", XED_OPERAND_MODE},
 {"MODEP5", XED_OPERAND_MODEP5},
-{"MODEP55C", XED_OPERAND_MODEP55C},
 {"MODE_FIRST_PREFIX", XED_OPERAND_MODE_FIRST_PREFIX},
 {"MODE_SHORT_UD0", XED_OPERAND_MODE_SHORT_UD0},
 {"MODRM_BYTE", XED_OPERAND_MODRM_BYTE},
@@ -98,6 +99,8 @@ static const name_table_xed_operand_enum_t name_array_xed_operand_enum_t[] = {
 {"POS_MODRM", XED_OPERAND_POS_MODRM},
 {"POS_NOMINAL_OPCODE", XED_OPERAND_POS_NOMINAL_OPCODE},
 {"POS_SIB", XED_OPERAND_POS_SIB},
+{"PREFETCHIT", XED_OPERAND_PREFETCHIT},
+{"PREFETCHRST", XED_OPERAND_PREFETCHRST},
 {"PREFIX66", XED_OPERAND_PREFIX66},
 {"PTR", XED_OPERAND_PTR},
 {"REALMODE", XED_OPERAND_REALMODE},
@@ -206,6 +209,7 @@ Here is a skeleton switch statement embedded in a comment
   case XED_OPERAND_DEFAULT_SEG:
   case XED_OPERAND_DF32:
   case XED_OPERAND_DF64:
+  case XED_OPERAND_DFV:
   case XED_OPERAND_DISP:
   case XED_OPERAND_DISP_WIDTH:
   case XED_OPERAND_DUMMY:
@@ -213,6 +217,7 @@ Here is a skeleton switch statement embedded in a comment
   case XED_OPERAND_ELEMENT_SIZE:
   case XED_OPERAND_ENCODER_PREFERRED:
   case XED_OPERAND_ENCODE_FORCE:
+  case XED_OPERAND_ENC_DELETE:
   case XED_OPERAND_EOSZ:
   case XED_OPERAND_ERROR:
   case XED_OPERAND_ESRC:
@@ -245,7 +250,6 @@ Here is a skeleton switch statement embedded in a comment
   case XED_OPERAND_MOD:
   case XED_OPERAND_MODE:
   case XED_OPERAND_MODEP5:
-  case XED_OPERAND_MODEP55C:
   case XED_OPERAND_MODE_FIRST_PREFIX:
   case XED_OPERAND_MODE_SHORT_UD0:
   case XED_OPERAND_MODRM_BYTE:
@@ -276,6 +280,8 @@ Here is a skeleton switch statement embedded in a comment
   case XED_OPERAND_POS_MODRM:
   case XED_OPERAND_POS_NOMINAL_OPCODE:
   case XED_OPERAND_POS_SIB:
+  case XED_OPERAND_PREFETCHIT:
+  case XED_OPERAND_PREFETCHRST:
   case XED_OPERAND_PREFIX66:
   case XED_OPERAND_PTR:
   case XED_OPERAND_REALMODE:

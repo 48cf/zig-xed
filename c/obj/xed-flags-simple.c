@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -108,8 +108,8 @@ const xed_simple_flag_t xed_flags_simple_table[] = {
 /* 82 */ {6,0,1,{0x0},{0x8d5},{0x0},388},
 /* 83 */ {6,0,1,{0x0},{0x8d5},{0x0},394},
 /* 84 */ {6,0,1,{0x0},{0x8d5},{0x0},400},
-/* 85 */ {1,0,1,{0x0},{0x1},{0x0},374},
-/* 86 */ {6,0,1,{0x0},{0x8d5},{0x0},406},
+/* 85 */ {6,0,1,{0x0},{0x8d5},{0x0},406},
+/* 86 */ {1,0,1,{0x0},{0x1},{0x0},374},
 /* 87 */ {6,0,1,{0x0},{0x8d5},{0x0},412},
 /* 88 */ {20,0,1,{0x0},{0x3f7fd5},{0x0},418},
 /* 89 */ {6,0,1,{0x0},{0x8d5},{0x94},438},

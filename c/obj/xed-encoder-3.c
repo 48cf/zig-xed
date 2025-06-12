@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -25,74 +25,6 @@ END_LEGAL */
 #include "xed-encode-private.h"
 #include "xed-enc-operand-lu.h"
 #include "xed-operand-accessors.h"
-xed_uint32_t xed_encode_ntluf_Ar26(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct {xed_uint32_t key; xed_int8_t has_egpr;} lu_entry_t;
-static const lu_entry_t lu_table[4] = {
-/*empty slot1 */ {0,0},
-/*h(499)=1 OUTREG=XED_REG_R26 EASZ=3  ->	FB HAS_EGPR=1 value=0x1*/ {499, 1},
-/*h(370)=2 OUTREG=XED_REG_R26D EASZ=2  ->	FB HAS_EGPR=1 value=0x1*/ {370, 1},
-/*h(241)=3 OUTREG=XED_REG_R26W EASZ=1  ->	FB HAS_EGPR=1 value=0x1*/ {241, 1}
-};
-xed_union64_t t;
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_EASZ_OUTREG(xes);
-hidx = (t.u64 = 2654435769  * key,  t.s.lo32 >> (32-2));
-if(lu_table[hidx].key == key) {
-    xed3_operand_set_has_egpr(xes,lu_table[hidx].has_egpr);
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_Ar27(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct {xed_uint32_t key; xed_int8_t has_egpr;} lu_entry_t;
-static const lu_entry_t lu_table[3] = {
-/*h(374)=0 OUTREG=XED_REG_R27D EASZ=2  ->	FB HAS_EGPR=1 value=0x1*/ {374, 1},
-/*h(245)=1 OUTREG=XED_REG_R27W EASZ=1  ->	FB HAS_EGPR=1 value=0x1*/ {245, 1},
-/*h(503)=2 OUTREG=XED_REG_R27 EASZ=3  ->	FB HAS_EGPR=1 value=0x1*/ {503, 1}
-};
-xed_union64_t t, u;
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_EASZ_OUTREG(xes);
-hidx = (t.u64 = 2654435769  * key, u.u64 = t.s.lo32 * 3ULL, u.s.hi32);
-if(lu_table[hidx].key == key) {
-    xed3_operand_set_has_egpr(xes,lu_table[hidx].has_egpr);
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_Ar28(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct {xed_uint32_t key; xed_int8_t has_egpr;} lu_entry_t;
-static const lu_entry_t lu_table[4] = {
-/*empty slot1 */ {0,0},
-/*h(507)=1 OUTREG=XED_REG_R28 EASZ=3  ->	FB HAS_EGPR=1 value=0x1*/ {507, 1},
-/*h(378)=2 OUTREG=XED_REG_R28D EASZ=2  ->	FB HAS_EGPR=1 value=0x1*/ {378, 1},
-/*h(249)=3 OUTREG=XED_REG_R28W EASZ=1  ->	FB HAS_EGPR=1 value=0x1*/ {249, 1}
-};
-xed_union64_t t;
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_EASZ_OUTREG(xes);
-hidx = (t.u64 = 2654435769  * key,  t.s.lo32 >> (32-2));
-if(lu_table[hidx].key == key) {
-    xed3_operand_set_has_egpr(xes,lu_table[hidx].has_egpr);
-    return 1;
-}
-else{
-    return 0;
-}
-}
 xed_uint32_t xed_encode_ntluf_Ar29(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
 {
 typedef struct {xed_uint32_t key; xed_int8_t has_egpr;} lu_entry_t;
@@ -1074,6 +1006,363 @@ else{
     return 0;
 }
 }
+xed_uint32_t xed_encode_ntluf_VGPR32_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_ntluf_func_ptr_t ntlufptr0;} lu_entry_t;
+static const lu_entry_t lu_table[3] = {
+/*h(0)=0 MODE=0  ->	ntluf*/ {xed_encode_ntluf_VGPR32_N_32},
+/*h(1)=1 MODE=1  ->	ntluf*/ {xed_encode_ntluf_VGPR32_N_32},
+/*h(2)=2 MODE=2  ->	ntluf*/ {xed_encode_ntluf_VGPR32_N_64}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed_uint64_t res = 1;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_MODE(xes);
+hidx = key - 0;
+if(hidx <= 2) {
+    if(lu_table[hidx].ntlufptr0 != 0) res=(*lu_table[hidx].ntlufptr0)(xes,arg_reg);
+    return res;
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_VGPR32_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_ntluf_func_ptr_t ntlufptr0;} lu_entry_t;
+static const lu_entry_t lu_table[3] = {
+/*h(0)=0 MODE=0  ->	ntluf*/ {xed_encode_ntluf_VGPR32_B_32},
+/*h(1)=1 MODE=1  ->	ntluf*/ {xed_encode_ntluf_VGPR32_B_32},
+/*h(2)=2 MODE=2  ->	ntluf*/ {xed_encode_ntluf_VGPR32_B_64}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed_uint64_t res = 1;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_MODE(xes);
+hidx = key - 0;
+if(hidx <= 2) {
+    if(lu_table[hidx].ntlufptr0 != 0) res=(*lu_table[hidx].ntlufptr0)(xes,arg_reg);
+    return res;
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_VGPR32_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_ntluf_func_ptr_t ntlufptr0;} lu_entry_t;
+static const lu_entry_t lu_table[3] = {
+/*h(0)=0 MODE=0  ->	ntluf*/ {xed_encode_ntluf_VGPR32_R_32},
+/*h(1)=1 MODE=1  ->	ntluf*/ {xed_encode_ntluf_VGPR32_R_32},
+/*h(2)=2 MODE=2  ->	ntluf*/ {xed_encode_ntluf_VGPR32_R_64}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed_uint64_t res = 1;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_MODE(xes);
+hidx = key - 0;
+if(hidx <= 2) {
+    if(lu_table[hidx].ntlufptr0 != 0) res=(*lu_table[hidx].ntlufptr0)(xes,arg_reg);
+    return res;
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_VGPR32_N_32(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_int8_t vexdest210;} lu_entry_t;
+static const lu_entry_t lu_table[8] = {
+/*h(66)=0 OUTREG=XED_REG_EAX  ->	FB VEXDEST210=7 value=0x7*/ {7},
+/*h(67)=1 OUTREG=XED_REG_ECX  ->	FB VEXDEST210=6 value=0x6*/ {6},
+/*h(68)=2 OUTREG=XED_REG_EDX  ->	FB VEXDEST210=5 value=0x5*/ {5},
+/*h(69)=3 OUTREG=XED_REG_EBX  ->	FB VEXDEST210=4 value=0x4*/ {4},
+/*h(70)=4 OUTREG=XED_REG_ESP  ->	FB VEXDEST210=3 value=0x3*/ {3},
+/*h(71)=5 OUTREG=XED_REG_EBP  ->	FB VEXDEST210=2 value=0x2*/ {2},
+/*h(72)=6 OUTREG=XED_REG_ESI  ->	FB VEXDEST210=1 value=0x1*/ {1},
+/*h(73)=7 OUTREG=XED_REG_EDI  ->	FB VEXDEST210=0 value=0x0*/ {0}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_OUTREG(xes);
+hidx = key - 66;
+if(hidx <= 7) {
+    xed3_operand_set_vexdest210(xes,lu_table[hidx].vexdest210);
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_VGPR32_N_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_int8_t vexdest210 ;xed_int8_t vexdest3;} lu_entry_t;
+static const lu_entry_t lu_table[16] = {
+/*h(66)=0 OUTREG=XED_REG_EAX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=7 value=0x7*/ {7,1},
+/*h(67)=1 OUTREG=XED_REG_ECX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=6 value=0x6*/ {6,1},
+/*h(68)=2 OUTREG=XED_REG_EDX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=5 value=0x5*/ {5,1},
+/*h(69)=3 OUTREG=XED_REG_EBX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=4 value=0x4*/ {4,1},
+/*h(70)=4 OUTREG=XED_REG_ESP  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=3 value=0x3*/ {3,1},
+/*h(71)=5 OUTREG=XED_REG_EBP  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=2 value=0x2*/ {2,1},
+/*h(72)=6 OUTREG=XED_REG_ESI  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=1 value=0x1*/ {1,1},
+/*h(73)=7 OUTREG=XED_REG_EDI  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=0 value=0x0*/ {0,1},
+/*h(74)=8 OUTREG=XED_REG_R8D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=7 value=0x7*/ {7,0},
+/*h(75)=9 OUTREG=XED_REG_R9D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=6 value=0x6*/ {6,0},
+/*h(76)=10 OUTREG=XED_REG_R10D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=5 value=0x5*/ {5,0},
+/*h(77)=11 OUTREG=XED_REG_R11D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=4 value=0x4*/ {4,0},
+/*h(78)=12 OUTREG=XED_REG_R12D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=3 value=0x3*/ {3,0},
+/*h(79)=13 OUTREG=XED_REG_R13D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=2 value=0x2*/ {2,0},
+/*h(80)=14 OUTREG=XED_REG_R14D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=1 value=0x1*/ {1,0},
+/*h(81)=15 OUTREG=XED_REG_R15D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=0 value=0x0*/ {0,0}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_OUTREG(xes);
+hidx = key - 66;
+if(hidx <= 15) {
+    xed3_operand_set_vexdest210(xes,lu_table[hidx].vexdest210);
+    xed3_operand_set_vexdest3(xes,lu_table[hidx].vexdest3);
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_VGPR32_B_32(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_int8_t rm;} lu_entry_t;
+static const lu_entry_t lu_table[8] = {
+/*h(66)=0 OUTREG=XED_REG_EAX  ->	FB RM=0 value=0x0*/ {0},
+/*h(67)=1 OUTREG=XED_REG_ECX  ->	FB RM=1 value=0x1*/ {1},
+/*h(68)=2 OUTREG=XED_REG_EDX  ->	FB RM=2 value=0x2*/ {2},
+/*h(69)=3 OUTREG=XED_REG_EBX  ->	FB RM=3 value=0x3*/ {3},
+/*h(70)=4 OUTREG=XED_REG_ESP  ->	FB RM=4 value=0x4*/ {4},
+/*h(71)=5 OUTREG=XED_REG_EBP  ->	FB RM=5 value=0x5*/ {5},
+/*h(72)=6 OUTREG=XED_REG_ESI  ->	FB RM=6 value=0x6*/ {6},
+/*h(73)=7 OUTREG=XED_REG_EDI  ->	FB RM=7 value=0x7*/ {7}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_OUTREG(xes);
+hidx = key - 66;
+if(hidx <= 7) {
+    xed3_operand_set_rm(xes,lu_table[hidx].rm);
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_VGPR32_B_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_int8_t rexb ;xed_int8_t rm;} lu_entry_t;
+static const lu_entry_t lu_table[16] = {
+/*h(66)=0 OUTREG=XED_REG_EAX  ->	FB REXB=0 value=0x0 	FB RM=0 value=0x0*/ {0,0},
+/*h(67)=1 OUTREG=XED_REG_ECX  ->	FB REXB=0 value=0x0 	FB RM=1 value=0x1*/ {0,1},
+/*h(68)=2 OUTREG=XED_REG_EDX  ->	FB REXB=0 value=0x0 	FB RM=2 value=0x2*/ {0,2},
+/*h(69)=3 OUTREG=XED_REG_EBX  ->	FB REXB=0 value=0x0 	FB RM=3 value=0x3*/ {0,3},
+/*h(70)=4 OUTREG=XED_REG_ESP  ->	FB REXB=0 value=0x0 	FB RM=4 value=0x4*/ {0,4},
+/*h(71)=5 OUTREG=XED_REG_EBP  ->	FB REXB=0 value=0x0 	FB RM=5 value=0x5*/ {0,5},
+/*h(72)=6 OUTREG=XED_REG_ESI  ->	FB REXB=0 value=0x0 	FB RM=6 value=0x6*/ {0,6},
+/*h(73)=7 OUTREG=XED_REG_EDI  ->	FB REXB=0 value=0x0 	FB RM=7 value=0x7*/ {0,7},
+/*h(74)=8 OUTREG=XED_REG_R8D  ->	FB REXB=1 value=0x1 	FB RM=0 value=0x0*/ {1,0},
+/*h(75)=9 OUTREG=XED_REG_R9D  ->	FB REXB=1 value=0x1 	FB RM=1 value=0x1*/ {1,1},
+/*h(76)=10 OUTREG=XED_REG_R10D  ->	FB REXB=1 value=0x1 	FB RM=2 value=0x2*/ {1,2},
+/*h(77)=11 OUTREG=XED_REG_R11D  ->	FB REXB=1 value=0x1 	FB RM=3 value=0x3*/ {1,3},
+/*h(78)=12 OUTREG=XED_REG_R12D  ->	FB REXB=1 value=0x1 	FB RM=4 value=0x4*/ {1,4},
+/*h(79)=13 OUTREG=XED_REG_R13D  ->	FB REXB=1 value=0x1 	FB RM=5 value=0x5*/ {1,5},
+/*h(80)=14 OUTREG=XED_REG_R14D  ->	FB REXB=1 value=0x1 	FB RM=6 value=0x6*/ {1,6},
+/*h(81)=15 OUTREG=XED_REG_R15D  ->	FB REXB=1 value=0x1 	FB RM=7 value=0x7*/ {1,7}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_OUTREG(xes);
+hidx = key - 66;
+if(hidx <= 15) {
+    xed3_operand_set_rexb(xes,lu_table[hidx].rexb);
+    xed3_operand_set_rm(xes,lu_table[hidx].rm);
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_VGPR32_R_32(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_int8_t reg;} lu_entry_t;
+static const lu_entry_t lu_table[8] = {
+/*h(66)=0 OUTREG=XED_REG_EAX  ->	FB REG=0 value=0x0*/ {0},
+/*h(67)=1 OUTREG=XED_REG_ECX  ->	FB REG=1 value=0x1*/ {1},
+/*h(68)=2 OUTREG=XED_REG_EDX  ->	FB REG=2 value=0x2*/ {2},
+/*h(69)=3 OUTREG=XED_REG_EBX  ->	FB REG=3 value=0x3*/ {3},
+/*h(70)=4 OUTREG=XED_REG_ESP  ->	FB REG=4 value=0x4*/ {4},
+/*h(71)=5 OUTREG=XED_REG_EBP  ->	FB REG=5 value=0x5*/ {5},
+/*h(72)=6 OUTREG=XED_REG_ESI  ->	FB REG=6 value=0x6*/ {6},
+/*h(73)=7 OUTREG=XED_REG_EDI  ->	FB REG=7 value=0x7*/ {7}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_OUTREG(xes);
+hidx = key - 66;
+if(hidx <= 7) {
+    xed3_operand_set_reg(xes,lu_table[hidx].reg);
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_VGPR32_R_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_int8_t reg ;xed_int8_t rexr;} lu_entry_t;
+static const lu_entry_t lu_table[16] = {
+/*h(66)=0 OUTREG=XED_REG_EAX  ->	FB REXR=0 value=0x0 	FB REG=0 value=0x0*/ {0,0},
+/*h(67)=1 OUTREG=XED_REG_ECX  ->	FB REXR=0 value=0x0 	FB REG=1 value=0x1*/ {1,0},
+/*h(68)=2 OUTREG=XED_REG_EDX  ->	FB REXR=0 value=0x0 	FB REG=2 value=0x2*/ {2,0},
+/*h(69)=3 OUTREG=XED_REG_EBX  ->	FB REXR=0 value=0x0 	FB REG=3 value=0x3*/ {3,0},
+/*h(70)=4 OUTREG=XED_REG_ESP  ->	FB REXR=0 value=0x0 	FB REG=4 value=0x4*/ {4,0},
+/*h(71)=5 OUTREG=XED_REG_EBP  ->	FB REXR=0 value=0x0 	FB REG=5 value=0x5*/ {5,0},
+/*h(72)=6 OUTREG=XED_REG_ESI  ->	FB REXR=0 value=0x0 	FB REG=6 value=0x6*/ {6,0},
+/*h(73)=7 OUTREG=XED_REG_EDI  ->	FB REXR=0 value=0x0 	FB REG=7 value=0x7*/ {7,0},
+/*h(74)=8 OUTREG=XED_REG_R8D  ->	FB REXR=1 value=0x1 	FB REG=0 value=0x0*/ {0,1},
+/*h(75)=9 OUTREG=XED_REG_R9D  ->	FB REXR=1 value=0x1 	FB REG=1 value=0x1*/ {1,1},
+/*h(76)=10 OUTREG=XED_REG_R10D  ->	FB REXR=1 value=0x1 	FB REG=2 value=0x2*/ {2,1},
+/*h(77)=11 OUTREG=XED_REG_R11D  ->	FB REXR=1 value=0x1 	FB REG=3 value=0x3*/ {3,1},
+/*h(78)=12 OUTREG=XED_REG_R12D  ->	FB REXR=1 value=0x1 	FB REG=4 value=0x4*/ {4,1},
+/*h(79)=13 OUTREG=XED_REG_R13D  ->	FB REXR=1 value=0x1 	FB REG=5 value=0x5*/ {5,1},
+/*h(80)=14 OUTREG=XED_REG_R14D  ->	FB REXR=1 value=0x1 	FB REG=6 value=0x6*/ {6,1},
+/*h(81)=15 OUTREG=XED_REG_R15D  ->	FB REXR=1 value=0x1 	FB REG=7 value=0x7*/ {7,1}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_OUTREG(xes);
+hidx = key - 66;
+if(hidx <= 15) {
+    xed3_operand_set_reg(xes,lu_table[hidx].reg);
+    xed3_operand_set_rexr(xes,lu_table[hidx].rexr);
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_VGPR64_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_int8_t vexdest210 ;xed_int8_t vexdest3;} lu_entry_t;
+static const lu_entry_t lu_table[16] = {
+/*h(98)=0 OUTREG=XED_REG_RAX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=7 value=0x7*/ {7,1},
+/*h(99)=1 OUTREG=XED_REG_RCX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=6 value=0x6*/ {6,1},
+/*h(100)=2 OUTREG=XED_REG_RDX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=5 value=0x5*/ {5,1},
+/*h(101)=3 OUTREG=XED_REG_RBX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=4 value=0x4*/ {4,1},
+/*h(102)=4 OUTREG=XED_REG_RSP  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=3 value=0x3*/ {3,1},
+/*h(103)=5 OUTREG=XED_REG_RBP  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=2 value=0x2*/ {2,1},
+/*h(104)=6 OUTREG=XED_REG_RSI  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=1 value=0x1*/ {1,1},
+/*h(105)=7 OUTREG=XED_REG_RDI  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=0 value=0x0*/ {0,1},
+/*h(106)=8 OUTREG=XED_REG_R8  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=7 value=0x7*/ {7,0},
+/*h(107)=9 OUTREG=XED_REG_R9  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=6 value=0x6*/ {6,0},
+/*h(108)=10 OUTREG=XED_REG_R10  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=5 value=0x5*/ {5,0},
+/*h(109)=11 OUTREG=XED_REG_R11  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=4 value=0x4*/ {4,0},
+/*h(110)=12 OUTREG=XED_REG_R12  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=3 value=0x3*/ {3,0},
+/*h(111)=13 OUTREG=XED_REG_R13  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=2 value=0x2*/ {2,0},
+/*h(112)=14 OUTREG=XED_REG_R14  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=1 value=0x1*/ {1,0},
+/*h(113)=15 OUTREG=XED_REG_R15  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=0 value=0x0*/ {0,0}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_OUTREG(xes);
+hidx = key - 98;
+if(hidx <= 15) {
+    xed3_operand_set_vexdest210(xes,lu_table[hidx].vexdest210);
+    xed3_operand_set_vexdest3(xes,lu_table[hidx].vexdest3);
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_VGPR64_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_int8_t rexb ;xed_int8_t rm;} lu_entry_t;
+static const lu_entry_t lu_table[16] = {
+/*h(98)=0 OUTREG=XED_REG_RAX  ->	FB REXB=0 value=0x0 	FB RM=0 value=0x0*/ {0,0},
+/*h(99)=1 OUTREG=XED_REG_RCX  ->	FB REXB=0 value=0x0 	FB RM=1 value=0x1*/ {0,1},
+/*h(100)=2 OUTREG=XED_REG_RDX  ->	FB REXB=0 value=0x0 	FB RM=2 value=0x2*/ {0,2},
+/*h(101)=3 OUTREG=XED_REG_RBX  ->	FB REXB=0 value=0x0 	FB RM=3 value=0x3*/ {0,3},
+/*h(102)=4 OUTREG=XED_REG_RSP  ->	FB REXB=0 value=0x0 	FB RM=4 value=0x4*/ {0,4},
+/*h(103)=5 OUTREG=XED_REG_RBP  ->	FB REXB=0 value=0x0 	FB RM=5 value=0x5*/ {0,5},
+/*h(104)=6 OUTREG=XED_REG_RSI  ->	FB REXB=0 value=0x0 	FB RM=6 value=0x6*/ {0,6},
+/*h(105)=7 OUTREG=XED_REG_RDI  ->	FB REXB=0 value=0x0 	FB RM=7 value=0x7*/ {0,7},
+/*h(106)=8 OUTREG=XED_REG_R8  ->	FB REXB=1 value=0x1 	FB RM=0 value=0x0*/ {1,0},
+/*h(107)=9 OUTREG=XED_REG_R9  ->	FB REXB=1 value=0x1 	FB RM=1 value=0x1*/ {1,1},
+/*h(108)=10 OUTREG=XED_REG_R10  ->	FB REXB=1 value=0x1 	FB RM=2 value=0x2*/ {1,2},
+/*h(109)=11 OUTREG=XED_REG_R11  ->	FB REXB=1 value=0x1 	FB RM=3 value=0x3*/ {1,3},
+/*h(110)=12 OUTREG=XED_REG_R12  ->	FB REXB=1 value=0x1 	FB RM=4 value=0x4*/ {1,4},
+/*h(111)=13 OUTREG=XED_REG_R13  ->	FB REXB=1 value=0x1 	FB RM=5 value=0x5*/ {1,5},
+/*h(112)=14 OUTREG=XED_REG_R14  ->	FB REXB=1 value=0x1 	FB RM=6 value=0x6*/ {1,6},
+/*h(113)=15 OUTREG=XED_REG_R15  ->	FB REXB=1 value=0x1 	FB RM=7 value=0x7*/ {1,7}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_OUTREG(xes);
+hidx = key - 98;
+if(hidx <= 15) {
+    xed3_operand_set_rexb(xes,lu_table[hidx].rexb);
+    xed3_operand_set_rm(xes,lu_table[hidx].rm);
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_VGPR64_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_int8_t reg ;xed_int8_t rexr;} lu_entry_t;
+static const lu_entry_t lu_table[16] = {
+/*h(98)=0 OUTREG=XED_REG_RAX  ->	FB REXR=0 value=0x0 	FB REG=0 value=0x0*/ {0,0},
+/*h(99)=1 OUTREG=XED_REG_RCX  ->	FB REXR=0 value=0x0 	FB REG=1 value=0x1*/ {1,0},
+/*h(100)=2 OUTREG=XED_REG_RDX  ->	FB REXR=0 value=0x0 	FB REG=2 value=0x2*/ {2,0},
+/*h(101)=3 OUTREG=XED_REG_RBX  ->	FB REXR=0 value=0x0 	FB REG=3 value=0x3*/ {3,0},
+/*h(102)=4 OUTREG=XED_REG_RSP  ->	FB REXR=0 value=0x0 	FB REG=4 value=0x4*/ {4,0},
+/*h(103)=5 OUTREG=XED_REG_RBP  ->	FB REXR=0 value=0x0 	FB REG=5 value=0x5*/ {5,0},
+/*h(104)=6 OUTREG=XED_REG_RSI  ->	FB REXR=0 value=0x0 	FB REG=6 value=0x6*/ {6,0},
+/*h(105)=7 OUTREG=XED_REG_RDI  ->	FB REXR=0 value=0x0 	FB REG=7 value=0x7*/ {7,0},
+/*h(106)=8 OUTREG=XED_REG_R8  ->	FB REXR=1 value=0x1 	FB REG=0 value=0x0*/ {0,1},
+/*h(107)=9 OUTREG=XED_REG_R9  ->	FB REXR=1 value=0x1 	FB REG=1 value=0x1*/ {1,1},
+/*h(108)=10 OUTREG=XED_REG_R10  ->	FB REXR=1 value=0x1 	FB REG=2 value=0x2*/ {2,1},
+/*h(109)=11 OUTREG=XED_REG_R11  ->	FB REXR=1 value=0x1 	FB REG=3 value=0x3*/ {3,1},
+/*h(110)=12 OUTREG=XED_REG_R12  ->	FB REXR=1 value=0x1 	FB REG=4 value=0x4*/ {4,1},
+/*h(111)=13 OUTREG=XED_REG_R13  ->	FB REXR=1 value=0x1 	FB REG=5 value=0x5*/ {5,1},
+/*h(112)=14 OUTREG=XED_REG_R14  ->	FB REXR=1 value=0x1 	FB REG=6 value=0x6*/ {6,1},
+/*h(113)=15 OUTREG=XED_REG_R15  ->	FB REXR=1 value=0x1 	FB REG=7 value=0x7*/ {7,1}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_OUTREG(xes);
+hidx = key - 98;
+if(hidx <= 15) {
+    xed3_operand_set_reg(xes,lu_table[hidx].reg);
+    xed3_operand_set_rexr(xes,lu_table[hidx].rexr);
+    return 1;
+}
+else{
+    return 0;
+}
+}
 xed_uint32_t xed_encode_ntluf_XMM_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
 {
 typedef struct { xed_ntluf_func_ptr_t ntlufptr0;} lu_entry_t;
@@ -1236,6 +1525,75 @@ hidx = key - 269;
 if(hidx <= 15) {
     xed3_operand_set_rexb(xes,lu_table[hidx].rexb);
     xed3_operand_set_rm(xes,lu_table[hidx].rm);
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_VGPRy_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_ntluf_func_ptr_t ntlufptr0;} lu_entry_t;
+static const lu_entry_t lu_table[3] = {
+/*h(1)=0 EOSZ=1  ->	ntluf*/ {xed_encode_ntluf_VGPR32_R},
+/*h(2)=1 EOSZ=2  ->	ntluf*/ {xed_encode_ntluf_VGPR32_R},
+/*h(3)=2 EOSZ=3  ->	ntluf*/ {xed_encode_ntluf_VGPR64_R}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed_uint64_t res = 1;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_EOSZ(xes);
+hidx = key - 1;
+if(hidx <= 2) {
+    if(lu_table[hidx].ntlufptr0 != 0) res=(*lu_table[hidx].ntlufptr0)(xes,arg_reg);
+    return res;
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_VGPRy_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_ntluf_func_ptr_t ntlufptr0;} lu_entry_t;
+static const lu_entry_t lu_table[3] = {
+/*h(1)=0 EOSZ=1  ->	ntluf*/ {xed_encode_ntluf_VGPR32_B},
+/*h(2)=1 EOSZ=2  ->	ntluf*/ {xed_encode_ntluf_VGPR32_B},
+/*h(3)=2 EOSZ=3  ->	ntluf*/ {xed_encode_ntluf_VGPR64_B}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed_uint64_t res = 1;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_EOSZ(xes);
+hidx = key - 1;
+if(hidx <= 2) {
+    if(lu_table[hidx].ntlufptr0 != 0) res=(*lu_table[hidx].ntlufptr0)(xes,arg_reg);
+    return res;
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_VGPRy_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_ntluf_func_ptr_t ntlufptr0;} lu_entry_t;
+static const lu_entry_t lu_table[3] = {
+/*h(1)=0 EOSZ=1  ->	ntluf*/ {xed_encode_ntluf_VGPR32_N},
+/*h(2)=1 EOSZ=2  ->	ntluf*/ {xed_encode_ntluf_VGPR32_N},
+/*h(3)=2 EOSZ=3  ->	ntluf*/ {xed_encode_ntluf_VGPR64_N}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed_uint64_t res = 1;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_EOSZ(xes);
+hidx = key - 1;
+if(hidx <= 2) {
+    if(lu_table[hidx].ntlufptr0 != 0) res=(*lu_table[hidx].ntlufptr0)(xes,arg_reg);
+    return res;
     return 1;
 }
 else{
@@ -2222,432 +2580,6 @@ else{
     return 0;
 }
 }
-xed_uint32_t xed_encode_ntluf_VGPRy_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct { xed_ntluf_func_ptr_t ntlufptr0;} lu_entry_t;
-static const lu_entry_t lu_table[3] = {
-/*h(1)=0 EOSZ=1  ->	ntluf*/ {xed_encode_ntluf_VGPR32_R},
-/*h(2)=1 EOSZ=2  ->	ntluf*/ {xed_encode_ntluf_VGPR32_R},
-/*h(3)=2 EOSZ=3  ->	ntluf*/ {xed_encode_ntluf_VGPR64_R}
-};
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed_uint64_t res = 1;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_EOSZ(xes);
-hidx = key - 1;
-if(hidx <= 2) {
-    if(lu_table[hidx].ntlufptr0 != 0) res=(*lu_table[hidx].ntlufptr0)(xes,arg_reg);
-    return res;
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_VGPRy_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct { xed_ntluf_func_ptr_t ntlufptr0;} lu_entry_t;
-static const lu_entry_t lu_table[3] = {
-/*h(1)=0 EOSZ=1  ->	ntluf*/ {xed_encode_ntluf_VGPR32_B},
-/*h(2)=1 EOSZ=2  ->	ntluf*/ {xed_encode_ntluf_VGPR32_B},
-/*h(3)=2 EOSZ=3  ->	ntluf*/ {xed_encode_ntluf_VGPR64_B}
-};
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed_uint64_t res = 1;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_EOSZ(xes);
-hidx = key - 1;
-if(hidx <= 2) {
-    if(lu_table[hidx].ntlufptr0 != 0) res=(*lu_table[hidx].ntlufptr0)(xes,arg_reg);
-    return res;
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_VGPRy_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct { xed_ntluf_func_ptr_t ntlufptr0;} lu_entry_t;
-static const lu_entry_t lu_table[3] = {
-/*h(1)=0 EOSZ=1  ->	ntluf*/ {xed_encode_ntluf_VGPR32_N},
-/*h(2)=1 EOSZ=2  ->	ntluf*/ {xed_encode_ntluf_VGPR32_N},
-/*h(3)=2 EOSZ=3  ->	ntluf*/ {xed_encode_ntluf_VGPR64_N}
-};
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed_uint64_t res = 1;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_EOSZ(xes);
-hidx = key - 1;
-if(hidx <= 2) {
-    if(lu_table[hidx].ntlufptr0 != 0) res=(*lu_table[hidx].ntlufptr0)(xes,arg_reg);
-    return res;
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_VGPR32_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct { xed_ntluf_func_ptr_t ntlufptr0;} lu_entry_t;
-static const lu_entry_t lu_table[3] = {
-/*h(0)=0 MODE=0  ->	ntluf*/ {xed_encode_ntluf_VGPR32_N_32},
-/*h(1)=1 MODE=1  ->	ntluf*/ {xed_encode_ntluf_VGPR32_N_32},
-/*h(2)=2 MODE=2  ->	ntluf*/ {xed_encode_ntluf_VGPR32_N_64}
-};
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed_uint64_t res = 1;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_MODE(xes);
-hidx = key - 0;
-if(hidx <= 2) {
-    if(lu_table[hidx].ntlufptr0 != 0) res=(*lu_table[hidx].ntlufptr0)(xes,arg_reg);
-    return res;
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_VGPR32_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct { xed_ntluf_func_ptr_t ntlufptr0;} lu_entry_t;
-static const lu_entry_t lu_table[3] = {
-/*h(0)=0 MODE=0  ->	ntluf*/ {xed_encode_ntluf_VGPR32_B_32},
-/*h(1)=1 MODE=1  ->	ntluf*/ {xed_encode_ntluf_VGPR32_B_32},
-/*h(2)=2 MODE=2  ->	ntluf*/ {xed_encode_ntluf_VGPR32_B_64}
-};
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed_uint64_t res = 1;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_MODE(xes);
-hidx = key - 0;
-if(hidx <= 2) {
-    if(lu_table[hidx].ntlufptr0 != 0) res=(*lu_table[hidx].ntlufptr0)(xes,arg_reg);
-    return res;
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_VGPR32_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct { xed_ntluf_func_ptr_t ntlufptr0;} lu_entry_t;
-static const lu_entry_t lu_table[3] = {
-/*h(0)=0 MODE=0  ->	ntluf*/ {xed_encode_ntluf_VGPR32_R_32},
-/*h(1)=1 MODE=1  ->	ntluf*/ {xed_encode_ntluf_VGPR32_R_32},
-/*h(2)=2 MODE=2  ->	ntluf*/ {xed_encode_ntluf_VGPR32_R_64}
-};
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed_uint64_t res = 1;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_MODE(xes);
-hidx = key - 0;
-if(hidx <= 2) {
-    if(lu_table[hidx].ntlufptr0 != 0) res=(*lu_table[hidx].ntlufptr0)(xes,arg_reg);
-    return res;
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_VGPR32_N_32(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct { xed_int8_t vexdest210;} lu_entry_t;
-static const lu_entry_t lu_table[8] = {
-/*h(66)=0 OUTREG=XED_REG_EAX  ->	FB VEXDEST210=7 value=0x7*/ {7},
-/*h(67)=1 OUTREG=XED_REG_ECX  ->	FB VEXDEST210=6 value=0x6*/ {6},
-/*h(68)=2 OUTREG=XED_REG_EDX  ->	FB VEXDEST210=5 value=0x5*/ {5},
-/*h(69)=3 OUTREG=XED_REG_EBX  ->	FB VEXDEST210=4 value=0x4*/ {4},
-/*h(70)=4 OUTREG=XED_REG_ESP  ->	FB VEXDEST210=3 value=0x3*/ {3},
-/*h(71)=5 OUTREG=XED_REG_EBP  ->	FB VEXDEST210=2 value=0x2*/ {2},
-/*h(72)=6 OUTREG=XED_REG_ESI  ->	FB VEXDEST210=1 value=0x1*/ {1},
-/*h(73)=7 OUTREG=XED_REG_EDI  ->	FB VEXDEST210=0 value=0x0*/ {0}
-};
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_OUTREG(xes);
-hidx = key - 66;
-if(hidx <= 7) {
-    xed3_operand_set_vexdest210(xes,lu_table[hidx].vexdest210);
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_VGPR32_N_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct { xed_int8_t vexdest210 ;xed_int8_t vexdest3;} lu_entry_t;
-static const lu_entry_t lu_table[16] = {
-/*h(66)=0 OUTREG=XED_REG_EAX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=7 value=0x7*/ {7,1},
-/*h(67)=1 OUTREG=XED_REG_ECX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=6 value=0x6*/ {6,1},
-/*h(68)=2 OUTREG=XED_REG_EDX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=5 value=0x5*/ {5,1},
-/*h(69)=3 OUTREG=XED_REG_EBX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=4 value=0x4*/ {4,1},
-/*h(70)=4 OUTREG=XED_REG_ESP  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=3 value=0x3*/ {3,1},
-/*h(71)=5 OUTREG=XED_REG_EBP  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=2 value=0x2*/ {2,1},
-/*h(72)=6 OUTREG=XED_REG_ESI  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=1 value=0x1*/ {1,1},
-/*h(73)=7 OUTREG=XED_REG_EDI  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=0 value=0x0*/ {0,1},
-/*h(74)=8 OUTREG=XED_REG_R8D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=7 value=0x7*/ {7,0},
-/*h(75)=9 OUTREG=XED_REG_R9D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=6 value=0x6*/ {6,0},
-/*h(76)=10 OUTREG=XED_REG_R10D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=5 value=0x5*/ {5,0},
-/*h(77)=11 OUTREG=XED_REG_R11D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=4 value=0x4*/ {4,0},
-/*h(78)=12 OUTREG=XED_REG_R12D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=3 value=0x3*/ {3,0},
-/*h(79)=13 OUTREG=XED_REG_R13D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=2 value=0x2*/ {2,0},
-/*h(80)=14 OUTREG=XED_REG_R14D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=1 value=0x1*/ {1,0},
-/*h(81)=15 OUTREG=XED_REG_R15D  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=0 value=0x0*/ {0,0}
-};
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_OUTREG(xes);
-hidx = key - 66;
-if(hidx <= 15) {
-    xed3_operand_set_vexdest210(xes,lu_table[hidx].vexdest210);
-    xed3_operand_set_vexdest3(xes,lu_table[hidx].vexdest3);
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_VGPR64_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct { xed_int8_t vexdest210 ;xed_int8_t vexdest3;} lu_entry_t;
-static const lu_entry_t lu_table[16] = {
-/*h(98)=0 OUTREG=XED_REG_RAX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=7 value=0x7*/ {7,1},
-/*h(99)=1 OUTREG=XED_REG_RCX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=6 value=0x6*/ {6,1},
-/*h(100)=2 OUTREG=XED_REG_RDX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=5 value=0x5*/ {5,1},
-/*h(101)=3 OUTREG=XED_REG_RBX  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=4 value=0x4*/ {4,1},
-/*h(102)=4 OUTREG=XED_REG_RSP  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=3 value=0x3*/ {3,1},
-/*h(103)=5 OUTREG=XED_REG_RBP  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=2 value=0x2*/ {2,1},
-/*h(104)=6 OUTREG=XED_REG_RSI  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=1 value=0x1*/ {1,1},
-/*h(105)=7 OUTREG=XED_REG_RDI  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=0 value=0x0*/ {0,1},
-/*h(106)=8 OUTREG=XED_REG_R8  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=7 value=0x7*/ {7,0},
-/*h(107)=9 OUTREG=XED_REG_R9  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=6 value=0x6*/ {6,0},
-/*h(108)=10 OUTREG=XED_REG_R10  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=5 value=0x5*/ {5,0},
-/*h(109)=11 OUTREG=XED_REG_R11  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=4 value=0x4*/ {4,0},
-/*h(110)=12 OUTREG=XED_REG_R12  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=3 value=0x3*/ {3,0},
-/*h(111)=13 OUTREG=XED_REG_R13  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=2 value=0x2*/ {2,0},
-/*h(112)=14 OUTREG=XED_REG_R14  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=1 value=0x1*/ {1,0},
-/*h(113)=15 OUTREG=XED_REG_R15  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=0 value=0x0*/ {0,0}
-};
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_OUTREG(xes);
-hidx = key - 98;
-if(hidx <= 15) {
-    xed3_operand_set_vexdest210(xes,lu_table[hidx].vexdest210);
-    xed3_operand_set_vexdest3(xes,lu_table[hidx].vexdest3);
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_VGPR32_R_32(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct { xed_int8_t reg;} lu_entry_t;
-static const lu_entry_t lu_table[8] = {
-/*h(66)=0 OUTREG=XED_REG_EAX  ->	FB REG=0 value=0x0*/ {0},
-/*h(67)=1 OUTREG=XED_REG_ECX  ->	FB REG=1 value=0x1*/ {1},
-/*h(68)=2 OUTREG=XED_REG_EDX  ->	FB REG=2 value=0x2*/ {2},
-/*h(69)=3 OUTREG=XED_REG_EBX  ->	FB REG=3 value=0x3*/ {3},
-/*h(70)=4 OUTREG=XED_REG_ESP  ->	FB REG=4 value=0x4*/ {4},
-/*h(71)=5 OUTREG=XED_REG_EBP  ->	FB REG=5 value=0x5*/ {5},
-/*h(72)=6 OUTREG=XED_REG_ESI  ->	FB REG=6 value=0x6*/ {6},
-/*h(73)=7 OUTREG=XED_REG_EDI  ->	FB REG=7 value=0x7*/ {7}
-};
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_OUTREG(xes);
-hidx = key - 66;
-if(hidx <= 7) {
-    xed3_operand_set_reg(xes,lu_table[hidx].reg);
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_VGPR32_R_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct { xed_int8_t reg ;xed_int8_t rexr;} lu_entry_t;
-static const lu_entry_t lu_table[16] = {
-/*h(66)=0 OUTREG=XED_REG_EAX  ->	FB REXR=0 value=0x0 	FB REG=0 value=0x0*/ {0,0},
-/*h(67)=1 OUTREG=XED_REG_ECX  ->	FB REXR=0 value=0x0 	FB REG=1 value=0x1*/ {1,0},
-/*h(68)=2 OUTREG=XED_REG_EDX  ->	FB REXR=0 value=0x0 	FB REG=2 value=0x2*/ {2,0},
-/*h(69)=3 OUTREG=XED_REG_EBX  ->	FB REXR=0 value=0x0 	FB REG=3 value=0x3*/ {3,0},
-/*h(70)=4 OUTREG=XED_REG_ESP  ->	FB REXR=0 value=0x0 	FB REG=4 value=0x4*/ {4,0},
-/*h(71)=5 OUTREG=XED_REG_EBP  ->	FB REXR=0 value=0x0 	FB REG=5 value=0x5*/ {5,0},
-/*h(72)=6 OUTREG=XED_REG_ESI  ->	FB REXR=0 value=0x0 	FB REG=6 value=0x6*/ {6,0},
-/*h(73)=7 OUTREG=XED_REG_EDI  ->	FB REXR=0 value=0x0 	FB REG=7 value=0x7*/ {7,0},
-/*h(74)=8 OUTREG=XED_REG_R8D  ->	FB REXR=1 value=0x1 	FB REG=0 value=0x0*/ {0,1},
-/*h(75)=9 OUTREG=XED_REG_R9D  ->	FB REXR=1 value=0x1 	FB REG=1 value=0x1*/ {1,1},
-/*h(76)=10 OUTREG=XED_REG_R10D  ->	FB REXR=1 value=0x1 	FB REG=2 value=0x2*/ {2,1},
-/*h(77)=11 OUTREG=XED_REG_R11D  ->	FB REXR=1 value=0x1 	FB REG=3 value=0x3*/ {3,1},
-/*h(78)=12 OUTREG=XED_REG_R12D  ->	FB REXR=1 value=0x1 	FB REG=4 value=0x4*/ {4,1},
-/*h(79)=13 OUTREG=XED_REG_R13D  ->	FB REXR=1 value=0x1 	FB REG=5 value=0x5*/ {5,1},
-/*h(80)=14 OUTREG=XED_REG_R14D  ->	FB REXR=1 value=0x1 	FB REG=6 value=0x6*/ {6,1},
-/*h(81)=15 OUTREG=XED_REG_R15D  ->	FB REXR=1 value=0x1 	FB REG=7 value=0x7*/ {7,1}
-};
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_OUTREG(xes);
-hidx = key - 66;
-if(hidx <= 15) {
-    xed3_operand_set_reg(xes,lu_table[hidx].reg);
-    xed3_operand_set_rexr(xes,lu_table[hidx].rexr);
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_VGPR64_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct { xed_int8_t reg ;xed_int8_t rexr;} lu_entry_t;
-static const lu_entry_t lu_table[16] = {
-/*h(98)=0 OUTREG=XED_REG_RAX  ->	FB REXR=0 value=0x0 	FB REG=0 value=0x0*/ {0,0},
-/*h(99)=1 OUTREG=XED_REG_RCX  ->	FB REXR=0 value=0x0 	FB REG=1 value=0x1*/ {1,0},
-/*h(100)=2 OUTREG=XED_REG_RDX  ->	FB REXR=0 value=0x0 	FB REG=2 value=0x2*/ {2,0},
-/*h(101)=3 OUTREG=XED_REG_RBX  ->	FB REXR=0 value=0x0 	FB REG=3 value=0x3*/ {3,0},
-/*h(102)=4 OUTREG=XED_REG_RSP  ->	FB REXR=0 value=0x0 	FB REG=4 value=0x4*/ {4,0},
-/*h(103)=5 OUTREG=XED_REG_RBP  ->	FB REXR=0 value=0x0 	FB REG=5 value=0x5*/ {5,0},
-/*h(104)=6 OUTREG=XED_REG_RSI  ->	FB REXR=0 value=0x0 	FB REG=6 value=0x6*/ {6,0},
-/*h(105)=7 OUTREG=XED_REG_RDI  ->	FB REXR=0 value=0x0 	FB REG=7 value=0x7*/ {7,0},
-/*h(106)=8 OUTREG=XED_REG_R8  ->	FB REXR=1 value=0x1 	FB REG=0 value=0x0*/ {0,1},
-/*h(107)=9 OUTREG=XED_REG_R9  ->	FB REXR=1 value=0x1 	FB REG=1 value=0x1*/ {1,1},
-/*h(108)=10 OUTREG=XED_REG_R10  ->	FB REXR=1 value=0x1 	FB REG=2 value=0x2*/ {2,1},
-/*h(109)=11 OUTREG=XED_REG_R11  ->	FB REXR=1 value=0x1 	FB REG=3 value=0x3*/ {3,1},
-/*h(110)=12 OUTREG=XED_REG_R12  ->	FB REXR=1 value=0x1 	FB REG=4 value=0x4*/ {4,1},
-/*h(111)=13 OUTREG=XED_REG_R13  ->	FB REXR=1 value=0x1 	FB REG=5 value=0x5*/ {5,1},
-/*h(112)=14 OUTREG=XED_REG_R14  ->	FB REXR=1 value=0x1 	FB REG=6 value=0x6*/ {6,1},
-/*h(113)=15 OUTREG=XED_REG_R15  ->	FB REXR=1 value=0x1 	FB REG=7 value=0x7*/ {7,1}
-};
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_OUTREG(xes);
-hidx = key - 98;
-if(hidx <= 15) {
-    xed3_operand_set_reg(xes,lu_table[hidx].reg);
-    xed3_operand_set_rexr(xes,lu_table[hidx].rexr);
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_VGPR32_B_32(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct { xed_int8_t rm;} lu_entry_t;
-static const lu_entry_t lu_table[8] = {
-/*h(66)=0 OUTREG=XED_REG_EAX  ->	FB RM=0 value=0x0*/ {0},
-/*h(67)=1 OUTREG=XED_REG_ECX  ->	FB RM=1 value=0x1*/ {1},
-/*h(68)=2 OUTREG=XED_REG_EDX  ->	FB RM=2 value=0x2*/ {2},
-/*h(69)=3 OUTREG=XED_REG_EBX  ->	FB RM=3 value=0x3*/ {3},
-/*h(70)=4 OUTREG=XED_REG_ESP  ->	FB RM=4 value=0x4*/ {4},
-/*h(71)=5 OUTREG=XED_REG_EBP  ->	FB RM=5 value=0x5*/ {5},
-/*h(72)=6 OUTREG=XED_REG_ESI  ->	FB RM=6 value=0x6*/ {6},
-/*h(73)=7 OUTREG=XED_REG_EDI  ->	FB RM=7 value=0x7*/ {7}
-};
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_OUTREG(xes);
-hidx = key - 66;
-if(hidx <= 7) {
-    xed3_operand_set_rm(xes,lu_table[hidx].rm);
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_VGPR32_B_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct { xed_int8_t rexb ;xed_int8_t rm;} lu_entry_t;
-static const lu_entry_t lu_table[16] = {
-/*h(66)=0 OUTREG=XED_REG_EAX  ->	FB REXB=0 value=0x0 	FB RM=0 value=0x0*/ {0,0},
-/*h(67)=1 OUTREG=XED_REG_ECX  ->	FB REXB=0 value=0x0 	FB RM=1 value=0x1*/ {0,1},
-/*h(68)=2 OUTREG=XED_REG_EDX  ->	FB REXB=0 value=0x0 	FB RM=2 value=0x2*/ {0,2},
-/*h(69)=3 OUTREG=XED_REG_EBX  ->	FB REXB=0 value=0x0 	FB RM=3 value=0x3*/ {0,3},
-/*h(70)=4 OUTREG=XED_REG_ESP  ->	FB REXB=0 value=0x0 	FB RM=4 value=0x4*/ {0,4},
-/*h(71)=5 OUTREG=XED_REG_EBP  ->	FB REXB=0 value=0x0 	FB RM=5 value=0x5*/ {0,5},
-/*h(72)=6 OUTREG=XED_REG_ESI  ->	FB REXB=0 value=0x0 	FB RM=6 value=0x6*/ {0,6},
-/*h(73)=7 OUTREG=XED_REG_EDI  ->	FB REXB=0 value=0x0 	FB RM=7 value=0x7*/ {0,7},
-/*h(74)=8 OUTREG=XED_REG_R8D  ->	FB REXB=1 value=0x1 	FB RM=0 value=0x0*/ {1,0},
-/*h(75)=9 OUTREG=XED_REG_R9D  ->	FB REXB=1 value=0x1 	FB RM=1 value=0x1*/ {1,1},
-/*h(76)=10 OUTREG=XED_REG_R10D  ->	FB REXB=1 value=0x1 	FB RM=2 value=0x2*/ {1,2},
-/*h(77)=11 OUTREG=XED_REG_R11D  ->	FB REXB=1 value=0x1 	FB RM=3 value=0x3*/ {1,3},
-/*h(78)=12 OUTREG=XED_REG_R12D  ->	FB REXB=1 value=0x1 	FB RM=4 value=0x4*/ {1,4},
-/*h(79)=13 OUTREG=XED_REG_R13D  ->	FB REXB=1 value=0x1 	FB RM=5 value=0x5*/ {1,5},
-/*h(80)=14 OUTREG=XED_REG_R14D  ->	FB REXB=1 value=0x1 	FB RM=6 value=0x6*/ {1,6},
-/*h(81)=15 OUTREG=XED_REG_R15D  ->	FB REXB=1 value=0x1 	FB RM=7 value=0x7*/ {1,7}
-};
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_OUTREG(xes);
-hidx = key - 66;
-if(hidx <= 15) {
-    xed3_operand_set_rexb(xes,lu_table[hidx].rexb);
-    xed3_operand_set_rm(xes,lu_table[hidx].rm);
-    return 1;
-}
-else{
-    return 0;
-}
-}
-xed_uint32_t xed_encode_ntluf_VGPR64_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
-{
-typedef struct { xed_int8_t rexb ;xed_int8_t rm;} lu_entry_t;
-static const lu_entry_t lu_table[16] = {
-/*h(98)=0 OUTREG=XED_REG_RAX  ->	FB REXB=0 value=0x0 	FB RM=0 value=0x0*/ {0,0},
-/*h(99)=1 OUTREG=XED_REG_RCX  ->	FB REXB=0 value=0x0 	FB RM=1 value=0x1*/ {0,1},
-/*h(100)=2 OUTREG=XED_REG_RDX  ->	FB REXB=0 value=0x0 	FB RM=2 value=0x2*/ {0,2},
-/*h(101)=3 OUTREG=XED_REG_RBX  ->	FB REXB=0 value=0x0 	FB RM=3 value=0x3*/ {0,3},
-/*h(102)=4 OUTREG=XED_REG_RSP  ->	FB REXB=0 value=0x0 	FB RM=4 value=0x4*/ {0,4},
-/*h(103)=5 OUTREG=XED_REG_RBP  ->	FB REXB=0 value=0x0 	FB RM=5 value=0x5*/ {0,5},
-/*h(104)=6 OUTREG=XED_REG_RSI  ->	FB REXB=0 value=0x0 	FB RM=6 value=0x6*/ {0,6},
-/*h(105)=7 OUTREG=XED_REG_RDI  ->	FB REXB=0 value=0x0 	FB RM=7 value=0x7*/ {0,7},
-/*h(106)=8 OUTREG=XED_REG_R8  ->	FB REXB=1 value=0x1 	FB RM=0 value=0x0*/ {1,0},
-/*h(107)=9 OUTREG=XED_REG_R9  ->	FB REXB=1 value=0x1 	FB RM=1 value=0x1*/ {1,1},
-/*h(108)=10 OUTREG=XED_REG_R10  ->	FB REXB=1 value=0x1 	FB RM=2 value=0x2*/ {1,2},
-/*h(109)=11 OUTREG=XED_REG_R11  ->	FB REXB=1 value=0x1 	FB RM=3 value=0x3*/ {1,3},
-/*h(110)=12 OUTREG=XED_REG_R12  ->	FB REXB=1 value=0x1 	FB RM=4 value=0x4*/ {1,4},
-/*h(111)=13 OUTREG=XED_REG_R13  ->	FB REXB=1 value=0x1 	FB RM=5 value=0x5*/ {1,5},
-/*h(112)=14 OUTREG=XED_REG_R14  ->	FB REXB=1 value=0x1 	FB RM=6 value=0x6*/ {1,6},
-/*h(113)=15 OUTREG=XED_REG_R15  ->	FB REXB=1 value=0x1 	FB RM=7 value=0x7*/ {1,7}
-};
-xed_uint64_t key = 0;
-xed_uint64_t hidx = 0;
-xed3_operand_set_outreg(xes,arg_reg);
-key = xed_enc_lu_OUTREG(xes);
-hidx = key - 98;
-if(hidx <= 15) {
-    xed3_operand_set_rexb(xes,lu_table[hidx].rexb);
-    xed3_operand_set_rm(xes,lu_table[hidx].rm);
-    return 1;
-}
-else{
-    return 0;
-}
-}
 xed_uint32_t xed_encode_ntluf_MASK1(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
 {
 typedef struct { xed_int8_t mask;} lu_entry_t;
@@ -2978,6 +2910,81 @@ key = xed_enc_lu_OUTREG(xes);
 hidx = key - 301;
 if(hidx <= 7) {
     xed3_operand_set_reg(xes,lu_table[hidx].reg);
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_YMM_R3_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_int8_t reg ;xed_int8_t rexr ;xed_int8_t rexr4;} lu_entry_t;
+static const lu_entry_t lu_table[32] = {
+/*h(301)=0 OUTREG=XED_REG_YMM0  ->	FB REXR4=0 value=0x0 	FB REXR=0 value=0x0 	FB REG=0 value=0x0*/ {0,0,0},
+/*h(302)=1 OUTREG=XED_REG_YMM1  ->	FB REXR4=0 value=0x0 	FB REXR=0 value=0x0 	FB REG=1 value=0x1*/ {1,0,0},
+/*h(303)=2 OUTREG=XED_REG_YMM2  ->	FB REXR4=0 value=0x0 	FB REXR=0 value=0x0 	FB REG=2 value=0x2*/ {2,0,0},
+/*h(304)=3 OUTREG=XED_REG_YMM3  ->	FB REXR4=0 value=0x0 	FB REXR=0 value=0x0 	FB REG=3 value=0x3*/ {3,0,0},
+/*h(305)=4 OUTREG=XED_REG_YMM4  ->	FB REXR4=0 value=0x0 	FB REXR=0 value=0x0 	FB REG=4 value=0x4*/ {4,0,0},
+/*h(306)=5 OUTREG=XED_REG_YMM5  ->	FB REXR4=0 value=0x0 	FB REXR=0 value=0x0 	FB REG=5 value=0x5*/ {5,0,0},
+/*h(307)=6 OUTREG=XED_REG_YMM6  ->	FB REXR4=0 value=0x0 	FB REXR=0 value=0x0 	FB REG=6 value=0x6*/ {6,0,0},
+/*h(308)=7 OUTREG=XED_REG_YMM7  ->	FB REXR4=0 value=0x0 	FB REXR=0 value=0x0 	FB REG=7 value=0x7*/ {7,0,0},
+/*h(309)=8 OUTREG=XED_REG_YMM8  ->	FB REXR4=0 value=0x0 	FB REXR=1 value=0x1 	FB REG=0 value=0x0*/ {0,1,0},
+/*h(310)=9 OUTREG=XED_REG_YMM9  ->	FB REXR4=0 value=0x0 	FB REXR=1 value=0x1 	FB REG=1 value=0x1*/ {1,1,0},
+/*h(311)=10 OUTREG=XED_REG_YMM10  ->	FB REXR4=0 value=0x0 	FB REXR=1 value=0x1 	FB REG=2 value=0x2*/ {2,1,0},
+/*h(312)=11 OUTREG=XED_REG_YMM11  ->	FB REXR4=0 value=0x0 	FB REXR=1 value=0x1 	FB REG=3 value=0x3*/ {3,1,0},
+/*h(313)=12 OUTREG=XED_REG_YMM12  ->	FB REXR4=0 value=0x0 	FB REXR=1 value=0x1 	FB REG=4 value=0x4*/ {4,1,0},
+/*h(314)=13 OUTREG=XED_REG_YMM13  ->	FB REXR4=0 value=0x0 	FB REXR=1 value=0x1 	FB REG=5 value=0x5*/ {5,1,0},
+/*h(315)=14 OUTREG=XED_REG_YMM14  ->	FB REXR4=0 value=0x0 	FB REXR=1 value=0x1 	FB REG=6 value=0x6*/ {6,1,0},
+/*h(316)=15 OUTREG=XED_REG_YMM15  ->	FB REXR4=0 value=0x0 	FB REXR=1 value=0x1 	FB REG=7 value=0x7*/ {7,1,0},
+/*h(317)=16 OUTREG=XED_REG_YMM16  ->	FB REXR4=1 value=0x1 	FB REXR=0 value=0x0 	FB REG=0 value=0x0*/ {0,0,1},
+/*h(318)=17 OUTREG=XED_REG_YMM17  ->	FB REXR4=1 value=0x1 	FB REXR=0 value=0x0 	FB REG=1 value=0x1*/ {1,0,1},
+/*h(319)=18 OUTREG=XED_REG_YMM18  ->	FB REXR4=1 value=0x1 	FB REXR=0 value=0x0 	FB REG=2 value=0x2*/ {2,0,1},
+/*h(320)=19 OUTREG=XED_REG_YMM19  ->	FB REXR4=1 value=0x1 	FB REXR=0 value=0x0 	FB REG=3 value=0x3*/ {3,0,1},
+/*h(321)=20 OUTREG=XED_REG_YMM20  ->	FB REXR4=1 value=0x1 	FB REXR=0 value=0x0 	FB REG=4 value=0x4*/ {4,0,1},
+/*h(322)=21 OUTREG=XED_REG_YMM21  ->	FB REXR4=1 value=0x1 	FB REXR=0 value=0x0 	FB REG=5 value=0x5*/ {5,0,1},
+/*h(323)=22 OUTREG=XED_REG_YMM22  ->	FB REXR4=1 value=0x1 	FB REXR=0 value=0x0 	FB REG=6 value=0x6*/ {6,0,1},
+/*h(324)=23 OUTREG=XED_REG_YMM23  ->	FB REXR4=1 value=0x1 	FB REXR=0 value=0x0 	FB REG=7 value=0x7*/ {7,0,1},
+/*h(325)=24 OUTREG=XED_REG_YMM24  ->	FB REXR4=1 value=0x1 	FB REXR=1 value=0x1 	FB REG=0 value=0x0*/ {0,1,1},
+/*h(326)=25 OUTREG=XED_REG_YMM25  ->	FB REXR4=1 value=0x1 	FB REXR=1 value=0x1 	FB REG=1 value=0x1*/ {1,1,1},
+/*h(327)=26 OUTREG=XED_REG_YMM26  ->	FB REXR4=1 value=0x1 	FB REXR=1 value=0x1 	FB REG=2 value=0x2*/ {2,1,1},
+/*h(328)=27 OUTREG=XED_REG_YMM27  ->	FB REXR4=1 value=0x1 	FB REXR=1 value=0x1 	FB REG=3 value=0x3*/ {3,1,1},
+/*h(329)=28 OUTREG=XED_REG_YMM28  ->	FB REXR4=1 value=0x1 	FB REXR=1 value=0x1 	FB REG=4 value=0x4*/ {4,1,1},
+/*h(330)=29 OUTREG=XED_REG_YMM29  ->	FB REXR4=1 value=0x1 	FB REXR=1 value=0x1 	FB REG=5 value=0x5*/ {5,1,1},
+/*h(331)=30 OUTREG=XED_REG_YMM30  ->	FB REXR4=1 value=0x1 	FB REXR=1 value=0x1 	FB REG=6 value=0x6*/ {6,1,1},
+/*h(332)=31 OUTREG=XED_REG_YMM31  ->	FB REXR4=1 value=0x1 	FB REXR=1 value=0x1 	FB REG=7 value=0x7*/ {7,1,1}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_OUTREG(xes);
+hidx = key - 301;
+if(hidx <= 31) {
+    xed3_operand_set_reg(xes,lu_table[hidx].reg);
+    xed3_operand_set_rexr(xes,lu_table[hidx].rexr);
+    xed3_operand_set_rexr4(xes,lu_table[hidx].rexr4);
+    return 1;
+}
+else{
+    return 0;
+}
+}
+xed_uint32_t xed_encode_ntluf_ZMM_R3(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg)
+{
+typedef struct { xed_ntluf_func_ptr_t ntlufptr0;} lu_entry_t;
+static const lu_entry_t lu_table[3] = {
+/*h(0)=0 MODE=0  ->	ntluf*/ {xed_encode_ntluf_ZMM_R3_32},
+/*h(1)=1 MODE=1  ->	ntluf*/ {xed_encode_ntluf_ZMM_R3_32},
+/*h(2)=2 MODE=2  ->	ntluf*/ {xed_encode_ntluf_ZMM_R3_64}
+};
+xed_uint64_t key = 0;
+xed_uint64_t hidx = 0;
+xed_uint64_t res = 1;
+xed3_operand_set_outreg(xes,arg_reg);
+key = xed_enc_lu_MODE(xes);
+hidx = key - 0;
+if(hidx <= 2) {
+    if(lu_table[hidx].ntlufptr0 != 0) res=(*lu_table[hidx].ntlufptr0)(xes,arg_reg);
+    return res;
     return 1;
 }
 else{

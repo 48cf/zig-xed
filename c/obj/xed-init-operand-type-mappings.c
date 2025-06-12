@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -24,17 +24,24 @@ END_LEGAL */
 const xed_operand_type_info_t xed_operand_xtype_info[] = {
 /* INVALID */ { XED_OPERAND_ELEMENT_TYPE_INVALID, 0 },
 /* 2bf16 */ { XED_OPERAND_ELEMENT_TYPE_BFLOAT16, 32 },
+/* 2bf8 */ { XED_OPERAND_ELEMENT_TYPE_BFLOAT8, 16 },
 /* 2f16 */ { XED_OPERAND_ELEMENT_TYPE_FLOAT16, 32 },
+/* 2hf8 */ { XED_OPERAND_ELEMENT_TYPE_HFLOAT8, 16 },
 /* 2i16 */ { XED_OPERAND_ELEMENT_TYPE_INT, 32 },
+/* 2i8 */ { XED_OPERAND_ELEMENT_TYPE_INT8, 16 },
 /* 2u16 */ { XED_OPERAND_ELEMENT_TYPE_UINT, 32 },
+/* 4bf8 */ { XED_OPERAND_ELEMENT_TYPE_BFLOAT8, 32 },
+/* 4hf8 */ { XED_OPERAND_ELEMENT_TYPE_HFLOAT8, 32 },
 /* 4i8 */ { XED_OPERAND_ELEMENT_TYPE_INT8, 32 },
 /* 4u8 */ { XED_OPERAND_ELEMENT_TYPE_UINT8, 32 },
 /* b80 */ { XED_OPERAND_ELEMENT_TYPE_LONGBCD, 80 },
 /* bf16 */ { XED_OPERAND_ELEMENT_TYPE_BFLOAT16, 16 },
+/* bf8 */ { XED_OPERAND_ELEMENT_TYPE_BFLOAT8, 8 },
 /* f16 */ { XED_OPERAND_ELEMENT_TYPE_FLOAT16, 16 },
 /* f32 */ { XED_OPERAND_ELEMENT_TYPE_SINGLE, 32 },
 /* f64 */ { XED_OPERAND_ELEMENT_TYPE_DOUBLE, 64 },
 /* f80 */ { XED_OPERAND_ELEMENT_TYPE_LONGDOUBLE, 80 },
+/* hf8 */ { XED_OPERAND_ELEMENT_TYPE_HFLOAT8, 8 },
 /* i1 */ { XED_OPERAND_ELEMENT_TYPE_INT, 1 },
 /* i128 */ { XED_OPERAND_ELEMENT_TYPE_INT, 128 },
 /* i16 */ { XED_OPERAND_ELEMENT_TYPE_INT, 16 },

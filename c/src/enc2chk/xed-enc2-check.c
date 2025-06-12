@@ -1,6 +1,6 @@
 /* BEGIN_LEGAL 
 
-Copyright (c) 2020 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -99,6 +99,14 @@ void xed_enc2_invalid_gpr8(xed_uint_t mode, xed_reg_enum_t reg,const char* argna
     if (mode != 64 && (reg >= XED_REG_R8B || (reg >= XED_REG_SPL && reg <= XED_REG_DIL)))
         xed_enc2_error("Bad gpr8 %s arg_name %s in function %s", xed_reg_enum_t2str(reg), argname, pfn);
 }
+void xed_enc2_invalid_gpr8_evex(xed_uint_t mode, xed_reg_enum_t reg,const char* argname,const char* pfn) {
+    if ( (reg < XED_REG_GPR8_FIRST || reg > XED_REG_GPR8_LAST) ||
+         (reg >= XED_REG_GPR8h_FIRST && reg <= XED_REG_GPR8h_LAST) )
+        xed_enc2_error("Bad gpr8 %s arg_name %s in function %s", xed_reg_enum_t2str(reg), argname, pfn);
+    if (mode != 64 && (reg >= XED_REG_R8B || (reg >= XED_REG_SPL && reg <= XED_REG_DIL)))
+        xed_enc2_error("Bad gpr8 %s arg_name %s in function %s", xed_reg_enum_t2str(reg), argname, pfn);
+}
+
 void xed_enc2_invalid_kreg(xed_uint_t mode, xed_reg_enum_t reg,const char* argname,const char* pfn) {
     if (reg < XED_REG_K0 || reg > XED_REG_K7) 
         xed_enc2_error("Bad mask reg %s arg_name %s in function %s", xed_reg_enum_t2str(reg), argname, pfn);
@@ -157,6 +165,11 @@ void xed_enc2_invalid_zeroing(xed_uint_t mode, xed_uint_t zeroing,const char* ar
     if (zeroing != 0 && zeroing != 1)
         xed_enc2_error("Bad zeroing value %d arg_name %s in function %s", zeroing, argname, pfn);
     (void) mode;
+}
+void xed_enc2_invalid_dfv(xed_uint_t mode, xed_uint_t dfv,const char* argname,const char* pfn) {
+    if (dfv > 15) 
+        xed_enc2_error("Bad dfv value %d arg_name %s in function %s", dfv, argname, pfn);
+    (void)mode;
 }
 void xed_enc2_invalid_zmm(xed_uint_t mode, xed_reg_enum_t reg,const char* argname,const char* pfn) {
     if (reg < XED_REG_ZMM_FIRST || reg > XED_REG_ZMM_LAST) 

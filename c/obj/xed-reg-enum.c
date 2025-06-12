@@ -213,7 +213,6 @@ static const name_table_xed_reg_enum_t name_array_xed_reg_enum_t[] = {
 {"FSBASE", XED_REG_FSBASE},
 {"GSBASE", XED_REG_GSBASE},
 {"TILECONFIG", XED_REG_TILECONFIG},
-{"IA32_KERNEL_GS_BASE", XED_REG_IA32_KERNEL_GS_BASE},
 {"DFV0", XED_REG_DFV0},
 {"DFV1", XED_REG_DFV1},
 {"DFV2", XED_REG_DFV2},
@@ -230,6 +229,7 @@ static const name_table_xed_reg_enum_t name_array_xed_reg_enum_t[] = {
 {"DFV13", XED_REG_DFV13},
 {"DFV14", XED_REG_DFV14},
 {"DFV15", XED_REG_DFV15},
+{"IA32_KERNEL_GS_BASE", XED_REG_IA32_KERNEL_GS_BASE},
 {"X87CONTROL", XED_REG_X87CONTROL},
 {"X87STATUS", XED_REG_X87STATUS},
 {"X87TAG", XED_REG_X87TAG},
@@ -685,7 +685,6 @@ Here is a skeleton switch statement embedded in a comment
   case XED_REG_FSBASE:
   case XED_REG_GSBASE:
   case XED_REG_TILECONFIG:
-  case XED_REG_IA32_KERNEL_GS_BASE:
   case XED_REG_DFV0:
   case XED_REG_DFV1:
   case XED_REG_DFV2:
@@ -702,6 +701,7 @@ Here is a skeleton switch statement embedded in a comment
   case XED_REG_DFV13:
   case XED_REG_DFV14:
   case XED_REG_DFV15:
+  case XED_REG_IA32_KERNEL_GS_BASE:
   case XED_REG_X87CONTROL:
   case XED_REG_X87STATUS:
   case XED_REG_X87TAG:

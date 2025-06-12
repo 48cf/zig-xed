@@ -49,6 +49,7 @@ pub fn main() !void {
     {
         const ar_log = try std.fs.cwd().readFileAlloc(allocator, "tmp/ar.log", 1 << 20);
         var lines = std.mem.tokenizeScalar(u8, ar_log, '\n');
+        _ = lines.next().?; // Skip libxed-ild.a
         const line = lines.next().?;
 
         var fields = std.mem.tokenizeScalar(u8, line, ' ');
@@ -79,7 +80,7 @@ pub fn main() !void {
 
     try out.writeAll(
         \\const std = @import("std");
-        \\pub fn addSources(lib: *std.Build.Step.Compile) void {
+        \\pub fn addSources(lib: anytype) void {
         \\  lib.addCSourceFiles(.{
         \\      .files = &.{
         \\

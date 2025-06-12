@@ -7,7 +7,7 @@
 # define INCLUDE_PRIVATE_XED3_OP_CHAIN_CAPTURE_H
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -310,9 +310,17 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPO
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_REG1_XED_REG_EAX_REG2_XED_REG_ECX_REG3_XED_REG_EDX_REG4_XED_REG_EBX_REG5_XED_REG_EBP_REG6_XED_REG_ESI_REG7_XED_REG_EDI_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d);
 
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR16_R_MEM0_const1(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR32_R_MEM0_const1(xed_decoded_inst_t* d);
+
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_GPR16_R_REG1_rFLAGS(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR16_B_REG1_GPR16_R_REG2_rFLAGS(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRz_R_MEM0_const1(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_R_MEM0_const1(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_R_REG1_GPRz_B(xed_decoded_inst_t* d);
 
@@ -346,9 +354,17 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_EDX_REG
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_PTR_const1_IMM0_const1_REG0_XED_REG_STACKPUSH_REG1_XED_REG_EIP_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPUSH_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0_REG1_rFLAGS(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPUSH_REG1_XED_REG_FLAGS_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0_REG1_rFLAGS(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPUSH_REG1_XED_REG_EFLAGS_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPUSH_REG1_XED_REG_RFLAGS_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_REG1_XED_REG_FLAGS_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_REG1_XED_REG_EFLAGS_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_REG1_XED_REG_RFLAGS_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_AH_REG1_rFLAGS(xed_decoded_inst_t* d);
 
@@ -552,8 +568,6 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_MMX_R_REG1_MMX_
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R_REG1_XMM_B_MEM0_const1_BASE0_ArDI_SEG0_FINAL_DSEG(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR32_R_MEM0_const1(xed_decoded_inst_t* d);
-
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR32_R_REG1_GPR32_B(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R_MEM0_const1_REG1_rFLAGS(xed_decoded_inst_t* d);
@@ -563,8 +577,6 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R_REG1_XMM_
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R_REG1_GPR32_B(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R_REG1_GPR64_B(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_R_MEM0_const1(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_R_REG1_XMM_B(xed_decoded_inst_t* d);
 
@@ -754,6 +766,18 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R_REG1_XMM_
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_IMM0_const1_REG0_XED_REG_EAX(xed_decoded_inst_t* d);
 
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_A_GPR_R_MEM0_const1_REG1_rFLAGS(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_RCX(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_ECX(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_ABSBR_const1_REG0_XED_REG_RIP(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_SB_REG1_XED_REG_STACKPUSH_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_SB_REG1_XED_REG_STACKPOP_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d);
+
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_UIF(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_B(xed_decoded_inst_t* d);
@@ -762,35 +786,21 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_UIF_REG
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_rIP_REG1_XED_REG_STACKPOP_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0_REG2_rFLAGS(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_A_GPR_R_MEM0_const1_REG1_rFLAGS(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_RCX(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_ECX(xed_decoded_inst_t* d);
-
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_RSI_REG1_XED_REG_RDI_REG2_XED_REG_RCX(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_B_REG1_GPR64_R(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_B_REG1_GPR64_R_REG2_XED_REG_MSRS(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_R_REG1_GPR64_B(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_R_REG1_GPR64_B_REG2_XED_REG_MSRS(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_RAX_REG1_XED_REG_RBX_REG2_XED_REG_RCX(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_REG1_XED_REG_RIP_REG2_XED_REG_RSP_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0_REG3_rFLAGS(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_REG1_XED_REG_RIP_REG2_XED_REG_RFLAGS_REG3_XED_REG_RSP_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0_REG4_rFLAGS(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_REG1_XED_REG_CS_REG2_XED_REG_SS_REG3_XED_REG_RIP_REG4_XED_REG_RFLAGS_REG5_XED_REG_RSP_REG6_XED_REG_GSBASE_REG7_XED_REG_IA32_KERNEL_GS_BASE_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0_REG8_rFLAGS(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_REG1_XED_REG_CS_REG2_XED_REG_SS_REG3_XED_REG_RIP_REG4_XED_REG_RSP_REG5_XED_REG_GSBASE_REG6_XED_REG_IA32_KERNEL_GS_BASE_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0_REG7_rFLAGS(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR16_B_REG1_XED_REG_IA32_KERNEL_GS_BASE(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_XED_REG_IA32_KERNEL_GS_BASE(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_RIP_REG1_rFLAGS(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_ABSBR_const1_REG0_XED_REG_RIP(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_SB_REG1_XED_REG_STACKPUSH_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_SB_REG1_XED_REG_STACKPOP_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_RAX_REG1_XED_REG_RBX_REG2_XED_REG_RCX(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R_REG1_XMM_N_MEM0_const1_REG2_XMM_SE(xed_decoded_inst_t* d);
 
@@ -1058,6 +1068,8 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_TMM
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_TMM_R(xed_decoded_inst_t* d);
 
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_TMM_R_REG1_TMM_B(xed_decoded_inst_t* d);
+
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R_MEM0_const1_BCAST_const0x1b(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R_MEM0_const1_BCAST_const0xe(xed_decoded_inst_t* d);
@@ -1066,9 +1078,13 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_VGP
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_VGPR64_R_REG1_VGPR64_N_REG2_rFLAGS(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_VGPR64_B_IMM0_const1(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_VGPR64_B_IMM0_const1_REG1_XED_REG_MSRS(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_IMM0_const1_REG0_VGPR64_B(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_IMM0_const1_REG0_VGPR64_B_REG1_XED_REG_MSRS(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_REG2_ZMM_N3_REG3_ZMM_B3(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_REG2_ZMM_N3_MEM0_const1(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_REG2_XMM_N3_REG3_XMM_B3(xed_decoded_inst_t* d);
 
@@ -1077,28 +1093,6 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MAS
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_YMM_N3_REG3_YMM_B3(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_YMM_N3_MEM0_const1(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_REG2_ZMM_N3_REG3_ZMM_B3(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_REG2_ZMM_N3_MEM0_const1(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_REG2_XMM_B3(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_MEM0_const1(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_REG2_YMM_B3(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_ZMM_B3(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_MEM0_const1(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_REG2_ZMM_B3(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_MEM0_const1(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_MASKNOT0(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_YMM_B3(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_REG2_ZMM_N3_REG3_ZMM_B3_IMM0_const1(xed_decoded_inst_t* d);
 
@@ -1168,7 +1162,23 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_B3_REG1_MAS
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_REG2_YMM_B3(xed_decoded_inst_t* d);
 
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_MEM0_const1(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_REG2_XMM_B3(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_MEM0_const1(xed_decoded_inst_t* d);
+
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_XMM_B3(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_MEM0_const1(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_REG2_ZMM_B3(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_YMM_B3(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_ZMM_B3(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_REG2_YMM_B3(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_B3_REG1_MASK1_REG2_ZMM_R3_IMM0_const1(xed_decoded_inst_t* d);
 
@@ -1234,6 +1244,10 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR32_B_REG1_XM
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_XMM_R3(xed_decoded_inst_t* d);
 
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_XMM_B3(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_B3_REG1_XMM_R3(xed_decoded_inst_t* d);
+
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_XMM_N3_REG2_XMM_B3(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_ZMM_R3(xed_decoded_inst_t* d);
@@ -1247,10 +1261,6 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_MEM0_con
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_GPR64_B(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_B_REG1_XMM_R3(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_XMM_B3(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_B3_REG1_XMM_R3(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_B3_REG1_MASK1_REG2_XMM_N3_REG3_XMM_R3(xed_decoded_inst_t* d);
 
@@ -1426,6 +1436,8 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_N3_REG1_ZMM
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_N3_MEM0_const1_IMM0_const1(xed_decoded_inst_t* d);
 
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_MASKNOT0(xed_decoded_inst_t* d);
+
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_YMM_N3_REG2_YMM_B3_IMM0_const1(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_YMM_N3_MEM0_const1_IMM0_const1(xed_decoded_inst_t* d);
@@ -1504,8 +1516,6 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_N_REG1_GPR
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_N_REG1_GPRv_R_MEM0_const1(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_L_R3_MEM0_const1_REG1_rFLAGS(xed_decoded_inst_t* d);
-
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR32_R_REG1_GPR32_N_REG2_GPR32_B_REG3_rFLAGS(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR32_R_REG1_GPR32_N_MEM0_const1_REG2_rFLAGS(xed_decoded_inst_t* d);
@@ -1554,28 +1564,6 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_N_REG1_GP
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_N_MEM0_const1(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR8_B_REG1_GPR8_R_REG2_DFV_REG3_rFLAGS(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_GPR8_R_REG1_DFV_REG2_rFLAGS(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_B_IMM0_const1_REG1_DFV_REG2_rFLAGS(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_IMM0_const1_REG0_DFV_REG1_rFLAGS(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_B_REG1_GPRv_R_REG2_DFV_REG3_rFLAGS(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_GPRv_R_REG1_DFV_REG2_rFLAGS(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR8_R_REG1_GPR8_B_REG2_DFV_REG3_rFLAGS(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR8_R_MEM0_const1_REG1_DFV_REG2_rFLAGS(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_R_REG1_GPRv_B_REG2_DFV_REG3_rFLAGS(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_R_MEM0_const1_REG1_DFV_REG2_rFLAGS(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR8_B_IMM0_const1_REG1_DFV_REG2_rFLAGS(xed_decoded_inst_t* d);
-
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_GPR32_R_REG1_GPR32_N_REG2_rFLAGS(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_GPR64_R_REG1_GPR64_N_REG2_rFLAGS(xed_decoded_inst_t* d);
@@ -1619,8 +1607,6 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR32_R_REG1_MA
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_MASK_R_REG1_GPR64_B(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_R_REG1_MASK_B(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_A_GPR_R_MEM0_const1(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_GPRy_R(xed_decoded_inst_t* d);
 
@@ -1666,18 +1652,6 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_R_REG1_GP
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_R_MEM0_const1_IMM0_const1(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_L_R3_REG1_XMM_L_B3(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_L_R3_MEM0_const1(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_L_R3_REG1_XMM_L_B3_IMM0_const1(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_L_R3_MEM0_const1_IMM0_const1(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_L_R3_REG1_XMM_L_B3_REG2_XED_REG_XMM0(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_L_R3_MEM0_const1_REG1_XED_REG_XMM0(xed_decoded_inst_t* d);
-
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_B_REG1_GPRv_R_IMM0_const1(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_GPRv_R_IMM0_const1(xed_decoded_inst_t* d);
@@ -1702,13 +1676,25 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_N_REG1_GPR
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_N_MEM0_const1_REG1_GPRv_R_REG2_XED_REG_CL(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_B_IMM0_const1(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_B_IMM0_const1_REG1_XED_REG_MSRS(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_IMM0_const1_REG0_GPR64_B(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_IMM0_const1_REG0_GPR64_B_REG1_XED_REG_MSRS(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_TMM_R3_MEM0_const1(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_TMM_R3(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_TMM_B3_REG2_GPR32_N(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_TMM_B3_IMM0_const1(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_REG2_YMM_N3_REG3_YMM_B3(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_REG2_YMM_N3_MEM0_const1(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_ZMM_N3_REG3_ZMM_B3(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_ZMM_N3_MEM0_const1(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_nt_nop_ntluf(xed_decoded_inst_t* d)
 {
@@ -3673,6 +3659,28 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR16_R_MEM0_const1(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_GPR16_R(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_operand_set_mem0(d, 1);
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR32_R_MEM0_const1(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_GPR32_R(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_operand_set_mem0(d, 1);
+return XED_ERROR_NONE;
+}
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_GPR16_R_REG1_rFLAGS(xed_decoded_inst_t* d)
 {
 xed3_operand_set_mem0(d, 1);
@@ -3710,6 +3718,28 @@ xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRz_R_MEM0_const1(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_GPRz_R(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_operand_set_mem0(d, 1);
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_R_MEM0_const1(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_GPR64_R(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_operand_set_mem0(d, 1);
 return XED_ERROR_NONE;
 }
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_R_REG1_GPRz_B(xed_decoded_inst_t* d)
@@ -3944,9 +3974,10 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPUSH_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0_REG1_rFLAGS(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPUSH_REG1_XED_REG_FLAGS_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d)
 {
 xed3_operand_set_reg0(d, XED_REG_STACKPUSH);
+xed3_operand_set_reg1(d, XED_REG_FLAGS);
 xed3_operand_set_mem0(d, 1);
 xed3_capture_nt_SrSP(d);
 /*opname BASE0 */
@@ -3957,20 +3988,15 @@ return xed3_operand_get_error(d);
 xed3_capture_nt_FINAL_SSEG0(d);
 /*opname SEG0 */
 xed3_operand_set_seg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_rFLAGS(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0_REG1_rFLAGS(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPUSH_REG1_XED_REG_EFLAGS_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d)
 {
-xed3_operand_set_reg0(d, XED_REG_STACKPOP);
+xed3_operand_set_reg0(d, XED_REG_STACKPUSH);
+xed3_operand_set_reg1(d, XED_REG_EFLAGS);
 xed3_operand_set_mem0(d, 1);
 xed3_capture_nt_SrSP(d);
 /*opname BASE0 */
@@ -3984,9 +4010,79 @@ xed3_operand_set_seg0(d, xed3_operand_get_outreg(d));
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_rFLAGS(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPUSH_REG1_XED_REG_RFLAGS_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d)
+{
+xed3_operand_set_reg0(d, XED_REG_STACKPUSH);
+xed3_operand_set_reg1(d, XED_REG_RFLAGS);
+xed3_operand_set_mem0(d, 1);
+xed3_capture_nt_SrSP(d);
+/*opname BASE0 */
+xed3_operand_set_base0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_FINAL_SSEG0(d);
+/*opname SEG0 */
+xed3_operand_set_seg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_REG1_XED_REG_FLAGS_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d)
+{
+xed3_operand_set_reg0(d, XED_REG_STACKPOP);
+xed3_operand_set_reg1(d, XED_REG_FLAGS);
+xed3_operand_set_mem0(d, 1);
+xed3_capture_nt_SrSP(d);
+/*opname BASE0 */
+xed3_operand_set_base0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_FINAL_SSEG0(d);
+/*opname SEG0 */
+xed3_operand_set_seg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_REG1_XED_REG_EFLAGS_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d)
+{
+xed3_operand_set_reg0(d, XED_REG_STACKPOP);
+xed3_operand_set_reg1(d, XED_REG_EFLAGS);
+xed3_operand_set_mem0(d, 1);
+xed3_capture_nt_SrSP(d);
+/*opname BASE0 */
+xed3_operand_set_base0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_FINAL_SSEG0(d);
+/*opname SEG0 */
+xed3_operand_set_seg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_REG1_XED_REG_RFLAGS_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d)
+{
+xed3_operand_set_reg0(d, XED_REG_STACKPOP);
+xed3_operand_set_reg1(d, XED_REG_RFLAGS);
+xed3_operand_set_mem0(d, 1);
+xed3_capture_nt_SrSP(d);
+/*opname BASE0 */
+xed3_operand_set_base0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_FINAL_SSEG0(d);
+/*opname SEG0 */
+xed3_operand_set_seg0(d, xed3_operand_get_outreg(d));
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -5944,17 +6040,6 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR32_R_MEM0_const1(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_GPR32_R(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_mem0(d, 1);
-return XED_ERROR_NONE;
-}
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR32_R_REG1_GPR32_B(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_GPR32_R(d);
@@ -6040,17 +6125,6 @@ xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_R_MEM0_const1(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_GPR64_R(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_mem0(d, 1);
 return XED_ERROR_NONE;
 }
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_R_REG1_XMM_B(xed_decoded_inst_t* d)
@@ -7637,6 +7711,87 @@ xed3_operand_set_imm0(d, 1);
 xed3_operand_set_reg0(d, XED_REG_EAX);
 return XED_ERROR_NONE;
 }
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_A_GPR_R_MEM0_const1_REG1_rFLAGS(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_A_GPR_R(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_operand_set_mem0(d, 1);
+xed3_capture_nt_rFLAGS(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_RCX(xed_decoded_inst_t* d)
+{
+xed3_operand_set_reg0(d, XED_REG_RCX);
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_ECX(xed_decoded_inst_t* d)
+{
+xed3_operand_set_reg0(d, XED_REG_ECX);
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_ABSBR_const1_REG0_XED_REG_RIP(xed_decoded_inst_t* d)
+{
+xed3_operand_set_absbr(d, 1);
+xed3_operand_set_reg0(d, XED_REG_RIP);
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_SB_REG1_XED_REG_STACKPUSH_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_GPR64_SB(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_operand_set_reg1(d, XED_REG_STACKPUSH);
+xed3_operand_set_mem0(d, 1);
+xed3_capture_nt_SrSP(d);
+/*opname BASE0 */
+xed3_operand_set_base0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_FINAL_SSEG0(d);
+/*opname SEG0 */
+xed3_operand_set_seg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_SB_REG1_XED_REG_STACKPOP_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_GPR64_SB(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_operand_set_reg1(d, XED_REG_STACKPOP);
+xed3_operand_set_mem0(d, 1);
+xed3_capture_nt_SrSP(d);
+/*opname BASE0 */
+xed3_operand_set_base0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_FINAL_SSEG0(d);
+/*opname SEG0 */
+xed3_operand_set_seg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_UIF(xed_decoded_inst_t* d)
 {
 xed3_operand_set_reg0(d, XED_REG_UIF);
@@ -7693,33 +7848,6 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_A_GPR_R_MEM0_const1_REG1_rFLAGS(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_A_GPR_R(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_mem0(d, 1);
-xed3_capture_nt_rFLAGS(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_RCX(xed_decoded_inst_t* d)
-{
-xed3_operand_set_reg0(d, XED_REG_RCX);
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_ECX(xed_decoded_inst_t* d)
-{
-xed3_operand_set_reg0(d, XED_REG_ECX);
-return XED_ERROR_NONE;
-}
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_RSI_REG1_XED_REG_RDI_REG2_XED_REG_RCX(xed_decoded_inst_t* d)
 {
 xed3_operand_set_reg0(d, XED_REG_RSI);
@@ -7727,7 +7855,7 @@ xed3_operand_set_reg1(d, XED_REG_RDI);
 xed3_operand_set_reg2(d, XED_REG_RCX);
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_B_REG1_GPR64_R(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_B_REG1_GPR64_R_REG2_XED_REG_MSRS(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_GPR64_B(d);
 /*opname REG0 */
@@ -7741,9 +7869,10 @@ xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
+xed3_operand_set_reg2(d, XED_REG_MSRS);
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_R_REG1_GPR64_B(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_R_REG1_GPR64_B_REG2_XED_REG_MSRS(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_GPR64_R(d);
 /*opname REG0 */
@@ -7757,21 +7886,14 @@ xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
+xed3_operand_set_reg2(d, XED_REG_MSRS);
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_RAX_REG1_XED_REG_RBX_REG2_XED_REG_RCX(xed_decoded_inst_t* d)
-{
-xed3_operand_set_reg0(d, XED_REG_RAX);
-xed3_operand_set_reg1(d, XED_REG_RBX);
-xed3_operand_set_reg2(d, XED_REG_RCX);
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_REG1_XED_REG_RIP_REG2_XED_REG_RFLAGS_REG3_XED_REG_RSP_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0_REG4_rFLAGS(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_REG1_XED_REG_RIP_REG2_XED_REG_RSP_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0_REG3_rFLAGS(xed_decoded_inst_t* d)
 {
 xed3_operand_set_reg0(d, XED_REG_STACKPOP);
 xed3_operand_set_reg1(d, XED_REG_RIP);
-xed3_operand_set_reg2(d, XED_REG_RFLAGS);
-xed3_operand_set_reg3(d, XED_REG_RSP);
+xed3_operand_set_reg2(d, XED_REG_RSP);
 xed3_operand_set_mem0(d, 1);
 xed3_capture_nt_SrSP(d);
 /*opname BASE0 */
@@ -7786,23 +7908,22 @@ if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 xed3_capture_nt_rFLAGS(d);
-/*opname REG4 */
-xed3_operand_set_reg4(d, xed3_operand_get_outreg(d));
+/*opname REG3 */
+xed3_operand_set_reg3(d, xed3_operand_get_outreg(d));
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_REG1_XED_REG_CS_REG2_XED_REG_SS_REG3_XED_REG_RIP_REG4_XED_REG_RFLAGS_REG5_XED_REG_RSP_REG6_XED_REG_GSBASE_REG7_XED_REG_IA32_KERNEL_GS_BASE_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0_REG8_rFLAGS(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_STACKPOP_REG1_XED_REG_CS_REG2_XED_REG_SS_REG3_XED_REG_RIP_REG4_XED_REG_RSP_REG5_XED_REG_GSBASE_REG6_XED_REG_IA32_KERNEL_GS_BASE_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0_REG7_rFLAGS(xed_decoded_inst_t* d)
 {
 xed3_operand_set_reg0(d, XED_REG_STACKPOP);
 xed3_operand_set_reg1(d, XED_REG_CS);
 xed3_operand_set_reg2(d, XED_REG_SS);
 xed3_operand_set_reg3(d, XED_REG_RIP);
-xed3_operand_set_reg4(d, XED_REG_RFLAGS);
-xed3_operand_set_reg5(d, XED_REG_RSP);
-xed3_operand_set_reg6(d, XED_REG_GSBASE);
-xed3_operand_set_reg7(d, XED_REG_IA32_KERNEL_GS_BASE);
+xed3_operand_set_reg4(d, XED_REG_RSP);
+xed3_operand_set_reg5(d, XED_REG_GSBASE);
+xed3_operand_set_reg6(d, XED_REG_IA32_KERNEL_GS_BASE);
 xed3_operand_set_mem0(d, 1);
 xed3_capture_nt_SrSP(d);
 /*opname BASE0 */
@@ -7817,8 +7938,8 @@ if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 xed3_capture_nt_rFLAGS(d);
-/*opname REG8 */
-xed3_operand_set_reg8(d, xed3_operand_get_outreg(d));
+/*opname REG7 */
+xed3_operand_set_reg7(d, xed3_operand_get_outreg(d));
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -7841,69 +7962,11 @@ xed3_operand_set_mem0(d, 1);
 xed3_operand_set_reg0(d, XED_REG_IA32_KERNEL_GS_BASE);
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_RIP_REG1_rFLAGS(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XED_REG_RAX_REG1_XED_REG_RBX_REG2_XED_REG_RCX(xed_decoded_inst_t* d)
 {
-xed3_operand_set_reg0(d, XED_REG_RIP);
-xed3_capture_nt_rFLAGS(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_ABSBR_const1_REG0_XED_REG_RIP(xed_decoded_inst_t* d)
-{
-xed3_operand_set_absbr(d, 1);
-xed3_operand_set_reg0(d, XED_REG_RIP);
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_SB_REG1_XED_REG_STACKPUSH_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_GPR64_SB(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_reg1(d, XED_REG_STACKPUSH);
-xed3_operand_set_mem0(d, 1);
-xed3_capture_nt_SrSP(d);
-/*opname BASE0 */
-xed3_operand_set_base0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_FINAL_SSEG0(d);
-/*opname SEG0 */
-xed3_operand_set_seg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_SB_REG1_XED_REG_STACKPOP_MEM0_const1_BASE0_SrSP_SEG0_FINAL_SSEG0(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_GPR64_SB(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_reg1(d, XED_REG_STACKPOP);
-xed3_operand_set_mem0(d, 1);
-xed3_capture_nt_SrSP(d);
-/*opname BASE0 */
-xed3_operand_set_base0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_FINAL_SSEG0(d);
-/*opname SEG0 */
-xed3_operand_set_seg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
+xed3_operand_set_reg0(d, XED_REG_RAX);
+xed3_operand_set_reg1(d, XED_REG_RBX);
+xed3_operand_set_reg2(d, XED_REG_RCX);
 return XED_ERROR_NONE;
 }
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R_REG1_XMM_N_MEM0_const1_REG2_XMM_SE(xed_decoded_inst_t* d)
@@ -10388,6 +10451,22 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_TMM_R_REG1_TMM_B(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_TMM_R(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_TMM_B(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R_MEM0_const1_BCAST_const0x1b(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_XMM_R(d);
@@ -10458,7 +10537,7 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_VGPR64_B_IMM0_const1(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_VGPR64_B_IMM0_const1_REG1_XED_REG_MSRS(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_VGPR64_B(d);
 /*opname REG0 */
@@ -10467,9 +10546,10 @@ if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 xed3_operand_set_imm0(d, 1);
+xed3_operand_set_reg1(d, XED_REG_MSRS);
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_IMM0_const1_REG0_VGPR64_B(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_IMM0_const1_REG0_VGPR64_B_REG1_XED_REG_MSRS(xed_decoded_inst_t* d)
 {
 xed3_operand_set_imm0(d, 1);
 xed3_capture_nt_VGPR64_B(d);
@@ -10478,6 +10558,58 @@ xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
+xed3_operand_set_reg1(d, XED_REG_MSRS);
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_REG2_ZMM_N3_REG3_ZMM_B3(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_ZMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_MASK1(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ZMM_N3(d);
+/*opname REG2 */
+xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ZMM_B3(d);
+/*opname REG3 */
+xed3_operand_set_reg3(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_REG2_ZMM_N3_MEM0_const1(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_ZMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_MASK1(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ZMM_N3(d);
+/*opname REG2 */
+xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_operand_set_mem0(d, 1);
 return XED_ERROR_NONE;
 }
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_REG2_XMM_N3_REG3_XMM_B3(xed_decoded_inst_t* d)
@@ -10580,229 +10712,6 @@ if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 xed3_operand_set_mem0(d, 1);
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_REG2_ZMM_N3_REG3_ZMM_B3(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_ZMM_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_MASK1(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ZMM_N3(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ZMM_B3(d);
-/*opname REG3 */
-xed3_operand_set_reg3(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_REG2_ZMM_N3_MEM0_const1(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_ZMM_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_MASK1(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ZMM_N3(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_mem0(d, 1);
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_REG2_XMM_B3(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_XMM_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_MASK1(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_XMM_B3(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_MEM0_const1(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_XMM_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_MASK1(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_mem0(d, 1);
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_REG2_YMM_B3(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_XMM_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_MASK1(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_YMM_B3(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_ZMM_B3(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_YMM_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_MASK1(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ZMM_B3(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_MEM0_const1(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_YMM_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_MASK1(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_mem0(d, 1);
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_REG2_ZMM_B3(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_ZMM_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_MASK1(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ZMM_B3(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_MEM0_const1(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_ZMM_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_MASK1(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_mem0(d, 1);
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_MASKNOT0(xed_decoded_inst_t* d)
-{
-xed3_operand_set_mem0(d, 1);
-xed3_capture_nt_MASKNOT0(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_YMM_B3(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_YMM_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_MASK1(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_YMM_B3(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
 return XED_ERROR_NONE;
 }
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_REG2_ZMM_N3_REG3_ZMM_B3_IMM0_const1(xed_decoded_inst_t* d)
@@ -11560,6 +11469,62 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_MEM0_const1(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_ZMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_MASK1(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_operand_set_mem0(d, 1);
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_REG2_XMM_B3(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_XMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_MASK1(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_XMM_B3(d);
+/*opname REG2 */
+xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_MEM0_const1(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_XMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_MASK1(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_operand_set_mem0(d, 1);
+return XED_ERROR_NONE;
+}
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_XMM_B3(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_YMM_R3(d);
@@ -11575,6 +11540,111 @@ if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 xed3_capture_nt_XMM_B3(d);
+/*opname REG2 */
+xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_MEM0_const1(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_YMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_MASK1(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_operand_set_mem0(d, 1);
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_MASK1_REG2_ZMM_B3(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_ZMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_MASK1(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ZMM_B3(d);
+/*opname REG2 */
+xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_YMM_B3(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_YMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_MASK1(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_YMM_B3(d);
+/*opname REG2 */
+xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_ZMM_B3(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_YMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_MASK1(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ZMM_B3(d);
+/*opname REG2 */
+xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_REG2_YMM_B3(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_XMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_MASK1(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_YMM_B3(d);
 /*opname REG2 */
 xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
 if (xed3_operand_get_error(d)) {
@@ -12206,6 +12276,38 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_XMM_B3(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_XMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_XMM_B3(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_B3_REG1_XMM_R3(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_XMM_B3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_XMM_R3(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_XMM_N3_REG2_XMM_B3(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_XMM_R3(d);
@@ -12291,38 +12393,6 @@ return XED_ERROR_NONE;
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_B_REG1_XMM_R3(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_GPR64_B(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_XMM_R3(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_XMM_B3(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_XMM_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_XMM_B3(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_B3_REG1_XMM_R3(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_XMM_B3(d);
 /*opname REG0 */
 xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
 if (xed3_operand_get_error(d)) {
@@ -14105,6 +14175,17 @@ xed3_operand_set_mem0(d, 1);
 xed3_operand_set_imm0(d, 1);
 return XED_ERROR_NONE;
 }
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_MASKNOT0(xed_decoded_inst_t* d)
+{
+xed3_operand_set_mem0(d, 1);
+xed3_capture_nt_MASKNOT0(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_YMM_N3_REG2_YMM_B3_IMM0_const1(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_YMM_R3(d);
@@ -14928,23 +15009,6 @@ return xed3_operand_get_error(d);
 xed3_operand_set_mem0(d, 1);
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_L_R3_MEM0_const1_REG1_rFLAGS(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_XMM_L_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_mem0(d, 1);
-xed3_capture_nt_rFLAGS(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR32_R_REG1_GPR32_N_REG2_GPR32_B_REG3_rFLAGS(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_GPR32_R(d);
@@ -15437,274 +15501,6 @@ return xed3_operand_get_error(d);
 xed3_operand_set_mem0(d, 1);
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR8_B_REG1_GPR8_R_REG2_DFV_REG3_rFLAGS(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_GPR8_B(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_GPR8_R(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_DFV(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_rFLAGS(d);
-/*opname REG3 */
-xed3_operand_set_reg3(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_GPR8_R_REG1_DFV_REG2_rFLAGS(xed_decoded_inst_t* d)
-{
-xed3_operand_set_mem0(d, 1);
-xed3_capture_nt_GPR8_R(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_DFV(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_rFLAGS(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_B_IMM0_const1_REG1_DFV_REG2_rFLAGS(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_GPRv_B(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_imm0(d, 1);
-xed3_capture_nt_DFV(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_rFLAGS(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_IMM0_const1_REG0_DFV_REG1_rFLAGS(xed_decoded_inst_t* d)
-{
-xed3_operand_set_mem0(d, 1);
-xed3_operand_set_imm0(d, 1);
-xed3_capture_nt_DFV(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_rFLAGS(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_B_REG1_GPRv_R_REG2_DFV_REG3_rFLAGS(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_GPRv_B(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_GPRv_R(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_DFV(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_rFLAGS(d);
-/*opname REG3 */
-xed3_operand_set_reg3(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_GPRv_R_REG1_DFV_REG2_rFLAGS(xed_decoded_inst_t* d)
-{
-xed3_operand_set_mem0(d, 1);
-xed3_capture_nt_GPRv_R(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_DFV(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_rFLAGS(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR8_R_REG1_GPR8_B_REG2_DFV_REG3_rFLAGS(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_GPR8_R(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_GPR8_B(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_DFV(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_rFLAGS(d);
-/*opname REG3 */
-xed3_operand_set_reg3(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR8_R_MEM0_const1_REG1_DFV_REG2_rFLAGS(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_GPR8_R(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_mem0(d, 1);
-xed3_capture_nt_DFV(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_rFLAGS(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_R_REG1_GPRv_B_REG2_DFV_REG3_rFLAGS(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_GPRv_R(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_GPRv_B(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_DFV(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_rFLAGS(d);
-/*opname REG3 */
-xed3_operand_set_reg3(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_R_MEM0_const1_REG1_DFV_REG2_rFLAGS(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_GPRv_R(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_mem0(d, 1);
-xed3_capture_nt_DFV(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_rFLAGS(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR8_B_IMM0_const1_REG1_DFV_REG2_rFLAGS(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_GPR8_B(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_imm0(d, 1);
-xed3_capture_nt_DFV(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_rFLAGS(d);
-/*opname REG2 */
-xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_GPR32_R_REG1_GPR32_N_REG2_rFLAGS(xed_decoded_inst_t* d)
 {
 xed3_operand_set_mem0(d, 1);
@@ -16049,17 +15845,6 @@ xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_A_GPR_R_MEM0_const1(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_A_GPR_R(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_mem0(d, 1);
 return XED_ERROR_NONE;
 }
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_MEM0_const1_REG0_GPRy_R(xed_decoded_inst_t* d)
@@ -16441,91 +16226,6 @@ xed3_operand_set_mem0(d, 1);
 xed3_operand_set_imm0(d, 1);
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_L_R3_REG1_XMM_L_B3(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_XMM_L_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_XMM_L_B3(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_L_R3_MEM0_const1(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_XMM_L_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_mem0(d, 1);
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_L_R3_REG1_XMM_L_B3_IMM0_const1(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_XMM_L_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_XMM_L_B3(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_imm0(d, 1);
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_L_R3_MEM0_const1_IMM0_const1(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_XMM_L_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_mem0(d, 1);
-xed3_operand_set_imm0(d, 1);
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_L_R3_REG1_XMM_L_B3_REG2_XED_REG_XMM0(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_XMM_L_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_XMM_L_B3(d);
-/*opname REG1 */
-xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_reg2(d, XED_REG_XMM0);
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_L_R3_MEM0_const1_REG1_XED_REG_XMM0(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_XMM_L_R3(d);
-/*opname REG0 */
-xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_operand_set_mem0(d, 1);
-xed3_operand_set_reg1(d, XED_REG_XMM0);
-return XED_ERROR_NONE;
-}
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPRv_B_REG1_GPRv_R_IMM0_const1(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_GPRv_B(d);
@@ -16772,7 +16472,7 @@ return xed3_operand_get_error(d);
 xed3_operand_set_reg2(d, XED_REG_CL);
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_B_IMM0_const1(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_GPR64_B_IMM0_const1_REG1_XED_REG_MSRS(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_GPR64_B(d);
 /*opname REG0 */
@@ -16781,9 +16481,10 @@ if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 xed3_operand_set_imm0(d, 1);
+xed3_operand_set_reg1(d, XED_REG_MSRS);
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_IMM0_const1_REG0_GPR64_B(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_IMM0_const1_REG0_GPR64_B_REG1_XED_REG_MSRS(xed_decoded_inst_t* d)
 {
 xed3_operand_set_imm0(d, 1);
 xed3_capture_nt_GPR64_B(d);
@@ -16792,6 +16493,7 @@ xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
+xed3_operand_set_reg1(d, XED_REG_MSRS);
 return XED_ERROR_NONE;
 }
 static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_TMM_R3_MEM0_const1(xed_decoded_inst_t* d)
@@ -16814,6 +16516,147 @@ xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_TMM_B3_REG2_GPR32_N(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_ZMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_TMM_B3(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_GPR32_N(d);
+/*opname REG2 */
+xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_ZMM_R3_REG1_TMM_B3_IMM0_const1(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_ZMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_TMM_B3(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_operand_set_imm0(d, 1);
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_REG2_YMM_N3_REG3_YMM_B3(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_XMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_MASK1(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_YMM_N3(d);
+/*opname REG2 */
+xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_YMM_B3(d);
+/*opname REG3 */
+xed3_operand_set_reg3(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_XMM_R3_REG1_MASK1_REG2_YMM_N3_MEM0_const1(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_XMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_MASK1(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_YMM_N3(d);
+/*opname REG2 */
+xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_operand_set_mem0(d, 1);
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_ZMM_N3_REG3_ZMM_B3(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_YMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_MASK1(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ZMM_N3(d);
+/*opname REG2 */
+xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ZMM_B3(d);
+/*opname REG3 */
+xed3_operand_set_reg3(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_ntluf_REG0_YMM_R3_REG1_MASK1_REG2_ZMM_N3_MEM0_const1(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_YMM_R3(d);
+/*opname REG0 */
+xed3_operand_set_reg0(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_MASK1(d);
+/*opname REG1 */
+xed3_operand_set_reg1(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ZMM_N3(d);
+/*opname REG2 */
+xed3_operand_set_reg2(d, xed3_operand_get_outreg(d));
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_operand_set_mem0(d, 1);
 return XED_ERROR_NONE;
 }
 #endif

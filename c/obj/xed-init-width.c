@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -363,6 +363,10 @@ void xed_init_width_mappings(void)
    xed_width_bits[XED_OPERAND_WIDTH_BND64][1] = 192;
    xed_width_bits[XED_OPERAND_WIDTH_BND64][2] = 192;
    xed_width_bits[XED_OPERAND_WIDTH_BND64][3] = 192;
+   xed_width_bits[XED_OPERAND_WIDTH_WRD][0] = 16;
+   xed_width_bits[XED_OPERAND_WIDTH_WRD][1] = 16;
+   xed_width_bits[XED_OPERAND_WIDTH_WRD][2] = 16;
+   xed_width_bits[XED_OPERAND_WIDTH_WRD][3] = 16;
    xed_width_bits[XED_OPERAND_WIDTH_PMMSZ16][0] = 112;
    xed_width_bits[XED_OPERAND_WIDTH_PMMSZ16][1] = 112;
    xed_width_bits[XED_OPERAND_WIDTH_PMMSZ16][2] = 112;
@@ -419,10 +423,6 @@ void xed_init_width_mappings(void)
    xed_width_bits[XED_OPERAND_WIDTH_YPD][1] = 256;
    xed_width_bits[XED_OPERAND_WIDTH_YPD][2] = 256;
    xed_width_bits[XED_OPERAND_WIDTH_YPD][3] = 256;
-   xed_width_bits[XED_OPERAND_WIDTH_ZBF16][0] = 512;
-   xed_width_bits[XED_OPERAND_WIDTH_ZBF16][1] = 512;
-   xed_width_bits[XED_OPERAND_WIDTH_ZBF16][2] = 512;
-   xed_width_bits[XED_OPERAND_WIDTH_ZBF16][3] = 512;
    xed_width_bits[XED_OPERAND_WIDTH_VV][0] = 0;
    xed_width_bits[XED_OPERAND_WIDTH_VV][1] = 0;
    xed_width_bits[XED_OPERAND_WIDTH_VV][2] = 0;
@@ -431,10 +431,6 @@ void xed_init_width_mappings(void)
    xed_width_bits[XED_OPERAND_WIDTH_ZV][1] = 0;
    xed_width_bits[XED_OPERAND_WIDTH_ZV][2] = 0;
    xed_width_bits[XED_OPERAND_WIDTH_ZV][3] = 0;
-   xed_width_bits[XED_OPERAND_WIDTH_WRD][0] = 16;
-   xed_width_bits[XED_OPERAND_WIDTH_WRD][1] = 16;
-   xed_width_bits[XED_OPERAND_WIDTH_WRD][2] = 16;
-   xed_width_bits[XED_OPERAND_WIDTH_WRD][3] = 16;
    xed_width_bits[XED_OPERAND_WIDTH_MSKW][0] = 64;
    xed_width_bits[XED_OPERAND_WIDTH_MSKW][1] = 64;
    xed_width_bits[XED_OPERAND_WIDTH_MSKW][2] = 64;
@@ -503,6 +499,10 @@ void xed_init_width_mappings(void)
    xed_width_bits[XED_OPERAND_WIDTH_ZU128][1] = 512;
    xed_width_bits[XED_OPERAND_WIDTH_ZU128][2] = 512;
    xed_width_bits[XED_OPERAND_WIDTH_ZU128][3] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_ZBF16][0] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_ZBF16][1] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_ZBF16][2] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_ZBF16][3] = 512;
    xed_width_bits[XED_OPERAND_WIDTH_M384][0] = 384;
    xed_width_bits[XED_OPERAND_WIDTH_M384][1] = 384;
    xed_width_bits[XED_OPERAND_WIDTH_M384][2] = 384;
@@ -543,4 +543,32 @@ void xed_init_width_mappings(void)
    xed_width_bits[XED_OPERAND_WIDTH_ZD0][1] = 512;
    xed_width_bits[XED_OPERAND_WIDTH_ZD0][2] = 512;
    xed_width_bits[XED_OPERAND_WIDTH_ZD0][3] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z2I16][0] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z2I16][1] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z2I16][2] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z2I16][3] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z2U16][0] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z2U16][1] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z2U16][2] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z2U16][3] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_ZHF8][0] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_ZHF8][1] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_ZHF8][2] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_ZHF8][3] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_ZBF8][0] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_ZBF8][1] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_ZBF8][2] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_ZBF8][3] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z4U8][0] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z4U8][1] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z4U8][2] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z4U8][3] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z4I8][0] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z4I8][1] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z4I8][2] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z4I8][3] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z2I8][0] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z2I8][1] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z2I8][2] = 512;
+   xed_width_bits[XED_OPERAND_WIDTH_Z2I8][3] = 512;
 }

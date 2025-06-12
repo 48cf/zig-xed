@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -136,6 +136,8 @@ char const* const xed_iclass_string[XED_ICLASS_NAME_STR_MAX] = {
 "pcmpistri",
 "pcmpestrm",
 "pcmpestrm",
+"prefetch",
+"prefetch",
 "xstore",
 "xstore",
 "xcryptecb",
@@ -166,4 +168,38 @@ char const* const xed_iclass_string[XED_ICLASS_NAME_STR_MAX] = {
 "vpcmpestrm",
 "vpextrw",
 "vpextrw",
+"IMULZU",
+"IMULZU",
+"SETZUB",
+"SETZUB",
+"SETZUBE",
+"SETZUBE",
+"SETZUL",
+"SETZUL",
+"SETZULE",
+"SETZULE",
+"SETZUNB",
+"SETZUNB",
+"SETZUNBE",
+"SETZUNBE",
+"SETZUNL",
+"SETZUNL",
+"SETZUNLE",
+"SETZUNLE",
+"SETZUNO",
+"SETZUNO",
+"SETZUNP",
+"SETZUNP",
+"SETZUNS",
+"SETZUNS",
+"SETZUNZ",
+"SETZUNZ",
+"SETZUO",
+"SETZUO",
+"SETZUP",
+"SETZUP",
+"SETZUS",
+"SETZUS",
+"SETZUZ",
+"SETZUZ",
 };

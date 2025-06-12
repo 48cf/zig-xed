@@ -7,7 +7,7 @@
 # define XED_ENC_GROUPS_H
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -593,4 +593,31 @@ xed_bool_t xed_encode_group_566(xed_encoder_request_t* xes);
 xed_bool_t xed_encode_group_567(xed_encoder_request_t* xes);
 xed_bool_t xed_encode_group_568(xed_encoder_request_t* xes);
 xed_bool_t xed_encode_group_569(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_570(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_571(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_572(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_573(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_574(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_575(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_576(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_577(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_578(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_579(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_580(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_581(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_582(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_583(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_584(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_585(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_586(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_587(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_588(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_589(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_590(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_591(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_592(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_593(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_594(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_595(xed_encoder_request_t* xes);
+xed_bool_t xed_encode_group_596(xed_encoder_request_t* xes);
 #endif

@@ -7,7 +7,7 @@
 # define INCLUDE_PRIVATE_XED3_OPERAND_LU_H
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -31,6 +31,8 @@ XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_OSZ_REP(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_OSZ_REP(const xed_decoded_inst_t* d);
 
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REP(const xed_decoded_inst_t* d);
+
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_REG_REP(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_REP(const xed_decoded_inst_t* d);
@@ -52,6 +54,8 @@ XED_NOINLINE xed_uint64_t xed_dec_lu_MODE_REXW(const xed_decoded_inst_t* d);
 XED_NOINLINE xed_uint64_t xed_dec_lu_REP_WBNOINVD(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_REG(const xed_decoded_inst_t* d);
+
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_PREFETCHIT_PREFETCHRST_REG(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_ASZ_NONTERM_EASZ_MOD_MODE_MPXMODE_OSZ_REP(const xed_decoded_inst_t* d);
 
@@ -81,6 +85,8 @@ XED_NOINLINE xed_uint64_t xed_dec_lu_LOCK_MOD3(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_OSZ_REG_REP_REX2_REXW(const xed_decoded_inst_t* d);
 
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_OSZ_REXW(const xed_decoded_inst_t* d);
+
 XED_NOINLINE xed_uint64_t xed_dec_lu_LOCK_MOD3_REG(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_REP_TZCNT(const xed_decoded_inst_t* d);
@@ -97,7 +103,7 @@ XED_NOINLINE xed_uint64_t xed_dec_lu_MODE_OSZ(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_OSZ(const xed_decoded_inst_t* d);
 
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE(const xed_decoded_inst_t* d);
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REXW(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_REP(const xed_decoded_inst_t* d);
 
@@ -117,6 +123,8 @@ XED_NOINLINE xed_uint64_t xed_dec_lu_REP_REX2(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_MODE_OSZ_REP_REX2_REXW(const xed_decoded_inst_t* d);
 
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE(const xed_decoded_inst_t* d);
+
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_REG_RM(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_OSZ_REG_REXW_RM(const xed_decoded_inst_t* d);
@@ -135,11 +143,13 @@ XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_REXW_VEXDEST210_7_VEXDEST3_VEX_PREFIX_
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_VEXDEST210_7_VEXDEST3_VEX_PREFIX_VL(const xed_decoded_inst_t* d);
 
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REXW_VEX_PREFIX_VL(const xed_decoded_inst_t* d);
+
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REG_REXW_RM_VEXDEST210_7_VEXDEST3_VEX_PREFIX_VL(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REXW_RM4_VEXDEST210_7_VEXDEST3_VEX_PREFIX_VL(const xed_decoded_inst_t* d);
 
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REXW_VEX_PREFIX_VL(const xed_decoded_inst_t* d);
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REXW_VEXDEST210_7_VEXDEST3_VEX_PREFIX_VL(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_ASZ_NONTERM_EASZ_MOD3_REXW_RM4_VEX_PREFIX_VL(const xed_decoded_inst_t* d);
 
@@ -149,7 +159,7 @@ XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REG_REXW_VEX_PREFIX_VL(const xed_
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_VEX_PREFIX(const xed_decoded_inst_t* d);
 
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REXW_VEXDEST210_7_VEXDEST3_VEX_PREFIX_VL(const xed_decoded_inst_t* d);
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REG_VEXDEST210_7_VEXDEST3_VEX_PREFIX_VL(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REG_REXW_VEXDEST210_7_VEXDEST3_VEX_PREFIX_VL(const xed_decoded_inst_t* d);
 
@@ -181,11 +191,15 @@ XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_REXW_UBIT_VEXDEST_1F_VE
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MOD3_REXW_UBIT_VEX_PREFIX(const xed_decoded_inst_t* d);
 
-XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REG_REXW_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
+XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REG_REXW_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
 
-XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REXW_RM4_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
+XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REXW_RM_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
+
+XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REXW_RM4_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_REXW_UBIT_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
+
+XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REXW_UBIT_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MOD3_MODE_REXW_UBIT_VEXDEST_1F_VEX_PREFIX_VL(const xed_decoded_inst_t* d);
 
@@ -197,17 +211,17 @@ XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_UBIT_VEX_PREFIX_VL_ZERO
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REXW_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
 
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REG_REXW_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REXW_UBIT_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
 
-XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REG_REXW_UBIT_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REXW_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
 
-XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REXW_UBIT_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
+XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MOD3_REXW_UBIT_VEXDEST_1F_VEX_PREFIX_ZEROING(const xed_decoded_inst_t* d);
 
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REXW_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REXW_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MOD3_REXW_UBIT_VEXDEST_1F_VEX_PREFIX(const xed_decoded_inst_t* d);
 
@@ -217,17 +231,23 @@ XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REXW_UBIT_VEXDEST_
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_REXW_UBIT_VEXDEST_1F_VEX_PREFIX_ZEROING(const xed_decoded_inst_t* d);
 
+XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REXW_RM4_VEXDEST_1F_VEX_PREFIX_VL(const xed_decoded_inst_t* d);
+
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
+
+XED_NOINLINE xed_uint64_t xed_dec_lu_MASK_MOD3_MODE_ND_NF_SCC_UBIT_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
+
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REXW_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
+
+XED_NOINLINE xed_uint64_t xed_dec_lu_MASK_MOD3_MODE_ND_NF_REG_SCC_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
+
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
 
-XED_NOINLINE xed_uint64_t xed_dec_lu_MASK_MOD3_MODE_ND_VEXDEST4_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REG_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
 
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_NF_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REG_REXW_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
 
-XED_NOINLINE xed_uint64_t xed_dec_lu_MASK_MOD3_MODE_ND_NF_REG_VEXDEST210_7_VEXDEST3_VEXDEST4_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
-
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REG_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
-
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REG_REXW_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REG_UBIT_VEXDEST_1F_VEX_PREFIX_VL(const xed_decoded_inst_t* d);
 
 XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MOD3_UBIT_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d);
 

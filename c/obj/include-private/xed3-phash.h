@@ -7,7 +7,7 @@
 # define INCLUDE_PRIVATE_XED3_PHASH_H
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -30,7 +30,7 @@ END_LEGAL */
 #define XED_PHASH_MAP_LIMIT 11
 const xed3_find_func_t* xed3_phash_lu[4][XED_PHASH_MAP_LIMIT] = {
 { xed3_phash_vv0_map_legacy_map0, xed3_phash_vv0_map_legacy_map1, xed3_phash_vv0_map_legacy_map2, xed3_phash_vv0_map_legacy_map3, xed3_phash_vv0_map_amd_3dnow, 0, 0, 0, 0, 0, 0 },
-{ 0, xed3_phash_vv1_map_vex_map1, xed3_phash_vv1_map_vex_map2, xed3_phash_vv1_map_vex_map3, 0, 0, 0, xed3_phash_vv1_map_vex_map7, 0, 0, 0 },
+{ 0, xed3_phash_vv1_map_vex_map1, xed3_phash_vv1_map_vex_map2, xed3_phash_vv1_map_vex_map3, 0, xed3_phash_vv1_map_vex_map5, 0, xed3_phash_vv1_map_vex_map7, 0, 0, 0 },
 { 0, xed3_phash_vv2_map_evex_map1, xed3_phash_vv2_map_evex_map2, xed3_phash_vv2_map_evex_map3, xed3_phash_vv2_map_evex_map4, xed3_phash_vv2_map_evex_map5, xed3_phash_vv2_map_evex_map6, xed3_phash_vv2_map_evex_map7, 0, 0, 0 },
 { 0, 0, 0, 0, 0, 0, 0, 0, xed3_phash_vv3_map_amd_xop8, xed3_phash_vv3_map_amd_xop9, xed3_phash_vv3_map_amd_xopA },
 };

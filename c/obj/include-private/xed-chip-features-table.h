@@ -7,7 +7,7 @@
 # define XED_CHIP_FEATURES_TABLE_H
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -26,8 +26,7 @@ END_LEGAL */
 #include "xed-isa-set-enum.h"
 #include "xed-chip-enum.h"
 #include "xed-chip-features.h"
-extern xed_uint64_t xed_chip_features[XED_CHIP_LAST][XED_FEATURE_VECTOR_MAX];
-extern xed_bool_t xed_chip_supports_avx512[XED_CHIP_LAST];
-extern xed_bool_t xed_chip_supports_apx[XED_CHIP_LAST];
+extern xed_features_elem_t xed_chip_features[XED_CHIP_LAST][XED_FEATURE_VECTOR_MAX];
 void xed_init_chip_model_info(void);
+xed_features_elem_t const* xed_get_features(xed_chip_enum_t chip);
 #endif

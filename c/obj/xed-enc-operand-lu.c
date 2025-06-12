@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -325,11 +325,10 @@ XED_NOINLINE xed_uint64_t xed_enc_lu_EVVSPACE(xed_encoder_request_t* xes)
    key += ((xed_uint64_t) xed3_operand_get_evvspace(xes)) << ((0));
    return key;
 }
-XED_NOINLINE xed_uint64_t xed_enc_lu_MASK_VEXDEST4(xed_encoder_request_t* xes)
+XED_NOINLINE xed_uint64_t xed_enc_lu_DFV(xed_encoder_request_t* xes)
 {
    xed_uint64_t key = 0;
-   key += ((xed_uint64_t) xed3_operand_get_mask(xes)) << ((0));
-   key += ((xed_uint64_t) xed3_operand_get_vexdest4(xes)) << ((3));
+   key += ((xed_uint64_t) xed3_operand_get_dfv(xes)) << ((0));
    return key;
 }
 XED_NOINLINE xed_uint64_t xed_enc_lu_IMM_WIDTH_MODE_UIMM0_1(xed_encoder_request_t* xes)

@@ -1,6 +1,6 @@
 /* BEGIN_LEGAL 
 
-Copyright (c) 2020 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -36,6 +36,7 @@ void xed_enc2_invalid_gpr64_index(xed_uint_t mode, xed_reg_enum_t reg,const char
 
 
 void xed_enc2_invalid_gpr8(xed_uint_t mode, xed_reg_enum_t reg,const char* argname,const char* pfn);
+void xed_enc2_invalid_gpr8_evex(xed_uint_t mode, xed_reg_enum_t reg,const char* argname,const char* pfn);
 void xed_enc2_invalid_kreg(xed_uint_t mode, xed_reg_enum_t reg,const char* argname,const char* pfn);
 void xed_enc2_invalid_kreg_not0(xed_uint_t mode, xed_reg_enum_t reg,const char* argname,const char* pfn);
 void xed_enc2_invalid_mmx(xed_uint_t mode, xed_reg_enum_t reg,const char* argname,const char* pfn);
@@ -48,6 +49,7 @@ void xed_enc2_invalid_zmm(xed_uint_t mode, xed_reg_enum_t reg,const char* argnam
 void xed_enc2_invalid_rcsae(xed_uint_t mode, xed_uint_t rcsae,const char* argname,const char* pfn);
 void xed_enc2_invalid_scale(xed_uint_t mode, xed_uint_t scale,const char* argname,const char* pfn);
 void xed_enc2_invalid_zeroing(xed_uint_t mode, xed_uint_t zeroing,const char* argname,const char* pfn);
+void xed_enc2_invalid_dfv(xed_uint_t mode, xed_uint_t dfv,const char* argname,const char* pfn);
 
 # if defined(XED_REG_TREG_FIRST_DEFINED)
 void xed_enc2_invalid_tmm(xed_uint_t mode, xed_reg_enum_t reg,

@@ -7,7 +7,7 @@
 # define INCLUDE_PRIVATE_XED3_PHASH_LU_VV1_H
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -26,5 +26,6 @@ END_LEGAL */
 extern const xed3_find_func_t xed3_phash_vv1_map_vex_map1[256];
 extern const xed3_find_func_t xed3_phash_vv1_map_vex_map2[256];
 extern const xed3_find_func_t xed3_phash_vv1_map_vex_map3[256];
+extern const xed3_find_func_t xed3_phash_vv1_map_vex_map5[256];
 extern const xed3_find_func_t xed3_phash_vv1_map_vex_map7[256];
 #endif

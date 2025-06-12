@@ -1,6 +1,6 @@
 /* BEGIN_LEGAL 
 
-Copyright (c) 2023 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ END_LEGAL */
 #include "xed-operand-accessors.h"
 #include "xed-ild-enum.h"
 #include "xed-map-feature-tables.h"
+#include "xed-chip-features-private.h"
 #include "xed-chip-features-table.h"
 #include "xed-ild-extension.h"
 
@@ -169,7 +170,7 @@ static void prefix_scanner(xed_decoded_inst_t* d)
             
           /* segment prefixes */
           case 0x2E: //CS
-            if (xed_ild_ext_mode_64b(d)==0)  { // 16/32b  mode
+            if (mode_64b(d)==0)  { // 16/32b  mode
                 set_hint_2e(d);
                 xed3_operand_set_ild_seg(d, b);
             }
@@ -184,7 +185,7 @@ static void prefix_scanner(xed_decoded_inst_t* d)
             
           case 0x3E: //DS (& CET no-track on indirect call/jmp)
 
-            if (xed_ild_ext_mode_64b(d)==0) { //16/32b mode
+            if (mode_64b(d)==0) { //16/32b mode
                 set_hint_3e(d);                
                 xed3_operand_set_ild_seg(d, b);
             }
@@ -204,7 +205,7 @@ static void prefix_scanner(xed_decoded_inst_t* d)
             
           case 0x26: //ES
           case 0x36: //SS
-            if (xed_ild_ext_mode_64b(d)==0)  {
+            if (mode_64b(d)==0)  {
                 xed3_operand_set_ild_seg(d, b);
                 clear_hint(d);
             }
@@ -251,7 +252,7 @@ static void prefix_scanner(xed_decoded_inst_t* d)
             
           default:
              /*Take care of REX prefix */
-            if (xed_ild_ext_mode_64b(d)  &&
+            if (mode_64b(d)  &&
                 (b & 0xf0) == 0x40) {
                     nrexes++;
                     rex = b;
@@ -387,7 +388,7 @@ static void vex_c4_scanner(xed_decoded_inst_t* d)
         length++;
         c4byte1.u32 = xed_decoded_inst_get_byte(d, length);
         // in 16/32b modes, the MODRM.MOD field MUST be 0b11
-        if (!xed_ild_ext_mode_64b(d) && c4byte1.coarse.rx_inv != 3) {
+        if (!mode_64b(d) && c4byte1.coarse.rx_inv != 3) {
             // this is not a vex prefix, go to next scanner
             return;
         }
@@ -413,7 +414,7 @@ static void vex_c4_scanner(xed_decoded_inst_t* d)
 
       xed3_operand_set_rexr(d, ~c4byte1.s.r_inv&1);
       xed3_operand_set_rexx(d, ~c4byte1.s.x_inv&1);
-      xed3_operand_set_rexb(d, (xed_ild_ext_mode_64b(d) & ~c4byte1.s.b_inv)&1);
+      xed3_operand_set_rexb(d, (mode_64b(d) & ~c4byte1.s.b_inv)&1);
       xed3_operand_set_rexw(d, c4byte2.s.w);
 
       xed3_operand_set_vexdest3(d,   c4byte2.s.v3);
@@ -457,7 +458,7 @@ static void vex_c5_scanner(xed_decoded_inst_t* d)
         length++;
         c5byte1.u32 = xed_decoded_inst_get_byte(d, length);
         // in 16/32b modes, the MODRM.MOD field MUST be 0b11
-        if (!xed_ild_ext_mode_64b(d) && c5byte1.coarse.rv3_inv != 3) {
+        if (!mode_64b(d) && c5byte1.coarse.rv3_inv != 3) {
             // this is not a vex prefix, go to next scanner
             return;
         }
@@ -569,7 +570,7 @@ static void xop_scanner(xed_decoded_inst_t* d)
       
       xed3_operand_set_rexr(d, ~xop_byte1.s.r_inv&1);
       xed3_operand_set_rexx(d, ~xop_byte1.s.x_inv&1);
-      xed3_operand_set_rexb(d, (xed_ild_ext_mode_64b(d) & ~xop_byte1.s.b_inv)&1);
+      xed3_operand_set_rexb(d, (mode_64b(d) & ~xop_byte1.s.b_inv)&1);
 
       xed3_operand_set_rexw(d, xop_byte2.s.w);
 
@@ -630,7 +631,12 @@ static void vex_scanner(xed_decoded_inst_t* d)
     /* this handles the AVX C4/C5 VEX prefixes and also the AMD XOP 0x8F
      * prefix */
     unsigned char length = xed_decoded_inst_get_length(d);
-    xed_uint8_t b = xed_decoded_inst_get_byte(d, length);
+    xed_uint8_t b;
+    
+    // assumption: length < max_bytes (checked in prefix_scanner)
+    xed_assert(length < xed3_operand_get_max_bytes(d));
+    b = xed_decoded_inst_get_byte(d, length);
+
     if (b == 0xC5) {
         if (!xed3_operand_get_out_of_bytes(d)) 
             vex_c5_scanner(d);
@@ -896,23 +902,27 @@ static void disp_scanner(xed_decoded_inst_t* d)
           
             switch(ilog2[disp_bytes]) { 
               case 0: { // 1B=8b. ilog2(1) = 0
-                  xed_int8_t byte = *(xed_int8_t*)disp_ptr;
-                  xed3_operand_set_disp(d, byte);  
+                  xed_int8_t disp = 0;
+                  memcpy(&disp, disp_ptr, sizeof(disp));
+                  xed3_operand_set_disp(d, disp);
                   break;
               }
               case 1: { // 2B=16b ilog2(2) = 1
-                  xed_int16_t word = *(xed_int16_t*)disp_ptr;
-                  xed3_operand_set_disp(d, word);  
+                  xed_int16_t disp = 0;
+                  memcpy(&disp, disp_ptr, sizeof(disp));
+                  xed3_operand_set_disp(d, disp);
                   break;
               }
               case 2: { // 4B=32b ilog2(4) = 2
-                  xed_int32_t dword = *(xed_int32_t*)disp_ptr;
-                  xed3_operand_set_disp(d, dword);
+                  xed_int32_t disp = 0;
+                  memcpy(&disp, disp_ptr, sizeof(disp));
+                  xed3_operand_set_disp(d, disp);
                   break;
               }
               case 3: {// 8B=64b ilog2(8) = 3
-                  xed_int64_t qword = *(xed_int64_t*)disp_ptr;
-                  xed3_operand_set_disp(d, qword);
+                  xed_int64_t disp = 0;
+                  memcpy(&disp, disp_ptr, sizeof(disp));
+                  xed3_operand_set_disp(d, disp);
                   break;
               }
               default:
@@ -992,20 +1002,14 @@ void xed_set_downstream_info(xed_decoded_inst_t* d, xed_uint_t vv) {
 static void catch_invalid_rex_or_legacy_prefixes(xed_decoded_inst_t* d)
 {
     // REX, F2, F3, 66 are not allowed before VEX or EVEX prefixes
-    if ( xed_ild_ext_mode_64b(d) && xed3_operand_get_rex(d) )
+    if ( mode_64b(d) && xed3_operand_get_rex(d) )
         xed3_operand_set_error(d,XED_ERROR_BAD_REX_PREFIX);
     else if ( xed3_operand_get_prefix66(d) ||
               xed3_operand_get_ild_f3(d) ||
               xed3_operand_get_ild_f2(d) )
         xed3_operand_set_error(d,XED_ERROR_BAD_LEGACY_PREFIX);
 }
-static void catch_invalid_mode(xed_decoded_inst_t* d)
-{
-    // we know we have VEX or EVEX instr.
-    if (xed3_operand_get_realmode(d)) {
-        xed3_operand_set_error(d,XED_ERROR_INVALID_MODE);
-    }
-}
+
 
 static void evex_vex_opcode_scanner(xed_decoded_inst_t* d)
 {
@@ -1025,6 +1029,7 @@ static void evex_vex_opcode_scanner(xed_decoded_inst_t* d)
 // as instructions with the REX2 prefix should be fed to a dedicated REX2 scanner
 static XED_INLINE xed_bool_t opcode_scanner_needed(xed_decoded_inst_t *d)
 {
+    // FIXME: Consider skipping error check here — already validated earlier
 #if defined(XED_APX)
     return (xed3_operand_get_error(d) == XED_ERROR_NONE) && (xed3_operand_get_rex2(d) == 0);
 #else
@@ -1036,8 +1041,13 @@ static XED_INLINE xed_bool_t opcode_scanner_needed(xed_decoded_inst_t *d)
 static void opcode_scanner(xed_decoded_inst_t* d)
 {
     unsigned char length = xed_decoded_inst_get_length(d);
-    xed_uint8_t b = xed_decoded_inst_get_byte(d, length);
+    xed_uint8_t b;
     xed_uint64_t i;
+    
+    // assumption: length < max_bytes (checked in prefix_scanner)
+    xed_assert(length < xed3_operand_get_max_bytes(d));
+    b = xed_decoded_inst_get_byte(d, length);
+
 
     // matching maps vs having a summary of which opcodes are definately map0.
     // Common case is map 0, but the loop would check them all and deduce map 0, slowly.
@@ -1180,39 +1190,20 @@ typedef union{
 #endif // XED_APX
 } xed_evex_payload3_t;
 
-// indicate whether the current chip supports AVX512 architecture.
-// Uses a pre-detirmined mapping of chips to boolean values (xed_chip_supports_avx512)
-static XED_INLINE xed_bool_t chip_supports_avx512(xed_decoded_inst_t* d)
+// indicate whether the current decoder features/chip supports AVX512 architecture
+static XED_INLINE xed_bool_t 
+decoder_supports_avx512(xed_decoded_inst_t *d)
 {
-    xed_chip_enum_t chip = xed_decoded_inst_get_input_chip(d);
     if (xed3_operand_get_no_vex(d) || xed3_operand_get_no_evex(d))
         return 0;
-    if (chip == XED_CHIP_INVALID)
-        chip = XED_CHIP_ALL;
-    if (chip < XED_CHIP_LAST)
-        return xed_chip_supports_avx512[chip];
-    return 0;
+    return 1;
 }
-
-#if defined(XED_APX)
-// indicate whether the current chip supports APX architecture.
-// Uses a pre-detirmined mapping of chips to boolean values (xed_chip_supports_apx)
-xed_bool_t chip_supports_apx(xed_decoded_inst_t* d)
-{
-    xed_chip_enum_t chip = xed_decoded_inst_get_input_chip(d);
-    if (chip == XED_CHIP_INVALID)
-        chip = XED_CHIP_ALL;
-    if (chip < XED_CHIP_LAST)
-        return xed_chip_supports_apx[chip];
-    return 0;
-}
-#endif
 
 static XED_INLINE xed_uint8_t set_evex_map(xed_decoded_inst_t *d, xed_evex_payload1_t evex1)
 {
     xed_uint8_t map = evex1.s.map; // 4 bits map
 #if defined(XED_APX)
-    if (xed_ild_ext_apx_supported(d))
+    if (decoder_supports_apx(d))
     {
         map = evex1.apx.map;       // 3 bits map
         xed3_operand_set_rexb4(d, evex1.apx.rexb4);
@@ -1224,24 +1215,22 @@ static XED_INLINE xed_uint8_t set_evex_map(xed_decoded_inst_t *d, xed_evex_paylo
 
 static void evex_scanner(xed_decoded_inst_t* d)
 {
-     /* assumption: length < max_bytes  
-     * This is checked in prefix_scanner.
-     * If any other scanner is added before evex_scanner, this condition 
-     * should be preserved.
-     * FIXME: check length < max_bytes here anyway? This will be less
-     * error-prone, but that's an additional non-necessary branch.
-     */
-    xed_uint8_t max_bytes = xed3_operand_get_max_bytes(d);
     unsigned char length = xed_decoded_inst_get_length(d);
-    xed_uint8_t b = xed_decoded_inst_get_byte(d, length);
+    xed_uint8_t b;
 
+    // assumption: length < max_bytes (checked in prefix_scanner)
+    xed_assert(length < xed3_operand_get_max_bytes(d));
+    b = xed_decoded_inst_get_byte(d, length);
+    
     if (b == 0x62)
     {
+        xed_uint8_t max_bytes = xed3_operand_get_max_bytes(d);
         xed_evex_payload1_t evex1;
+        xed_uint_t eff_map;
         // check that it is not a BOUND instruction
         if (length + 1 < max_bytes) {
             evex1.u8 = xed_decoded_inst_get_byte(d, length+1);
-            if (!xed_ild_ext_mode_64b(d) && evex1.coarse.rx_inv != 3) {
+            if (!mode_64b(d) && evex1.coarse.rx_inv != 3) {
                 /*this is a BOUND instruction */
                 return;
             }
@@ -1251,8 +1240,12 @@ static void evex_scanner(xed_decoded_inst_t* d)
             too_short(d);
             return;
         }
+        
+        // Link to the EVEX encoding space
+        xed3_operand_set_vexvalid(d, 2);
 
-        if (evex1.coarse.map == 0) {
+        eff_map = set_evex_map(d, evex1);
+        if (eff_map == 0) {
             xed_decoded_inst_set_length(d, length+2);
             bad_map(d);
             return; 
@@ -1264,21 +1257,17 @@ static void evex_scanner(xed_decoded_inst_t* d)
         for an opcode */
         if (length + 4 < max_bytes) {
             xed_evex_payload2_t evex2;
-            xed_uint_t eff_map;
-            
-            xed3_operand_set_vexvalid(d, 2);
 
             evex2.u8 = xed_decoded_inst_get_byte(d, length+2);
 
             // above check guarantees that r and x are 1 in 16/32b mode.
-            if (xed_ild_ext_mode_64b(d)) {
+            if (mode_64b(d)) {
                 xed3_operand_set_rexr(d,  ~evex1.s.r_inv&1);
                 xed3_operand_set_rexx(d,  ~evex1.s.x_inv&1);
                 xed3_operand_set_rexb(d,  ~evex1.s.b_inv&1);
                 xed3_operand_set_rexr4(d, ~evex1.s.rr_inv & 1);
             }
 
-            eff_map = set_evex_map(d, evex1);
             if (xed_ild_map_valid_evex(eff_map) == 0) {
                 xed_decoded_inst_set_length(d, length+4);    // we saw 62 xx xx xx opc
                 bad_map(d);
@@ -1288,7 +1277,7 @@ static void evex_scanner(xed_decoded_inst_t* d)
             xed3_operand_set_rexw(d,   evex2.s.rexw);
             xed3_operand_set_vexdest3(d,  evex2.s.vexdest3);
             xed3_operand_set_vexdest210(d, evex2.s.vexdest210);
-            xed_ild_ext_set_ubit(d, evex2.s.ubit);
+            xed3_operand_set_ubit(d, evex2.s.ubit);
             xed_ild_set_pp_vex_prefix(d, evex2.s.pp);
 
             if(evex2.s.pp == 1) { // Compacted 0x66 prefix
@@ -1311,7 +1300,7 @@ static void evex_scanner(xed_decoded_inst_t* d)
                 set_vl(d, evex3.s.llrc);
                 xed3_operand_set_bcrc(d, evex3.s.bcrc);
                 xed3_operand_set_vexdest4(d, ~evex3.s.vexdest4p&1);
-                if (!xed_ild_ext_mode_64b(d) && evex3.s.vexdest4p==0)
+                if (!mode_64b(d) && evex3.s.vexdest4p==0)
                     bad_v4(d);
 
                 xed3_operand_set_mask(d, evex3.s.mask);
@@ -1319,7 +1308,7 @@ static void evex_scanner(xed_decoded_inst_t* d)
                     bad_z_aaa(d);
             
 #if defined(XED_APX)
-                if (xed_ild_ext_apx_supported(d))
+                if (decoder_supports_apx(d))
                 {
                     /* Set the APX reinterpreted EVEX bits */
                     // APX promoted instruction's NT will clear the MASK and BCRC XED operands, 
@@ -1357,6 +1346,26 @@ static void evex_scanner(xed_decoded_inst_t* d)
     }
 }
 
+void late_evex_scanner(xed_decoded_inst_t *d)
+{
+    /* Reinterpret the EVEX prefix bits.
+     * Due to ModRM.mod dependency and performance in mind, do it as a late scanner */
+#if defined(XED_APX)
+    xed_uint_t mod3 = xed3_operand_get_mod3(d);
+    xed_assert(xed3_operand_get_vexvalid(d)==2);
+    if (!mod3 && decoder_supports_apx(d))
+    {
+        // [APX] Reinterpret the Ubit with memory index fourth EGPR bit.
+        // Pacify the iPattern's UBIT condition and set the X4 inverted value.
+        xed_uint_t ubit = xed3_operand_get_ubit(d);
+        xed3_operand_set_ubit(d, 1);  // Needed for non-APX EVEX instructions
+        xed3_operand_set_rexx4(d, ~ubit & 1);
+    }
+#endif // XED_APX
+    (void) d; // Pacify compiler
+}
+#endif // defined(XED_SUPPORTS_AVX512)
+
 #if defined(XED_APX)
 // process the REX2 prefix if exists.
 // This function checks for the existence of REX2 prefix (starting with xD5)
@@ -1364,13 +1373,12 @@ static void evex_scanner(xed_decoded_inst_t* d)
 // then scans the instructions' opcode
 static XED_INLINE void rex2_scanner(xed_decoded_inst_t *d)
 {
-    /* assumption: length < max_bytes  
-     * This is checked in prefix_scanner.
-     * If any other scanner is added before evex_scanner, this condition 
-     * should be preserved.
-     */
     xed_uint8_t length = xed_decoded_inst_get_length(d);
-    xed_uint8_t b = xed_decoded_inst_get_byte(d, length);
+    xed_uint8_t b;
+    
+    // assumption: length < max_bytes (checked in prefix_scanner)
+    xed_assert(length < xed3_operand_get_max_bytes(d));
+    b = xed_decoded_inst_get_byte(d, length);
 
     /* REX2 Prefix */
     if (b == 0xD5)
@@ -1513,23 +1521,32 @@ static void imm_scanner(xed_decoded_inst_t* d)
   switch(imm_bytes)  {
   case 0:
       break;
-  case 1:    {
-        xed_uint8_t uimm0 =  *imm_ptr;
-        xed_uint8_t esrc = uimm0 >> 4;
-        
-        xed3_operand_set_uimm0(d, uimm0);
-        xed3_operand_set_esrc(d, esrc);
-        break;
-    }
-  case 2:
-      xed3_operand_set_uimm0(d, *(xed_uint16_t*)imm_ptr);
+  case 1: {
+      xed_uint8_t esrc, uimm0 = 0;
+      memcpy(&uimm0, imm_ptr, sizeof(uimm0));
+      esrc = uimm0 >> 4;
+      xed3_operand_set_uimm0(d, uimm0);
+      xed3_operand_set_esrc(d, esrc);
       break;
-  case 4:
-      xed3_operand_set_uimm0(d, *(xed_uint32_t*)imm_ptr);
+  }
+  case 2: {
+      xed_uint16_t uimm0 = 0;
+      memcpy(&uimm0, imm_ptr, sizeof(uimm0));
+      xed3_operand_set_uimm0(d, uimm0);
       break;
-  case 8:
-      xed3_operand_set_uimm0(d, *(xed_uint64_t*)imm_ptr);
+  }
+  case 4: {
+      xed_uint32_t uimm0 = 0;
+      memcpy(&uimm0, imm_ptr, sizeof(uimm0));
+      xed3_operand_set_uimm0(d, uimm0);
       break;
+  }
+  case 8: {
+      xed_uint64_t uimm0 = 0;
+      memcpy(&uimm0, imm_ptr, sizeof(uimm0));
+      xed3_operand_set_uimm0(d, uimm0);
+      break;
+  }
   default:
       /*Unexpected immediate width, this should never happen*/
       xed_assert(0);
@@ -1538,7 +1555,6 @@ static void imm_scanner(xed_decoded_inst_t* d)
   /* uimm1 is set earlier */
 }
 
-#endif // defined(XED_SUPPORTS_AVX512)
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -1569,7 +1585,7 @@ void xed_ild_init(void) {
 
 
 void
-xed_instruction_length_decode(xed_decoded_inst_t* ild)
+xed_instruction_length_decode(xed_decoded_inst_t *ild)
 {
     prefix_scanner(ild);
 #if defined(XED_AVX) 
@@ -1587,7 +1603,7 @@ xed_instruction_length_decode(xed_decoded_inst_t* ild)
     // if we got a vex prefix (which also sucks down the opcode),
     // then we do not need to scan for evex prefixes.
     if (!xed3_operand_get_vexvalid(ild)) {
-        if (chip_supports_avx512(ild)) {
+        if (decoder_supports_avx512(ild)) {
             // Scan EVEX prefixes only if chip supports AVX512
             evex_scanner(ild);
         }
@@ -1599,13 +1615,12 @@ xed_instruction_length_decode(xed_decoded_inst_t* ild)
     
     if (xed3_operand_get_vexvalid(ild)) {
         catch_invalid_rex_or_legacy_prefixes(ild);
-        catch_invalid_mode(ild);
     }
 
     if (!xed3_operand_get_vexvalid(ild)) {
         // Scan the legacy encoding space
 #if defined(XED_APX)
-        if (chip_supports_apx(ild) && xed_ild_ext_apx_supported(ild)) {
+        if (decoder_supports_apx(ild)) {
             rex2_scanner(ild);
         }
 #endif // XED_APX
@@ -1621,6 +1636,11 @@ xed_instruction_length_decode(xed_decoded_inst_t* ild)
     sib_scanner(ild);
     disp_scanner(ild);
     imm_scanner(ild);
+#if defined(XED_SUPPORTS_AVX512)
+    if (xed3_operand_get_vexvalid(ild) == 2) { // EVEX
+        late_evex_scanner(ild);
+    }
+#endif
 }
 
 #include "xed-chip-modes.h"
@@ -1633,10 +1653,12 @@ xed_ild_decode(xed_decoded_inst_t* xedd,
            const unsigned int bytes)
 {
     xed_uint_t tbytes;
+    xed_features_elem_t const *features = 0;
     xed_chip_enum_t chip = xed_decoded_inst_get_input_chip(xedd);
+    if (chip != XED_CHIP_INVALID)
+        features = xed_get_features(chip);
+    set_chip_modes(xedd, chip, features); // FIXME: add support for cpuid features
 
-    set_chip_modes(xedd,chip,0); //FIXME: add support for cpuid features
-    
     xedd->_byte_array._dec = itext;
 
     tbytes =  bytes;

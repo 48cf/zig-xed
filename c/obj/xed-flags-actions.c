@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -431,16 +431,16 @@ const xed_flag_action_t xed_flag_action_table[] = {
 /* 405 */ { XED_FLAG_cf,XED_FLAG_ACTION_0 },
 /* 406 */ { XED_FLAG_zf,XED_FLAG_ACTION_mod },
 /* 407 */ { XED_FLAG_cf,XED_FLAG_ACTION_mod },
-/* 408 */ { XED_FLAG_pf,XED_FLAG_ACTION_mod },
-/* 409 */ { XED_FLAG_of,XED_FLAG_ACTION_mod },
-/* 410 */ { XED_FLAG_sf,XED_FLAG_ACTION_mod },
-/* 411 */ { XED_FLAG_af,XED_FLAG_ACTION_mod },
+/* 408 */ { XED_FLAG_pf,XED_FLAG_ACTION_0 },
+/* 409 */ { XED_FLAG_of,XED_FLAG_ACTION_0 },
+/* 410 */ { XED_FLAG_sf,XED_FLAG_ACTION_0 },
+/* 411 */ { XED_FLAG_af,XED_FLAG_ACTION_0 },
 /* 412 */ { XED_FLAG_zf,XED_FLAG_ACTION_mod },
 /* 413 */ { XED_FLAG_cf,XED_FLAG_ACTION_mod },
-/* 414 */ { XED_FLAG_pf,XED_FLAG_ACTION_0 },
-/* 415 */ { XED_FLAG_of,XED_FLAG_ACTION_0 },
-/* 416 */ { XED_FLAG_sf,XED_FLAG_ACTION_0 },
-/* 417 */ { XED_FLAG_af,XED_FLAG_ACTION_0 },
+/* 414 */ { XED_FLAG_pf,XED_FLAG_ACTION_mod },
+/* 415 */ { XED_FLAG_of,XED_FLAG_ACTION_mod },
+/* 416 */ { XED_FLAG_sf,XED_FLAG_ACTION_mod },
+/* 417 */ { XED_FLAG_af,XED_FLAG_ACTION_mod },
 /* 418 */ { XED_FLAG_id,XED_FLAG_ACTION_pop },
 /* 419 */ { XED_FLAG_vip,XED_FLAG_ACTION_pop },
 /* 420 */ { XED_FLAG_vif,XED_FLAG_ACTION_pop },

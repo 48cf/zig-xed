@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -29,6 +29,7 @@ const xed_attribute_enum_t xed_attributes_table[XED_MAX_ATTRIBUTE_COUNT] = {
   XED_ATTRIBUTE_ATT_OPERAND_ORDER_EXCEPTION,
   XED_ATTRIBUTE_BROADCAST_ENABLED,
   XED_ATTRIBUTE_BYTEOP,
+  XED_ATTRIBUTE_DEFAULT_FLAGS,
   XED_ATTRIBUTE_DISP8_EIGHTHMEM,
   XED_ATTRIBUTE_DISP8_FULL,
   XED_ATTRIBUTE_DISP8_FULLMEM,
@@ -94,6 +95,7 @@ const xed_attribute_enum_t xed_attributes_table[XED_MAX_ATTRIBUTE_COUNT] = {
   XED_ATTRIBUTE_NOP,
   XED_ATTRIBUTE_NOTSX,
   XED_ATTRIBUTE_NOTSX_COND,
+  XED_ATTRIBUTE_NO_REG_MATCH,
   XED_ATTRIBUTE_NO_RIP_REL,
   XED_ATTRIBUTE_NO_SRC_DEST_MATCH,
   XED_ATTRIBUTE_PREFETCH,

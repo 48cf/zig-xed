@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -25,38 +25,6 @@ END_LEGAL */
 #include "xed-encode-private.h"
 #include "xed-enc-operand-lu.h"
 #include "xed-operand-accessors.h"
-xed_uint_t xed_encode_nonterminal_EVEX_REXR4_ENC_EMIT(xed_encoder_request_t* xes)
-{
-/* EVEX_REXR4_ENC()::
-	MODE=2 REXR4=1  ->	emit 0b0 emit_type=numeric value=0x0 nbits=1
-	MODE=2 REXR4=0  ->	emit 0b1 emit_type=numeric value=0x1 nbits=1
-	MODE=1 REXR4=0  ->	emit 0b1 emit_type=numeric value=0x1 nbits=1
-	MODE=1 REXR4=1  ->	FB ERROR=XED_ERROR_GENERAL_ERROR
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-unsigned int iform = xed_encoder_request_iforms(xes)->x_EVEX_REXR4_ENC;
-/* 5 */ if (iform==5) {
-    xed_encoder_request_encode_emit(xes,1,0x0);
-    if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
-    return okay;
-}
-/* 2 */ if (iform==2) {
-    xed_encoder_request_encode_emit(xes,1,0x1);
-    if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
-    return okay;
-}
-/* 4 */ if (iform==4) {
-    xed_encoder_request_encode_emit(xes,1,0x1);
-    if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
-    return okay;
-}
-if (1) { /*otherwise*/
-    if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
-    return okay;
-}
-return 0;
-}
 xed_uint_t xed_encode_nonterminal_EVEX_REXB4_MAP_ENC_EMIT(xed_encoder_request_t* xes)
 {
 /* EVEX_REXB4_MAP_ENC()::
@@ -122,49 +90,49 @@ unsigned int iform = xed_encoder_request_iforms(xes)->x_EVEX_REXB4_MAP_ENC;
     return okay;
 }
 /* 43 */ if (iform==43) {
-    xed_encoder_request_encode_emit(xes,1,(xed3_operand_get_rexb4(xes)));
+    xed_encoder_request_encode_emit(xes,1,((xed_uint64_t)xed3_operand_get_rexb4(xes)));
     xed_encoder_request_encode_emit(xes,3,0x0);
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 49 */ if (iform==49) {
-    xed_encoder_request_encode_emit(xes,1,(xed3_operand_get_rexb4(xes)));
+    xed_encoder_request_encode_emit(xes,1,((xed_uint64_t)xed3_operand_get_rexb4(xes)));
     xed_encoder_request_encode_emit(xes,3,0x1);
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 55 */ if (iform==55) {
-    xed_encoder_request_encode_emit(xes,1,(xed3_operand_get_rexb4(xes)));
+    xed_encoder_request_encode_emit(xes,1,((xed_uint64_t)xed3_operand_get_rexb4(xes)));
     xed_encoder_request_encode_emit(xes,3,0x2);
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 61 */ if (iform==61) {
-    xed_encoder_request_encode_emit(xes,1,(xed3_operand_get_rexb4(xes)));
+    xed_encoder_request_encode_emit(xes,1,((xed_uint64_t)xed3_operand_get_rexb4(xes)));
     xed_encoder_request_encode_emit(xes,3,0x3);
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 73 */ if (iform==73) {
-    xed_encoder_request_encode_emit(xes,1,(xed3_operand_get_rexb4(xes)));
+    xed_encoder_request_encode_emit(xes,1,((xed_uint64_t)xed3_operand_get_rexb4(xes)));
     xed_encoder_request_encode_emit(xes,3,0x5);
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 79 */ if (iform==79) {
-    xed_encoder_request_encode_emit(xes,1,(xed3_operand_get_rexb4(xes)));
+    xed_encoder_request_encode_emit(xes,1,((xed_uint64_t)xed3_operand_get_rexb4(xes)));
     xed_encoder_request_encode_emit(xes,3,0x6);
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 67 */ if (iform==67) {
-    xed_encoder_request_encode_emit(xes,1,(xed3_operand_get_rexb4(xes)));
+    xed_encoder_request_encode_emit(xes,1,((xed_uint64_t)xed3_operand_get_rexb4(xes)));
     xed_encoder_request_encode_emit(xes,3,0x4);
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 5 */ if (iform==5) {
-    xed_encoder_request_encode_emit(xes,1,(xed3_operand_get_rexb4(xes)));
+    xed_encoder_request_encode_emit(xes,1,((xed_uint64_t)xed3_operand_get_rexb4(xes)));
     xed_encoder_request_encode_emit(xes,3,0x7);
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
@@ -184,8 +152,8 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_EVEX_REXW_VVVV_ENC;
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,1,(xed3_operand_get_rexw(xes)));
-    xed_encoder_request_encode_emit(xes,4,(xed3_operand_get_vexdest3(xes)<< 3)|(xed3_operand_get_vexdest210(xes)));
+    xed_encoder_request_encode_emit(xes,1,((xed_uint64_t)xed3_operand_get_rexw(xes)));
+    xed_encoder_request_encode_emit(xes,4,((xed_uint64_t)xed3_operand_get_vexdest3(xes)<< 3)|((xed_uint64_t)xed3_operand_get_vexdest210(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -287,16 +255,16 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_AVX512_EVEX_BYTE3_ENC;
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,4,(xed3_operand_get_zeroing(xes)<< 3)|(xed3_operand_get_llrc(xes)<< 1)|(xed3_operand_get_bcrc(xes)));
+    xed_encoder_request_encode_emit(xes,4,((xed_uint64_t)xed3_operand_get_zeroing(xes)<< 3)|((xed_uint64_t)xed3_operand_get_llrc(xes)<< 1)|((xed_uint64_t)xed3_operand_get_bcrc(xes)));
     xed_encoder_request_encode_emit(xes,1,0x1);
-    xed_encoder_request_encode_emit(xes,3,(xed3_operand_get_mask(xes)));
+    xed_encoder_request_encode_emit(xes,3,((xed_uint64_t)xed3_operand_get_mask(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 2 */ if (iform==2) {
-    xed_encoder_request_encode_emit(xes,4,(xed3_operand_get_zeroing(xes)<< 3)|(xed3_operand_get_llrc(xes)<< 1)|(xed3_operand_get_bcrc(xes)));
+    xed_encoder_request_encode_emit(xes,4,((xed_uint64_t)xed3_operand_get_zeroing(xes)<< 3)|((xed_uint64_t)xed3_operand_get_llrc(xes)<< 1)|((xed_uint64_t)xed3_operand_get_bcrc(xes)));
     xed_encoder_request_encode_emit(xes,1,0x0);
-    xed_encoder_request_encode_emit(xes,3,(xed3_operand_get_mask(xes)));
+    xed_encoder_request_encode_emit(xes,3,((xed_uint64_t)xed3_operand_get_mask(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -309,10 +277,10 @@ return 0;
 xed_uint_t xed_encode_nonterminal_AVX512_ROUND_EMIT(xed_encoder_request_t* xes)
 {
 /* AVX512_ROUND()::
-	ROUNDC=1  ->	FB LLRC=0 value=0x0 	FB BCRC=1 value=0x1
-	ROUNDC=2  ->	FB LLRC=1 value=0x1 	FB BCRC=1 value=0x1
-	ROUNDC=3  ->	FB LLRC=2 value=0x2 	FB BCRC=1 value=0x1
-	ROUNDC=4  ->	FB LLRC=3 value=0x3 	FB BCRC=1 value=0x1
+	ROUNDC=1  ->	FB LLRC=0 value=0x0 	FB BCRC=1 value=0x1 	FB SAE=1 value=0x1
+	ROUNDC=2  ->	FB LLRC=1 value=0x1 	FB BCRC=1 value=0x1 	FB SAE=1 value=0x1
+	ROUNDC=3  ->	FB LLRC=2 value=0x2 	FB BCRC=1 value=0x1 	FB SAE=1 value=0x1
+	ROUNDC=4  ->	FB LLRC=3 value=0x3 	FB BCRC=1 value=0x1 	FB SAE=1 value=0x1
  */
 xed_uint_t okay=1;
 (void) xes; // pacify the compiler
@@ -472,156 +440,6 @@ xed_uint_t okay=1;
 (void) xes;
 return 1;
 }
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_READER_BYTE_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_GPR_READER_BYTE()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_READER_WORD_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_GPR_READER_WORD()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_D_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_GPR_WRITER_LDOP_D()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_Q_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_GPR_WRITER_LDOP_Q()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_BYTE_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_GPR_WRITER_STORE_BYTE()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_WORD_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_GPR_WRITER_STORE_WORD()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_TUPLE1_BYTE_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_TUPLE1_BYTE()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_TUPLE1_WORD_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_TUPLE1_WORD()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_SCALAR_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_SCALAR()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_TUPLE1_SUBDWORD_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_TUPLE1_SUBDWORD()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_READER_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_GPR_READER()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_READER_SUBDWORD_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_GPR_READER_SUBDWORD()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_GPR_WRITER_LDOP()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_GPR_WRITER_STORE()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_SUBDWORD_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_GPR_WRITER_STORE_SUBDWORD()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
 xed_uint_t xed_encode_nonterminal_NELEM_MEM128_EMIT(xed_encoder_request_t* xes)
 {
 /* NELEM_MEM128()::
@@ -633,19 +451,9 @@ xed_uint_t okay=1;
 (void) xes;
 return 1;
 }
-xed_uint_t xed_encode_nonterminal_NELEM_TUPLE1_EMIT(xed_encoder_request_t* xes)
+xed_uint_t xed_encode_nonterminal_NELEM_ONE_EMIT(xed_encoder_request_t* xes)
 {
-/* NELEM_TUPLE1()::
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_GSCAT_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_GSCAT()::
+/* NELEM_ONE()::
  */
 xed_uint_t okay=1;
 (void) xes; // pacify the compiler
@@ -851,6 +659,16 @@ xed_uint_t okay=1;
 (void) xes;
 return 1;
 }
+xed_uint_t xed_encode_nonterminal_NELEM_TUPLE1_4X_EMIT(xed_encoder_request_t* xes)
+{
+/* NELEM_TUPLE1_4X()::
+ */
+xed_uint_t okay=1;
+(void) xes; // pacify the compiler
+(void) okay;
+(void) xes;
+return 1;
+}
 xed_uint_t xed_encode_nonterminal_NELEM_QUARTER_EMIT(xed_encoder_request_t* xes)
 {
 /* NELEM_QUARTER()::
@@ -903,18 +721,18 @@ xed_uint_t okay=1;
 unsigned int iform = xed_encoder_request_iforms(xes)->x_APX_EVEX_BYTE3_ENC;
 /* 1 */ if (iform==1) {
     xed_encoder_request_encode_emit(xes,1,0x0);
-    xed_encoder_request_encode_emit(xes,3,(xed3_operand_get_vl(xes)<< 1)|(xed3_operand_get_nd(xes)));
+    xed_encoder_request_encode_emit(xes,3,((xed_uint64_t)xed3_operand_get_vl(xes)<< 1)|((xed_uint64_t)xed3_operand_get_nd(xes)));
     xed_encoder_request_encode_emit(xes,1,0x1);
-    xed_encoder_request_encode_emit(xes,1,(xed3_operand_get_nf(xes)));
+    xed_encoder_request_encode_emit(xes,1,((xed_uint64_t)xed3_operand_get_nf(xes)));
     xed_encoder_request_encode_emit(xes,2,0x0);
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 2 */ if (iform==2) {
     xed_encoder_request_encode_emit(xes,1,0x0);
-    xed_encoder_request_encode_emit(xes,3,(xed3_operand_get_vl(xes)<< 1)|(xed3_operand_get_nd(xes)));
+    xed_encoder_request_encode_emit(xes,3,((xed_uint64_t)xed3_operand_get_vl(xes)<< 1)|((xed_uint64_t)xed3_operand_get_nd(xes)));
     xed_encoder_request_encode_emit(xes,1,0x0);
-    xed_encoder_request_encode_emit(xes,1,(xed3_operand_get_nf(xes)));
+    xed_encoder_request_encode_emit(xes,1,((xed_uint64_t)xed3_operand_get_nf(xes)));
     xed_encoder_request_encode_emit(xes,2,0x0);
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
@@ -935,8 +753,8 @@ xed_uint_t okay=1;
 unsigned int iform = xed_encoder_request_iforms(xes)->x_APX_CC_EVEX_BYTE3_ENC;
 /* 1 */ if (iform==1) {
     xed_encoder_request_encode_emit(xes,3,0x0);
-    xed_encoder_request_encode_emit(xes,1,(xed3_operand_get_nd(xes)));
-    xed_encoder_request_encode_emit(xes,4,(xed3_operand_get_scc(xes)));
+    xed_encoder_request_encode_emit(xes,1,((xed_uint64_t)xed3_operand_get_nd(xes)));
+    xed_encoder_request_encode_emit(xes,4,((xed_uint64_t)xed3_operand_get_scc(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -960,22 +778,22 @@ return 1;
 xed_uint_t xed_encode_nonterminal_EVAPX_SCC_EMIT(xed_encoder_request_t* xes)
 {
 /* EVAPX_SCC()::
-	VEXDEST4=0 MASK=0  ->	FB SCC=8 value=0x8 	FB EVVSPACE=2 value=0x2
-	VEXDEST4=1 MASK=0  ->	FB SCC=0 value=0x0 	FB EVVSPACE=2 value=0x2 	FB VEXDEST4=0 value=0x0
-	VEXDEST4=0 MASK=1  ->	FB SCC=9 value=0x9 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0
-	VEXDEST4=0 MASK=2  ->	FB SCC=10 value=0xa 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0
-	VEXDEST4=0 MASK=3  ->	FB SCC=11 value=0xb 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0
-	VEXDEST4=0 MASK=4  ->	FB SCC=12 value=0xc 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0
-	VEXDEST4=0 MASK=5  ->	FB SCC=13 value=0xd 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0
-	VEXDEST4=0 MASK=6  ->	FB SCC=14 value=0xe 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0
-	VEXDEST4=0 MASK=7  ->	FB SCC=15 value=0xf 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0
-	VEXDEST4=1 MASK=1  ->	FB SCC=1 value=0x1 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0 	FB VEXDEST4=0 value=0x0
-	VEXDEST4=1 MASK=2  ->	FB SCC=2 value=0x2 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0 	FB VEXDEST4=0 value=0x0
-	VEXDEST4=1 MASK=3  ->	FB SCC=3 value=0x3 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0 	FB VEXDEST4=0 value=0x0
-	VEXDEST4=1 MASK=4  ->	FB SCC=4 value=0x4 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0 	FB VEXDEST4=0 value=0x0
-	VEXDEST4=1 MASK=5  ->	FB SCC=5 value=0x5 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0 	FB VEXDEST4=0 value=0x0
-	VEXDEST4=1 MASK=6  ->	FB SCC=6 value=0x6 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0 	FB VEXDEST4=0 value=0x0
-	VEXDEST4=1 MASK=7  ->	FB SCC=7 value=0x7 	FB EVVSPACE=2 value=0x2 	FB MASK=0 value=0x0 	FB VEXDEST4=0 value=0x0
+	DFV=0  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=0 value=0x0 	FB EVVSPACE=2 value=0x2
+	DFV=1  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=1 value=0x1 	FB EVVSPACE=2 value=0x2
+	DFV=2  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=2 value=0x2 	FB EVVSPACE=2 value=0x2
+	DFV=3  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=3 value=0x3 	FB EVVSPACE=2 value=0x2
+	DFV=4  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=4 value=0x4 	FB EVVSPACE=2 value=0x2
+	DFV=5  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=5 value=0x5 	FB EVVSPACE=2 value=0x2
+	DFV=6  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=6 value=0x6 	FB EVVSPACE=2 value=0x2
+	DFV=7  ->	FB VEXDEST3=0 value=0x0 	FB VEXDEST210=7 value=0x7 	FB EVVSPACE=2 value=0x2
+	DFV=8  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=0 value=0x0 	FB EVVSPACE=2 value=0x2
+	DFV=9  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=1 value=0x1 	FB EVVSPACE=2 value=0x2
+	DFV=10  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=2 value=0x2 	FB EVVSPACE=2 value=0x2
+	DFV=11  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=3 value=0x3 	FB EVVSPACE=2 value=0x2
+	DFV=12  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=4 value=0x4 	FB EVVSPACE=2 value=0x2
+	DFV=13  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=5 value=0x5 	FB EVVSPACE=2 value=0x2
+	DFV=14  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=6 value=0x6 	FB EVVSPACE=2 value=0x2
+	DFV=15  ->	FB VEXDEST3=1 value=0x1 	FB VEXDEST210=7 value=0x7 	FB EVVSPACE=2 value=0x2
  */
 xed_uint_t okay=1;
 (void) xes; // pacify the compiler
@@ -1023,17 +841,17 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_UIMMv;
 /* 2 */ if (iform==2) {
-    xed_encoder_request_encode_emit(xes,16,(xed3_operand_get_uimm0(xes)));
+    xed_encoder_request_encode_emit(xes,16,((xed_uint64_t)xed3_operand_get_uimm0(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 3 */ if (iform==3) {
-    xed_encoder_request_encode_emit(xes,32,(xed3_operand_get_uimm0(xes)));
+    xed_encoder_request_encode_emit(xes,32,((xed_uint64_t)xed3_operand_get_uimm0(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,64,(xed3_operand_get_uimm0(xes)));
+    xed_encoder_request_encode_emit(xes,64,((xed_uint64_t)xed3_operand_get_uimm0(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -1054,17 +872,17 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_SIMMz;
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,16,(xed3_operand_get_uimm0(xes)));
+    xed_encoder_request_encode_emit(xes,16,((xed_uint64_t)xed3_operand_get_uimm0(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 2 */ if (iform==2) {
-    xed_encoder_request_encode_emit(xes,32,(xed3_operand_get_uimm0(xes)));
+    xed_encoder_request_encode_emit(xes,32,((xed_uint64_t)xed3_operand_get_uimm0(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 3 */ if (iform==3) {
-    xed_encoder_request_encode_emit(xes,32,(xed3_operand_get_uimm0(xes)));
+    xed_encoder_request_encode_emit(xes,32,((xed_uint64_t)xed3_operand_get_uimm0(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -1083,7 +901,7 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_SIMM8;
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,8,(xed3_operand_get_uimm0(xes)));
+    xed_encoder_request_encode_emit(xes,8,((xed_uint64_t)xed3_operand_get_uimm0(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -1102,7 +920,7 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_UIMM8;
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,8,(xed3_operand_get_uimm0(xes)));
+    xed_encoder_request_encode_emit(xes,8,((xed_uint64_t)xed3_operand_get_uimm0(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -1121,7 +939,7 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_UIMM8_1;
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,8,(xed3_operand_get_uimm1(xes)));
+    xed_encoder_request_encode_emit(xes,8,((xed_uint64_t)xed3_operand_get_uimm1(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -1140,7 +958,7 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_UIMM16;
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,16,(xed3_operand_get_uimm0(xes)));
+    xed_encoder_request_encode_emit(xes,16,((xed_uint64_t)xed3_operand_get_uimm0(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -1159,7 +977,7 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_UIMM32;
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,32,(xed3_operand_get_uimm0(xes)));
+    xed_encoder_request_encode_emit(xes,32,((xed_uint64_t)xed3_operand_get_uimm0(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -1178,7 +996,7 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_BRDISP8;
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,8,(xed3_operand_get_disp(xes)));
+    xed_encoder_request_encode_emit(xes,8,((xed_uint64_t)xed3_operand_get_disp(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -1197,7 +1015,7 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_BRDISP32;
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,32,(xed3_operand_get_disp(xes)));
+    xed_encoder_request_encode_emit(xes,32,((xed_uint64_t)xed3_operand_get_disp(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -1216,7 +1034,7 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_BRDISP64;
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,64,(xed3_operand_get_disp(xes)));
+    xed_encoder_request_encode_emit(xes,64,((xed_uint64_t)xed3_operand_get_disp(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -1237,17 +1055,17 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_BRDISPz;
 /* 3 */ if (iform==3) {
-    xed_encoder_request_encode_emit(xes,16,(xed3_operand_get_disp(xes)));
+    xed_encoder_request_encode_emit(xes,16,((xed_uint64_t)xed3_operand_get_disp(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 2 */ if (iform==2) {
-    xed_encoder_request_encode_emit(xes,32,(xed3_operand_get_disp(xes)));
+    xed_encoder_request_encode_emit(xes,32,((xed_uint64_t)xed3_operand_get_disp(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,32,(xed3_operand_get_disp(xes)));
+    xed_encoder_request_encode_emit(xes,32,((xed_uint64_t)xed3_operand_get_disp(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -1268,17 +1086,17 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_MEMDISPv;
 /* 3 */ if (iform==3) {
-    xed_encoder_request_encode_emit(xes,16,(xed3_operand_get_disp(xes)));
+    xed_encoder_request_encode_emit(xes,16,((xed_uint64_t)xed3_operand_get_disp(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 2 */ if (iform==2) {
-    xed_encoder_request_encode_emit(xes,32,(xed3_operand_get_disp(xes)));
+    xed_encoder_request_encode_emit(xes,32,((xed_uint64_t)xed3_operand_get_disp(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,64,(xed3_operand_get_disp(xes)));
+    xed_encoder_request_encode_emit(xes,64,((xed_uint64_t)xed3_operand_get_disp(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -1297,7 +1115,7 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_MEMDISP32;
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,32,(xed3_operand_get_disp(xes)));
+    xed_encoder_request_encode_emit(xes,32,((xed_uint64_t)xed3_operand_get_disp(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -1316,7 +1134,7 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_MEMDISP16;
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,16,(xed3_operand_get_disp(xes)));
+    xed_encoder_request_encode_emit(xes,16,((xed_uint64_t)xed3_operand_get_disp(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -1335,7 +1153,7 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_MEMDISP8;
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,8,(xed3_operand_get_disp(xes)));
+    xed_encoder_request_encode_emit(xes,8,((xed_uint64_t)xed3_operand_get_disp(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -1361,17 +1179,17 @@ unsigned int iform = xed_encoder_request_iforms(xes)->x_MEMDISP;
     return okay;
 }
 /* 4 */ if (iform==4) {
-    xed_encoder_request_encode_emit(xes,8,(xed3_operand_get_disp(xes)));
+    xed_encoder_request_encode_emit(xes,8,((xed_uint64_t)xed3_operand_get_disp(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 2 */ if (iform==2) {
-    xed_encoder_request_encode_emit(xes,16,(xed3_operand_get_disp(xes)));
+    xed_encoder_request_encode_emit(xes,16,((xed_uint64_t)xed3_operand_get_disp(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
 /* 3 */ if (iform==3) {
-    xed_encoder_request_encode_emit(xes,32,(xed3_operand_get_disp(xes)));
+    xed_encoder_request_encode_emit(xes,32,((xed_uint64_t)xed3_operand_get_disp(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }

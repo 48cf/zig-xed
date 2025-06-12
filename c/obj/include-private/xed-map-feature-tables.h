@@ -7,7 +7,7 @@
 # define XED_MAP_FEATURE_TABLES_H
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -44,8 +44,8 @@ static XED_INLINE xed_bool_t xed_ild_has_imm_legacy(xed_uint_t m)
 }
 static XED_INLINE xed_bool_t xed_ild_has_modrm_vex(xed_uint_t m)
 {
-   /* [0, 2, 1, 1, 0, 0, 0, 1, 0, 0, 0] */
-   const xed_uint64_t data_const = 0x4058ULL;
+   /* [0, 2, 1, 1, 0, 1, 0, 1, 0, 0, 0] */
+   const xed_uint64_t data_const = 0x4458ULL;
    return (xed_bool_t)((data_const >> (2*m)) & 3);
 }
 static XED_INLINE xed_bool_t xed_ild_has_disp_vex(xed_uint_t m)
@@ -101,8 +101,8 @@ static XED_INLINE xed_bool_t xed_ild_has_modrm(xed_uint_t vv, xed_uint_t m)
    const xed_uint64_t data_const[4] = {
    /* [2, 2, 1, 1, 1, 0, 0, 0, 0, 0, 0] legacy */
     0x15aULL,
-   /* [0, 2, 1, 1, 0, 0, 0, 1, 0, 0, 0] vex */
-    0x4058ULL,
+   /* [0, 2, 1, 1, 0, 1, 0, 1, 0, 0, 0] vex */
+    0x4458ULL,
    /* [0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0] evex */
     0x5554ULL,
    /* [0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1] xop */
@@ -149,8 +149,8 @@ static XED_INLINE xed_bool_t xed_ild_map_valid_legacy(xed_uint_t m)
 }
 static XED_INLINE xed_bool_t xed_ild_map_valid_vex(xed_uint_t m)
 {
-   /* [0, 1, 1, 1, 0, 0, 0, 1, 0, 0, 0] */
-   const xed_uint64_t data_const = 0x8eULL;
+   /* [0, 1, 1, 1, 0, 1, 0, 1, 0, 0, 0] */
+   const xed_uint64_t data_const = 0xaeULL;
    return (xed_bool_t)((data_const >> m) & 1);
 }
 static XED_INLINE xed_bool_t xed_ild_map_valid_evex(xed_uint_t m)

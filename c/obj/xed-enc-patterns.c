@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -108,13 +108,14 @@ void xed_encode_instruction_fb_pattern_10(xed_encoder_request_t* xes)
        xed3_operand_set_map(xes,*(val+0));
        xed3_operand_set_mod(xes,*(val+1));
        xed3_operand_set_nd(xes,*(val+2));
-       xed3_operand_set_vex_prefix(xes,*(val+3));
-       xed3_operand_set_vexdest210(xes,*(val+4));
-       xed3_operand_set_vexdest3(xes,*(val+5));
-       xed3_operand_set_vexdest4(xes,*(val+6));
-       xed3_operand_set_vexvalid(xes,*(val+7));
-       xed3_operand_set_vl(xes,*(val+8));
-       xed3_operand_set_zeroing(xes,*(val+9));
+       xed3_operand_set_ubit(xes,*(val+3));
+       xed3_operand_set_vex_prefix(xes,*(val+4));
+       xed3_operand_set_vexdest210(xes,*(val+5));
+       xed3_operand_set_vexdest3(xes,*(val+6));
+       xed3_operand_set_vexdest4(xes,*(val+7));
+       xed3_operand_set_vexvalid(xes,*(val+8));
+       xed3_operand_set_vl(xes,*(val+9));
+       xed3_operand_set_zeroing(xes,*(val+10));
 }
 void xed_encode_instruction_fb_pattern_11(xed_encoder_request_t* xes)
 {
@@ -139,10 +140,11 @@ void xed_encode_instruction_fb_pattern_12(xed_encoder_request_t* xes)
        xed3_operand_set_mod(xes,*(val+2));
        xed3_operand_set_nd(xes,*(val+3));
        xed3_operand_set_reg(xes,*(val+4));
-       xed3_operand_set_vex_prefix(xes,*(val+5));
-       xed3_operand_set_vexvalid(xes,*(val+6));
-       xed3_operand_set_vl(xes,*(val+7));
-       xed3_operand_set_zeroing(xes,*(val+8));
+       xed3_operand_set_ubit(xes,*(val+5));
+       xed3_operand_set_vex_prefix(xes,*(val+6));
+       xed3_operand_set_vexvalid(xes,*(val+7));
+       xed3_operand_set_vl(xes,*(val+8));
+       xed3_operand_set_zeroing(xes,*(val+9));
 }
 void xed_encode_instruction_fb_pattern_13(xed_encoder_request_t* xes)
 {
@@ -164,10 +166,11 @@ void xed_encode_instruction_fb_pattern_14(xed_encoder_request_t* xes)
        xed3_operand_set_map(xes,*(val+0));
        xed3_operand_set_mod(xes,*(val+1));
        xed3_operand_set_nd(xes,*(val+2));
-       xed3_operand_set_vex_prefix(xes,*(val+3));
-       xed3_operand_set_vexvalid(xes,*(val+4));
-       xed3_operand_set_vl(xes,*(val+5));
-       xed3_operand_set_zeroing(xes,*(val+6));
+       xed3_operand_set_ubit(xes,*(val+3));
+       xed3_operand_set_vex_prefix(xes,*(val+4));
+       xed3_operand_set_vexvalid(xes,*(val+5));
+       xed3_operand_set_vl(xes,*(val+6));
+       xed3_operand_set_zeroing(xes,*(val+7));
 }
 void xed_encode_instruction_fb_pattern_15(xed_encoder_request_t* xes)
 {
@@ -189,13 +192,14 @@ void xed_encode_instruction_fb_pattern_16(xed_encoder_request_t* xes)
        xed3_operand_set_mod(xes,*(val+2));
        xed3_operand_set_nd(xes,*(val+3));
        xed3_operand_set_reg(xes,*(val+4));
-       xed3_operand_set_vex_prefix(xes,*(val+5));
-       xed3_operand_set_vexdest210(xes,*(val+6));
-       xed3_operand_set_vexdest3(xes,*(val+7));
-       xed3_operand_set_vexdest4(xes,*(val+8));
-       xed3_operand_set_vexvalid(xes,*(val+9));
-       xed3_operand_set_vl(xes,*(val+10));
-       xed3_operand_set_zeroing(xes,*(val+11));
+       xed3_operand_set_ubit(xes,*(val+5));
+       xed3_operand_set_vex_prefix(xes,*(val+6));
+       xed3_operand_set_vexdest210(xes,*(val+7));
+       xed3_operand_set_vexdest3(xes,*(val+8));
+       xed3_operand_set_vexdest4(xes,*(val+9));
+       xed3_operand_set_vexvalid(xes,*(val+10));
+       xed3_operand_set_vl(xes,*(val+11));
+       xed3_operand_set_zeroing(xes,*(val+12));
 }
 void xed_encode_instruction_fb_pattern_17(xed_encoder_request_t* xes)
 {
@@ -237,13 +241,14 @@ void xed_encode_instruction_fb_pattern_20(xed_encoder_request_t* xes)
        xed3_operand_set_mod(xes,*(val+1));
        xed3_operand_set_nd(xes,*(val+2));
        xed3_operand_set_reg(xes,*(val+3));
-       xed3_operand_set_vex_prefix(xes,*(val+4));
-       xed3_operand_set_vexdest210(xes,*(val+5));
-       xed3_operand_set_vexdest3(xes,*(val+6));
-       xed3_operand_set_vexdest4(xes,*(val+7));
-       xed3_operand_set_vexvalid(xes,*(val+8));
-       xed3_operand_set_vl(xes,*(val+9));
-       xed3_operand_set_zeroing(xes,*(val+10));
+       xed3_operand_set_ubit(xes,*(val+4));
+       xed3_operand_set_vex_prefix(xes,*(val+5));
+       xed3_operand_set_vexdest210(xes,*(val+6));
+       xed3_operand_set_vexdest3(xes,*(val+7));
+       xed3_operand_set_vexdest4(xes,*(val+8));
+       xed3_operand_set_vexvalid(xes,*(val+9));
+       xed3_operand_set_vl(xes,*(val+10));
+       xed3_operand_set_zeroing(xes,*(val+11));
 }
 void xed_encode_instruction_fb_pattern_21(xed_encoder_request_t* xes)
 {
@@ -268,10 +273,11 @@ void xed_encode_instruction_fb_pattern_22(xed_encoder_request_t* xes)
        xed3_operand_set_mod(xes,*(val+1));
        xed3_operand_set_nd(xes,*(val+2));
        xed3_operand_set_reg(xes,*(val+3));
-       xed3_operand_set_vex_prefix(xes,*(val+4));
-       xed3_operand_set_vexvalid(xes,*(val+5));
-       xed3_operand_set_vl(xes,*(val+6));
-       xed3_operand_set_zeroing(xes,*(val+7));
+       xed3_operand_set_ubit(xes,*(val+4));
+       xed3_operand_set_vex_prefix(xes,*(val+5));
+       xed3_operand_set_vexvalid(xes,*(val+6));
+       xed3_operand_set_vl(xes,*(val+7));
+       xed3_operand_set_zeroing(xes,*(val+8));
 }
 void xed_encode_instruction_fb_pattern_23(xed_encoder_request_t* xes)
 {
@@ -290,38 +296,11 @@ void xed_encode_instruction_fb_pattern_24(xed_encoder_request_t* xes)
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
        xed3_operand_set_map(xes,*(val+0));
-       xed3_operand_set_mod(xes,*(val+1));
-       xed3_operand_set_vex_prefix(xes,*(val+2));
-       xed3_operand_set_vexdest210(xes,*(val+3));
-       xed3_operand_set_vexdest3(xes,*(val+4));
-       xed3_operand_set_vexdest4(xes,*(val+5));
-       xed3_operand_set_vexvalid(xes,*(val+6));
-       xed3_operand_set_vl(xes,*(val+7));
-       xed3_operand_set_zeroing(xes,*(val+8));
-}
-void xed_encode_instruction_fb_pattern_25(xed_encoder_request_t* xes)
-{
-       const xed_uint8_t* val;
-       val = xed_encoder_get_start_field_value(xes);
-       xed3_operand_set_map(xes,*(val+0));
-       xed3_operand_set_vex_prefix(xes,*(val+1));
-       xed3_operand_set_vexdest210(xes,*(val+2));
-       xed3_operand_set_vexdest3(xes,*(val+3));
-       xed3_operand_set_vexdest4(xes,*(val+4));
-       xed3_operand_set_vexvalid(xes,*(val+5));
-       xed3_operand_set_vl(xes,*(val+6));
-       xed3_operand_set_zeroing(xes,*(val+7));
-}
-void xed_encode_instruction_fb_pattern_26(xed_encoder_request_t* xes)
-{
-       const xed_uint8_t* val;
-       val = xed_encoder_get_start_field_value(xes);
-       xed3_operand_set_map(xes,*(val+0));
        xed3_operand_set_osz(xes,*(val+1));
        xed3_operand_set_reg(xes,*(val+2));
        xed3_operand_set_rep(xes,*(val+3));
 }
-void xed_encode_instruction_fb_pattern_27(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_25(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -329,7 +308,7 @@ void xed_encode_instruction_fb_pattern_27(xed_encoder_request_t* xes)
        xed3_operand_set_reg(xes,*(val+1));
        xed3_operand_set_rep(xes,*(val+2));
 }
-void xed_encode_instruction_fb_pattern_28(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_26(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -338,7 +317,7 @@ void xed_encode_instruction_fb_pattern_28(xed_encoder_request_t* xes)
        xed3_operand_set_reg(xes,*(val+2));
        xed3_operand_set_rexw(xes,*(val+3));
 }
-void xed_encode_instruction_fb_pattern_29(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_27(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -348,7 +327,7 @@ void xed_encode_instruction_fb_pattern_29(xed_encoder_request_t* xes)
        xed3_operand_set_reg(xes,*(val+3));
        xed3_operand_set_rep(xes,*(val+4));
 }
-void xed_encode_instruction_fb_pattern_30(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_28(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -356,7 +335,7 @@ void xed_encode_instruction_fb_pattern_30(xed_encoder_request_t* xes)
        xed3_operand_set_osz(xes,*(val+1));
        xed3_operand_set_rep(xes,*(val+2));
 }
-void xed_encode_instruction_fb_pattern_31(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_29(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -365,7 +344,7 @@ void xed_encode_instruction_fb_pattern_31(xed_encoder_request_t* xes)
        xed3_operand_set_osz(xes,*(val+2));
        xed3_operand_set_rep(xes,*(val+3));
 }
-void xed_encode_instruction_fb_pattern_32(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_30(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -374,6 +353,22 @@ void xed_encode_instruction_fb_pattern_32(xed_encoder_request_t* xes)
        xed3_operand_set_reg(xes,*(val+2));
        xed3_operand_set_rep(xes,*(val+3));
        xed3_operand_set_rexw(xes,*(val+4));
+}
+void xed_encode_instruction_fb_pattern_31(xed_encoder_request_t* xes)
+{
+       const xed_uint8_t* val;
+       val = xed_encoder_get_start_field_value(xes);
+       xed3_operand_set_map(xes,*(val+0));
+       xed3_operand_set_prefetchrst(xes,*(val+1));
+       xed3_operand_set_reg(xes,*(val+2));
+}
+void xed_encode_instruction_fb_pattern_32(xed_encoder_request_t* xes)
+{
+       const xed_uint8_t* val;
+       val = xed_encoder_get_start_field_value(xes);
+       xed3_operand_set_map(xes,*(val+0));
+       xed3_operand_set_prefetchit(xes,*(val+1));
+       xed3_operand_set_reg(xes,*(val+2));
 }
 void xed_encode_instruction_fb_pattern_33(xed_encoder_request_t* xes)
 {
@@ -476,9 +471,16 @@ void xed_encode_instruction_fb_pattern_43(xed_encoder_request_t* xes)
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
        xed3_operand_set_map(xes,*(val+0));
-       xed3_operand_set_rep(xes,*(val+1));
+       xed3_operand_set_rexw(xes,*(val+1));
 }
 void xed_encode_instruction_fb_pattern_44(xed_encoder_request_t* xes)
+{
+       const xed_uint8_t* val;
+       val = xed_encoder_get_start_field_value(xes);
+       xed3_operand_set_map(xes,*(val+0));
+       xed3_operand_set_rep(xes,*(val+1));
+}
+void xed_encode_instruction_fb_pattern_45(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -487,7 +489,7 @@ void xed_encode_instruction_fb_pattern_44(xed_encoder_request_t* xes)
        xed3_operand_set_rep(xes,*(val+2));
        xed3_operand_set_rexw(xes,*(val+3));
 }
-void xed_encode_instruction_fb_pattern_45(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_46(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -495,7 +497,7 @@ void xed_encode_instruction_fb_pattern_45(xed_encoder_request_t* xes)
        xed3_operand_set_rep(xes,*(val+1));
        xed3_operand_set_rexw(xes,*(val+2));
 }
-void xed_encode_instruction_fb_pattern_46(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_47(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -503,7 +505,7 @@ void xed_encode_instruction_fb_pattern_46(xed_encoder_request_t* xes)
        xed3_operand_set_rexb(xes,*(val+1));
        xed3_operand_set_srm(xes,*(val+2));
 }
-void xed_encode_instruction_fb_pattern_47(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_48(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -512,20 +514,13 @@ void xed_encode_instruction_fb_pattern_47(xed_encoder_request_t* xes)
        xed3_operand_set_rexb4(xes,*(val+2));
        xed3_operand_set_srm(xes,*(val+3));
 }
-void xed_encode_instruction_fb_pattern_48(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_49(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
        xed3_operand_set_map(xes,*(val+0));
        xed3_operand_set_osz(xes,*(val+1));
        xed3_operand_set_rexw(xes,*(val+2));
-}
-void xed_encode_instruction_fb_pattern_49(xed_encoder_request_t* xes)
-{
-       const xed_uint8_t* val;
-       val = xed_encoder_get_start_field_value(xes);
-       xed3_operand_set_map(xes,*(val+0));
-       xed3_operand_set_rexw(xes,*(val+1));
 }
 void xed_encode_instruction_fb_pattern_50(xed_encoder_request_t* xes)
 {
@@ -562,9 +557,38 @@ void xed_encode_instruction_fb_pattern_53(xed_encoder_request_t* xes)
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
        xed3_operand_set_map(xes,*(val+0));
-       xed3_operand_set_wbnoinvd(xes,*(val+1));
+       xed3_operand_set_mod(xes,*(val+1));
+       xed3_operand_set_reg(xes,*(val+2));
+       xed3_operand_set_vex_prefix(xes,*(val+3));
+       xed3_operand_set_vexdest210(xes,*(val+4));
+       xed3_operand_set_vexdest3(xes,*(val+5));
+       xed3_operand_set_vexvalid(xes,*(val+6));
+       xed3_operand_set_vl(xes,*(val+7));
 }
 void xed_encode_instruction_fb_pattern_54(xed_encoder_request_t* xes)
+{
+       const xed_uint8_t* val;
+       val = xed_encoder_get_start_field_value(xes);
+       xed3_operand_set_map(xes,*(val+0));
+       xed3_operand_set_mod(xes,*(val+1));
+       xed3_operand_set_nd(xes,*(val+2));
+       xed3_operand_set_reg(xes,*(val+3));
+       xed3_operand_set_ubit(xes,*(val+4));
+       xed3_operand_set_vex_prefix(xes,*(val+5));
+       xed3_operand_set_vexdest210(xes,*(val+6));
+       xed3_operand_set_vexdest3(xes,*(val+7));
+       xed3_operand_set_vexdest4(xes,*(val+8));
+       xed3_operand_set_vexvalid(xes,*(val+9));
+       xed3_operand_set_vl(xes,*(val+10));
+}
+void xed_encode_instruction_fb_pattern_55(xed_encoder_request_t* xes)
+{
+       const xed_uint8_t* val;
+       val = xed_encoder_get_start_field_value(xes);
+       xed3_operand_set_map(xes,*(val+0));
+       xed3_operand_set_wbnoinvd(xes,*(val+1));
+}
+void xed_encode_instruction_fb_pattern_56(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -573,7 +597,7 @@ void xed_encode_instruction_fb_pattern_54(xed_encoder_request_t* xes)
        xed3_operand_set_rep(xes,*(val+2));
        xed3_operand_set_rexw(xes,*(val+3));
 }
-void xed_encode_instruction_fb_pattern_55(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_57(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -583,7 +607,7 @@ void xed_encode_instruction_fb_pattern_55(xed_encoder_request_t* xes)
        xed3_operand_set_rep(xes,*(val+3));
        xed3_operand_set_rexw(xes,*(val+4));
 }
-void xed_encode_instruction_fb_pattern_56(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_58(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -591,7 +615,7 @@ void xed_encode_instruction_fb_pattern_56(xed_encoder_request_t* xes)
        xed3_operand_set_rep(xes,*(val+1));
        xed3_operand_set_tzcnt(xes,*(val+2));
 }
-void xed_encode_instruction_fb_pattern_57(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_59(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -600,7 +624,7 @@ void xed_encode_instruction_fb_pattern_57(xed_encoder_request_t* xes)
        xed3_operand_set_rep(xes,*(val+2));
        xed3_operand_set_tzcnt(xes,*(val+3));
 }
-void xed_encode_instruction_fb_pattern_58(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_60(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -608,7 +632,7 @@ void xed_encode_instruction_fb_pattern_58(xed_encoder_request_t* xes)
        xed3_operand_set_map(xes,*(val+1));
        xed3_operand_set_rep(xes,*(val+2));
 }
-void xed_encode_instruction_fb_pattern_59(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_61(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -617,7 +641,7 @@ void xed_encode_instruction_fb_pattern_59(xed_encoder_request_t* xes)
        xed3_operand_set_mod(xes,*(val+2));
        xed3_operand_set_rep(xes,*(val+3));
 }
-void xed_encode_instruction_fb_pattern_60(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_62(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -629,7 +653,7 @@ void xed_encode_instruction_fb_pattern_60(xed_encoder_request_t* xes)
        xed3_operand_set_rex2(xes,*(val+5));
        xed3_operand_set_rexw(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_61(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_63(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -639,7 +663,7 @@ void xed_encode_instruction_fb_pattern_61(xed_encoder_request_t* xes)
        xed3_operand_set_rep(xes,*(val+3));
        xed3_operand_set_rex2(xes,*(val+4));
 }
-void xed_encode_instruction_fb_pattern_62(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_64(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -649,7 +673,7 @@ void xed_encode_instruction_fb_pattern_62(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+3));
        xed3_operand_set_vexvalid(xes,*(val+4));
 }
-void xed_encode_instruction_fb_pattern_63(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_65(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -660,7 +684,7 @@ void xed_encode_instruction_fb_pattern_63(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+4));
        xed3_operand_set_vexvalid(xes,*(val+5));
 }
-void xed_encode_instruction_fb_pattern_64(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_66(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -672,7 +696,7 @@ void xed_encode_instruction_fb_pattern_64(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest3(xes,*(val+5));
        xed3_operand_set_vexvalid(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_65(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_67(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -685,7 +709,7 @@ void xed_encode_instruction_fb_pattern_65(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest3(xes,*(val+6));
        xed3_operand_set_vexvalid(xes,*(val+7));
 }
-void xed_encode_instruction_fb_pattern_66(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_68(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -695,7 +719,7 @@ void xed_encode_instruction_fb_pattern_66(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest3(xes,*(val+3));
        xed3_operand_set_vexvalid(xes,*(val+4));
 }
-void xed_encode_instruction_fb_pattern_67(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_69(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -706,7 +730,7 @@ void xed_encode_instruction_fb_pattern_67(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest3(xes,*(val+4));
        xed3_operand_set_vexvalid(xes,*(val+5));
 }
-void xed_encode_instruction_fb_pattern_68(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_70(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -715,7 +739,7 @@ void xed_encode_instruction_fb_pattern_68(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+2));
        xed3_operand_set_vexvalid(xes,*(val+3));
 }
-void xed_encode_instruction_fb_pattern_69(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_71(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -725,7 +749,7 @@ void xed_encode_instruction_fb_pattern_69(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+3));
        xed3_operand_set_vexvalid(xes,*(val+4));
 }
-void xed_encode_instruction_fb_pattern_70(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_72(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -737,7 +761,15 @@ void xed_encode_instruction_fb_pattern_70(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest3(xes,*(val+5));
        xed3_operand_set_vexvalid(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_71(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_73(xed_encoder_request_t* xes)
+{
+       const xed_uint8_t* val;
+       val = xed_encoder_get_start_field_value(xes);
+       xed3_operand_set_map(xes,*(val+0));
+       xed3_operand_set_rep(xes,*(val+1));
+       xed3_operand_set_wbnoinvd(xes,*(val+2));
+}
+void xed_encode_instruction_fb_pattern_74(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -745,7 +777,7 @@ void xed_encode_instruction_fb_pattern_71(xed_encoder_request_t* xes)
        xed3_operand_set_mod(xes,*(val+1));
        xed3_operand_set_rep(xes,*(val+2));
 }
-void xed_encode_instruction_fb_pattern_72(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_75(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -754,7 +786,7 @@ void xed_encode_instruction_fb_pattern_72(xed_encoder_request_t* xes)
        xed3_operand_set_osz(xes,*(val+2));
        xed3_operand_set_rep(xes,*(val+3));
 }
-void xed_encode_instruction_fb_pattern_73(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_76(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -764,7 +796,7 @@ void xed_encode_instruction_fb_pattern_73(xed_encoder_request_t* xes)
        xed3_operand_set_rep(xes,*(val+3));
        xed3_operand_set_rexw(xes,*(val+4));
 }
-void xed_encode_instruction_fb_pattern_74(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_77(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -775,7 +807,7 @@ void xed_encode_instruction_fb_pattern_74(xed_encoder_request_t* xes)
        xed3_operand_set_rep(xes,*(val+4));
        xed3_operand_set_rexw(xes,*(val+5));
 }
-void xed_encode_instruction_fb_pattern_75(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_78(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -791,34 +823,7 @@ void xed_encode_instruction_fb_pattern_75(xed_encoder_request_t* xes)
        xed3_operand_set_vl(xes,*(val+9));
        xed3_operand_set_zeroing(xes,*(val+10));
 }
-void xed_encode_instruction_fb_pattern_76(xed_encoder_request_t* xes)
-{
-       const xed_uint8_t* val;
-       val = xed_encoder_get_start_field_value(xes);
-       xed3_operand_set_map(xes,*(val+0));
-       xed3_operand_set_mod(xes,*(val+1));
-       xed3_operand_set_nd(xes,*(val+2));
-       xed3_operand_set_vex_prefix(xes,*(val+3));
-       xed3_operand_set_vexdest210(xes,*(val+4));
-       xed3_operand_set_vexdest3(xes,*(val+5));
-       xed3_operand_set_vexdest4(xes,*(val+6));
-       xed3_operand_set_vexvalid(xes,*(val+7));
-       xed3_operand_set_zeroing(xes,*(val+8));
-}
-void xed_encode_instruction_fb_pattern_77(xed_encoder_request_t* xes)
-{
-       const xed_uint8_t* val;
-       val = xed_encoder_get_start_field_value(xes);
-       xed3_operand_set_map(xes,*(val+0));
-       xed3_operand_set_nd(xes,*(val+1));
-       xed3_operand_set_vex_prefix(xes,*(val+2));
-       xed3_operand_set_vexdest210(xes,*(val+3));
-       xed3_operand_set_vexdest3(xes,*(val+4));
-       xed3_operand_set_vexdest4(xes,*(val+5));
-       xed3_operand_set_vexvalid(xes,*(val+6));
-       xed3_operand_set_zeroing(xes,*(val+7));
-}
-void xed_encode_instruction_fb_pattern_78(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_79(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -826,7 +831,7 @@ void xed_encode_instruction_fb_pattern_78(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+1));
        xed3_operand_set_vexvalid(xes,*(val+2));
 }
-void xed_encode_instruction_fb_pattern_79(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_80(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -835,7 +840,7 @@ void xed_encode_instruction_fb_pattern_79(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+2));
        xed3_operand_set_vexvalid(xes,*(val+3));
 }
-void xed_encode_instruction_fb_pattern_80(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_81(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -848,7 +853,7 @@ void xed_encode_instruction_fb_pattern_80(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+6));
        xed3_operand_set_vexvalid(xes,*(val+7));
 }
-void xed_encode_instruction_fb_pattern_81(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_82(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -859,7 +864,7 @@ void xed_encode_instruction_fb_pattern_81(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+4));
        xed3_operand_set_vexvalid(xes,*(val+5));
 }
-void xed_encode_instruction_fb_pattern_82(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_83(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -871,7 +876,7 @@ void xed_encode_instruction_fb_pattern_82(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+5));
        xed3_operand_set_vexvalid(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_83(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_84(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -885,7 +890,7 @@ void xed_encode_instruction_fb_pattern_83(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+7));
        xed3_operand_set_zeroing(xes,*(val+8));
 }
-void xed_encode_instruction_fb_pattern_84(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_85(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -897,7 +902,7 @@ void xed_encode_instruction_fb_pattern_84(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+5));
        xed3_operand_set_zeroing(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_85(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_86(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -910,7 +915,7 @@ void xed_encode_instruction_fb_pattern_85(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+6));
        xed3_operand_set_zeroing(xes,*(val+7));
 }
-void xed_encode_instruction_fb_pattern_86(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_87(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -928,7 +933,7 @@ void xed_encode_instruction_fb_pattern_86(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+11));
        xed3_operand_set_zeroing(xes,*(val+12));
 }
-void xed_encode_instruction_fb_pattern_87(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_88(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -945,7 +950,7 @@ void xed_encode_instruction_fb_pattern_87(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+10));
        xed3_operand_set_zeroing(xes,*(val+11));
 }
-void xed_encode_instruction_fb_pattern_88(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_89(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -961,7 +966,7 @@ void xed_encode_instruction_fb_pattern_88(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest4(xes,*(val+9));
        xed3_operand_set_vexvalid(xes,*(val+10));
 }
-void xed_encode_instruction_fb_pattern_89(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_90(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -975,7 +980,7 @@ void xed_encode_instruction_fb_pattern_89(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest4(xes,*(val+7));
        xed3_operand_set_vexvalid(xes,*(val+8));
 }
-void xed_encode_instruction_fb_pattern_90(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_91(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -986,7 +991,7 @@ void xed_encode_instruction_fb_pattern_90(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest3(xes,*(val+4));
        xed3_operand_set_vexvalid(xes,*(val+5));
 }
-void xed_encode_instruction_fb_pattern_91(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_92(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -998,7 +1003,7 @@ void xed_encode_instruction_fb_pattern_91(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest3(xes,*(val+5));
        xed3_operand_set_vexvalid(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_92(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_93(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1014,7 +1019,7 @@ void xed_encode_instruction_fb_pattern_92(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+9));
        xed3_operand_set_zeroing(xes,*(val+10));
 }
-void xed_encode_instruction_fb_pattern_93(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_94(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1029,7 +1034,7 @@ void xed_encode_instruction_fb_pattern_93(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+8));
        xed3_operand_set_zeroing(xes,*(val+9));
 }
-void xed_encode_instruction_fb_pattern_94(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_95(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1038,7 +1043,7 @@ void xed_encode_instruction_fb_pattern_94(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+2));
        xed3_operand_set_vexvalid(xes,*(val+3));
 }
-void xed_encode_instruction_fb_pattern_95(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_96(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1048,7 +1053,7 @@ void xed_encode_instruction_fb_pattern_95(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+3));
        xed3_operand_set_vexvalid(xes,*(val+4));
 }
-void xed_encode_instruction_fb_pattern_96(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_97(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1060,7 +1065,7 @@ void xed_encode_instruction_fb_pattern_96(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+5));
        xed3_operand_set_zeroing(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_97(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_98(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1073,18 +1078,6 @@ void xed_encode_instruction_fb_pattern_97(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+6));
        xed3_operand_set_vexvalid(xes,*(val+7));
        xed3_operand_set_zeroing(xes,*(val+8));
-}
-void xed_encode_instruction_fb_pattern_98(xed_encoder_request_t* xes)
-{
-       const xed_uint8_t* val;
-       val = xed_encoder_get_start_field_value(xes);
-       xed3_operand_set_bcrc(xes,*(val+0));
-       xed3_operand_set_map(xes,*(val+1));
-       xed3_operand_set_mask(xes,*(val+2));
-       xed3_operand_set_ubit(xes,*(val+3));
-       xed3_operand_set_vex_prefix(xes,*(val+4));
-       xed3_operand_set_vexvalid(xes,*(val+5));
-       xed3_operand_set_zeroing(xes,*(val+6));
 }
 void xed_encode_instruction_fb_pattern_99(xed_encoder_request_t* xes)
 {
@@ -1093,6 +1086,18 @@ void xed_encode_instruction_fb_pattern_99(xed_encoder_request_t* xes)
        xed3_operand_set_bcrc(xes,*(val+0));
        xed3_operand_set_map(xes,*(val+1));
        xed3_operand_set_mask(xes,*(val+2));
+       xed3_operand_set_ubit(xes,*(val+3));
+       xed3_operand_set_vex_prefix(xes,*(val+4));
+       xed3_operand_set_vexvalid(xes,*(val+5));
+       xed3_operand_set_zeroing(xes,*(val+6));
+}
+void xed_encode_instruction_fb_pattern_100(xed_encoder_request_t* xes)
+{
+       const xed_uint8_t* val;
+       val = xed_encoder_get_start_field_value(xes);
+       xed3_operand_set_bcrc(xes,*(val+0));
+       xed3_operand_set_map(xes,*(val+1));
+       xed3_operand_set_mask(xes,*(val+2));
        xed3_operand_set_rexw(xes,*(val+3));
        xed3_operand_set_skip_osz(xes,*(val+4));
        xed3_operand_set_ubit(xes,*(val+5));
@@ -1100,7 +1105,7 @@ void xed_encode_instruction_fb_pattern_99(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+7));
        xed3_operand_set_zeroing(xes,*(val+8));
 }
-void xed_encode_instruction_fb_pattern_100(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_101(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1115,7 +1120,7 @@ void xed_encode_instruction_fb_pattern_100(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+8));
        xed3_operand_set_zeroing(xes,*(val+9));
 }
-void xed_encode_instruction_fb_pattern_101(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_102(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1128,7 +1133,7 @@ void xed_encode_instruction_fb_pattern_101(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+6));
        xed3_operand_set_zeroing(xes,*(val+7));
 }
-void xed_encode_instruction_fb_pattern_102(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_103(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1139,7 +1144,7 @@ void xed_encode_instruction_fb_pattern_102(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+4));
        xed3_operand_set_vl(xes,*(val+5));
 }
-void xed_encode_instruction_fb_pattern_103(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_104(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1151,7 +1156,7 @@ void xed_encode_instruction_fb_pattern_103(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest3(xes,*(val+5));
        xed3_operand_set_vexvalid(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_104(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_105(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1165,7 +1170,7 @@ void xed_encode_instruction_fb_pattern_104(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest3(xes,*(val+7));
        xed3_operand_set_vexvalid(xes,*(val+8));
 }
-void xed_encode_instruction_fb_pattern_105(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_106(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1181,7 +1186,7 @@ void xed_encode_instruction_fb_pattern_105(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest4(xes,*(val+9));
        xed3_operand_set_vexvalid(xes,*(val+10));
 }
-void xed_encode_instruction_fb_pattern_106(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_107(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1197,21 +1202,6 @@ void xed_encode_instruction_fb_pattern_106(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest3(xes,*(val+9));
        xed3_operand_set_vexdest4(xes,*(val+10));
        xed3_operand_set_vexvalid(xes,*(val+11));
-}
-void xed_encode_instruction_fb_pattern_107(xed_encoder_request_t* xes)
-{
-       const xed_uint8_t* val;
-       val = xed_encoder_get_start_field_value(xes);
-       xed3_operand_set_bcrc(xes,*(val+0));
-       xed3_operand_set_map(xes,*(val+1));
-       xed3_operand_set_rexw(xes,*(val+2));
-       xed3_operand_set_skip_osz(xes,*(val+3));
-       xed3_operand_set_ubit(xes,*(val+4));
-       xed3_operand_set_vex_prefix(xes,*(val+5));
-       xed3_operand_set_vexdest210(xes,*(val+6));
-       xed3_operand_set_vexdest3(xes,*(val+7));
-       xed3_operand_set_vexdest4(xes,*(val+8));
-       xed3_operand_set_vexvalid(xes,*(val+9));
 }
 void xed_encode_instruction_fb_pattern_108(xed_encoder_request_t* xes)
 {
@@ -1227,9 +1217,24 @@ void xed_encode_instruction_fb_pattern_108(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest3(xes,*(val+7));
        xed3_operand_set_vexdest4(xes,*(val+8));
        xed3_operand_set_vexvalid(xes,*(val+9));
-       xed3_operand_set_zeroing(xes,*(val+10));
 }
 void xed_encode_instruction_fb_pattern_109(xed_encoder_request_t* xes)
+{
+       const xed_uint8_t* val;
+       val = xed_encoder_get_start_field_value(xes);
+       xed3_operand_set_bcrc(xes,*(val+0));
+       xed3_operand_set_map(xes,*(val+1));
+       xed3_operand_set_rexw(xes,*(val+2));
+       xed3_operand_set_skip_osz(xes,*(val+3));
+       xed3_operand_set_ubit(xes,*(val+4));
+       xed3_operand_set_vex_prefix(xes,*(val+5));
+       xed3_operand_set_vexdest210(xes,*(val+6));
+       xed3_operand_set_vexdest3(xes,*(val+7));
+       xed3_operand_set_vexdest4(xes,*(val+8));
+       xed3_operand_set_vexvalid(xes,*(val+9));
+       xed3_operand_set_zeroing(xes,*(val+10));
+}
+void xed_encode_instruction_fb_pattern_110(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1243,7 +1248,7 @@ void xed_encode_instruction_fb_pattern_109(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest4(xes,*(val+7));
        xed3_operand_set_vexvalid(xes,*(val+8));
 }
-void xed_encode_instruction_fb_pattern_110(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_111(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1256,7 +1261,7 @@ void xed_encode_instruction_fb_pattern_110(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest4(xes,*(val+6));
        xed3_operand_set_vexvalid(xes,*(val+7));
 }
-void xed_encode_instruction_fb_pattern_111(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_112(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1267,7 +1272,7 @@ void xed_encode_instruction_fb_pattern_111(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+4));
        xed3_operand_set_vexvalid(xes,*(val+5));
 }
-void xed_encode_instruction_fb_pattern_112(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_113(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1277,7 +1282,7 @@ void xed_encode_instruction_fb_pattern_112(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+3));
        xed3_operand_set_vexvalid(xes,*(val+4));
 }
-void xed_encode_instruction_fb_pattern_113(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_114(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1289,7 +1294,7 @@ void xed_encode_instruction_fb_pattern_113(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+5));
        xed3_operand_set_vexvalid(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_114(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_115(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1300,7 +1305,7 @@ void xed_encode_instruction_fb_pattern_114(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+4));
        xed3_operand_set_vexvalid(xes,*(val+5));
 }
-void xed_encode_instruction_fb_pattern_115(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_116(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1314,7 +1319,7 @@ void xed_encode_instruction_fb_pattern_115(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+7));
        xed3_operand_set_vexvalid(xes,*(val+8));
 }
-void xed_encode_instruction_fb_pattern_116(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_117(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1326,7 +1331,7 @@ void xed_encode_instruction_fb_pattern_116(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+5));
        xed3_operand_set_vexvalid(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_117(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_118(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1338,7 +1343,7 @@ void xed_encode_instruction_fb_pattern_117(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+5));
        xed3_operand_set_zeroing(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_118(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_119(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1349,7 +1354,7 @@ void xed_encode_instruction_fb_pattern_118(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+4));
        xed3_operand_set_zeroing(xes,*(val+5));
 }
-void xed_encode_instruction_fb_pattern_119(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_120(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1363,7 +1368,7 @@ void xed_encode_instruction_fb_pattern_119(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+7));
        xed3_operand_set_zeroing(xes,*(val+8));
 }
-void xed_encode_instruction_fb_pattern_120(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_121(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1376,7 +1381,7 @@ void xed_encode_instruction_fb_pattern_120(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+6));
        xed3_operand_set_zeroing(xes,*(val+7));
 }
-void xed_encode_instruction_fb_pattern_121(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_122(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1388,7 +1393,7 @@ void xed_encode_instruction_fb_pattern_121(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+5));
        xed3_operand_set_vl(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_122(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_123(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1399,7 +1404,7 @@ void xed_encode_instruction_fb_pattern_122(xed_encoder_request_t* xes)
        xed3_operand_set_vex_prefix(xes,*(val+4));
        xed3_operand_set_vexvalid(xes,*(val+5));
 }
-void xed_encode_instruction_fb_pattern_123(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_124(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1415,7 +1420,7 @@ void xed_encode_instruction_fb_pattern_123(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+9));
        xed3_operand_set_zeroing(xes,*(val+10));
 }
-void xed_encode_instruction_fb_pattern_124(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_125(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1428,7 +1433,7 @@ void xed_encode_instruction_fb_pattern_124(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest3(xes,*(val+6));
        xed3_operand_set_vexvalid(xes,*(val+7));
 }
-void xed_encode_instruction_fb_pattern_125(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_126(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1443,7 +1448,7 @@ void xed_encode_instruction_fb_pattern_125(xed_encoder_request_t* xes)
        xed3_operand_set_vexdest4(xes,*(val+8));
        xed3_operand_set_vexvalid(xes,*(val+9));
 }
-void xed_encode_instruction_fb_pattern_126(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_127(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1452,7 +1457,7 @@ void xed_encode_instruction_fb_pattern_126(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+2));
        xed3_operand_set_vl(xes,*(val+3));
 }
-void xed_encode_instruction_fb_pattern_127(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_128(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1463,7 +1468,7 @@ void xed_encode_instruction_fb_pattern_127(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+4));
        xed3_operand_set_vl(xes,*(val+5));
 }
-void xed_encode_instruction_fb_pattern_128(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_129(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1473,7 +1478,7 @@ void xed_encode_instruction_fb_pattern_128(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+3));
        xed3_operand_set_vl(xes,*(val+4));
 }
-void xed_encode_instruction_fb_pattern_129(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_130(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1485,7 +1490,7 @@ void xed_encode_instruction_fb_pattern_129(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+5));
        xed3_operand_set_vl(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_130(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_131(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1494,12 +1499,13 @@ void xed_encode_instruction_fb_pattern_130(xed_encoder_request_t* xes)
        xed3_operand_set_nd(xes,*(val+2));
        xed3_operand_set_rexw(xes,*(val+3));
        xed3_operand_set_skip_osz(xes,*(val+4));
-       xed3_operand_set_vex_prefix(xes,*(val+5));
-       xed3_operand_set_vexvalid(xes,*(val+6));
-       xed3_operand_set_vl(xes,*(val+7));
-       xed3_operand_set_zeroing(xes,*(val+8));
+       xed3_operand_set_ubit(xes,*(val+5));
+       xed3_operand_set_vex_prefix(xes,*(val+6));
+       xed3_operand_set_vexvalid(xes,*(val+7));
+       xed3_operand_set_vl(xes,*(val+8));
+       xed3_operand_set_zeroing(xes,*(val+9));
 }
-void xed_encode_instruction_fb_pattern_131(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_132(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1512,7 +1518,7 @@ void xed_encode_instruction_fb_pattern_131(xed_encoder_request_t* xes)
        xed3_operand_set_vl(xes,*(val+6));
        xed3_operand_set_zeroing(xes,*(val+7));
 }
-void xed_encode_instruction_fb_pattern_132(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_133(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1522,7 +1528,7 @@ void xed_encode_instruction_fb_pattern_132(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+3));
        xed3_operand_set_vl(xes,*(val+4));
 }
-void xed_encode_instruction_fb_pattern_133(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_134(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1534,7 +1540,7 @@ void xed_encode_instruction_fb_pattern_133(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+5));
        xed3_operand_set_vl(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_134(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_135(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1545,7 +1551,7 @@ void xed_encode_instruction_fb_pattern_134(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+4));
        xed3_operand_set_vl(xes,*(val+5));
 }
-void xed_encode_instruction_fb_pattern_135(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_136(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1558,7 +1564,7 @@ void xed_encode_instruction_fb_pattern_135(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+6));
        xed3_operand_set_vl(xes,*(val+7));
 }
-void xed_encode_instruction_fb_pattern_136(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_137(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1568,12 +1574,13 @@ void xed_encode_instruction_fb_pattern_136(xed_encoder_request_t* xes)
        xed3_operand_set_reg(xes,*(val+3));
        xed3_operand_set_rexw(xes,*(val+4));
        xed3_operand_set_skip_osz(xes,*(val+5));
-       xed3_operand_set_vex_prefix(xes,*(val+6));
-       xed3_operand_set_vexvalid(xes,*(val+7));
-       xed3_operand_set_vl(xes,*(val+8));
-       xed3_operand_set_zeroing(xes,*(val+9));
+       xed3_operand_set_ubit(xes,*(val+6));
+       xed3_operand_set_vex_prefix(xes,*(val+7));
+       xed3_operand_set_vexvalid(xes,*(val+8));
+       xed3_operand_set_vl(xes,*(val+9));
+       xed3_operand_set_zeroing(xes,*(val+10));
 }
-void xed_encode_instruction_fb_pattern_137(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_138(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1587,7 +1594,7 @@ void xed_encode_instruction_fb_pattern_137(xed_encoder_request_t* xes)
        xed3_operand_set_vl(xes,*(val+7));
        xed3_operand_set_zeroing(xes,*(val+8));
 }
-void xed_encode_instruction_fb_pattern_138(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_139(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1599,7 +1606,7 @@ void xed_encode_instruction_fb_pattern_138(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+5));
        xed3_operand_set_vl(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_139(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_140(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1613,7 +1620,7 @@ void xed_encode_instruction_fb_pattern_139(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+7));
        xed3_operand_set_vl(xes,*(val+8));
 }
-void xed_encode_instruction_fb_pattern_140(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_141(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1626,7 +1633,7 @@ void xed_encode_instruction_fb_pattern_140(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+6));
        xed3_operand_set_vl(xes,*(val+7));
 }
-void xed_encode_instruction_fb_pattern_141(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_142(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1635,15 +1642,16 @@ void xed_encode_instruction_fb_pattern_141(xed_encoder_request_t* xes)
        xed3_operand_set_nd(xes,*(val+2));
        xed3_operand_set_rexw(xes,*(val+3));
        xed3_operand_set_skip_osz(xes,*(val+4));
-       xed3_operand_set_vex_prefix(xes,*(val+5));
-       xed3_operand_set_vexdest210(xes,*(val+6));
-       xed3_operand_set_vexdest3(xes,*(val+7));
-       xed3_operand_set_vexdest4(xes,*(val+8));
-       xed3_operand_set_vexvalid(xes,*(val+9));
-       xed3_operand_set_vl(xes,*(val+10));
-       xed3_operand_set_zeroing(xes,*(val+11));
+       xed3_operand_set_ubit(xes,*(val+5));
+       xed3_operand_set_vex_prefix(xes,*(val+6));
+       xed3_operand_set_vexdest210(xes,*(val+7));
+       xed3_operand_set_vexdest3(xes,*(val+8));
+       xed3_operand_set_vexdest4(xes,*(val+9));
+       xed3_operand_set_vexvalid(xes,*(val+10));
+       xed3_operand_set_vl(xes,*(val+11));
+       xed3_operand_set_zeroing(xes,*(val+12));
 }
-void xed_encode_instruction_fb_pattern_142(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_143(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1654,7 +1662,7 @@ void xed_encode_instruction_fb_pattern_142(xed_encoder_request_t* xes)
        xed3_operand_set_rexw(xes,*(val+4));
        xed3_operand_set_skip_osz(xes,*(val+5));
 }
-void xed_encode_instruction_fb_pattern_143(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_144(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1664,7 +1672,7 @@ void xed_encode_instruction_fb_pattern_143(xed_encoder_request_t* xes)
        xed3_operand_set_rexw(xes,*(val+3));
        xed3_operand_set_skip_osz(xes,*(val+4));
 }
-void xed_encode_instruction_fb_pattern_144(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_145(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1674,7 +1682,7 @@ void xed_encode_instruction_fb_pattern_144(xed_encoder_request_t* xes)
        xed3_operand_set_rexw(xes,*(val+3));
        xed3_operand_set_skip_osz(xes,*(val+4));
 }
-void xed_encode_instruction_fb_pattern_145(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_146(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1682,24 +1690,6 @@ void xed_encode_instruction_fb_pattern_145(xed_encoder_request_t* xes)
        xed3_operand_set_rep(xes,*(val+1));
        xed3_operand_set_rexw(xes,*(val+2));
        xed3_operand_set_skip_osz(xes,*(val+3));
-}
-void xed_encode_instruction_fb_pattern_146(xed_encoder_request_t* xes)
-{
-       const xed_uint8_t* val;
-       val = xed_encoder_get_start_field_value(xes);
-       xed3_operand_set_bcrc(xes,*(val+0));
-       xed3_operand_set_map(xes,*(val+1));
-       xed3_operand_set_reg(xes,*(val+2));
-       xed3_operand_set_rexw(xes,*(val+3));
-       xed3_operand_set_rm(xes,*(val+4));
-       xed3_operand_set_skip_osz(xes,*(val+5));
-       xed3_operand_set_ubit(xes,*(val+6));
-       xed3_operand_set_vex_prefix(xes,*(val+7));
-       xed3_operand_set_vexdest210(xes,*(val+8));
-       xed3_operand_set_vexdest3(xes,*(val+9));
-       xed3_operand_set_vexvalid(xes,*(val+10));
-       xed3_operand_set_vl(xes,*(val+11));
-       xed3_operand_set_zeroing(xes,*(val+12));
 }
 void xed_encode_instruction_fb_pattern_147(xed_encoder_request_t* xes)
 {
@@ -1756,9 +1746,19 @@ void xed_encode_instruction_fb_pattern_150(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
-       xed3_operand_set_map(xes,*(val+0));
-       xed3_operand_set_rep(xes,*(val+1));
-       xed3_operand_set_wbnoinvd(xes,*(val+2));
+       xed3_operand_set_bcrc(xes,*(val+0));
+       xed3_operand_set_map(xes,*(val+1));
+       xed3_operand_set_reg(xes,*(val+2));
+       xed3_operand_set_rexw(xes,*(val+3));
+       xed3_operand_set_rm(xes,*(val+4));
+       xed3_operand_set_skip_osz(xes,*(val+5));
+       xed3_operand_set_ubit(xes,*(val+6));
+       xed3_operand_set_vex_prefix(xes,*(val+7));
+       xed3_operand_set_vexdest210(xes,*(val+8));
+       xed3_operand_set_vexdest3(xes,*(val+9));
+       xed3_operand_set_vexvalid(xes,*(val+10));
+       xed3_operand_set_vl(xes,*(val+11));
+       xed3_operand_set_zeroing(xes,*(val+12));
 }
 void xed_encode_instruction_fb_pattern_151(xed_encoder_request_t* xes)
 {
@@ -1778,20 +1778,6 @@ void xed_encode_instruction_fb_pattern_152(xed_encoder_request_t* xes)
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
        xed3_operand_set_map(xes,*(val+0));
-       xed3_operand_set_nd(xes,*(val+1));
-       xed3_operand_set_reg(xes,*(val+2));
-       xed3_operand_set_vex_prefix(xes,*(val+3));
-       xed3_operand_set_vexdest210(xes,*(val+4));
-       xed3_operand_set_vexdest3(xes,*(val+5));
-       xed3_operand_set_vexdest4(xes,*(val+6));
-       xed3_operand_set_vexvalid(xes,*(val+7));
-       xed3_operand_set_zeroing(xes,*(val+8));
-}
-void xed_encode_instruction_fb_pattern_153(xed_encoder_request_t* xes)
-{
-       const xed_uint8_t* val;
-       val = xed_encoder_get_start_field_value(xes);
-       xed3_operand_set_map(xes,*(val+0));
        xed3_operand_set_reg(xes,*(val+1));
        xed3_operand_set_rexw(xes,*(val+2));
        xed3_operand_set_skip_osz(xes,*(val+3));
@@ -1801,7 +1787,7 @@ void xed_encode_instruction_fb_pattern_153(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+7));
        xed3_operand_set_vl(xes,*(val+8));
 }
-void xed_encode_instruction_fb_pattern_154(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_153(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1811,40 +1797,40 @@ void xed_encode_instruction_fb_pattern_154(xed_encoder_request_t* xes)
        xed3_operand_set_reg(xes,*(val+3));
        xed3_operand_set_rexw(xes,*(val+4));
        xed3_operand_set_skip_osz(xes,*(val+5));
-       xed3_operand_set_ubit(xes,*(val+6));
-       xed3_operand_set_vex_prefix(xes,*(val+7));
-       xed3_operand_set_vexdest210(xes,*(val+8));
-       xed3_operand_set_vexdest3(xes,*(val+9));
-       xed3_operand_set_vexdest4(xes,*(val+10));
-       xed3_operand_set_vexvalid(xes,*(val+11));
-       xed3_operand_set_vl(xes,*(val+12));
-       xed3_operand_set_zeroing(xes,*(val+13));
+       xed3_operand_set_vex_prefix(xes,*(val+6));
+       xed3_operand_set_vexdest210(xes,*(val+7));
+       xed3_operand_set_vexdest3(xes,*(val+8));
+       xed3_operand_set_vexdest4(xes,*(val+9));
+       xed3_operand_set_vexvalid(xes,*(val+10));
+       xed3_operand_set_vl(xes,*(val+11));
+       xed3_operand_set_zeroing(xes,*(val+12));
 }
-void xed_encode_instruction_fb_pattern_155(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_154(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
        xed3_operand_set_map(xes,*(val+0));
-       xed3_operand_set_rexw(xes,*(val+1));
-       xed3_operand_set_rm(xes,*(val+2));
-       xed3_operand_set_skip_osz(xes,*(val+3));
-       xed3_operand_set_vex_prefix(xes,*(val+4));
-       xed3_operand_set_vexdest210(xes,*(val+5));
-       xed3_operand_set_vexdest3(xes,*(val+6));
-       xed3_operand_set_vexvalid(xes,*(val+7));
-       xed3_operand_set_vl(xes,*(val+8));
+       xed3_operand_set_need_sib(xes,*(val+1));
+       xed3_operand_set_rexw(xes,*(val+2));
+       xed3_operand_set_rm(xes,*(val+3));
+       xed3_operand_set_skip_osz(xes,*(val+4));
+       xed3_operand_set_vex_prefix(xes,*(val+5));
+       xed3_operand_set_vexdest210(xes,*(val+6));
+       xed3_operand_set_vexdest3(xes,*(val+7));
+       xed3_operand_set_vexvalid(xes,*(val+8));
+       xed3_operand_set_vl(xes,*(val+9));
 }
-void xed_encode_instruction_fb_pattern_156(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_155(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
        xed3_operand_set_bcrc(xes,*(val+0));
        xed3_operand_set_map(xes,*(val+1));
        xed3_operand_set_mask(xes,*(val+2));
-       xed3_operand_set_rexw(xes,*(val+3));
-       xed3_operand_set_rm(xes,*(val+4));
-       xed3_operand_set_skip_osz(xes,*(val+5));
-       xed3_operand_set_ubit(xes,*(val+6));
+       xed3_operand_set_need_sib(xes,*(val+3));
+       xed3_operand_set_rexw(xes,*(val+4));
+       xed3_operand_set_rm(xes,*(val+5));
+       xed3_operand_set_skip_osz(xes,*(val+6));
        xed3_operand_set_vex_prefix(xes,*(val+7));
        xed3_operand_set_vexdest210(xes,*(val+8));
        xed3_operand_set_vexdest3(xes,*(val+9));
@@ -1853,7 +1839,7 @@ void xed_encode_instruction_fb_pattern_156(xed_encoder_request_t* xes)
        xed3_operand_set_vl(xes,*(val+12));
        xed3_operand_set_zeroing(xes,*(val+13));
 }
-void xed_encode_instruction_fb_pattern_157(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_156(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1869,7 +1855,7 @@ void xed_encode_instruction_fb_pattern_157(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+9));
        xed3_operand_set_vl(xes,*(val+10));
 }
-void xed_encode_instruction_fb_pattern_158(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_157(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1884,38 +1870,52 @@ void xed_encode_instruction_fb_pattern_158(xed_encoder_request_t* xes)
        xed3_operand_set_vexvalid(xes,*(val+8));
        xed3_operand_set_vl(xes,*(val+9));
 }
+void xed_encode_instruction_fb_pattern_158(xed_encoder_request_t* xes)
+{
+       const xed_uint8_t* val;
+       val = xed_encoder_get_start_field_value(xes);
+       xed3_operand_set_map(xes,*(val+0));
+       xed3_operand_set_mask(xes,*(val+1));
+       xed3_operand_set_mod(xes,*(val+2));
+       xed3_operand_set_nd(xes,*(val+3));
+       xed3_operand_set_nf(xes,*(val+4));
+       xed3_operand_set_scc(xes,*(val+5));
+       xed3_operand_set_ubit(xes,*(val+6));
+       xed3_operand_set_vex_prefix(xes,*(val+7));
+       xed3_operand_set_vexvalid(xes,*(val+8));
+       xed3_operand_set_vl(xes,*(val+9));
+       xed3_operand_set_zeroing(xes,*(val+10));
+}
 void xed_encode_instruction_fb_pattern_159(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
        xed3_operand_set_map(xes,*(val+0));
-       xed3_operand_set_mod(xes,*(val+1));
-       xed3_operand_set_reg(xes,*(val+2));
-       xed3_operand_set_rexw(xes,*(val+3));
-       xed3_operand_set_skip_osz(xes,*(val+4));
+       xed3_operand_set_mask(xes,*(val+1));
+       xed3_operand_set_nd(xes,*(val+2));
+       xed3_operand_set_nf(xes,*(val+3));
+       xed3_operand_set_scc(xes,*(val+4));
        xed3_operand_set_vex_prefix(xes,*(val+5));
-       xed3_operand_set_vexdest210(xes,*(val+6));
-       xed3_operand_set_vexdest3(xes,*(val+7));
-       xed3_operand_set_vexvalid(xes,*(val+8));
-       xed3_operand_set_vl(xes,*(val+9));
+       xed3_operand_set_vexvalid(xes,*(val+6));
+       xed3_operand_set_vl(xes,*(val+7));
+       xed3_operand_set_zeroing(xes,*(val+8));
 }
 void xed_encode_instruction_fb_pattern_160(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
        xed3_operand_set_map(xes,*(val+0));
-       xed3_operand_set_mod(xes,*(val+1));
-       xed3_operand_set_nd(xes,*(val+2));
-       xed3_operand_set_reg(xes,*(val+3));
-       xed3_operand_set_rexw(xes,*(val+4));
-       xed3_operand_set_skip_osz(xes,*(val+5));
-       xed3_operand_set_vex_prefix(xes,*(val+6));
-       xed3_operand_set_vexdest210(xes,*(val+7));
-       xed3_operand_set_vexdest3(xes,*(val+8));
-       xed3_operand_set_vexdest4(xes,*(val+9));
-       xed3_operand_set_vexvalid(xes,*(val+10));
-       xed3_operand_set_vl(xes,*(val+11));
-       xed3_operand_set_zeroing(xes,*(val+12));
+       xed3_operand_set_mask(xes,*(val+1));
+       xed3_operand_set_mod(xes,*(val+2));
+       xed3_operand_set_nd(xes,*(val+3));
+       xed3_operand_set_nf(xes,*(val+4));
+       xed3_operand_set_reg(xes,*(val+5));
+       xed3_operand_set_scc(xes,*(val+6));
+       xed3_operand_set_ubit(xes,*(val+7));
+       xed3_operand_set_vex_prefix(xes,*(val+8));
+       xed3_operand_set_vexvalid(xes,*(val+9));
+       xed3_operand_set_vl(xes,*(val+10));
+       xed3_operand_set_zeroing(xes,*(val+11));
 }
 void xed_encode_instruction_fb_pattern_161(xed_encoder_request_t* xes)
 {
@@ -1923,57 +1923,16 @@ void xed_encode_instruction_fb_pattern_161(xed_encoder_request_t* xes)
        val = xed_encoder_get_start_field_value(xes);
        xed3_operand_set_map(xes,*(val+0));
        xed3_operand_set_mask(xes,*(val+1));
-       xed3_operand_set_mod(xes,*(val+2));
-       xed3_operand_set_nd(xes,*(val+3));
-       xed3_operand_set_vex_prefix(xes,*(val+4));
-       xed3_operand_set_vexdest4(xes,*(val+5));
-       xed3_operand_set_vexvalid(xes,*(val+6));
-       xed3_operand_set_vl(xes,*(val+7));
-       xed3_operand_set_zeroing(xes,*(val+8));
-}
-void xed_encode_instruction_fb_pattern_162(xed_encoder_request_t* xes)
-{
-       const xed_uint8_t* val;
-       val = xed_encoder_get_start_field_value(xes);
-       xed3_operand_set_map(xes,*(val+0));
-       xed3_operand_set_mask(xes,*(val+1));
        xed3_operand_set_nd(xes,*(val+2));
-       xed3_operand_set_vex_prefix(xes,*(val+3));
-       xed3_operand_set_vexdest4(xes,*(val+4));
-       xed3_operand_set_vexvalid(xes,*(val+5));
-       xed3_operand_set_vl(xes,*(val+6));
-       xed3_operand_set_zeroing(xes,*(val+7));
-}
-void xed_encode_instruction_fb_pattern_163(xed_encoder_request_t* xes)
-{
-       const xed_uint8_t* val;
-       val = xed_encoder_get_start_field_value(xes);
-       xed3_operand_set_map(xes,*(val+0));
-       xed3_operand_set_mask(xes,*(val+1));
-       xed3_operand_set_mod(xes,*(val+2));
-       xed3_operand_set_nd(xes,*(val+3));
+       xed3_operand_set_nf(xes,*(val+3));
        xed3_operand_set_reg(xes,*(val+4));
-       xed3_operand_set_vex_prefix(xes,*(val+5));
-       xed3_operand_set_vexdest4(xes,*(val+6));
+       xed3_operand_set_scc(xes,*(val+5));
+       xed3_operand_set_vex_prefix(xes,*(val+6));
        xed3_operand_set_vexvalid(xes,*(val+7));
        xed3_operand_set_vl(xes,*(val+8));
        xed3_operand_set_zeroing(xes,*(val+9));
 }
-void xed_encode_instruction_fb_pattern_164(xed_encoder_request_t* xes)
-{
-       const xed_uint8_t* val;
-       val = xed_encoder_get_start_field_value(xes);
-       xed3_operand_set_map(xes,*(val+0));
-       xed3_operand_set_mask(xes,*(val+1));
-       xed3_operand_set_nd(xes,*(val+2));
-       xed3_operand_set_reg(xes,*(val+3));
-       xed3_operand_set_vex_prefix(xes,*(val+4));
-       xed3_operand_set_vexdest4(xes,*(val+5));
-       xed3_operand_set_vexvalid(xes,*(val+6));
-       xed3_operand_set_vl(xes,*(val+7));
-       xed3_operand_set_zeroing(xes,*(val+8));
-}
-void xed_encode_instruction_fb_pattern_165(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_162(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1988,7 +1947,7 @@ void xed_encode_instruction_fb_pattern_165(xed_encoder_request_t* xes)
        xed3_operand_set_vl(xes,*(val+8));
        xed3_operand_set_zeroing(xes,*(val+9));
 }
-void xed_encode_instruction_fb_pattern_166(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_163(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -1996,12 +1955,13 @@ void xed_encode_instruction_fb_pattern_166(xed_encoder_request_t* xes)
        xed3_operand_set_mod(xes,*(val+1));
        xed3_operand_set_nd(xes,*(val+2));
        xed3_operand_set_nf(xes,*(val+3));
-       xed3_operand_set_vex_prefix(xes,*(val+4));
-       xed3_operand_set_vexvalid(xes,*(val+5));
-       xed3_operand_set_vl(xes,*(val+6));
-       xed3_operand_set_zeroing(xes,*(val+7));
+       xed3_operand_set_ubit(xes,*(val+4));
+       xed3_operand_set_vex_prefix(xes,*(val+5));
+       xed3_operand_set_vexvalid(xes,*(val+6));
+       xed3_operand_set_vl(xes,*(val+7));
+       xed3_operand_set_zeroing(xes,*(val+8));
 }
-void xed_encode_instruction_fb_pattern_167(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_164(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -2013,7 +1973,41 @@ void xed_encode_instruction_fb_pattern_167(xed_encoder_request_t* xes)
        xed3_operand_set_vl(xes,*(val+5));
        xed3_operand_set_zeroing(xes,*(val+6));
 }
-void xed_encode_instruction_fb_pattern_168(xed_encoder_request_t* xes)
+void xed_encode_instruction_fb_pattern_165(xed_encoder_request_t* xes)
+{
+       const xed_uint8_t* val;
+       val = xed_encoder_get_start_field_value(xes);
+       xed3_operand_set_map(xes,*(val+0));
+       xed3_operand_set_mod(xes,*(val+1));
+       xed3_operand_set_nd(xes,*(val+2));
+       xed3_operand_set_reg(xes,*(val+3));
+       xed3_operand_set_rexw(xes,*(val+4));
+       xed3_operand_set_skip_osz(xes,*(val+5));
+       xed3_operand_set_ubit(xes,*(val+6));
+       xed3_operand_set_vex_prefix(xes,*(val+7));
+       xed3_operand_set_vexdest210(xes,*(val+8));
+       xed3_operand_set_vexdest3(xes,*(val+9));
+       xed3_operand_set_vexdest4(xes,*(val+10));
+       xed3_operand_set_vexvalid(xes,*(val+11));
+       xed3_operand_set_vl(xes,*(val+12));
+       xed3_operand_set_zeroing(xes,*(val+13));
+}
+void xed_encode_instruction_fb_pattern_166(xed_encoder_request_t* xes)
+{
+       const xed_uint8_t* val;
+       val = xed_encoder_get_start_field_value(xes);
+       xed3_operand_set_map(xes,*(val+0));
+       xed3_operand_set_mod(xes,*(val+1));
+       xed3_operand_set_reg(xes,*(val+2));
+       xed3_operand_set_rexw(xes,*(val+3));
+       xed3_operand_set_skip_osz(xes,*(val+4));
+       xed3_operand_set_vex_prefix(xes,*(val+5));
+       xed3_operand_set_vexdest210(xes,*(val+6));
+       xed3_operand_set_vexdest3(xes,*(val+7));
+       xed3_operand_set_vexvalid(xes,*(val+8));
+       xed3_operand_set_vl(xes,*(val+9));
+}
+void xed_encode_instruction_fb_pattern_167(xed_encoder_request_t* xes)
 {
        const xed_uint8_t* val;
        val = xed_encoder_get_start_field_value(xes);
@@ -2023,6 +2017,24 @@ void xed_encode_instruction_fb_pattern_168(xed_encoder_request_t* xes)
        xed3_operand_set_rep(xes,*(val+3));
        xed3_operand_set_rex2(xes,*(val+4));
        xed3_operand_set_rexw(xes,*(val+5));
+}
+void xed_encode_instruction_fb_pattern_168(xed_encoder_request_t* xes)
+{
+       const xed_uint8_t* val;
+       val = xed_encoder_get_start_field_value(xes);
+       xed3_operand_set_bcrc(xes,*(val+0));
+       xed3_operand_set_map(xes,*(val+1));
+       xed3_operand_set_mask(xes,*(val+2));
+       xed3_operand_set_need_sib(xes,*(val+3));
+       xed3_operand_set_rexw(xes,*(val+4));
+       xed3_operand_set_rm(xes,*(val+5));
+       xed3_operand_set_skip_osz(xes,*(val+6));
+       xed3_operand_set_vex_prefix(xes,*(val+7));
+       xed3_operand_set_vexdest210(xes,*(val+8));
+       xed3_operand_set_vexdest3(xes,*(val+9));
+       xed3_operand_set_vexdest4(xes,*(val+10));
+       xed3_operand_set_vexvalid(xes,*(val+11));
+       xed3_operand_set_vl(xes,*(val+12));
 }
 void xed_encode_instruction_emit_pattern_0(xed_encoder_request_t* xes)
 {
@@ -2583,27 +2595,20 @@ void xed_encode_instruction_emit_pattern_71(xed_encoder_request_t* xes)
 }
 void xed_encode_instruction_emit_pattern_72(xed_encoder_request_t* xes)
 {
-       if (!xed3_operand_get_rex2(xes))
-           xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_REFINING66_EMIT(xes);
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_UIMM32_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_73(xed_encoder_request_t* xes)
 {
-       if (!xed3_operand_get_rex2(xes))
-           xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_IGNORE66_EMIT(xes);
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_EVAPX_EMIT(xes);
+       xed_encode_nonterminal_UIMM32_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_74(xed_encoder_request_t* xes)
 {
@@ -2613,7 +2618,8 @@ void xed_encode_instruction_emit_pattern_74(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_IGNORE66_EMIT(xes);
+       xed_encode_nonterminal_REFINING66_EMIT(xes);
+       xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_UIMM8_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_75(xed_encoder_request_t* xes)
@@ -2624,9 +2630,32 @@ void xed_encode_instruction_emit_pattern_75(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_OVERRIDE_SEG0_EMIT(xes);
+       xed_encode_nonterminal_IGNORE66_EMIT(xes);
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_76(xed_encoder_request_t* xes)
+{
+       if (!xed3_operand_get_rex2(xes))
+           xed_encoder_request_emit_bytes(xes,8,0x0f);
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_IGNORE66_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+}
+void xed_encode_instruction_emit_pattern_77(xed_encoder_request_t* xes)
+{
+       if (!xed3_operand_get_rex2(xes))
+           xed_encoder_request_emit_bytes(xes,8,0x0f);
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_OVERRIDE_SEG0_EMIT(xes);
+}
+void xed_encode_instruction_emit_pattern_78(xed_encoder_request_t* xes)
 {
        if (!xed3_operand_get_rex2(xes))
            xed_encoder_request_emit_bytes(xes,8,0x0f);
@@ -2637,7 +2666,7 @@ void xed_encode_instruction_emit_pattern_76(xed_encoder_request_t* xes)
        xed_encode_nonterminal_REFINING66_EMIT(xes);
        xed_encode_nonterminal_OVERRIDE_SEG0_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_77(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_79(xed_encoder_request_t* xes)
 {
        if (!xed3_operand_get_rex2(xes))
            xed_encoder_request_emit_bytes(xes,8,0x0f);
@@ -2648,7 +2677,7 @@ void xed_encode_instruction_emit_pattern_77(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_78(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_80(xed_encoder_request_t* xes)
 {
        if (!xed3_operand_get_rex2(xes))
            xed_encoder_request_emit_bytes(xes,8,0x0f);
@@ -2659,31 +2688,12 @@ void xed_encode_instruction_emit_pattern_78(xed_encoder_request_t* xes)
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_CR_WIDTH_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_79(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_81(xed_encoder_request_t* xes)
 {
        if (!xed3_operand_get_rex2(xes))
            xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_encode_emit(xes,5,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_srm(xes));
-}
-void xed_encode_instruction_emit_pattern_80(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,0x0f);
-       xed_encoder_request_emit_bytes(xes,8,0x38);
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_81(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,0x0f);
-       xed_encoder_request_emit_bytes(xes,8,0x38);
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
 }
 void xed_encode_instruction_emit_pattern_82(xed_encoder_request_t* xes)
 {
@@ -2693,7 +2703,6 @@ void xed_encode_instruction_emit_pattern_82(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_REFINING66_EMIT(xes);
        xed_encode_nonterminal_MODRM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_83(xed_encoder_request_t* xes)
@@ -2704,28 +2713,27 @@ void xed_encode_instruction_emit_pattern_83(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_REFINING66_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_84(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,0x0f);
-       xed_encoder_request_emit_bytes(xes,8,0x3a);
+       xed_encoder_request_emit_bytes(xes,8,0x38);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_REFINING66_EMIT(xes);
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_85(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,0x0f);
-       xed_encoder_request_emit_bytes(xes,8,0x3a);
+       xed_encoder_request_emit_bytes(xes,8,0x38);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_REFINING66_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_86(xed_encoder_request_t* xes)
 {
@@ -2735,7 +2743,6 @@ void xed_encode_instruction_emit_pattern_86(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_REFINING66_EMIT(xes);
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_UIMM8_EMIT(xes);
 }
@@ -2747,7 +2754,6 @@ void xed_encode_instruction_emit_pattern_87(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_REFINING66_EMIT(xes);
        xed_encode_nonterminal_UIMM8_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_88(xed_encoder_request_t* xes)
@@ -2755,10 +2761,10 @@ void xed_encode_instruction_emit_pattern_88(xed_encoder_request_t* xes)
        xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,0x3a);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encode_nonterminal_REFINING66_EMIT(xes);
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_REFINING66_EMIT(xes);
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_UIMM8_EMIT(xes);
 }
@@ -2767,26 +2773,49 @@ void xed_encode_instruction_emit_pattern_89(xed_encoder_request_t* xes)
        xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,0x3a);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encode_nonterminal_REFINING66_EMIT(xes);
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_REFINING66_EMIT(xes);
        xed_encode_nonterminal_UIMM8_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_90(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,0x0f);
-       xed_encoder_request_emit_bytes(xes,8,0x38);
+       xed_encoder_request_emit_bytes(xes,8,0x3a);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encode_nonterminal_REFINING66_EMIT(xes);
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_91(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,0x0f);
+       xed_encoder_request_emit_bytes(xes,8,0x3a);
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encode_nonterminal_REFINING66_EMIT(xes);
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+}
+void xed_encode_instruction_emit_pattern_92(xed_encoder_request_t* xes)
+{
+       xed_encoder_request_emit_bytes(xes,8,0x0f);
+       xed_encoder_request_emit_bytes(xes,8,0x38);
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encode_nonterminal_REFINING66_EMIT(xes);
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+}
+void xed_encode_instruction_emit_pattern_93(xed_encoder_request_t* xes)
+{
+       xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,0x38);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encode_nonterminal_REFINING66_EMIT(xes);
@@ -2794,7 +2823,7 @@ void xed_encode_instruction_emit_pattern_91(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
 }
-void xed_encode_instruction_emit_pattern_92(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_94(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,0x3a);
@@ -2806,7 +2835,7 @@ void xed_encode_instruction_emit_pattern_92(xed_encoder_request_t* xes)
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_UIMM8_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_93(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_95(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,0x3a);
@@ -2817,7 +2846,7 @@ void xed_encode_instruction_emit_pattern_93(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_UIMM8_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_94(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_96(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,0x38);
@@ -2829,14 +2858,14 @@ void xed_encode_instruction_emit_pattern_94(xed_encoder_request_t* xes)
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_CR_WIDTH_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_95(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_97(xed_encoder_request_t* xes)
 {
        if (!xed3_operand_get_rex2(xes))
            xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 8, 0x0);
 }
-void xed_encode_instruction_emit_pattern_96(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_98(xed_encoder_request_t* xes)
 {
        if (!xed3_operand_get_rex2(xes))
            xed_encoder_request_emit_bytes(xes,8,0x0f);
@@ -2844,7 +2873,7 @@ void xed_encode_instruction_emit_pattern_96(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 8, 0x40);
        xed_encoder_request_encode_emit(xes, 8, 0x0);
 }
-void xed_encode_instruction_emit_pattern_97(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_99(xed_encoder_request_t* xes)
 {
        if (!xed3_operand_get_rex2(xes))
            xed_encoder_request_emit_bytes(xes,8,0x0f);
@@ -2853,7 +2882,7 @@ void xed_encode_instruction_emit_pattern_97(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 8, 0x0);
        xed_encoder_request_encode_emit(xes, 8, 0x0);
 }
-void xed_encode_instruction_emit_pattern_98(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_100(xed_encoder_request_t* xes)
 {
        if (!xed3_operand_get_rex2(xes))
            xed_encoder_request_emit_bytes(xes,8,0x0f);
@@ -2864,7 +2893,7 @@ void xed_encode_instruction_emit_pattern_98(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 8, 0x0);
        xed_encoder_request_encode_emit(xes, 8, 0x0);
 }
-void xed_encode_instruction_emit_pattern_99(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_101(xed_encoder_request_t* xes)
 {
        if (!xed3_operand_get_rex2(xes))
            xed_encoder_request_emit_bytes(xes,8,0x0f);
@@ -2876,7 +2905,7 @@ void xed_encode_instruction_emit_pattern_99(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 8, 0x0);
        xed_encoder_request_encode_emit(xes, 8, 0x0);
 }
-void xed_encode_instruction_emit_pattern_100(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_102(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,0x0f);
@@ -2886,49 +2915,28 @@ void xed_encode_instruction_emit_pattern_100(xed_encoder_request_t* xes)
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
 }
-void xed_encode_instruction_emit_pattern_101(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,0x0f);
-       xed_encoder_request_emit_bytes(xes,8,0x0f);
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-}
-void xed_encode_instruction_emit_pattern_102(xed_encoder_request_t* xes)
-{
-       if (!xed3_operand_get_rex2(xes))
-           xed_encoder_request_emit_bytes(xes,8,0x0f);
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encode_nonterminal_IGNORE66_EMIT(xes);
-}
 void xed_encode_instruction_emit_pattern_103(xed_encoder_request_t* xes)
 {
-       if (!xed3_operand_get_rex2(xes))
-           xed_encoder_request_emit_bytes(xes,8,0x0f);
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encode_nonterminal_REFINING66_EMIT(xes);
+       xed_encoder_request_emit_bytes(xes,8,0x0f);
+       xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_1_EMIT(xes);
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
 }
 void xed_encode_instruction_emit_pattern_104(xed_encoder_request_t* xes)
 {
        if (!xed3_operand_get_rex2(xes))
            xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encode_nonterminal_REFINING66_EMIT(xes);
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_IGNORE66_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_105(xed_encoder_request_t* xes)
 {
        if (!xed3_operand_get_rex2(xes))
            xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encode_nonterminal_REFINING66_EMIT(xes);
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
@@ -2937,20 +2945,24 @@ void xed_encode_instruction_emit_pattern_105(xed_encoder_request_t* xes)
 }
 void xed_encode_instruction_emit_pattern_106(xed_encoder_request_t* xes)
 {
+       if (!xed3_operand_get_rex2(xes))
+           xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encode_nonterminal_REFINING66_EMIT(xes);
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_SE_IMM8_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_107(xed_encoder_request_t* xes)
 {
+       if (!xed3_operand_get_rex2(xes))
+           xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_SE_IMM8_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_1_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_108(xed_encoder_request_t* xes)
 {
@@ -2959,7 +2971,7 @@ void xed_encode_instruction_emit_pattern_108(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM32_EMIT(xes);
+       xed_encode_nonterminal_SE_IMM8_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_109(xed_encoder_request_t* xes)
 {
@@ -2967,18 +2979,16 @@ void xed_encode_instruction_emit_pattern_109(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_UIMM32_EMIT(xes);
+       xed_encode_nonterminal_SE_IMM8_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_110(xed_encoder_request_t* xes)
 {
-       if (!xed3_operand_get_rex2(xes))
-           xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_REFINING66_EMIT(xes);
+       xed_encode_nonterminal_UIMM32_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_111(xed_encoder_request_t* xes)
 {
@@ -2988,16 +2998,18 @@ void xed_encode_instruction_emit_pattern_111(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_DF64_EMIT(xes);
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_REFINING66_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_112(xed_encoder_request_t* xes)
 {
+       if (!xed3_operand_get_rex2(xes))
+           xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_FIX_ROUND_LEN512_EMIT(xes);
-       xed_encode_nonterminal_AVX512_ROUND_EMIT(xes);
+       xed_encode_nonterminal_DF64_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_113(xed_encoder_request_t* xes)
 {
@@ -3005,9 +3017,8 @@ void xed_encode_instruction_emit_pattern_113(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_FULL_EMIT(xes);
+       xed_encode_nonterminal_FIX_ROUND_LEN512_EMIT(xes);
+       xed_encode_nonterminal_AVX512_ROUND_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_114(xed_encoder_request_t* xes)
 {
@@ -3016,7 +3027,7 @@ void xed_encode_instruction_emit_pattern_114(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
        xed_encode_nonterminal_NELEM_FULL_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_115(xed_encoder_request_t* xes)
@@ -3025,8 +3036,9 @@ void xed_encode_instruction_emit_pattern_115(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
-       xed_encode_nonterminal_AVX512_ROUND_EMIT(xes);
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_FULL_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_116(xed_encoder_request_t* xes)
 {
@@ -3034,9 +3046,8 @@ void xed_encode_instruction_emit_pattern_116(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_SCALAR_EMIT(xes);
+       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
+       xed_encode_nonterminal_AVX512_ROUND_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_117(xed_encoder_request_t* xes)
 {
@@ -3045,10 +3056,20 @@ void xed_encode_instruction_emit_pattern_117(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_SCALAR_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_118(xed_encoder_request_t* xes)
+{
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
+}
+void xed_encode_instruction_emit_pattern_119(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
@@ -3057,17 +3078,6 @@ void xed_encode_instruction_emit_pattern_118(xed_encoder_request_t* xes)
        xed_encode_nonterminal_FIX_ROUND_LEN512_EMIT(xes);
        xed_encode_nonterminal_SAE_EMIT(xes);
        xed_encode_nonterminal_UIMM8_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_119(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_FULL_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_120(xed_encoder_request_t* xes)
 {
@@ -3077,7 +3087,7 @@ void xed_encode_instruction_emit_pattern_120(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
        xed_encode_nonterminal_NELEM_FULL_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_121(xed_encoder_request_t* xes)
@@ -3086,9 +3096,10 @@ void xed_encode_instruction_emit_pattern_121(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
-       xed_encode_nonterminal_SAE_EMIT(xes);
+       xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_FULL_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_122(xed_encoder_request_t* xes)
 {
@@ -3096,10 +3107,9 @@ void xed_encode_instruction_emit_pattern_122(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
+       xed_encode_nonterminal_SAE_EMIT(xes);
        xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_SCALAR_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_123(xed_encoder_request_t* xes)
 {
@@ -3109,8 +3119,8 @@ void xed_encode_instruction_emit_pattern_123(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_SCALAR_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_124(xed_encoder_request_t* xes)
 {
@@ -3118,7 +3128,10 @@ void xed_encode_instruction_emit_pattern_124(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_125(xed_encoder_request_t* xes)
 {
@@ -3127,7 +3140,6 @@ void xed_encode_instruction_emit_pattern_125(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
-       xed_encode_nonterminal_SAE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_126(xed_encoder_request_t* xes)
 {
@@ -3135,10 +3147,8 @@ void xed_encode_instruction_emit_pattern_126(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_SCALAR_EMIT(xes);
        xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
+       xed_encode_nonterminal_SAE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_127(xed_encoder_request_t* xes)
 {
@@ -3147,8 +3157,8 @@ void xed_encode_instruction_emit_pattern_127(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_SCALAR_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
        xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_128(xed_encoder_request_t* xes)
@@ -3157,9 +3167,20 @@ void xed_encode_instruction_emit_pattern_128(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_FIX_ROUND_LEN512_EMIT(xes);
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
+       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_129(xed_encoder_request_t* xes)
+{
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_FIX_ROUND_LEN512_EMIT(xes);
+}
+void xed_encode_instruction_emit_pattern_130(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
@@ -3169,7 +3190,7 @@ void xed_encode_instruction_emit_pattern_129(xed_encoder_request_t* xes)
        xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
        xed_encode_nonterminal_NELEM_HALF_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_130(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_131(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
@@ -3178,7 +3199,7 @@ void xed_encode_instruction_emit_pattern_130(xed_encoder_request_t* xes)
        xed_encode_nonterminal_FIX_ROUND_LEN512_EMIT(xes);
        xed_encode_nonterminal_SAE_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_131(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_132(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
@@ -3187,7 +3208,7 @@ void xed_encode_instruction_emit_pattern_131(xed_encoder_request_t* xes)
        xed_encode_nonterminal_EVEXR4_ONE_EMIT(xes);
        xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_132(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_133(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
@@ -3197,17 +3218,6 @@ void xed_encode_instruction_emit_pattern_132(xed_encoder_request_t* xes)
        xed_encode_nonterminal_AVX512_ROUND_EMIT(xes);
        xed_encode_nonterminal_EVEXR4_ONE_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_133(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_Q_EMIT(xes);
-       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
-}
 void xed_encode_instruction_emit_pattern_134(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
@@ -3216,7 +3226,7 @@ void xed_encode_instruction_emit_pattern_134(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_Q_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
        xed_encode_nonterminal_EVEXR4_ONE_EMIT(xes);
        xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
 }
@@ -3238,7 +3248,8 @@ void xed_encode_instruction_emit_pattern_136(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_D_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
+       xed_encode_nonterminal_EVEXR4_ONE_EMIT(xes);
        xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_137(xed_encoder_request_t* xes)
@@ -3248,10 +3259,8 @@ void xed_encode_instruction_emit_pattern_137(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_D_EMIT(xes);
-       xed_encode_nonterminal_EVEXR4_ONE_EMIT(xes);
-       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_138(xed_encoder_request_t* xes)
 {
@@ -3261,8 +3270,7 @@ void xed_encode_instruction_emit_pattern_138(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_READER_EMIT(xes);
-       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
+       xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_139(xed_encoder_request_t* xes)
 {
@@ -3272,8 +3280,7 @@ void xed_encode_instruction_emit_pattern_139(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_READER_EMIT(xes);
-       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
+       xed_encode_nonterminal_NELEM_MOVDDUP_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_140(xed_encoder_request_t* xes)
 {
@@ -3282,9 +3289,8 @@ void xed_encode_instruction_emit_pattern_140(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_141(xed_encoder_request_t* xes)
 {
@@ -3293,8 +3299,8 @@ void xed_encode_instruction_emit_pattern_141(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_TUPLE1_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_142(xed_encoder_request_t* xes)
 {
@@ -3303,8 +3309,9 @@ void xed_encode_instruction_emit_pattern_142(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_TUPLE1_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_143(xed_encoder_request_t* xes)
 {
@@ -3313,9 +3320,8 @@ void xed_encode_instruction_emit_pattern_143(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_TUPLE1_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_MEM128_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_144(xed_encoder_request_t* xes)
 {
@@ -3324,8 +3330,8 @@ void xed_encode_instruction_emit_pattern_144(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_MEM128_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_145(xed_encoder_request_t* xes)
 {
@@ -3334,8 +3340,8 @@ void xed_encode_instruction_emit_pattern_145(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_MEM128_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_146(xed_encoder_request_t* xes)
 {
@@ -3344,8 +3350,9 @@ void xed_encode_instruction_emit_pattern_146(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_READER_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_147(xed_encoder_request_t* xes)
 {
@@ -3354,8 +3361,9 @@ void xed_encode_instruction_emit_pattern_147(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_148(xed_encoder_request_t* xes)
 {
@@ -3364,8 +3372,8 @@ void xed_encode_instruction_emit_pattern_148(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_READER_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_TUPLE2_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_149(xed_encoder_request_t* xes)
 {
@@ -3374,8 +3382,8 @@ void xed_encode_instruction_emit_pattern_149(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_HALFMEM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_150(xed_encoder_request_t* xes)
 {
@@ -3384,8 +3392,8 @@ void xed_encode_instruction_emit_pattern_150(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_MOVDDUP_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_QUARTERMEM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_151(xed_encoder_request_t* xes)
 {
@@ -3395,7 +3403,7 @@ void xed_encode_instruction_emit_pattern_151(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xes);
+       xed_encode_nonterminal_NELEM_EIGHTHMEM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_152(xed_encoder_request_t* xes)
 {
@@ -3405,7 +3413,7 @@ void xed_encode_instruction_emit_pattern_152(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xes);
+       xed_encode_nonterminal_NELEM_HALFMEM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_153(xed_encoder_request_t* xes)
 {
@@ -3414,9 +3422,8 @@ void xed_encode_instruction_emit_pattern_153(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
        xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xes);
+       xed_encode_nonterminal_NELEM_QUARTERMEM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_154(xed_encoder_request_t* xes)
 {
@@ -3425,8 +3432,8 @@ void xed_encode_instruction_emit_pattern_154(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_MEM128_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_HALFMEM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_155(xed_encoder_request_t* xes)
 {
@@ -3435,8 +3442,9 @@ void xed_encode_instruction_emit_pattern_155(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_MEM128_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_156(xed_encoder_request_t* xes)
 {
@@ -3445,8 +3453,9 @@ void xed_encode_instruction_emit_pattern_156(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_MEM128_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_157(xed_encoder_request_t* xes)
 {
@@ -3455,8 +3464,7 @@ void xed_encode_instruction_emit_pattern_157(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_128_BITS_EMIT(xes);
        xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_158(xed_encoder_request_t* xes)
@@ -3467,8 +3475,8 @@ void xed_encode_instruction_emit_pattern_158(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_HALFMEM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_159(xed_encoder_request_t* xes)
 {
@@ -3476,9 +3484,7 @@ void xed_encode_instruction_emit_pattern_159(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_TUPLE2_EMIT(xes);
+       xed_encode_nonterminal_VMODRM_XMM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_160(xed_encoder_request_t* xes)
 {
@@ -3486,9 +3492,9 @@ void xed_encode_instruction_emit_pattern_160(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_HALFMEM_EMIT(xes);
+       xed_encode_nonterminal_UISA_VMODRM_YMM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_161(xed_encoder_request_t* xes)
 {
@@ -3496,9 +3502,9 @@ void xed_encode_instruction_emit_pattern_161(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_QUARTERMEM_EMIT(xes);
+       xed_encode_nonterminal_UISA_VMODRM_XMM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_162(xed_encoder_request_t* xes)
 {
@@ -3506,9 +3512,7 @@ void xed_encode_instruction_emit_pattern_162(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_EIGHTHMEM_EMIT(xes);
+       xed_encode_nonterminal_VMODRM_YMM_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_163(xed_encoder_request_t* xes)
 {
@@ -3516,9 +3520,9 @@ void xed_encode_instruction_emit_pattern_163(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_HALFMEM_EMIT(xes);
+       xed_encode_nonterminal_UISA_VMODRM_ZMM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_164(xed_encoder_request_t* xes)
 {
@@ -3526,9 +3530,9 @@ void xed_encode_instruction_emit_pattern_164(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_QUARTERMEM_EMIT(xes);
+       xed_encode_nonterminal_UISA_VMODRM_XMM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_165(xed_encoder_request_t* xes)
 {
@@ -3536,9 +3540,9 @@ void xed_encode_instruction_emit_pattern_165(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_UISA_VMODRM_YMM_EMIT(xes);
        xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_HALFMEM_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_166(xed_encoder_request_t* xes)
 {
@@ -3546,10 +3550,9 @@ void xed_encode_instruction_emit_pattern_166(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_BYTE_EMIT(xes);
+       xed_encode_nonterminal_UISA_VMODRM_ZMM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_167(xed_encoder_request_t* xes)
 {
@@ -3558,9 +3561,8 @@ void xed_encode_instruction_emit_pattern_167(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_WORD_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_168(xed_encoder_request_t* xes)
 {
@@ -3569,9 +3571,8 @@ void xed_encode_instruction_emit_pattern_168(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_169(xed_encoder_request_t* xes)
 {
@@ -3579,32 +3580,28 @@ void xed_encode_instruction_emit_pattern_169(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_READER_BYTE_EMIT(xes);
+       xed_encode_nonterminal_BRDISPz_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_170(xed_encoder_request_t* xes)
 {
+       xed_encoder_request_emit_bytes(xes,8,0x0f);
+       xed_encoder_request_emit_bytes(xes,8,0x38);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_READER_WORD_EMIT(xes);
+       xed_encode_nonterminal_IMMUNE66_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_171(xed_encoder_request_t* xes)
 {
+       xed_encoder_request_emit_bytes(xes,8,0x0f);
+       xed_encoder_request_emit_bytes(xes,8,0x38);
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_READER_EMIT(xes);
+       xed_encode_nonterminal_IMMUNE66_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_172(xed_encoder_request_t* xes)
 {
@@ -3613,9 +3610,8 @@ void xed_encode_instruction_emit_pattern_172(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_READER_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_TUPLE4_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_173(xed_encoder_request_t* xes)
 {
@@ -3624,8 +3620,8 @@ void xed_encode_instruction_emit_pattern_173(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_128_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_TUPLE4_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_174(xed_encoder_request_t* xes)
 {
@@ -3635,8 +3631,8 @@ void xed_encode_instruction_emit_pattern_174(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_HALFMEM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_TUPLE4_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_175(xed_encoder_request_t* xes)
 {
@@ -3644,7 +3640,10 @@ void xed_encode_instruction_emit_pattern_175(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_VMODRM_XMM_EMIT(xes);
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_TUPLE4_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_176(xed_encoder_request_t* xes)
 {
@@ -3652,9 +3651,9 @@ void xed_encode_instruction_emit_pattern_176(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_UISA_VMODRM_YMM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GSCAT_EMIT(xes);
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_TUPLE8_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_177(xed_encoder_request_t* xes)
 {
@@ -3662,9 +3661,9 @@ void xed_encode_instruction_emit_pattern_177(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_UISA_VMODRM_XMM_EMIT(xes);
+       xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GSCAT_EMIT(xes);
+       xed_encode_nonterminal_NELEM_TUPLE2_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_178(xed_encoder_request_t* xes)
 {
@@ -3672,7 +3671,10 @@ void xed_encode_instruction_emit_pattern_178(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_VMODRM_YMM_EMIT(xes);
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_TUPLE8_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_179(xed_encoder_request_t* xes)
 {
@@ -3680,9 +3682,10 @@ void xed_encode_instruction_emit_pattern_179(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_UISA_VMODRM_ZMM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GSCAT_EMIT(xes);
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_TUPLE2_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_180(xed_encoder_request_t* xes)
 {
@@ -3690,9 +3693,8 @@ void xed_encode_instruction_emit_pattern_180(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_UISA_VMODRM_XMM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GSCAT_EMIT(xes);
+       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_181(xed_encoder_request_t* xes)
 {
@@ -3700,9 +3702,11 @@ void xed_encode_instruction_emit_pattern_181(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_UISA_VMODRM_YMM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GSCAT_EMIT(xes);
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_182(xed_encoder_request_t* xes)
 {
@@ -3710,9 +3714,11 @@ void xed_encode_instruction_emit_pattern_182(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_UISA_VMODRM_ZMM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GSCAT_EMIT(xes);
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_183(xed_encoder_request_t* xes)
 {
@@ -3720,50 +3726,10 @@ void xed_encode_instruction_emit_pattern_183(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_TUPLE1_BYTE_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_EVEXR4_ONE_EMIT(xes);
 }
 void xed_encode_instruction_emit_pattern_184(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_TUPLE1_WORD_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_185(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_BRDISPz_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_186(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,0x0f);
-       xed_encoder_request_emit_bytes(xes,8,0x38);
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_IMMUNE66_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_187(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,0x0f);
-       xed_encoder_request_emit_bytes(xes,8,0x38);
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_IMMUNE66_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_188(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
@@ -3773,193 +3739,51 @@ void xed_encode_instruction_emit_pattern_188(xed_encoder_request_t* xes)
        xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
        xed_encode_nonterminal_NELEM_TUPLE1_4X_EMIT(xes);
 }
+void xed_encode_instruction_emit_pattern_185(xed_encoder_request_t* xes)
+{
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_FULL_EMIT(xes);
+}
+void xed_encode_instruction_emit_pattern_186(xed_encoder_request_t* xes)
+{
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
+}
+void xed_encode_instruction_emit_pattern_187(xed_encoder_request_t* xes)
+{
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_FULL_EMIT(xes);
+}
+void xed_encode_instruction_emit_pattern_188(xed_encoder_request_t* xes)
+{
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
+       xed_encode_nonterminal_UIMM8_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
+}
 void xed_encode_instruction_emit_pattern_189(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_TUPLE4_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_190(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_TUPLE4_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_191(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GSCAT_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_192(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GSCAT_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_193(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_TUPLE4_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_194(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_TUPLE4_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_195(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_TUPLE8_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_196(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_TUPLE2_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_197(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_TUPLE8_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_198(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_TUPLE2_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_199(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_EVEXR4_ONE_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_200(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GSCAT_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_201(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GSCAT_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_202(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_FULL_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_203(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_SCALAR_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_204(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_FULL_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_205(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_206(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
-       xed_encode_nonterminal_UIMM8_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_SCALAR_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_207(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
@@ -3969,7 +3793,7 @@ void xed_encode_instruction_emit_pattern_207(xed_encoder_request_t* xes)
        xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
        xed_encode_nonterminal_NELEM_HALF_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_208(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_190(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
@@ -3979,7 +3803,7 @@ void xed_encode_instruction_emit_pattern_208(xed_encoder_request_t* xes)
        xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
        xed_encode_nonterminal_NELEM_QUARTER_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_209(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_191(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
@@ -3988,9 +3812,9 @@ void xed_encode_instruction_emit_pattern_209(xed_encoder_request_t* xes)
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
        xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_SCALAR_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_210(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_192(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
@@ -3999,7 +3823,7 @@ void xed_encode_instruction_emit_pattern_210(xed_encoder_request_t* xes)
        xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
        xed_encode_nonterminal_EVEXR4_ONE_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_211(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_193(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
@@ -4008,10 +3832,10 @@ void xed_encode_instruction_emit_pattern_211(xed_encoder_request_t* xes)
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
        xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_D_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
        xed_encode_nonterminal_EVEXR4_ONE_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_212(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_194(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
@@ -4020,51 +3844,64 @@ void xed_encode_instruction_emit_pattern_212(xed_encoder_request_t* xes)
        xed_encode_nonterminal_MODRM_EMIT(xes);
        xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
        xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_READER_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_213(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_195(xed_encoder_request_t* xes)
+{
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_EVAPX_SCC_EMIT(xes);
+}
+void xed_encode_instruction_emit_pattern_196(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_READER_EMIT(xes);
+       xed_encode_nonterminal_EVAPX_SCC_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_214(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_197(xed_encoder_request_t* xes)
+{
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_EVAPX_SCC_EMIT(xes);
+       xed_encode_nonterminal_SIMM8_EMIT(xes);
+}
+void xed_encode_instruction_emit_pattern_198(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_SCALAR_EMIT(xes);
+       xed_encode_nonterminal_EVAPX_SCC_EMIT(xes);
+       xed_encode_nonterminal_SIMM8_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_215(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_199(xed_encoder_request_t* xes)
+{
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_EVAPX_SCC_EMIT(xes);
+       xed_encode_nonterminal_SIMMz_EMIT(xes);
+}
+void xed_encode_instruction_emit_pattern_200(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_READER_EMIT(xes);
+       xed_encode_nonterminal_EVAPX_SCC_EMIT(xes);
+       xed_encode_nonterminal_SIMMz_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_216(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_ESIZE_16_BITS_EMIT(xes);
-       xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_217(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_201(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,0x0f);
        xed_encoder_request_emit_bytes(xes,8,0x38);
@@ -4074,72 +3911,42 @@ void xed_encode_instruction_emit_pattern_217(xed_encoder_request_t* xes)
        xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
        xed_encode_nonterminal_DF64_EMIT(xes);
 }
-void xed_encode_instruction_emit_pattern_218(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_EVAPX_EMIT(xes);
-       xed_encode_nonterminal_UIMM32_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_219(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_EVAPX_SCC_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_220(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_EVAPX_SCC_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_221(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_EVAPX_SCC_EMIT(xes);
-       xed_encode_nonterminal_SIMM8_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_222(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_EVAPX_SCC_EMIT(xes);
-       xed_encode_nonterminal_SIMM8_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_223(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_EVAPX_SCC_EMIT(xes);
-       xed_encode_nonterminal_SIMMz_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_224(xed_encoder_request_t* xes)
-{
-       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
-       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
-       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
-       xed_encode_nonterminal_MODRM_EMIT(xes);
-       xed_encode_nonterminal_EVAPX_SCC_EMIT(xes);
-       xed_encode_nonterminal_SIMMz_EMIT(xes);
-}
-void xed_encode_instruction_emit_pattern_225(xed_encoder_request_t* xes)
+void xed_encode_instruction_emit_pattern_202(xed_encoder_request_t* xes)
 {
        xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
        xed_encode_nonterminal_BRDISP64_EMIT(xes);
+}
+void xed_encode_instruction_emit_pattern_203(xed_encoder_request_t* xes)
+{
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_8_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_HALF_EMIT(xes);
+}
+void xed_encode_instruction_emit_pattern_204(xed_encoder_request_t* xes)
+{
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_64_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
+       xed_encode_nonterminal_EVEXR4_ONE_EMIT(xes);
+}
+void xed_encode_instruction_emit_pattern_205(xed_encoder_request_t* xes)
+{
+       xed_encoder_request_emit_bytes(xes,8,xed_encoder_get_nominal_opcode(xes));
+       xed_encoder_request_encode_emit(xes, 2, xed3_operand_get_mod(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_reg(xes));
+       xed_encoder_request_encode_emit(xes, 3, xed3_operand_get_rm(xes));
+       xed_encode_nonterminal_MODRM_EMIT(xes);
+       xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xes);
+       xed_encode_nonterminal_ESIZE_32_BITS_EMIT(xes);
+       xed_encode_nonterminal_NELEM_ONE_EMIT(xes);
+       xed_encode_nonterminal_EVEXR4_ONE_EMIT(xes);
 }

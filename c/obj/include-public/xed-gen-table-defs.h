@@ -7,7 +7,7 @@
 # define XED_GEN_TABLE_DEFS_H
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -22,17 +22,17 @@ Copyright (c) 2024 Intel Corporation
   limitations under the License.
   
 END_LEGAL */
-#define XED_ICLASS_NAME_STR_MAX 142
-#define XED_MAX_ATTRIBUTE_COUNT 103
-#define XED_MAX_INST_TABLE_NODES 10190
-#define XED_MAX_OPERAND_TABLE_NODES 1669
-#define XED_MAX_OPERAND_SEQUENCES 10121
+#define XED_ICLASS_NAME_STR_MAX 178
+#define XED_MAX_ATTRIBUTE_COUNT 105
+#define XED_MAX_INST_TABLE_NODES 10895
+#define XED_MAX_OPERAND_TABLE_NODES 1756
+#define XED_MAX_OPERAND_SEQUENCES 10878
 #define XED_MAX_REQUIRED_SIMPLE_FLAGS_ENTRIES 101
 #define XED_MAX_REQUIRED_COMPLEX_FLAGS_ENTRIES 149
 #define XED_MAX_GLOBAL_FLAG_ACTIONS 492
 #define XED_MAX_IFORMS_PER_ICLASS 48
-#define XED_MAX_REQUIRED_ATTRIBUTES 262
-#define XED_MAX_CONVERT_PATTERNS 5
+#define XED_MAX_REQUIRED_ATTRIBUTES 293
+#define XED_MAX_CONVERT_PATTERNS 7
 #define XED_MAX_DECORATIONS_PER_OPERAND 3
 #define XED_MAX_MAP_VEX  7
 #define XED_MAX_MAP_EVEX 7

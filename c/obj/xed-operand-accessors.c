@@ -52,6 +52,9 @@ XED_DLL_EXPORT void xed3_get_generic_operand(const xed_decoded_inst_t* d, xed_op
     case XED_OPERAND_DF64:
        *((xed_bits_t*)ret_arg)=xed3_operand_get_df64(d);
        break;
+    case XED_OPERAND_DFV:
+       *((xed_bits_t*)ret_arg)=xed3_operand_get_dfv(d);
+       break;
     case XED_OPERAND_DISP:
        *((xed_int64_t*)ret_arg)=xed3_operand_get_disp(d);
        break;
@@ -72,6 +75,9 @@ XED_DLL_EXPORT void xed3_get_generic_operand(const xed_decoded_inst_t* d, xed_op
        break;
     case XED_OPERAND_ENCODE_FORCE:
        *((xed_bits_t*)ret_arg)=xed3_operand_get_encode_force(d);
+       break;
+    case XED_OPERAND_ENC_DELETE:
+       *((xed_bits_t*)ret_arg)=xed3_operand_get_enc_delete(d);
        break;
     case XED_OPERAND_EOSZ:
        *((xed_bits_t*)ret_arg)=xed3_operand_get_eosz(d);
@@ -169,9 +175,6 @@ XED_DLL_EXPORT void xed3_get_generic_operand(const xed_decoded_inst_t* d, xed_op
     case XED_OPERAND_MODEP5:
        *((xed_bits_t*)ret_arg)=xed3_operand_get_modep5(d);
        break;
-    case XED_OPERAND_MODEP55C:
-       *((xed_bits_t*)ret_arg)=xed3_operand_get_modep55c(d);
-       break;
     case XED_OPERAND_MODE_FIRST_PREFIX:
        *((xed_bits_t*)ret_arg)=xed3_operand_get_mode_first_prefix(d);
        break;
@@ -261,6 +264,12 @@ XED_DLL_EXPORT void xed3_get_generic_operand(const xed_decoded_inst_t* d, xed_op
        break;
     case XED_OPERAND_POS_SIB:
        *((xed_bits_t*)ret_arg)=xed3_operand_get_pos_sib(d);
+       break;
+    case XED_OPERAND_PREFETCHIT:
+       *((xed_bits_t*)ret_arg)=xed3_operand_get_prefetchit(d);
+       break;
+    case XED_OPERAND_PREFETCHRST:
+       *((xed_bits_t*)ret_arg)=xed3_operand_get_prefetchrst(d);
        break;
     case XED_OPERAND_PREFIX66:
        *((xed_bits_t*)ret_arg)=xed3_operand_get_prefix66(d);
@@ -480,6 +489,9 @@ XED_DLL_EXPORT void xed3_set_generic_operand(xed_decoded_inst_t* d, xed_operand_
     case XED_OPERAND_DF64:
        xed3_operand_set_df64(d,(xed_bits_t)val);
        break;
+    case XED_OPERAND_DFV:
+       xed3_operand_set_dfv(d,(xed_bits_t)val);
+       break;
     case XED_OPERAND_DISP:
        xed3_operand_set_disp(d,(xed_int64_t)val);
        break;
@@ -500,6 +512,9 @@ XED_DLL_EXPORT void xed3_set_generic_operand(xed_decoded_inst_t* d, xed_operand_
        break;
     case XED_OPERAND_ENCODE_FORCE:
        xed3_operand_set_encode_force(d,(xed_bits_t)val);
+       break;
+    case XED_OPERAND_ENC_DELETE:
+       xed3_operand_set_enc_delete(d,(xed_bits_t)val);
        break;
     case XED_OPERAND_EOSZ:
        xed3_operand_set_eosz(d,(xed_bits_t)val);
@@ -597,9 +612,6 @@ XED_DLL_EXPORT void xed3_set_generic_operand(xed_decoded_inst_t* d, xed_operand_
     case XED_OPERAND_MODEP5:
        xed3_operand_set_modep5(d,(xed_bits_t)val);
        break;
-    case XED_OPERAND_MODEP55C:
-       xed3_operand_set_modep55c(d,(xed_bits_t)val);
-       break;
     case XED_OPERAND_MODE_FIRST_PREFIX:
        xed3_operand_set_mode_first_prefix(d,(xed_bits_t)val);
        break;
@@ -689,6 +701,12 @@ XED_DLL_EXPORT void xed3_set_generic_operand(xed_decoded_inst_t* d, xed_operand_
        break;
     case XED_OPERAND_POS_SIB:
        xed3_operand_set_pos_sib(d,(xed_bits_t)val);
+       break;
+    case XED_OPERAND_PREFETCHIT:
+       xed3_operand_set_prefetchit(d,(xed_bits_t)val);
+       break;
+    case XED_OPERAND_PREFETCHRST:
+       xed3_operand_set_prefetchrst(d,(xed_bits_t)val);
        break;
     case XED_OPERAND_PREFIX66:
        xed3_operand_set_prefix66(d,(xed_bits_t)val);

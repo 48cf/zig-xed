@@ -7,7 +7,7 @@
 # define INCLUDE_PRIVATE_XED3_PHASH_VV3_H
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -152,8 +152,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0x85_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0x85 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2214},
-/*h(1)=1 XOPV 0x85 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2215}
+/*h(0)=0 XOPV 0x85 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2244},
+/*h(1)=1 XOPV 0x85 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2245}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -170,8 +170,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0x86_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0x86 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2216},
-/*h(1)=1 XOPV 0x86 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2217}
+/*h(0)=0 XOPV 0x86 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2246},
+/*h(1)=1 XOPV 0x86 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2247}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -188,8 +188,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0x87_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0x87 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2218},
-/*h(1)=1 XOPV 0x87 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2219}
+/*h(0)=0 XOPV 0x87 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2248},
+/*h(1)=1 XOPV 0x87 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2249}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -206,8 +206,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0x8e_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0x8E VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2266},
-/*h(1)=1 XOPV 0x8E VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2267}
+/*h(0)=0 XOPV 0x8E VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2296},
+/*h(1)=1 XOPV 0x8E VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2297}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -224,8 +224,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0x8f_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0x8F VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2268},
-/*h(1)=1 XOPV 0x8F VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2269}
+/*h(0)=0 XOPV 0x8F VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2298},
+/*h(1)=1 XOPV 0x8F VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2299}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -242,8 +242,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0x95_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0x95 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2220},
-/*h(1)=1 XOPV 0x95 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2221}
+/*h(0)=0 XOPV 0x95 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2250},
+/*h(1)=1 XOPV 0x95 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2251}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -260,8 +260,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0x96_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0x96 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2222},
-/*h(1)=1 XOPV 0x96 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2223}
+/*h(0)=0 XOPV 0x96 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2252},
+/*h(1)=1 XOPV 0x96 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2253}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -278,8 +278,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0x97_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0x97 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2224},
-/*h(1)=1 XOPV 0x97 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2225}
+/*h(0)=0 XOPV 0x97 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2254},
+/*h(1)=1 XOPV 0x97 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2255}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -296,8 +296,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0x9e_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0x9E VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2270},
-/*h(1)=1 XOPV 0x9E VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2271}
+/*h(0)=0 XOPV 0x9E VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2300},
+/*h(1)=1 XOPV 0x9E VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2301}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -314,8 +314,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0x9f_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0x9F VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2272},
-/*h(1)=1 XOPV 0x9F VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2273}
+/*h(0)=0 XOPV 0x9F VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2302},
+/*h(1)=1 XOPV 0x9F VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2303}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -332,19 +332,19 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xa2_vv3(const xed_decoded
 {
 typedef struct {xed_uint32_t key; xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[14] = {
-/*h(0)=0 XOPV 0xA2 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {0, 2226},
-/*h(18)=1 XOPV 0xA2 VNP W1 VL256  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {18, 2232},
+/*h(0)=0 XOPV 0xA2 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {0, 2256},
+/*h(18)=1 XOPV 0xA2 VNP W1 VL256  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {18, 2262},
 /*empty slot1 */ {0,0},
-/*h(2)=3 XOPV 0xA2 VNP W1 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2, 2228},
+/*h(2)=3 XOPV 0xA2 VNP W1 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2, 2258},
 /*empty slot1 */ {0,0},
 /*empty slot1 */ {0,0},
 /*empty slot1 */ {0,0},
-/*h(17)=7 XOPV 0xA2 VNP W0 VL256  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {17, 2231},
-/*h(1)=8 XOPV 0xA2 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {1, 2227},
+/*h(17)=7 XOPV 0xA2 VNP W0 VL256  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {17, 2261},
+/*h(1)=8 XOPV 0xA2 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {1, 2257},
 /*empty slot1 */ {0,0},
-/*h(19)=10 XOPV 0xA2 VNP W1 VL256  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {19, 2233},
-/*h(3)=11 XOPV 0xA2 VNP W1 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {3, 2229},
-/*h(16)=12 XOPV 0xA2 VNP W0 VL256  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {16, 2230},
+/*h(19)=10 XOPV 0xA2 VNP W1 VL256  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {19, 2263},
+/*h(3)=11 XOPV 0xA2 VNP W1 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {3, 2259},
+/*h(16)=12 XOPV 0xA2 VNP W0 VL256  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {16, 2260},
 /*empty slot1 */ {0,0}
 };
 xed_union64_t t, u;
@@ -363,10 +363,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xa3_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(0)=0 XOPV 0xA3 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2234},
-/*h(1)=1 XOPV 0xA3 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2235},
-/*h(2)=2 XOPV 0xA3 VNP W1 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2236},
-/*h(3)=3 XOPV 0xA3 VNP W1 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2237}
+/*h(0)=0 XOPV 0xA3 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2264},
+/*h(1)=1 XOPV 0xA3 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2265},
+/*h(2)=2 XOPV 0xA3 VNP W1 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2266},
+/*h(3)=3 XOPV 0xA3 VNP W1 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2267}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -383,8 +383,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xa6_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0xA6 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2238},
-/*h(1)=1 XOPV 0xA6 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2239}
+/*h(0)=0 XOPV 0xA6 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2268},
+/*h(1)=1 XOPV 0xA6 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2269}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -401,8 +401,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xb6_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0xB6 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2240},
-/*h(1)=1 XOPV 0xB6 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2241}
+/*h(0)=0 XOPV 0xB6 VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() SE_IMM8()*/ {2270},
+/*h(1)=1 XOPV 0xB6 VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] SE_IMM8()*/ {2271}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -419,8 +419,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xc0_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xC0 VNP W0 VL128 NOVSR XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2242},
-/*h(13)=1 XOPV 0xC0 VNP W0 VL128 NOVSR XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2243}
+/*h(12)=0 XOPV 0xC0 VNP W0 VL128 NOVSR XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2272},
+/*h(13)=1 XOPV 0xC0 VNP W0 VL128 NOVSR XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2273}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -437,8 +437,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xc1_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xC1 VNP W0 VL128 NOVSR XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2248},
-/*h(13)=1 XOPV 0xC1 VNP W0 VL128 NOVSR XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2249}
+/*h(12)=0 XOPV 0xC1 VNP W0 VL128 NOVSR XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2278},
+/*h(13)=1 XOPV 0xC1 VNP W0 VL128 NOVSR XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2279}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -455,8 +455,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xc2_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xC2 VNP W0 VL128 NOVSR XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2254},
-/*h(13)=1 XOPV 0xC2 VNP W0 VL128 NOVSR XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2255}
+/*h(12)=0 XOPV 0xC2 VNP W0 VL128 NOVSR XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2284},
+/*h(13)=1 XOPV 0xC2 VNP W0 VL128 NOVSR XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2285}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -473,8 +473,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xc3_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xC3 VNP W0 VL128 NOVSR XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2260},
-/*h(13)=1 XOPV 0xC3 VNP W0 VL128 NOVSR XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2261}
+/*h(12)=0 XOPV 0xC3 VNP W0 VL128 NOVSR XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2290},
+/*h(13)=1 XOPV 0xC3 VNP W0 VL128 NOVSR XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2291}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -491,8 +491,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xcc_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0xCC VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2274},
-/*h(1)=1 XOPV 0xCC VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2275}
+/*h(0)=0 XOPV 0xCC VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2304},
+/*h(1)=1 XOPV 0xCC VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2305}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -509,8 +509,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xcd_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0xCD VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2276},
-/*h(1)=1 XOPV 0xCD VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2277}
+/*h(0)=0 XOPV 0xCD VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2306},
+/*h(1)=1 XOPV 0xCD VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2307}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -527,8 +527,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xce_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0xCE VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2278},
-/*h(1)=1 XOPV 0xCE VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2279}
+/*h(0)=0 XOPV 0xCE VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2308},
+/*h(1)=1 XOPV 0xCE VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2309}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -545,8 +545,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xcf_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0xCF VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2280},
-/*h(1)=1 XOPV 0xCF VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2281}
+/*h(0)=0 XOPV 0xCF VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2310},
+/*h(1)=1 XOPV 0xCF VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2311}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -563,8 +563,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xec_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0xEC VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2282},
-/*h(1)=1 XOPV 0xEC VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2283}
+/*h(0)=0 XOPV 0xEC VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2312},
+/*h(1)=1 XOPV 0xEC VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2313}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -581,8 +581,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xed_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0xED VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2284},
-/*h(1)=1 XOPV 0xED VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2285}
+/*h(0)=0 XOPV 0xED VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2314},
+/*h(1)=1 XOPV 0xED VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2315}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -599,8 +599,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xee_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0xEE VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2286},
-/*h(1)=1 XOPV 0xEE VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2287}
+/*h(0)=0 XOPV 0xEE VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2316},
+/*h(1)=1 XOPV 0xEE VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2317}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -617,8 +617,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop8_opcode0xef_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(0)=0 XOPV 0xEF VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2288},
-/*h(1)=1 XOPV 0xEF VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2289}
+/*h(0)=0 XOPV 0xEF VNP W0 VL128  XMAP8 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM8()*/ {2318},
+/*h(1)=1 XOPV 0xEF VNP W0 VL128  XMAP8 MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM8()*/ {2319}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -635,60 +635,60 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x1_vv3(const xed_decoded_
 {
 typedef struct {xed_uint32_t key; xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[55] = {
-/*h(34)=0 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b100] RM[nnn] MODRM()*/ {34, 2380},
-/*h(13)=1 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b001] RM[nnn]*/ {13, 2371},
+/*h(34)=0 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b100] RM[nnn] MODRM()*/ {34, 2410},
+/*h(13)=1 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b001] RM[nnn]*/ {13, 2401},
 /*empty slot1 */ {0,0},
-/*h(26)=3 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b011] RM[nnn] MODRM()*/ {26, 2376},
-/*h(60)=4 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b111] RM[nnn] MODRM()*/ {60, 2393},
+/*h(26)=3 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b011] RM[nnn] MODRM()*/ {26, 2406},
+/*h(60)=4 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b111] RM[nnn] MODRM()*/ {60, 2423},
 /*empty slot1 */ {0,0},
-/*h(18)=6 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b010] RM[nnn] MODRM()*/ {18, 2372},
-/*h(52)=7 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b110] RM[nnn] MODRM()*/ {52, 2389},
+/*h(18)=6 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b010] RM[nnn] MODRM()*/ {18, 2402},
+/*h(52)=7 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b110] RM[nnn] MODRM()*/ {52, 2419},
 /*empty slot1 */ {0,0},
-/*h(10)=9 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b001] RM[nnn] MODRM()*/ {10, 2368},
-/*h(44)=10 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b101] RM[nnn] MODRM()*/ {44, 2385},
+/*h(10)=9 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b001] RM[nnn] MODRM()*/ {10, 2398},
+/*h(44)=10 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b101] RM[nnn] MODRM()*/ {44, 2415},
 /*empty slot1 */ {0,0},
-/*h(57)=12 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b111] RM[nnn]*/ {57, 2394},
-/*h(36)=13 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b100] RM[nnn] MODRM()*/ {36, 2381},
+/*h(57)=12 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b111] RM[nnn]*/ {57, 2424},
+/*h(36)=13 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b100] RM[nnn] MODRM()*/ {36, 2411},
 /*empty slot1 */ {0,0},
-/*h(49)=15 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b110] RM[nnn]*/ {49, 2390},
-/*h(28)=16 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b011] RM[nnn] MODRM()*/ {28, 2377},
+/*h(49)=15 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b110] RM[nnn]*/ {49, 2420},
+/*h(28)=16 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b011] RM[nnn] MODRM()*/ {28, 2407},
 /*empty slot1 */ {0,0},
-/*h(41)=18 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b101] RM[nnn]*/ {41, 2386},
-/*h(20)=19 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b010] RM[nnn] MODRM()*/ {20, 2373},
+/*h(41)=18 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b101] RM[nnn]*/ {41, 2416},
+/*h(20)=19 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b010] RM[nnn] MODRM()*/ {20, 2403},
 /*empty slot1 */ {0,0},
-/*h(33)=21 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b100] RM[nnn]*/ {33, 2382},
-/*h(12)=22 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b001] RM[nnn] MODRM()*/ {12, 2369},
+/*h(33)=21 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b100] RM[nnn]*/ {33, 2412},
+/*h(12)=22 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b001] RM[nnn] MODRM()*/ {12, 2399},
 /*empty slot1 */ {0,0},
-/*h(25)=24 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b011] RM[nnn]*/ {25, 2378},
-/*h(59)=25 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b111] RM[nnn]*/ {59, 2394},
+/*h(25)=24 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b011] RM[nnn]*/ {25, 2408},
+/*h(59)=25 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b111] RM[nnn]*/ {59, 2424},
 /*empty slot1 */ {0,0},
-/*h(17)=27 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b010] RM[nnn]*/ {17, 2374},
-/*h(51)=28 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b110] RM[nnn]*/ {51, 2390},
+/*h(17)=27 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b010] RM[nnn]*/ {17, 2404},
+/*h(51)=28 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b110] RM[nnn]*/ {51, 2420},
 /*empty slot1 */ {0,0},
-/*h(9)=30 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b001] RM[nnn]*/ {9, 2370},
-/*h(43)=31 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b101] RM[nnn]*/ {43, 2386},
+/*h(9)=30 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b001] RM[nnn]*/ {9, 2400},
+/*h(43)=31 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b101] RM[nnn]*/ {43, 2416},
 /*empty slot1 */ {0,0},
-/*h(56)=33 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b111] RM[nnn] MODRM()*/ {56, 2392},
-/*h(35)=34 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b100] RM[nnn]*/ {35, 2382},
+/*h(56)=33 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b111] RM[nnn] MODRM()*/ {56, 2422},
+/*h(35)=34 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b100] RM[nnn]*/ {35, 2412},
 /*empty slot1 */ {0,0},
-/*h(48)=36 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b110] RM[nnn] MODRM()*/ {48, 2388},
-/*h(27)=37 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b011] RM[nnn]*/ {27, 2378},
-/*h(61)=38 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b111] RM[nnn]*/ {61, 2395},
-/*h(40)=39 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b101] RM[nnn] MODRM()*/ {40, 2384},
-/*h(19)=40 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b010] RM[nnn]*/ {19, 2374},
-/*h(53)=41 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b110] RM[nnn]*/ {53, 2391},
-/*h(32)=42 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b100] RM[nnn] MODRM()*/ {32, 2380},
-/*h(11)=43 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b001] RM[nnn]*/ {11, 2370},
-/*h(45)=44 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b101] RM[nnn]*/ {45, 2387},
-/*h(24)=45 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b011] RM[nnn] MODRM()*/ {24, 2376},
-/*h(58)=46 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b111] RM[nnn] MODRM()*/ {58, 2392},
-/*h(37)=47 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b100] RM[nnn]*/ {37, 2383},
-/*h(16)=48 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b010] RM[nnn] MODRM()*/ {16, 2372},
-/*h(50)=49 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b110] RM[nnn] MODRM()*/ {50, 2388},
-/*h(29)=50 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b011] RM[nnn]*/ {29, 2379},
-/*h(8)=51 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b001] RM[nnn] MODRM()*/ {8, 2368},
-/*h(42)=52 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b101] RM[nnn] MODRM()*/ {42, 2384},
-/*h(21)=53 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b010] RM[nnn]*/ {21, 2375},
+/*h(48)=36 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b110] RM[nnn] MODRM()*/ {48, 2418},
+/*h(27)=37 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b011] RM[nnn]*/ {27, 2408},
+/*h(61)=38 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b111] RM[nnn]*/ {61, 2425},
+/*h(40)=39 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b101] RM[nnn] MODRM()*/ {40, 2414},
+/*h(19)=40 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b010] RM[nnn]*/ {19, 2404},
+/*h(53)=41 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b110] RM[nnn]*/ {53, 2421},
+/*h(32)=42 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b100] RM[nnn] MODRM()*/ {32, 2410},
+/*h(11)=43 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b001] RM[nnn]*/ {11, 2400},
+/*h(45)=44 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b101] RM[nnn]*/ {45, 2417},
+/*h(24)=45 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b011] RM[nnn] MODRM()*/ {24, 2406},
+/*h(58)=46 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b111] RM[nnn] MODRM()*/ {58, 2422},
+/*h(37)=47 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b100] RM[nnn]*/ {37, 2413},
+/*h(16)=48 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b010] RM[nnn] MODRM()*/ {16, 2402},
+/*h(50)=49 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b110] RM[nnn] MODRM()*/ {50, 2418},
+/*h(29)=50 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b011] RM[nnn]*/ {29, 2409},
+/*h(8)=51 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b001] RM[nnn] MODRM()*/ {8, 2398},
+/*h(42)=52 XOPV 0x01 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b101] RM[nnn] MODRM()*/ {42, 2414},
+/*h(21)=53 XOPV 0x01 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b010] RM[nnn]*/ {21, 2405},
 /*empty slot1 */ {0,0}
 };
 xed_union64_t t, u;
@@ -707,23 +707,23 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x2_vv3(const xed_decoded_
 {
 typedef struct {xed_uint32_t key; xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[17] = {
-/*h(13)=0 XOPV 0x02 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b001] RM[nnn]*/ {13, 2399},
+/*h(13)=0 XOPV 0x02 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b001] RM[nnn]*/ {13, 2429},
 /*empty slot1 */ {0,0},
-/*h(52)=2 XOPV 0x02 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b110] RM[nnn] MODRM()*/ {52, 2401},
-/*h(10)=3 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b001] RM[nnn] MODRM()*/ {10, 2396},
-/*h(49)=4 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b110] RM[nnn]*/ {49, 2402},
+/*h(52)=2 XOPV 0x02 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b110] RM[nnn] MODRM()*/ {52, 2431},
+/*h(10)=3 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b001] RM[nnn] MODRM()*/ {10, 2426},
+/*h(49)=4 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b110] RM[nnn]*/ {49, 2432},
 /*empty slot1 */ {0,0},
 /*empty slot1 */ {0,0},
-/*h(12)=7 XOPV 0x02 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b001] RM[nnn] MODRM()*/ {12, 2397},
-/*h(51)=8 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b110] RM[nnn]*/ {51, 2402},
-/*h(9)=9 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b001] RM[nnn]*/ {9, 2398},
+/*h(12)=7 XOPV 0x02 VNP mode64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b001] RM[nnn] MODRM()*/ {12, 2427},
+/*h(51)=8 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b110] RM[nnn]*/ {51, 2432},
+/*h(9)=9 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b001] RM[nnn]*/ {9, 2428},
 /*empty slot1 */ {0,0},
-/*h(48)=11 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b110] RM[nnn] MODRM()*/ {48, 2400},
-/*h(53)=12 XOPV 0x02 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b110] RM[nnn]*/ {53, 2403},
-/*h(11)=13 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b001] RM[nnn]*/ {11, 2398},
+/*h(48)=11 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b110] RM[nnn] MODRM()*/ {48, 2430},
+/*h(53)=12 XOPV 0x02 VNP mode64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b110] RM[nnn]*/ {53, 2433},
+/*h(11)=13 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[0b11] MOD=3 REG[0b001] RM[nnn]*/ {11, 2428},
 /*empty slot1 */ {0,0},
-/*h(50)=15 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b110] RM[nnn] MODRM()*/ {50, 2400},
-/*h(8)=16 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b001] RM[nnn] MODRM()*/ {8, 2396}
+/*h(50)=15 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b110] RM[nnn] MODRM()*/ {50, 2430},
+/*h(8)=16 XOPV 0x02 VNP not64 VL128  XMAP9 MOD[mm] MOD!=3 REG[0b001] RM[nnn] MODRM()*/ {8, 2426}
 };
 xed_union64_t t, u;
 xed_uint64_t key = 0;
@@ -741,8 +741,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x12_vv3(const xed_decoded
 {
 typedef struct {xed_uint32_t key; xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(49)=0 XOPV 0x12 VNP VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[0b000] RM[nnn]*/ {49, 2404},
-/*h(51)=1 XOPV 0x12 VNP VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[0b001] RM[nnn]*/ {51, 2405}
+/*h(49)=0 XOPV 0x12 VNP VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[0b000] RM[nnn]*/ {49, 2434},
+/*h(51)=1 XOPV 0x12 VNP VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[0b001] RM[nnn]*/ {51, 2435}
 };
 xed_union64_t t;
 xed_uint64_t key = 0;
@@ -760,10 +760,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x80_vv3(const xed_decoded
 {
 typedef struct {xed_uint32_t key; xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(13)=0 XOPV 0x80 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {13, 2291},
-/*h(12)=1 XOPV 0x80 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {12, 2290},
-/*h(77)=2 XOPV 0x80 VNP W0 VL256 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {77, 2293},
-/*h(76)=3 XOPV 0x80 VNP W0 VL256 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {76, 2292}
+/*h(13)=0 XOPV 0x80 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {13, 2321},
+/*h(12)=1 XOPV 0x80 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {12, 2320},
+/*h(77)=2 XOPV 0x80 VNP W0 VL256 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {77, 2323},
+/*h(76)=3 XOPV 0x80 VNP W0 VL256 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {76, 2322}
 };
 xed_union64_t t;
 xed_uint64_t key = 0;
@@ -781,10 +781,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x81_vv3(const xed_decoded
 {
 typedef struct {xed_uint32_t key; xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(13)=0 XOPV 0x81 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {13, 2295},
-/*h(12)=1 XOPV 0x81 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {12, 2294},
-/*h(77)=2 XOPV 0x81 VNP W0 VL256 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {77, 2297},
-/*h(76)=3 XOPV 0x81 VNP W0 VL256 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {76, 2296}
+/*h(13)=0 XOPV 0x81 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {13, 2325},
+/*h(12)=1 XOPV 0x81 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {12, 2324},
+/*h(77)=2 XOPV 0x81 VNP W0 VL256 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {77, 2327},
+/*h(76)=3 XOPV 0x81 VNP W0 VL256 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {76, 2326}
 };
 xed_union64_t t;
 xed_uint64_t key = 0;
@@ -802,8 +802,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x82_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0x82 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2298},
-/*h(13)=1 XOPV 0x82 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2299}
+/*h(12)=0 XOPV 0x82 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2328},
+/*h(13)=1 XOPV 0x82 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2329}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -820,8 +820,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x83_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0x83 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2300},
-/*h(13)=1 XOPV 0x83 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2301}
+/*h(12)=0 XOPV 0x83 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2330},
+/*h(13)=1 XOPV 0x83 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2331}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -838,10 +838,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x90_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(0)=0 XOPV 0x90 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2244},
-/*h(1)=1 XOPV 0x90 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2245},
-/*h(2)=2 XOPV 0x90 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2246},
-/*h(3)=3 XOPV 0x90 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2247}
+/*h(0)=0 XOPV 0x90 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2274},
+/*h(1)=1 XOPV 0x90 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2275},
+/*h(2)=2 XOPV 0x90 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2276},
+/*h(3)=3 XOPV 0x90 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2277}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -858,10 +858,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x91_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(0)=0 XOPV 0x91 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2250},
-/*h(1)=1 XOPV 0x91 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2251},
-/*h(2)=2 XOPV 0x91 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2252},
-/*h(3)=3 XOPV 0x91 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2253}
+/*h(0)=0 XOPV 0x91 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2280},
+/*h(1)=1 XOPV 0x91 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2281},
+/*h(2)=2 XOPV 0x91 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2282},
+/*h(3)=3 XOPV 0x91 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2283}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -878,10 +878,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x92_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(0)=0 XOPV 0x92 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2256},
-/*h(1)=1 XOPV 0x92 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2257},
-/*h(2)=2 XOPV 0x92 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2258},
-/*h(3)=3 XOPV 0x92 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2259}
+/*h(0)=0 XOPV 0x92 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2286},
+/*h(1)=1 XOPV 0x92 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2287},
+/*h(2)=2 XOPV 0x92 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2288},
+/*h(3)=3 XOPV 0x92 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2289}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -898,10 +898,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x93_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(0)=0 XOPV 0x93 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2262},
-/*h(1)=1 XOPV 0x93 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2263},
-/*h(2)=2 XOPV 0x93 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2264},
-/*h(3)=3 XOPV 0x93 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2265}
+/*h(0)=0 XOPV 0x93 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2292},
+/*h(1)=1 XOPV 0x93 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2293},
+/*h(2)=2 XOPV 0x93 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2294},
+/*h(3)=3 XOPV 0x93 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2295}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -918,10 +918,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x94_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(0)=0 XOPV 0x94 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2302},
-/*h(1)=1 XOPV 0x94 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2303},
-/*h(2)=2 XOPV 0x94 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2304},
-/*h(3)=3 XOPV 0x94 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2305}
+/*h(0)=0 XOPV 0x94 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2332},
+/*h(1)=1 XOPV 0x94 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2333},
+/*h(2)=2 XOPV 0x94 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2334},
+/*h(3)=3 XOPV 0x94 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2335}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -938,10 +938,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x95_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(0)=0 XOPV 0x95 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2306},
-/*h(1)=1 XOPV 0x95 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2307},
-/*h(2)=2 XOPV 0x95 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2308},
-/*h(3)=3 XOPV 0x95 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2309}
+/*h(0)=0 XOPV 0x95 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2336},
+/*h(1)=1 XOPV 0x95 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2337},
+/*h(2)=2 XOPV 0x95 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2338},
+/*h(3)=3 XOPV 0x95 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2339}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -958,10 +958,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x96_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(0)=0 XOPV 0x96 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2310},
-/*h(1)=1 XOPV 0x96 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2311},
-/*h(2)=2 XOPV 0x96 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2312},
-/*h(3)=3 XOPV 0x96 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2313}
+/*h(0)=0 XOPV 0x96 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2340},
+/*h(1)=1 XOPV 0x96 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2341},
+/*h(2)=2 XOPV 0x96 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2342},
+/*h(3)=3 XOPV 0x96 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2343}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -978,10 +978,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x97_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(0)=0 XOPV 0x97 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2314},
-/*h(1)=1 XOPV 0x97 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2315},
-/*h(2)=2 XOPV 0x97 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2316},
-/*h(3)=3 XOPV 0x97 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2317}
+/*h(0)=0 XOPV 0x97 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2344},
+/*h(1)=1 XOPV 0x97 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2345},
+/*h(2)=2 XOPV 0x97 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2346},
+/*h(3)=3 XOPV 0x97 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2347}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -998,10 +998,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x98_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(0)=0 XOPV 0x98 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2344},
-/*h(1)=1 XOPV 0x98 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2345},
-/*h(2)=2 XOPV 0x98 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2346},
-/*h(3)=3 XOPV 0x98 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2347}
+/*h(0)=0 XOPV 0x98 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2374},
+/*h(1)=1 XOPV 0x98 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2375},
+/*h(2)=2 XOPV 0x98 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2376},
+/*h(3)=3 XOPV 0x98 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2377}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1018,10 +1018,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x99_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(0)=0 XOPV 0x99 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2348},
-/*h(1)=1 XOPV 0x99 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2349},
-/*h(2)=2 XOPV 0x99 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2350},
-/*h(3)=3 XOPV 0x99 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2351}
+/*h(0)=0 XOPV 0x99 VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2378},
+/*h(1)=1 XOPV 0x99 VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2379},
+/*h(2)=2 XOPV 0x99 VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2380},
+/*h(3)=3 XOPV 0x99 VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2381}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1038,10 +1038,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x9a_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(0)=0 XOPV 0x9A VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2352},
-/*h(1)=1 XOPV 0x9A VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2353},
-/*h(2)=2 XOPV 0x9A VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2354},
-/*h(3)=3 XOPV 0x9A VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2355}
+/*h(0)=0 XOPV 0x9A VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2382},
+/*h(1)=1 XOPV 0x9A VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2383},
+/*h(2)=2 XOPV 0x9A VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2384},
+/*h(3)=3 XOPV 0x9A VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2385}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1058,10 +1058,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0x9b_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(0)=0 XOPV 0x9B VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2356},
-/*h(1)=1 XOPV 0x9B VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2357},
-/*h(2)=2 XOPV 0x9B VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2358},
-/*h(3)=3 XOPV 0x9B VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2359}
+/*h(0)=0 XOPV 0x9B VNP W0 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2386},
+/*h(1)=1 XOPV 0x9B VNP W0 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2387},
+/*h(2)=2 XOPV 0x9B VNP W1 VL128  XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2388},
+/*h(3)=3 XOPV 0x9B VNP W1 VL128  XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2389}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1078,8 +1078,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0xc1_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xC1 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2318},
-/*h(13)=1 XOPV 0xC1 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2319}
+/*h(12)=0 XOPV 0xC1 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2348},
+/*h(13)=1 XOPV 0xC1 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2349}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1096,8 +1096,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0xc2_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xC2 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2320},
-/*h(13)=1 XOPV 0xC2 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2321}
+/*h(12)=0 XOPV 0xC2 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2350},
+/*h(13)=1 XOPV 0xC2 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2351}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1114,8 +1114,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0xc3_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xC3 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2322},
-/*h(13)=1 XOPV 0xC3 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2323}
+/*h(12)=0 XOPV 0xC3 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2352},
+/*h(13)=1 XOPV 0xC3 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2353}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1132,8 +1132,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0xc6_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xC6 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2324},
-/*h(13)=1 XOPV 0xC6 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2325}
+/*h(12)=0 XOPV 0xC6 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2354},
+/*h(13)=1 XOPV 0xC6 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2355}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1150,8 +1150,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0xc7_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xC7 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2326},
-/*h(13)=1 XOPV 0xC7 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2327}
+/*h(12)=0 XOPV 0xC7 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2356},
+/*h(13)=1 XOPV 0xC7 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2357}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1168,8 +1168,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0xcb_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xCB VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2360},
-/*h(13)=1 XOPV 0xCB VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2361}
+/*h(12)=0 XOPV 0xCB VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2390},
+/*h(13)=1 XOPV 0xCB VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2391}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1186,8 +1186,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0xd1_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xD1 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2328},
-/*h(13)=1 XOPV 0xD1 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2329}
+/*h(12)=0 XOPV 0xD1 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2358},
+/*h(13)=1 XOPV 0xD1 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2359}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1204,8 +1204,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0xd2_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xD2 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2330},
-/*h(13)=1 XOPV 0xD2 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2331}
+/*h(12)=0 XOPV 0xD2 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2360},
+/*h(13)=1 XOPV 0xD2 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2361}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1222,8 +1222,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0xd3_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xD3 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2332},
-/*h(13)=1 XOPV 0xD3 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2333}
+/*h(12)=0 XOPV 0xD3 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2362},
+/*h(13)=1 XOPV 0xD3 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2363}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1240,8 +1240,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0xd6_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xD6 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2334},
-/*h(13)=1 XOPV 0xD6 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2335}
+/*h(12)=0 XOPV 0xD6 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2364},
+/*h(13)=1 XOPV 0xD6 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2365}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1258,8 +1258,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0xd7_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xD7 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2336},
-/*h(13)=1 XOPV 0xD7 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2337}
+/*h(12)=0 XOPV 0xD7 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2366},
+/*h(13)=1 XOPV 0xD7 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2367}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1276,8 +1276,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0xdb_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xDB VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2362},
-/*h(13)=1 XOPV 0xDB VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2363}
+/*h(12)=0 XOPV 0xDB VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2392},
+/*h(13)=1 XOPV 0xDB VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2393}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1294,8 +1294,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0xe1_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xE1 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2338},
-/*h(13)=1 XOPV 0xE1 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2339}
+/*h(12)=0 XOPV 0xE1 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2368},
+/*h(13)=1 XOPV 0xE1 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2369}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1312,8 +1312,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0xe2_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xE2 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2340},
-/*h(13)=1 XOPV 0xE2 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2341}
+/*h(12)=0 XOPV 0xE2 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2370},
+/*h(13)=1 XOPV 0xE2 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2371}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1330,8 +1330,8 @@ static xed_uint32_t xed3_phash_find_mapamd_xop9_opcode0xe3_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[2] = {
-/*h(12)=0 XOPV 0xE3 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2342},
-/*h(13)=1 XOPV 0xE3 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2343}
+/*h(12)=0 XOPV 0xE3 VNP W0 VL128 NOVSR XMAP9 MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM()*/ {2372},
+/*h(13)=1 XOPV 0xE3 VNP W0 VL128 NOVSR XMAP9 MOD[0b11] MOD=3 REG[rrr] RM[nnn]*/ {2373}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1348,12 +1348,12 @@ static xed_uint32_t xed3_phash_find_mapamd_xopA_opcode0x10_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[6] = {
-/*h(24)=0 XOPV 0x10 VNP not64 VL128 NOVSR XMAPA MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM32()*/ {2364},
-/*h(25)=1 XOPV 0x10 VNP not64 VL128 NOVSR XMAPA MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM32()*/ {2366},
-/*h(26)=2 XOPV 0x10 VNP not64 VL128 NOVSR XMAPA MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM32()*/ {2364},
-/*h(27)=3 XOPV 0x10 VNP not64 VL128 NOVSR XMAPA MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM32()*/ {2366},
-/*h(28)=4 XOPV 0x10 VNP mode64  VL128 NOVSR XMAPA MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM32()*/ {2365},
-/*h(29)=5 XOPV 0x10 VNP mode64 VL128 NOVSR XMAPA MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM32()*/ {2367}
+/*h(24)=0 XOPV 0x10 VNP not64 VL128 NOVSR XMAPA MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM32()*/ {2394},
+/*h(25)=1 XOPV 0x10 VNP not64 VL128 NOVSR XMAPA MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM32()*/ {2396},
+/*h(26)=2 XOPV 0x10 VNP not64 VL128 NOVSR XMAPA MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM32()*/ {2394},
+/*h(27)=3 XOPV 0x10 VNP not64 VL128 NOVSR XMAPA MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM32()*/ {2396},
+/*h(28)=4 XOPV 0x10 VNP mode64  VL128 NOVSR XMAPA MOD[mm] MOD!=3 REG[rrr] RM[nnn] MODRM() UIMM32()*/ {2395},
+/*h(29)=5 XOPV 0x10 VNP mode64 VL128 NOVSR XMAPA MOD[0b11] MOD=3 REG[rrr] RM[nnn] UIMM32()*/ {2397}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -1370,10 +1370,10 @@ static xed_uint32_t xed3_phash_find_mapamd_xopA_opcode0x12_vv3(const xed_decoded
 {
 typedef struct { xed_uint32_t value;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(0)=0 XOPV 0x12 VNP  VL128  XMAPA MOD[mm] MOD!=3 REG[0b000] RM[nnn] MODRM() UIMM32()*/ {2406},
-/*h(1)=1 XOPV 0x12 VNP  VL128  XMAPA MOD[0b11] MOD=3 REG[0b000] RM[nnn] UIMM32()*/ {2407},
-/*h(2)=2 XOPV 0x12 VNP VL128  XMAPA MOD[mm] MOD!=3 REG[0b001] RM[nnn] MODRM() UIMM32()*/ {2408},
-/*h(3)=3 XOPV 0x12 VNP VL128  XMAPA MOD[0b11] MOD=3 REG[0b001] RM[nnn] UIMM32()*/ {2409}
+/*h(0)=0 XOPV 0x12 VNP  VL128  XMAPA MOD[mm] MOD!=3 REG[0b000] RM[nnn] MODRM() UIMM32()*/ {2436},
+/*h(1)=1 XOPV 0x12 VNP  VL128  XMAPA MOD[0b11] MOD=3 REG[0b000] RM[nnn] UIMM32()*/ {2437},
+/*h(2)=2 XOPV 0x12 VNP VL128  XMAPA MOD[mm] MOD!=3 REG[0b001] RM[nnn] MODRM() UIMM32()*/ {2438},
+/*h(3)=3 XOPV 0x12 VNP VL128  XMAPA MOD[0b11] MOD=3 REG[0b001] RM[nnn] UIMM32()*/ {2439}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;

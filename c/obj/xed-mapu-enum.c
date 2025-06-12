@@ -31,6 +31,7 @@ static const name_table_xed_mapu_enum_t name_array_xed_mapu_enum_t[] = {
 {"VEX_MAP1", XED_MAPU_VEX_MAP1},
 {"VEX_MAP2", XED_MAPU_VEX_MAP2},
 {"VEX_MAP3", XED_MAPU_VEX_MAP3},
+{"VEX_MAP5", XED_MAPU_VEX_MAP5},
 {"VEX_MAP7", XED_MAPU_VEX_MAP7},
 {"LAST", XED_MAPU_LAST},
 {0, XED_MAPU_LAST},
@@ -88,6 +89,7 @@ Here is a skeleton switch statement embedded in a comment
   case XED_MAPU_VEX_MAP1:
   case XED_MAPU_VEX_MAP2:
   case XED_MAPU_VEX_MAP3:
+  case XED_MAPU_VEX_MAP5:
   case XED_MAPU_VEX_MAP7:
   case XED_MAPU_LAST:
   default:

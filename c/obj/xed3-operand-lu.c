@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -37,6 +37,14 @@ key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
 key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
 key += ((xed_uint64_t) xed3_operand_get_osz(d)) << ((3));
 key += ((xed_uint64_t) xed3_operand_get_rep(d)) << ((4));
+return key;
+}
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REP(const xed_decoded_inst_t* d)
+{
+xed_uint64_t key = 0;
+key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
+key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
+key += ((xed_uint64_t) xed3_operand_get_rep(d)) << ((3));
 return key;
 }
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_REG_REP(const xed_decoded_inst_t* d)
@@ -125,6 +133,15 @@ XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_REG(const xed_decoded_inst_t* d)
 xed_uint64_t key = 0;
 key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
 key += ((xed_uint64_t) xed3_operand_get_reg(d)) << ((1));
+return key;
+}
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_PREFETCHIT_PREFETCHRST_REG(const xed_decoded_inst_t* d)
+{
+xed_uint64_t key = 0;
+key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
+key += ((xed_uint64_t) xed3_operand_get_prefetchit(d)) << ((1));
+key += ((xed_uint64_t) xed3_operand_get_prefetchrst(d)) << ((2));
+key += ((xed_uint64_t) xed3_operand_get_reg(d)) << ((3));
 return key;
 }
 XED_NOINLINE xed_uint64_t xed_dec_lu_ASZ_NONTERM_EASZ_MOD_MODE_MPXMODE_OSZ_REP(const xed_decoded_inst_t* d)
@@ -255,6 +272,15 @@ key += ((xed_uint64_t) xed3_operand_get_rex2(d)) << ((9));
 key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((10));
 return key;
 }
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_OSZ_REXW(const xed_decoded_inst_t* d)
+{
+xed_uint64_t key = 0;
+key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
+key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
+key += ((xed_uint64_t) xed3_operand_get_osz(d)) << ((3));
+key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((4));
+return key;
+}
 XED_NOINLINE xed_uint64_t xed_dec_lu_LOCK_MOD3_REG(const xed_decoded_inst_t* d)
 {
 xed_uint64_t key = 0;
@@ -322,11 +348,12 @@ key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
 key += ((xed_uint64_t) xed3_operand_get_osz(d)) << ((3));
 return key;
 }
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE(const xed_decoded_inst_t* d)
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REXW(const xed_decoded_inst_t* d)
 {
 xed_uint64_t key = 0;
 key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
 key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
+key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((3));
 return key;
 }
 XED_NOINLINE xed_uint64_t xed_dec_lu_REP(const xed_decoded_inst_t* d)
@@ -406,6 +433,13 @@ key += ((xed_uint64_t) xed3_operand_get_osz(d)) << ((2));
 key += ((xed_uint64_t) xed3_operand_get_rep(d)) << ((3));
 key += ((xed_uint64_t) xed3_operand_get_rex2(d)) << ((5));
 key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((6));
+return key;
+}
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE(const xed_decoded_inst_t* d)
+{
+xed_uint64_t key = 0;
+key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
+key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
 return key;
 }
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_REG_RM(const xed_decoded_inst_t* d)
@@ -491,6 +525,16 @@ key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((3));
 key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((5));
 return key;
 }
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REXW_VEX_PREFIX_VL(const xed_decoded_inst_t* d)
+{
+xed_uint64_t key = 0;
+key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
+key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
+key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((3));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((4));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((6));
+return key;
+}
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REG_REXW_RM_VEXDEST210_7_VEXDEST3_VEX_PREFIX_VL(const xed_decoded_inst_t* d)
 {
 xed_uint64_t key = 0;
@@ -518,14 +562,16 @@ key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((7));
 key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((9));
 return key;
 }
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REXW_VEX_PREFIX_VL(const xed_decoded_inst_t* d)
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REXW_VEXDEST210_7_VEXDEST3_VEX_PREFIX_VL(const xed_decoded_inst_t* d)
 {
 xed_uint64_t key = 0;
 key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
 key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
 key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((3));
-key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((4));
-key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((6));
+key += ((xed_uint64_t) xed3_operand_get_vexdest210_7(d)) << ((4));
+key += ((xed_uint64_t) xed3_operand_get_vexdest3(d)) << ((5));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((6));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((8));
 return key;
 }
 XED_NOINLINE xed_uint64_t xed_dec_lu_ASZ_NONTERM_EASZ_MOD3_REXW_RM4_VEX_PREFIX_VL(const xed_decoded_inst_t* d)
@@ -565,16 +611,16 @@ key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
 key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((1));
 return key;
 }
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REXW_VEXDEST210_7_VEXDEST3_VEX_PREFIX_VL(const xed_decoded_inst_t* d)
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REG_VEXDEST210_7_VEXDEST3_VEX_PREFIX_VL(const xed_decoded_inst_t* d)
 {
 xed_uint64_t key = 0;
 key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
 key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
-key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((3));
-key += ((xed_uint64_t) xed3_operand_get_vexdest210_7(d)) << ((4));
-key += ((xed_uint64_t) xed3_operand_get_vexdest3(d)) << ((5));
-key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((6));
-key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((8));
+key += ((xed_uint64_t) xed3_operand_get_reg(d)) << ((3));
+key += ((xed_uint64_t) xed3_operand_get_vexdest210_7(d)) << ((6));
+key += ((xed_uint64_t) xed3_operand_get_vexdest3(d)) << ((7));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((8));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((10));
 return key;
 }
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_REG_REXW_VEXDEST210_7_VEXDEST3_VEX_PREFIX_VL(const xed_decoded_inst_t* d)
@@ -741,7 +787,7 @@ key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((3));
 key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((4));
 return key;
 }
-XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REG_REXW_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
+XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REG_REXW_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
 {
 xed_uint64_t key = 0;
 key += ((xed_uint64_t) xed3_operand_get_bcrc(d)) << ((0));
@@ -750,6 +796,21 @@ key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((2));
 key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((3));
 key += ((xed_uint64_t) xed3_operand_get_reg(d)) << ((5));
 key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((8));
+key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((9));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((10));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((12));
+key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((14));
+return key;
+}
+XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REXW_RM_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
+{
+xed_uint64_t key = 0;
+key += ((xed_uint64_t) xed3_operand_get_bcrc(d)) << ((0));
+key += ((xed_uint64_t) xed3_operand_get_mask_zero(d)) << ((1));
+key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((2));
+key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((3));
+key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((5));
+key += ((xed_uint64_t) xed3_operand_get_rm(d)) << ((6));
 key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((9));
 key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((10));
 key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((11));
@@ -757,7 +818,7 @@ key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((13));
 key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((15));
 return key;
 }
-XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REXW_RM4_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
+XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REXW_RM4_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
 {
 xed_uint64_t key = 0;
 key += ((xed_uint64_t) xed3_operand_get_bcrc(d)) << ((0));
@@ -766,11 +827,10 @@ key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((2));
 key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((3));
 key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((5));
 key += ((xed_uint64_t) xed3_operand_get_rm4(d)) << ((6));
-key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((7));
-key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((8));
-key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((9));
-key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((11));
-key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((13));
+key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((7));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((8));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((10));
+key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((12));
 return key;
 }
 XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_REXW_UBIT_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
@@ -784,6 +844,20 @@ key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((4));
 key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((5));
 key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((7));
 key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((9));
+return key;
+}
+XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REXW_UBIT_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
+{
+xed_uint64_t key = 0;
+key += ((xed_uint64_t) xed3_operand_get_bcrc(d)) << ((0));
+key += ((xed_uint64_t) xed3_operand_get_mask_zero(d)) << ((1));
+key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((2));
+key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((3));
+key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((5));
+key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((6));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((7));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((9));
+key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((11));
 return key;
 }
 XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MOD3_MODE_REXW_UBIT_VEXDEST_1F_VEX_PREFIX_VL(const xed_decoded_inst_t* d)
@@ -857,7 +931,21 @@ key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((8));
 key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((10));
 return key;
 }
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REG_REXW_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REXW_UBIT_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
+{
+xed_uint64_t key = 0;
+key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
+key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
+key += ((xed_uint64_t) xed3_operand_get_nd(d)) << ((3));
+key += ((xed_uint64_t) xed3_operand_get_nf(d)) << ((4));
+key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((5));
+key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((6));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((7));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((9));
+key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((11));
+return key;
+}
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REG_REXW_UBIT_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
 {
 xed_uint64_t key = 0;
 key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
@@ -866,22 +954,10 @@ key += ((xed_uint64_t) xed3_operand_get_nd(d)) << ((3));
 key += ((xed_uint64_t) xed3_operand_get_nf(d)) << ((4));
 key += ((xed_uint64_t) xed3_operand_get_reg(d)) << ((5));
 key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((8));
-key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((9));
-key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((11));
-key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((13));
-return key;
-}
-XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
-{
-xed_uint64_t key = 0;
-key += ((xed_uint64_t) xed3_operand_get_bcrc(d)) << ((0));
-key += ((xed_uint64_t) xed3_operand_get_mask_zero(d)) << ((1));
-key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((2));
-key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((3));
-key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((4));
-key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((5));
-key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((7));
-key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((9));
+key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((9));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((10));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((12));
+key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((14));
 return key;
 }
 XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REXW_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
@@ -899,18 +975,17 @@ key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((10));
 key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((12));
 return key;
 }
-XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REXW_UBIT_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
+XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
 {
 xed_uint64_t key = 0;
 key += ((xed_uint64_t) xed3_operand_get_bcrc(d)) << ((0));
 key += ((xed_uint64_t) xed3_operand_get_mask_zero(d)) << ((1));
 key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((2));
-key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((3));
-key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((5));
-key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((6));
-key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((7));
-key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((9));
-key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((11));
+key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((3));
+key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((4));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((5));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((7));
+key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((9));
 return key;
 }
 XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MOD3_REXW_UBIT_VEXDEST_1F_VEX_PREFIX_ZEROING(const xed_decoded_inst_t* d)
@@ -925,7 +1000,7 @@ key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((5));
 key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((7));
 return key;
 }
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REXW_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REXW_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
 {
 xed_uint64_t key = 0;
 key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
@@ -933,10 +1008,11 @@ key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
 key += ((xed_uint64_t) xed3_operand_get_nd(d)) << ((3));
 key += ((xed_uint64_t) xed3_operand_get_nf(d)) << ((4));
 key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((5));
-key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((6));
-key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((7));
-key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((9));
-key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((11));
+key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((6));
+key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((7));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((8));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((10));
+key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((12));
 return key;
 }
 XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MOD3_REXW_UBIT_VEXDEST_1F_VEX_PREFIX(const xed_decoded_inst_t* d)
@@ -990,6 +1066,80 @@ key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((6));
 key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((8));
 return key;
 }
+XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MASK_ZERO_MOD3_MODE_REXW_RM4_VEXDEST_1F_VEX_PREFIX_VL(const xed_decoded_inst_t* d)
+{
+xed_uint64_t key = 0;
+key += ((xed_uint64_t) xed3_operand_get_bcrc(d)) << ((0));
+key += ((xed_uint64_t) xed3_operand_get_mask_zero(d)) << ((1));
+key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((2));
+key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((3));
+key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((5));
+key += ((xed_uint64_t) xed3_operand_get_rm4(d)) << ((6));
+key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((7));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((8));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((10));
+return key;
+}
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
+{
+xed_uint64_t key = 0;
+key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
+key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
+key += ((xed_uint64_t) xed3_operand_get_nd(d)) << ((3));
+key += ((xed_uint64_t) xed3_operand_get_nf(d)) << ((4));
+key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((5));
+key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((6));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((7));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((9));
+key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((11));
+return key;
+}
+XED_NOINLINE xed_uint64_t xed_dec_lu_MASK_MOD3_MODE_ND_NF_SCC_UBIT_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
+{
+xed_uint64_t key = 0;
+key += ((xed_uint64_t) xed3_operand_get_mask(d)) << ((0));
+key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((3));
+key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((4));
+key += ((xed_uint64_t) xed3_operand_get_nd(d)) << ((6));
+key += ((xed_uint64_t) xed3_operand_get_nf(d)) << ((7));
+key += ((xed_uint64_t) xed3_operand_get_scc(d)) << ((8));
+key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((12));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((13));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((15));
+key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((17));
+return key;
+}
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REXW_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
+{
+xed_uint64_t key = 0;
+key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
+key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
+key += ((xed_uint64_t) xed3_operand_get_nd(d)) << ((3));
+key += ((xed_uint64_t) xed3_operand_get_nf(d)) << ((4));
+key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((5));
+key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((6));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((7));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((9));
+key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((11));
+return key;
+}
+XED_NOINLINE xed_uint64_t xed_dec_lu_MASK_MOD3_MODE_ND_NF_REG_SCC_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
+{
+xed_uint64_t key = 0;
+key += ((xed_uint64_t) xed3_operand_get_mask(d)) << ((0));
+key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((3));
+key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((4));
+key += ((xed_uint64_t) xed3_operand_get_nd(d)) << ((6));
+key += ((xed_uint64_t) xed3_operand_get_nf(d)) << ((7));
+key += ((xed_uint64_t) xed3_operand_get_reg(d)) << ((8));
+key += ((xed_uint64_t) xed3_operand_get_scc(d)) << ((11));
+key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((15));
+key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((16));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((17));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((19));
+key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((21));
+return key;
+}
 XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
 {
 xed_uint64_t key = 0;
@@ -1003,49 +1153,7 @@ key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((8));
 key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((10));
 return key;
 }
-XED_NOINLINE xed_uint64_t xed_dec_lu_MASK_MOD3_MODE_ND_VEXDEST4_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
-{
-xed_uint64_t key = 0;
-key += ((xed_uint64_t) xed3_operand_get_mask(d)) << ((0));
-key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((3));
-key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((4));
-key += ((xed_uint64_t) xed3_operand_get_nd(d)) << ((6));
-key += ((xed_uint64_t) xed3_operand_get_vexdest4(d)) << ((7));
-key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((8));
-key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((10));
-key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((12));
-return key;
-}
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_NF_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
-{
-xed_uint64_t key = 0;
-key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
-key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
-key += ((xed_uint64_t) xed3_operand_get_nf(d)) << ((3));
-key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((4));
-key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((5));
-key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((7));
-key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((9));
-return key;
-}
-XED_NOINLINE xed_uint64_t xed_dec_lu_MASK_MOD3_MODE_ND_NF_REG_VEXDEST210_7_VEXDEST3_VEXDEST4_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
-{
-xed_uint64_t key = 0;
-key += ((xed_uint64_t) xed3_operand_get_mask(d)) << ((0));
-key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((3));
-key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((4));
-key += ((xed_uint64_t) xed3_operand_get_nd(d)) << ((6));
-key += ((xed_uint64_t) xed3_operand_get_nf(d)) << ((7));
-key += ((xed_uint64_t) xed3_operand_get_reg(d)) << ((8));
-key += ((xed_uint64_t) xed3_operand_get_vexdest210_7(d)) << ((11));
-key += ((xed_uint64_t) xed3_operand_get_vexdest3(d)) << ((12));
-key += ((xed_uint64_t) xed3_operand_get_vexdest4(d)) << ((13));
-key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((14));
-key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((16));
-key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((18));
-return key;
-}
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REG_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REG_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
 {
 xed_uint64_t key = 0;
 key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
@@ -1053,13 +1161,14 @@ key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
 key += ((xed_uint64_t) xed3_operand_get_nd(d)) << ((3));
 key += ((xed_uint64_t) xed3_operand_get_nf(d)) << ((4));
 key += ((xed_uint64_t) xed3_operand_get_reg(d)) << ((5));
-key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((8));
-key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((9));
-key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((11));
-key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((13));
+key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((8));
+key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((9));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((10));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((12));
+key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((14));
 return key;
 }
-XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REG_REXW_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REG_REXW_UBIT_VEXDEST_1F_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)
 {
 xed_uint64_t key = 0;
 key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
@@ -1068,10 +1177,25 @@ key += ((xed_uint64_t) xed3_operand_get_nd(d)) << ((3));
 key += ((xed_uint64_t) xed3_operand_get_nf(d)) << ((4));
 key += ((xed_uint64_t) xed3_operand_get_reg(d)) << ((5));
 key += ((xed_uint64_t) xed3_operand_get_rexw(d)) << ((8));
+key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((9));
+key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((10));
+key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((11));
+key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((13));
+key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((15));
+return key;
+}
+XED_NOINLINE xed_uint64_t xed_dec_lu_MOD3_MODE_ND_NF_REG_UBIT_VEXDEST_1F_VEX_PREFIX_VL(const xed_decoded_inst_t* d)
+{
+xed_uint64_t key = 0;
+key += ((xed_uint64_t) xed3_operand_get_mod3(d)) << ((0));
+key += ((xed_uint64_t) xed3_operand_get_mode(d)) << ((1));
+key += ((xed_uint64_t) xed3_operand_get_nd(d)) << ((3));
+key += ((xed_uint64_t) xed3_operand_get_nf(d)) << ((4));
+key += ((xed_uint64_t) xed3_operand_get_reg(d)) << ((5));
+key += ((xed_uint64_t) xed3_operand_get_ubit(d)) << ((8));
 key += ((xed_uint64_t) xed3_operand_get_vexdest_1f(d)) << ((9));
 key += ((xed_uint64_t) xed3_operand_get_vex_prefix(d)) << ((10));
 key += ((xed_uint64_t) xed3_operand_get_vl(d)) << ((12));
-key += ((xed_uint64_t) xed3_operand_get_zeroing(d)) << ((14));
 return key;
 }
 XED_NOINLINE xed_uint64_t xed_dec_lu_BCRC_MOD3_UBIT_VEX_PREFIX_VL_ZEROING(const xed_decoded_inst_t* d)

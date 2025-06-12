@@ -7,7 +7,7 @@
 # define INCLUDE_PRIVATE_XED3_CHAIN_CAPTURE_H
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -160,29 +160,17 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_VMODRM_XMM(xed_decoded_ins
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_VMODRM_YMM(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_FULL(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN512_SAE(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN512_AVX512_ROUND(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_FULL(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_YMM_ESIZE_64_BITS_NELEM_GSCAT(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_ZMM_ESIZE_32_BITS_NELEM_GSCAT(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_ZMM_ESIZE_64_BITS_NELEM_GSCAT(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN128_SAE(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_SCALAR(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_SCALAR(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_TUPLE1_4X(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN512_AVX512_ROUND(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_FULL(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN128_AVX512_ROUND(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_ONE(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_32_BITS_NELEM_FULL(xed_decoded_inst_t* d);
 
@@ -192,31 +180,27 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_TUPLE4(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_TUPLE1(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_TUPLE1(xed_decoded_inst_t* d);
-
 static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN512_SAE_UIMM8(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN128_SAE_UIMM8(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_64_BITS_NELEM_SCALAR(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_64_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_32_BITS_NELEM_SCALAR(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_32_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN128(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_SCALAR_FIX_ROUND_LEN128(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN128_SAE(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_SCALAR_FIX_ROUND_LEN128(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_ONE_FIX_ROUND_LEN128(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_GSCAT(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_GSCAT(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_ONE_FIX_ROUND_LEN128(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN512(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_HALF(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN512_SAE(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_HALFMEM(xed_decoded_inst_t* d);
 
@@ -226,17 +210,9 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_EVEXR4_ONE_FIX_ROUND_LEN12
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN128_AVX512_ROUND_EVEXR4_ONE(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_GPR_WRITER_LDOP_Q_FIX_ROUND_LEN128(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_ONE_EVEXR4_ONE_FIX_ROUND_LEN128(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_GPR_WRITER_LDOP_Q_EVEXR4_ONE_FIX_ROUND_LEN128(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_GPR_READER_FIX_ROUND_LEN128(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_GPR_READER_FIX_ROUND_LEN128(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_GPR_WRITER_LDOP_D_FIX_ROUND_LEN128(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_GPR_WRITER_LDOP_D_EVEXR4_ONE_FIX_ROUND_LEN128(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_ONE_EVEXR4_ONE_FIX_ROUND_LEN128(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN128_SAE_EVEXR4_ONE(xed_decoded_inst_t* d);
 
@@ -244,31 +220,25 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_32_BITS_
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_64_BITS_NELEM_TUPLE4(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_32_BITS_NELEM_GPR_WRITER_STORE(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_YMM_ESIZE_64_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_XMM_ESIZE_64_BITS_NELEM_GSCAT(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_XMM_ESIZE_64_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_XMM_ESIZE_32_BITS_NELEM_GSCAT(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_ZMM_ESIZE_32_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_YMM_ESIZE_32_BITS_NELEM_GSCAT(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_XMM_ESIZE_32_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_32_BITS_NELEM_TUPLE1(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_YMM_ESIZE_32_BITS_NELEM_ONE(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_ZMM_ESIZE_64_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_FULLMEM(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_FULLMEM(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_GPR_READER(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_GPR_WRITER_STORE(xed_decoded_inst_t* d);
-
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_MOVDDUP(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_TUPLE2(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_GPR_READER(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_GPR_WRITER_STORE(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_8_BITS_NELEM_QUARTERMEM(xed_decoded_inst_t* d);
 
@@ -292,77 +262,61 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_32_BITS_
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_64_BITS_NELEM_TUPLE2(xed_decoded_inst_t* d);
 
+static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN128_UIMM8(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_UIMM8_ESIZE_64_BITS_NELEM_ONE(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_UIMM8_ESIZE_32_BITS_NELEM_ONE(xed_decoded_inst_t* d);
+
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_FULLMEM(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_8_BITS_NELEM_FULLMEM(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_64_BITS_NELEM_FULLMEM(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_8_BITS_NELEM_TUPLE1_BYTE(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_8_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_TUPLE1_WORD(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_8_BITS_NELEM_FULLMEM(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_8_BITS_NELEM_GPR_WRITER_STORE_BYTE(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_8_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_64_BITS_NELEM_GPR_WRITER_STORE(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_16_BITS_NELEM_GPR_WRITER_STORE_WORD(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_16_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_UIMM8_EVEXR4_ONE(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_8_BITS_NELEM_GPR_READER_BYTE(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_32_BITS_NELEM_GPR_READER(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_64_BITS_NELEM_GPR_READER(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_16_BITS_NELEM_GPR_READER_WORD(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_8_BITS_NELEM_HALFMEM(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_MEM128(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_8_BITS_NELEM_GSCAT(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_GSCAT(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_TUPLE1_4X(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_128_BITS_NELEM_FULLMEM(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_FULL(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_16_BITS_NELEM_SCALAR(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_16_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_16_BITS_NELEM_FULL(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN128_UIMM8(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_UIMM8_ESIZE_16_BITS_NELEM_SCALAR(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_UIMM8_ESIZE_16_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_HALF(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_QUARTER(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_64_BITS_NELEM_SCALAR(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_64_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN128_EVEXR4_ONE(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_16_BITS_NELEM_GPR_WRITER_LDOP_D_EVEXR4_ONE(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_16_BITS_NELEM_ONE_EVEXR4_ONE(xed_decoded_inst_t* d);
 
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_32_BITS_NELEM_GPR_READER(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_64_BITS_NELEM_GPR_READER(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_32_BITS_NELEM_SCALAR(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_GPR_READER(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_GPR_WRITER_STORE(xed_decoded_inst_t* d);
-
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_EVAPX(xed_decoded_inst_t* d);
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_32_BITS_NELEM_ONE(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_EVAPX(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_EVAPX(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_EVAPX_SIMM8(xed_decoded_inst_t* d);
 
@@ -393,6 +347,12 @@ static XED_INLINE xed_error_enum_t xed3_capture_chain_EVAPX_ONE(xed_decoded_inst
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_EVAPX_ONE(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_chain_EVAPX_UIMM32(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_8_BITS_NELEM_HALF(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_64_BITS_NELEM_ONE_EVEXR4_ONE(xed_decoded_inst_t* d);
+
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_32_BITS_NELEM_ONE_EVEXR4_ONE(xed_decoded_inst_t* d);
 
 static XED_INLINE xed_error_enum_t xed3_capture_nt_nop(xed_decoded_inst_t* d)
 {
@@ -1167,29 +1127,13 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_FULL(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_32_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_FULL(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN512_SAE(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN512_AVX512_ROUND(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_FIX_ROUND_LEN512(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_SAE(d);
+xed3_capture_nt_AVX512_ROUND(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -1211,83 +1155,7 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_YMM_ESIZE_64_BITS_NELEM_GSCAT(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_UISA_VMODRM_YMM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_64_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GSCAT(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_ZMM_ESIZE_32_BITS_NELEM_GSCAT(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_UISA_VMODRM_ZMM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_32_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GSCAT(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_ZMM_ESIZE_64_BITS_NELEM_GSCAT(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_UISA_VMODRM_ZMM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_64_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GSCAT(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN128_SAE(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_FIX_ROUND_LEN128(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_SAE(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_SCALAR(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_64_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_SCALAR(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_SCALAR(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_FULL(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -1297,35 +1165,7 @@ xed3_capture_nt_ESIZE_32_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_SCALAR(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_TUPLE1_4X(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_32_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_TUPLE1_4X(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN512_AVX512_ROUND(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_FIX_ROUND_LEN512(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_AVX512_ROUND(d);
+xed3_capture_nt_NELEM_FULL(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -1338,6 +1178,38 @@ if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 xed3_capture_nt_AVX512_ROUND(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_ONE(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_MODRM(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ESIZE_64_BITS(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_NELEM_ONE(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_ONE(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_MODRM(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ESIZE_32_BITS(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -1415,38 +1287,6 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_TUPLE1(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_64_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_TUPLE1(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_TUPLE1(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_32_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_TUPLE1(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
 static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN512_SAE_UIMM8(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_FIX_ROUND_LEN512(d);
@@ -1479,7 +1319,7 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_64_BITS_NELEM_SCALAR(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_64_BITS_NELEM_ONE(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -1493,13 +1333,13 @@ xed3_capture_nt_ESIZE_64_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_SCALAR(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_32_BITS_NELEM_SCALAR(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_32_BITS_NELEM_ONE(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -1513,7 +1353,7 @@ xed3_capture_nt_ESIZE_32_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_SCALAR(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -1527,7 +1367,19 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_SCALAR_FIX_ROUND_LEN128(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN128_SAE(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_FIX_ROUND_LEN128(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_SAE(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_ONE_FIX_ROUND_LEN128(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -1537,7 +1389,7 @@ xed3_capture_nt_ESIZE_64_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_SCALAR(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -1547,7 +1399,7 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_SCALAR_FIX_ROUND_LEN128(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_ONE_FIX_ROUND_LEN128(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -1557,43 +1409,11 @@ xed3_capture_nt_ESIZE_32_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_SCALAR(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 xed3_capture_nt_FIX_ROUND_LEN128(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_GSCAT(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_64_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GSCAT(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_GSCAT(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_32_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GSCAT(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -1618,6 +1438,18 @@ if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 xed3_capture_nt_NELEM_HALF(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN512_SAE(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_FIX_ROUND_LEN512(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_SAE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -1687,7 +1519,7 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_GPR_WRITER_LDOP_Q_FIX_ROUND_LEN128(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_ONE_EVEXR4_ONE_FIX_ROUND_LEN128(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -1697,27 +1529,7 @@ xed3_capture_nt_ESIZE_64_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_GPR_WRITER_LDOP_Q(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_FIX_ROUND_LEN128(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_GPR_WRITER_LDOP_Q_EVEXR4_ONE_FIX_ROUND_LEN128(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_64_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_WRITER_LDOP_Q(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -1731,7 +1543,7 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_GPR_READER_FIX_ROUND_LEN128(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_ONE_EVEXR4_ONE_FIX_ROUND_LEN128(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -1741,67 +1553,7 @@ xed3_capture_nt_ESIZE_32_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_GPR_READER(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_FIX_ROUND_LEN128(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_GPR_READER_FIX_ROUND_LEN128(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_64_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_READER(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_FIX_ROUND_LEN128(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_GPR_WRITER_LDOP_D_FIX_ROUND_LEN128(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_32_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_WRITER_LDOP_D(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_FIX_ROUND_LEN128(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_GPR_WRITER_LDOP_D_EVEXR4_ONE_FIX_ROUND_LEN128(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_32_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_WRITER_LDOP_D(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -1871,27 +1623,23 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_32_BITS_NELEM_GPR_WRITER_STORE(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_YMM_ESIZE_64_BITS_NELEM_ONE(xed_decoded_inst_t* d)
 {
-xed3_capture_nt_MODRM(d);
+xed3_capture_nt_UISA_VMODRM_YMM(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_UIMM8(d);
+xed3_capture_nt_ESIZE_64_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_ESIZE_32_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_WRITER_STORE(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_XMM_ESIZE_64_BITS_NELEM_GSCAT(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_XMM_ESIZE_64_BITS_NELEM_ONE(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_UISA_VMODRM_XMM(d);
 if (xed3_operand_get_error(d)) {
@@ -1901,13 +1649,29 @@ xed3_capture_nt_ESIZE_64_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_GSCAT(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_XMM_ESIZE_32_BITS_NELEM_GSCAT(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_ZMM_ESIZE_32_BITS_NELEM_ONE(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_UISA_VMODRM_ZMM(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ESIZE_32_BITS(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_NELEM_ONE(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_XMM_ESIZE_32_BITS_NELEM_ONE(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_UISA_VMODRM_XMM(d);
 if (xed3_operand_get_error(d)) {
@@ -1917,13 +1681,13 @@ xed3_capture_nt_ESIZE_32_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_GSCAT(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_YMM_ESIZE_32_BITS_NELEM_GSCAT(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_YMM_ESIZE_32_BITS_NELEM_ONE(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_UISA_VMODRM_YMM(d);
 if (xed3_operand_get_error(d)) {
@@ -1933,27 +1697,23 @@ xed3_capture_nt_ESIZE_32_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_GSCAT(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_32_BITS_NELEM_TUPLE1(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_UISA_VMODRM_ZMM_ESIZE_64_BITS_NELEM_ONE(xed_decoded_inst_t* d)
 {
-xed3_capture_nt_MODRM(d);
+xed3_capture_nt_UISA_VMODRM_ZMM(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_UIMM8(d);
+xed3_capture_nt_ESIZE_64_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_ESIZE_32_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_TUPLE1(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -1991,38 +1751,6 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_GPR_READER(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_32_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_READER(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_GPR_WRITER_STORE(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_32_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_WRITER_STORE(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_MOVDDUP(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
@@ -2050,38 +1778,6 @@ if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 xed3_capture_nt_NELEM_TUPLE2(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_GPR_READER(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_64_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_READER(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_64_BITS_NELEM_GPR_WRITER_STORE(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_64_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_WRITER_STORE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -2275,6 +1971,66 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
+static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN128_UIMM8(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_FIX_ROUND_LEN128(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_UIMM8(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_UIMM8_ESIZE_64_BITS_NELEM_ONE(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_MODRM(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_FIX_ROUND_LEN128(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_UIMM8(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ESIZE_64_BITS(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_NELEM_ONE(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_UIMM8_ESIZE_32_BITS_NELEM_ONE(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_MODRM(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_FIX_ROUND_LEN128(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_UIMM8(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ESIZE_32_BITS(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_NELEM_ONE(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
 static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_FULLMEM(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
@@ -2327,7 +2083,7 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_8_BITS_NELEM_TUPLE1_BYTE(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_8_BITS_NELEM_ONE(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -2337,13 +2093,13 @@ xed3_capture_nt_ESIZE_8_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_TUPLE1_BYTE(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_TUPLE1_WORD(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_ONE(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -2353,7 +2109,7 @@ xed3_capture_nt_ESIZE_16_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_TUPLE1_WORD(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -2379,7 +2135,7 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_8_BITS_NELEM_GPR_WRITER_STORE_BYTE(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_8_BITS_NELEM_ONE(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -2393,33 +2149,13 @@ xed3_capture_nt_ESIZE_8_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_GPR_WRITER_STORE_BYTE(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_64_BITS_NELEM_GPR_WRITER_STORE(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_UIMM8(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_64_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_WRITER_STORE(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_16_BITS_NELEM_GPR_WRITER_STORE_WORD(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_16_BITS_NELEM_ONE(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -2433,7 +2169,7 @@ xed3_capture_nt_ESIZE_16_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_GPR_WRITER_STORE_WORD(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -2446,86 +2182,6 @@ if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 xed3_capture_nt_EVEXR4_ONE(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_8_BITS_NELEM_GPR_READER_BYTE(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_UIMM8(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_8_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_READER_BYTE(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_32_BITS_NELEM_GPR_READER(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_UIMM8(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_32_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_READER(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_64_BITS_NELEM_GPR_READER(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_UIMM8(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_64_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_READER(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_UIMM8_ESIZE_16_BITS_NELEM_GPR_READER_WORD(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_UIMM8(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_16_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_READER_WORD(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -2563,33 +2219,17 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_8_BITS_NELEM_GSCAT(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_32_BITS_NELEM_TUPLE1_4X(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_ESIZE_8_BITS(d);
+xed3_capture_nt_ESIZE_32_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_GSCAT(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_GSCAT(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_16_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GSCAT(d);
+xed3_capture_nt_NELEM_TUPLE1_4X(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -2627,7 +2267,7 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_16_BITS_NELEM_SCALAR(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_16_BITS_NELEM_ONE(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -2641,7 +2281,7 @@ xed3_capture_nt_ESIZE_16_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_SCALAR(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -2667,19 +2307,7 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_FIX_ROUND_LEN128_UIMM8(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_FIX_ROUND_LEN128(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_UIMM8(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_UIMM8_ESIZE_16_BITS_NELEM_SCALAR(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_UIMM8_ESIZE_16_BITS_NELEM_ONE(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -2697,7 +2325,7 @@ xed3_capture_nt_ESIZE_16_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_SCALAR(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -2735,7 +2363,7 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_64_BITS_NELEM_SCALAR(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_64_BITS_NELEM_ONE(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -2749,7 +2377,7 @@ xed3_capture_nt_ESIZE_64_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_SCALAR(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -2767,7 +2395,7 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_16_BITS_NELEM_GPR_WRITER_LDOP_D_EVEXR4_ONE(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_16_BITS_NELEM_ONE_EVEXR4_ONE(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -2781,7 +2409,7 @@ xed3_capture_nt_ESIZE_16_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_GPR_WRITER_LDOP_D(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -2791,7 +2419,7 @@ return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_32_BITS_NELEM_GPR_READER(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_32_BITS_NELEM_ONE(xed_decoded_inst_t* d)
 {
 xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
@@ -2805,79 +2433,15 @@ xed3_capture_nt_ESIZE_32_BITS(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_NELEM_GPR_READER(d);
+xed3_capture_nt_NELEM_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 return XED_ERROR_NONE;
 }
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_64_BITS_NELEM_GPR_READER(xed_decoded_inst_t* d)
+static XED_INLINE xed_error_enum_t xed3_capture_chain_EVAPX(xed_decoded_inst_t* d)
 {
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_FIX_ROUND_LEN128(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_64_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_READER(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_32_BITS_NELEM_SCALAR(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_FIX_ROUND_LEN128(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_32_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_SCALAR(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_GPR_READER(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_16_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_READER(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_16_BITS_NELEM_GPR_WRITER_STORE(xed_decoded_inst_t* d)
-{
-xed3_capture_nt_MODRM(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_ESIZE_16_BITS(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-xed3_capture_nt_NELEM_GPR_WRITER_STORE(d);
+xed3_capture_nt_EVAPX(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
@@ -2889,14 +2453,6 @@ xed3_capture_nt_MODRM(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
-xed3_capture_nt_EVAPX(d);
-if (xed3_operand_get_error(d)) {
-return xed3_operand_get_error(d);
-}
-return XED_ERROR_NONE;
-}
-static XED_INLINE xed_error_enum_t xed3_capture_chain_EVAPX(xed_decoded_inst_t* d)
-{
 xed3_capture_nt_EVAPX(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
@@ -3098,6 +2654,70 @@ if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }
 xed3_capture_nt_UIMM32(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_ESIZE_8_BITS_NELEM_HALF(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_MODRM(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ESIZE_8_BITS(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_NELEM_HALF(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_64_BITS_NELEM_ONE_EVEXR4_ONE(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_MODRM(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_FIX_ROUND_LEN128(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ESIZE_64_BITS(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_NELEM_ONE(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_EVEXR4_ONE(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+return XED_ERROR_NONE;
+}
+static XED_INLINE xed_error_enum_t xed3_capture_chain_MODRM_FIX_ROUND_LEN128_ESIZE_32_BITS_NELEM_ONE_EVEXR4_ONE(xed_decoded_inst_t* d)
+{
+xed3_capture_nt_MODRM(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_FIX_ROUND_LEN128(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_ESIZE_32_BITS(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_NELEM_ONE(d);
+if (xed3_operand_get_error(d)) {
+return xed3_operand_get_error(d);
+}
+xed3_capture_nt_EVEXR4_ONE(d);
 if (xed3_operand_get_error(d)) {
 return xed3_operand_get_error(d);
 }

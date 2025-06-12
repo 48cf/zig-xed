@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -4799,7 +4799,7 @@ xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_VSIB_ENC;
 /* 1 */ if (iform==1) {
-    xed_encoder_request_encode_emit(xes,8,(xed3_operand_get_sibscale(xes)<< 6)|(xed3_operand_get_sibindex(xes)<< 3)|(xed3_operand_get_sibbase(xes)));
+    xed_encoder_request_encode_emit(xes,8,((xed_uint64_t)xed3_operand_get_sibscale(xes)<< 6)|((xed_uint64_t)xed3_operand_get_sibindex(xes)<< 3)|((xed_uint64_t)xed3_operand_get_sibbase(xes)));
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
     return okay;
 }
@@ -4866,16 +4866,6 @@ xed_uint_t xed_encode_nonterminal_DISP_WIDTH_8_32_EMIT(xed_encoder_request_t* xe
 /* DISP_WIDTH_8_32()::
 	DISP_WIDTH=8  ->	nothing
 	DISP_WIDTH=32  ->	nothing
- */
-xed_uint_t okay=1;
-(void) xes; // pacify the compiler
-(void) okay;
-(void) xes;
-return 1;
-}
-xed_uint_t xed_encode_nonterminal_NELEM_TUPLE1_4X_EMIT(xed_encoder_request_t* xes)
-{
-/* NELEM_TUPLE1_4X()::
  */
 xed_uint_t okay=1;
 (void) xes; // pacify the compiler
@@ -4961,6 +4951,38 @@ xed_uint_t xed_encode_nonterminal_EVEX_REXB_ENC_EMIT(xed_encoder_request_t* xes)
 xed_uint_t okay=1;
 (void) xes; // pacify the compiler
 unsigned int iform = xed_encoder_request_iforms(xes)->x_EVEX_REXB_ENC;
+/* 5 */ if (iform==5) {
+    xed_encoder_request_encode_emit(xes,1,0x0);
+    if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
+    return okay;
+}
+/* 2 */ if (iform==2) {
+    xed_encoder_request_encode_emit(xes,1,0x1);
+    if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
+    return okay;
+}
+/* 4 */ if (iform==4) {
+    xed_encoder_request_encode_emit(xes,1,0x1);
+    if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
+    return okay;
+}
+if (1) { /*otherwise*/
+    if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;
+    return okay;
+}
+return 0;
+}
+xed_uint_t xed_encode_nonterminal_EVEX_REXR4_ENC_EMIT(xed_encoder_request_t* xes)
+{
+/* EVEX_REXR4_ENC()::
+	MODE=2 REXR4=1  ->	emit 0b0 emit_type=numeric value=0x0 nbits=1
+	MODE=2 REXR4=0  ->	emit 0b1 emit_type=numeric value=0x1 nbits=1
+	MODE=1 REXR4=0  ->	emit 0b1 emit_type=numeric value=0x1 nbits=1
+	MODE=1 REXR4=1  ->	FB ERROR=XED_ERROR_GENERAL_ERROR
+ */
+xed_uint_t okay=1;
+(void) xes; // pacify the compiler
+unsigned int iform = xed_encoder_request_iforms(xes)->x_EVEX_REXR4_ENC;
 /* 5 */ if (iform==5) {
     xed_encoder_request_encode_emit(xes,1,0x0);
     if (xed3_operand_get_error(xes) != XED_ERROR_NONE) okay=0;

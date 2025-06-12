@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -2165,18 +2165,23 @@ else{
 xed_uint32_t xed_encode_nonterminal_VEX_MAP_ENC_BIND(xed_encoder_request_t* xes)
 {
 typedef struct {xed_uint32_t key; xed_uint32_t emit;} lu_entry_t;
-static const lu_entry_t lu_table[5] = {
-/*h(18)=0 VEX_C4=1 MAP=2 REXW[w]=*  ->	emit 0b0_0010 emit_type=numeric value=0x2 nbits=5 	emit w emit_type=letters nbits=1*/ {18, 1},
-/*h(23)=1 VEX_C4=1 MAP=7 REXW[w]=*  ->	emit 0b0_0111 emit_type=numeric value=0x7 nbits=5 	emit w emit_type=letters nbits=1*/ {23, 2},
-/*h(17)=2 VEX_C4=1 MAP=1 REXW[w]=*  ->	emit 0b0_0001 emit_type=numeric value=0x1 nbits=5 	emit w emit_type=letters nbits=1*/ {17, 3},
-/*h(19)=3 VEX_C4=1 MAP=3 REXW[w]=*  ->	emit 0b0_0011 emit_type=numeric value=0x3 nbits=5 	emit w emit_type=letters nbits=1*/ {19, 4},
-/*h(16)=4 VEX_C4=1 MAP=0 REXW[w]=*  ->	emit 0b0_0000 emit_type=numeric value=0x0 nbits=5 	emit w emit_type=letters nbits=1*/ {16, 5}
+static const lu_entry_t lu_table[10] = {
+/*empty slot1 */ {0,0},
+/*h(18)=1 VEX_C4=1 MAP=2 REXW[w]=*  ->	emit 0b0_0010 emit_type=numeric value=0x2 nbits=5 	emit w emit_type=letters nbits=1*/ {18, 2},
+/*h(23)=2 VEX_C4=1 MAP=7 REXW[w]=*  ->	emit 0b0_0111 emit_type=numeric value=0x7 nbits=5 	emit w emit_type=letters nbits=1*/ {23, 3},
+/*empty slot1 */ {0,0},
+/*empty slot1 */ {0,0},
+/*h(17)=5 VEX_C4=1 MAP=1 REXW[w]=*  ->	emit 0b0_0001 emit_type=numeric value=0x1 nbits=5 	emit w emit_type=letters nbits=1*/ {17, 6},
+/*empty slot1 */ {0,0},
+/*h(19)=7 VEX_C4=1 MAP=3 REXW[w]=*  ->	emit 0b0_0011 emit_type=numeric value=0x3 nbits=5 	emit w emit_type=letters nbits=1*/ {19, 8},
+/*h(16)=8 VEX_C4=1 MAP=0 REXW[w]=*  ->	emit 0b0_0000 emit_type=numeric value=0x0 nbits=5 	emit w emit_type=letters nbits=1*/ {16, 9},
+/*h(21)=9 VEX_C4=1 MAP=5 REXW[w]=*  ->	emit 0b0_0101 emit_type=numeric value=0x5 nbits=5 	emit w emit_type=letters nbits=1*/ {21, 10}
 };
 xed_union64_t t, u;
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
 key = xed_enc_lu_MAP_VEX_C4(xes);
-hidx = (t.u64 = 2654435769  * key, u.u64 = t.s.lo32 * 5ULL, u.s.hi32);
+hidx = (t.u64 = 2654435769  * key, u.u64 = t.s.lo32 * 10ULL, u.s.hi32);
 if(lu_table[hidx].key == key) {
     xed_encoder_request_iforms(xes)->x_VEX_MAP_ENC=lu_table[hidx].emit;
     return 1;
@@ -2569,11 +2574,6 @@ else{
     return 0;
 }
 }
-xed_uint32_t xed_encode_nonterminal_NELEM_TUPLE1_4X_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
 xed_uint32_t xed_encode_nonterminal_EVEX_62_REXR_ENC_BIND(xed_encoder_request_t* xes)
 {
 typedef struct {xed_uint32_t key; xed_int8_t error ;xed_uint32_t emit;} lu_entry_t;
@@ -2931,12 +2931,12 @@ else{
 }
 xed_uint32_t xed_encode_nonterminal_AVX512_ROUND_BIND(xed_encoder_request_t* xes)
 {
-typedef struct { xed_int8_t bcrc ;xed_int8_t llrc;} lu_entry_t;
+typedef struct { xed_int8_t bcrc ;xed_int8_t llrc ;xed_int8_t sae;} lu_entry_t;
 static const lu_entry_t lu_table[4] = {
-/*h(1)=0 ROUNDC=1  ->	FB LLRC=0 value=0x0 	FB BCRC=1 value=0x1*/ {1,0},
-/*h(2)=1 ROUNDC=2  ->	FB LLRC=1 value=0x1 	FB BCRC=1 value=0x1*/ {1,1},
-/*h(3)=2 ROUNDC=3  ->	FB LLRC=2 value=0x2 	FB BCRC=1 value=0x1*/ {1,2},
-/*h(4)=3 ROUNDC=4  ->	FB LLRC=3 value=0x3 	FB BCRC=1 value=0x1*/ {1,3}
+/*h(1)=0 ROUNDC=1  ->	FB LLRC=0 value=0x0 	FB BCRC=1 value=0x1 	FB SAE=1 value=0x1*/ {1,0,1},
+/*h(2)=1 ROUNDC=2  ->	FB LLRC=1 value=0x1 	FB BCRC=1 value=0x1 	FB SAE=1 value=0x1*/ {1,1,1},
+/*h(3)=2 ROUNDC=3  ->	FB LLRC=2 value=0x2 	FB BCRC=1 value=0x1 	FB SAE=1 value=0x1*/ {1,2,1},
+/*h(4)=3 ROUNDC=4  ->	FB LLRC=3 value=0x3 	FB BCRC=1 value=0x1 	FB SAE=1 value=0x1*/ {1,3,1}
 };
 xed_uint64_t key = 0;
 xed_uint64_t hidx = 0;
@@ -2945,6 +2945,7 @@ hidx = key - 1;
 if(hidx <= 3) {
     xed3_operand_set_bcrc(xes,lu_table[hidx].bcrc);
     xed3_operand_set_llrc(xes,lu_table[hidx].llrc);
+    xed3_operand_set_sae(xes,lu_table[hidx].sae);
     return 1;
 }
 else{
@@ -2991,11 +2992,6 @@ xed_uint32_t xed_encode_nonterminal_ESIZE_32_BITS_BIND(xed_encoder_request_t* xe
 return 1;
 }
 xed_uint32_t xed_encode_nonterminal_ESIZE_16_BITS_BIND(xed_encoder_request_t* xes)
-{
-(void)xes;
-return 1;
-}
-xed_uint32_t xed_encode_nonterminal_ESIZE_8_BITS_BIND(xed_encoder_request_t* xes)
 {
 (void)xes;
 return 1;

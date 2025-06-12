@@ -31,11 +31,8 @@
 #  if !defined(XED_SUPPORTS_SHA)
 #    define XED_SUPPORTS_SHA
 #  endif
-#  if !defined(XED_SUPPORTS_WBNOINVD)
-#    define XED_SUPPORTS_WBNOINVD
-#  endif
 #  if !defined(XED_VERSION)
-#    define XED_VERSION "v2023.12.19"
+#    define XED_VERSION "v2025.06.08"
 #  endif
 #  if !defined(XED_VIA_ENABLED)
 #    define XED_VIA_ENABLED

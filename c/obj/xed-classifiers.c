@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -25,12 +25,25 @@ xed_bool_t xed_classify_amx(const xed_decoded_inst_t* d)
 {
     const xed_isa_set_enum_t isa_set = xed_decoded_inst_get_isa_set(d);
     switch(isa_set) {
+    case XED_ISA_SET_AMX_AVX512:
     case XED_ISA_SET_AMX_BF16:
     case XED_ISA_SET_AMX_COMPLEX:
     case XED_ISA_SET_AMX_FP16:
+    case XED_ISA_SET_AMX_FP8:
     case XED_ISA_SET_AMX_INT8:
+    case XED_ISA_SET_AMX_MOVRS:
+    case XED_ISA_SET_AMX_TF32:
     case XED_ISA_SET_AMX_TILE:
+    case XED_ISA_SET_AMX_TRANSPOSE:
+    case XED_ISA_SET_AMX_TRANSPOSE_BF16:
+    case XED_ISA_SET_AMX_TRANSPOSE_COMPLEX:
+    case XED_ISA_SET_AMX_TRANSPOSE_FP16:
+    case XED_ISA_SET_AMX_TRANSPOSE_MOVRS:
+    case XED_ISA_SET_AMX_TRANSPOSE_TF32:
     case XED_ISA_SET_APX_F_AMX:
+    case XED_ISA_SET_APX_F_AMX_MOVRS:
+    case XED_ISA_SET_APX_F_AMX_TRANSPOSE:
+    case XED_ISA_SET_APX_F_AMX_TRANSPOSE_MOVRS:
        return 1;
     default:
        return 0;
@@ -40,6 +53,13 @@ xed_bool_t xed_classify_avx512(const xed_decoded_inst_t* d)
 {
     const xed_isa_set_enum_t isa_set = xed_decoded_inst_get_isa_set(d);
     switch(isa_set) {
+    case XED_ISA_SET_AVX10_2_BF16_128:
+    case XED_ISA_SET_AVX10_2_BF16_256:
+    case XED_ISA_SET_AVX10_2_BF16_512:
+    case XED_ISA_SET_AVX10_2_BF16_SCALAR:
+    case XED_ISA_SET_AVX10_MOVRS_128:
+    case XED_ISA_SET_AVX10_MOVRS_256:
+    case XED_ISA_SET_AVX10_MOVRS_512:
     case XED_ISA_SET_AVX512BW_128:
     case XED_ISA_SET_AVX512BW_128N:
     case XED_ISA_SET_AVX512BW_256:
@@ -74,17 +94,39 @@ xed_bool_t xed_classify_avx512(const xed_decoded_inst_t* d)
     case XED_ISA_SET_AVX512_BITALG_128:
     case XED_ISA_SET_AVX512_BITALG_256:
     case XED_ISA_SET_AVX512_BITALG_512:
+    case XED_ISA_SET_AVX512_COM_EF_SCALAR:
     case XED_ISA_SET_AVX512_FP16_128:
     case XED_ISA_SET_AVX512_FP16_128N:
     case XED_ISA_SET_AVX512_FP16_256:
     case XED_ISA_SET_AVX512_FP16_512:
+    case XED_ISA_SET_AVX512_FP16_CONVERT_128:
+    case XED_ISA_SET_AVX512_FP16_CONVERT_256:
+    case XED_ISA_SET_AVX512_FP16_CONVERT_512:
     case XED_ISA_SET_AVX512_FP16_SCALAR:
+    case XED_ISA_SET_AVX512_FP8_CONVERT_128:
+    case XED_ISA_SET_AVX512_FP8_CONVERT_256:
+    case XED_ISA_SET_AVX512_FP8_CONVERT_512:
     case XED_ISA_SET_AVX512_GFNI_128:
     case XED_ISA_SET_AVX512_GFNI_256:
     case XED_ISA_SET_AVX512_GFNI_512:
     case XED_ISA_SET_AVX512_IFMA_128:
     case XED_ISA_SET_AVX512_IFMA_256:
     case XED_ISA_SET_AVX512_IFMA_512:
+    case XED_ISA_SET_AVX512_MEDIAX_128:
+    case XED_ISA_SET_AVX512_MEDIAX_256:
+    case XED_ISA_SET_AVX512_MEDIAX_512:
+    case XED_ISA_SET_AVX512_MINMAX_128:
+    case XED_ISA_SET_AVX512_MINMAX_256:
+    case XED_ISA_SET_AVX512_MINMAX_512:
+    case XED_ISA_SET_AVX512_MINMAX_SCALAR:
+    case XED_ISA_SET_AVX512_MOVZXC_128:
+    case XED_ISA_SET_AVX512_SAT_CVT_128:
+    case XED_ISA_SET_AVX512_SAT_CVT_256:
+    case XED_ISA_SET_AVX512_SAT_CVT_512:
+    case XED_ISA_SET_AVX512_SAT_CVT_DS_128:
+    case XED_ISA_SET_AVX512_SAT_CVT_DS_256:
+    case XED_ISA_SET_AVX512_SAT_CVT_DS_512:
+    case XED_ISA_SET_AVX512_SAT_CVT_DS_SCALAR:
     case XED_ISA_SET_AVX512_VAES_128:
     case XED_ISA_SET_AVX512_VAES_256:
     case XED_ISA_SET_AVX512_VAES_512:
@@ -97,6 +139,15 @@ xed_bool_t xed_classify_avx512(const xed_decoded_inst_t* d)
     case XED_ISA_SET_AVX512_VNNI_128:
     case XED_ISA_SET_AVX512_VNNI_256:
     case XED_ISA_SET_AVX512_VNNI_512:
+    case XED_ISA_SET_AVX512_VNNI_FP16_128:
+    case XED_ISA_SET_AVX512_VNNI_FP16_256:
+    case XED_ISA_SET_AVX512_VNNI_FP16_512:
+    case XED_ISA_SET_AVX512_VNNI_INT16_128:
+    case XED_ISA_SET_AVX512_VNNI_INT16_256:
+    case XED_ISA_SET_AVX512_VNNI_INT16_512:
+    case XED_ISA_SET_AVX512_VNNI_INT8_128:
+    case XED_ISA_SET_AVX512_VNNI_INT8_256:
+    case XED_ISA_SET_AVX512_VNNI_INT8_512:
     case XED_ISA_SET_AVX512_VP2INTERSECT_128:
     case XED_ISA_SET_AVX512_VP2INTERSECT_256:
     case XED_ISA_SET_AVX512_VP2INTERSECT_512:
@@ -106,6 +157,9 @@ xed_bool_t xed_classify_avx512(const xed_decoded_inst_t* d)
     case XED_ISA_SET_AVX512_VPOPCNTDQ_128:
     case XED_ISA_SET_AVX512_VPOPCNTDQ_256:
     case XED_ISA_SET_AVX512_VPOPCNTDQ_512:
+    case XED_ISA_SET_SM4_128:
+    case XED_ISA_SET_SM4_256:
+    case XED_ISA_SET_SM4_512:
        return 1;
     default:
        return 0;
@@ -167,6 +221,7 @@ xed_bool_t xed_classify_sse(const xed_decoded_inst_t* d)
 }
 xed_bool_t xed_classify_apx(const xed_decoded_inst_t* d)
 {
+#if defined(XED_SUPPORTS_AVX512)
     const xed_isa_set_enum_t isa_set = xed_decoded_inst_get_isa_set(d);
 /* REX2 Prefix is detected */
     if (xed3_operand_get_rex2(d)) return 1;
@@ -182,14 +237,15 @@ xed_bool_t xed_classify_apx(const xed_decoded_inst_t* d)
     case XED_ISA_SET_APX_F:
     case XED_ISA_SET_APX_F_ADX:
     case XED_ISA_SET_APX_F_AMX:
+    case XED_ISA_SET_APX_F_AMX_MOVRS:
+    case XED_ISA_SET_APX_F_AMX_TRANSPOSE:
+    case XED_ISA_SET_APX_F_AMX_TRANSPOSE_MOVRS:
     case XED_ISA_SET_APX_F_BMI1:
     case XED_ISA_SET_APX_F_BMI2:
     case XED_ISA_SET_APX_F_CET:
     case XED_ISA_SET_APX_F_CMPCCXADD:
     case XED_ISA_SET_APX_F_ENQCMD:
     case XED_ISA_SET_APX_F_INVPCID:
-    case XED_ISA_SET_APX_F_KEYLOCKER:
-    case XED_ISA_SET_APX_F_KEYLOCKER_WIDE:
     case XED_ISA_SET_APX_F_KOPB:
     case XED_ISA_SET_APX_F_KOPD:
     case XED_ISA_SET_APX_F_KOPQ:
@@ -198,12 +254,17 @@ xed_bool_t xed_classify_apx(const xed_decoded_inst_t* d)
     case XED_ISA_SET_APX_F_MOVBE:
     case XED_ISA_SET_APX_F_MOVDIR64B:
     case XED_ISA_SET_APX_F_MOVDIRI:
+    case XED_ISA_SET_APX_F_MOVRS:
+    case XED_ISA_SET_APX_F_MSR_IMM:
+    case XED_ISA_SET_APX_F_POPCNT:
     case XED_ISA_SET_APX_F_RAO_INT:
-    case XED_ISA_SET_APX_F_SHA:
     case XED_ISA_SET_APX_F_USER_MSR:
     case XED_ISA_SET_APX_F_VMX:
        return 1;
     default:
        return 0;
     }
+#endif
+(void)d;
+return 0;
 }

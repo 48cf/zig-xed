@@ -1,6 +1,9 @@
 .{
-    .name = "xed",
+    .name = .zig_xed,
     .version = "0.0.0",
+    .fingerprint = 0x4a44b96b3d16b735, // Changing this has security and trust implications.
+    .minimum_zig_version = "0.15.0-dev.769+4d7980645",
+    .dependencies = .{},
     .paths = .{
         "build.zig",
         "build.gen.zig",

@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -65,12 +65,13 @@ void xed_init_operand_ctypes(void)
    xed_operand_ctype[XED_OPERAND_MODE]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_SMODE]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_MODEP5]=XED_OPERAND_CTYPE_XED_BITS_T;
-   xed_operand_ctype[XED_OPERAND_MODEP55C]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_P4]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_LZCNT]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_TZCNT]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_MODE_FIRST_PREFIX]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_MODE_SHORT_UD0]=XED_OPERAND_CTYPE_XED_BITS_T;
+   xed_operand_ctype[XED_OPERAND_PREFETCHIT]=XED_OPERAND_CTYPE_XED_BITS_T;
+   xed_operand_ctype[XED_OPERAND_PREFETCHRST]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_IMM0]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_IMM1]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_IMM0SIGNED]=XED_OPERAND_CTYPE_XED_BITS_T;
@@ -141,7 +142,9 @@ void xed_init_operand_ctypes(void)
    xed_operand_ctype[XED_OPERAND_NO_EVEX]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_NO_VEX]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_NO_APX]=XED_OPERAND_CTYPE_XED_BITS_T;
+   xed_operand_ctype[XED_OPERAND_ENC_DELETE]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_AMD3DNOW]=XED_OPERAND_CTYPE_XED_BITS_T;
+   xed_operand_ctype[XED_OPERAND_WBNOINVD]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_MPXMODE]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_CET]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_CLDEMOTE]=XED_OPERAND_CTYPE_XED_BITS_T;
@@ -161,11 +164,11 @@ void xed_init_operand_ctypes(void)
    xed_operand_ctype[XED_OPERAND_SAE]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_VL_IGN]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_UBIT]=XED_OPERAND_CTYPE_XED_BITS_T;
-   xed_operand_ctype[XED_OPERAND_WBNOINVD]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_EVVSPACE]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_ND]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_NF]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_ctype[XED_OPERAND_SCC]=XED_OPERAND_CTYPE_XED_BITS_T;
+   xed_operand_ctype[XED_OPERAND_DFV]=XED_OPERAND_CTYPE_XED_BITS_T;
    xed_operand_bits[XED_OPERAND_SEG_OVD]=3;
    xed_operand_bits[XED_OPERAND_HINT]=3;
    xed_operand_bits[XED_OPERAND_ENCODE_FORCE]=1;
@@ -205,12 +208,13 @@ void xed_init_operand_ctypes(void)
    xed_operand_bits[XED_OPERAND_MODE]=2;
    xed_operand_bits[XED_OPERAND_SMODE]=2;
    xed_operand_bits[XED_OPERAND_MODEP5]=1;
-   xed_operand_bits[XED_OPERAND_MODEP55C]=1;
    xed_operand_bits[XED_OPERAND_P4]=1;
    xed_operand_bits[XED_OPERAND_LZCNT]=1;
    xed_operand_bits[XED_OPERAND_TZCNT]=1;
    xed_operand_bits[XED_OPERAND_MODE_FIRST_PREFIX]=1;
    xed_operand_bits[XED_OPERAND_MODE_SHORT_UD0]=1;
+   xed_operand_bits[XED_OPERAND_PREFETCHIT]=1;
+   xed_operand_bits[XED_OPERAND_PREFETCHRST]=1;
    xed_operand_bits[XED_OPERAND_IMM0]=1;
    xed_operand_bits[XED_OPERAND_IMM1]=1;
    xed_operand_bits[XED_OPERAND_IMM0SIGNED]=1;
@@ -281,7 +285,9 @@ void xed_init_operand_ctypes(void)
    xed_operand_bits[XED_OPERAND_NO_EVEX]=1;
    xed_operand_bits[XED_OPERAND_NO_VEX]=1;
    xed_operand_bits[XED_OPERAND_NO_APX]=1;
+   xed_operand_bits[XED_OPERAND_ENC_DELETE]=1;
    xed_operand_bits[XED_OPERAND_AMD3DNOW]=1;
+   xed_operand_bits[XED_OPERAND_WBNOINVD]=1;
    xed_operand_bits[XED_OPERAND_MPXMODE]=1;
    xed_operand_bits[XED_OPERAND_CET]=1;
    xed_operand_bits[XED_OPERAND_CLDEMOTE]=1;
@@ -301,11 +307,11 @@ void xed_init_operand_ctypes(void)
    xed_operand_bits[XED_OPERAND_SAE]=1;
    xed_operand_bits[XED_OPERAND_VL_IGN]=1;
    xed_operand_bits[XED_OPERAND_UBIT]=1;
-   xed_operand_bits[XED_OPERAND_WBNOINVD]=1;
    xed_operand_bits[XED_OPERAND_EVVSPACE]=2;
    xed_operand_bits[XED_OPERAND_ND]=1;
    xed_operand_bits[XED_OPERAND_NF]=1;
    xed_operand_bits[XED_OPERAND_SCC]=4;
+   xed_operand_bits[XED_OPERAND_DFV]=4;
 }
 xed_operand_ctype_enum_t xed_operand_get_ctype(xed_operand_enum_t opname)
 {

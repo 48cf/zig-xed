@@ -7,7 +7,7 @@
 # define INCLUDE_PRIVATE_XED_ILD_IMM_BYTES_H
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -497,7 +497,7 @@ const xed_ild_l1_func_t imm_width_map_evex_map4[256] = {
 /*opcode 0xd1*/ xed_lookup_function_0_IMM_WIDTH_CONST_l2,
 /*opcode 0xd2*/ xed_lookup_function_0_IMM_WIDTH_CONST_l2,
 /*opcode 0xd3*/ xed_lookup_function_0_IMM_WIDTH_CONST_l2,
-/*opcode 0xd4*/ xed_lookup_function_SIMM8_IMM_WIDTH_CONST_l2,
+/*opcode 0xd4*/ xed_lookup_function_0_IMM_WIDTH_CONST_l2,
 /*opcode 0xd5*/ xed_lookup_function_0_IMM_WIDTH_CONST_l2,
 /*opcode 0xd6*/ xed_lookup_function_0_IMM_WIDTH_CONST_l2,
 /*opcode 0xd7*/ xed_lookup_function_0_IMM_WIDTH_CONST_l2,

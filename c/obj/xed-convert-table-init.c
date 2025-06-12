@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -68,6 +68,24 @@ static const char* xed_convert_table_BCASTSTR[] = {
 /*0x1a*/ "{1to2}",
 /*0x1b*/ "{1to4}",
 };
+static const char* xed_convert_table_DFVSTR[] = {
+/*0x0*/ "{dfv=}",
+/*0x1*/ "{dfv=cf}",
+/*0x2*/ "{dfv=zf}",
+/*0x3*/ "{dfv=zf,cf}",
+/*0x4*/ "{dfv=sf}",
+/*0x5*/ "{dfv=sf,cf}",
+/*0x6*/ "{dfv=sf,zf}",
+/*0x7*/ "{dfv=sf,zf,cf}",
+/*0x8*/ "{dfv=of}",
+/*0x9*/ "{dfv=of,cf}",
+/*0xa*/ "{dfv=of,zf}",
+/*0xc*/ "{dfv=of,zf,cf}",
+/*0xc*/ "{dfv=of,sf}",
+/*0xd*/ "{dfv=of,sf,cf}",
+/*0xe*/ "{dfv=of,sf,zf}",
+/*0xf*/ "{dfv=of,sf,zf,cf}",
+};
 void xed_init_convert_tables(void)
 {
 xed_convert_table[XED_OPERAND_CONVERT_INVALID].table_name = 0;
@@ -85,4 +103,7 @@ xed_convert_table[XED_OPERAND_CONVERT_ROUNDC].opnd       = XED_OPERAND_ROUNDC;
 xed_convert_table[XED_OPERAND_CONVERT_BCASTSTR].table_name = xed_convert_table_BCASTSTR;
 xed_convert_table[XED_OPERAND_CONVERT_BCASTSTR].limit      = 28;
 xed_convert_table[XED_OPERAND_CONVERT_BCASTSTR].opnd       = XED_OPERAND_BCAST;
+xed_convert_table[XED_OPERAND_CONVERT_DFVSTR].table_name = xed_convert_table_DFVSTR;
+xed_convert_table[XED_OPERAND_CONVERT_DFVSTR].limit      = 16;
+xed_convert_table[XED_OPERAND_CONVERT_DFVSTR].opnd       = XED_OPERAND_DFV;
 }

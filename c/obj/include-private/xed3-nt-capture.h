@@ -7,7 +7,7 @@
 # define INCLUDE_PRIVATE_XED3_NT_CAPTURE_H
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -193,6 +193,30 @@ static XED_INLINE void xed3_capture_nt_CR_B(xed_decoded_inst_t* d);
 
 static XED_INLINE void xed3_capture_nt_DR_R(xed_decoded_inst_t* d);
 
+static XED_INLINE void xed3_capture_nt_VGPR32_N(xed_decoded_inst_t* d);
+
+static XED_INLINE void xed3_capture_nt_VGPR32_B(xed_decoded_inst_t* d);
+
+static XED_INLINE void xed3_capture_nt_VGPR32_R(xed_decoded_inst_t* d);
+
+static XED_INLINE void xed3_capture_nt_VGPR32_N_32(xed_decoded_inst_t* d);
+
+static XED_INLINE void xed3_capture_nt_VGPR32_N_64(xed_decoded_inst_t* d);
+
+static XED_INLINE void xed3_capture_nt_VGPR32_B_32(xed_decoded_inst_t* d);
+
+static XED_INLINE void xed3_capture_nt_VGPR32_B_64(xed_decoded_inst_t* d);
+
+static XED_INLINE void xed3_capture_nt_VGPR32_R_32(xed_decoded_inst_t* d);
+
+static XED_INLINE void xed3_capture_nt_VGPR32_R_64(xed_decoded_inst_t* d);
+
+static XED_INLINE void xed3_capture_nt_VGPR64_N(xed_decoded_inst_t* d);
+
+static XED_INLINE void xed3_capture_nt_VGPR64_B(xed_decoded_inst_t* d);
+
+static XED_INLINE void xed3_capture_nt_VGPR64_R(xed_decoded_inst_t* d);
+
 static XED_INLINE void xed3_capture_nt_GPR8_R(xed_decoded_inst_t* d);
 
 static XED_INLINE void xed3_capture_nt_GPR8_B(xed_decoded_inst_t* d);
@@ -281,6 +305,12 @@ static XED_INLINE void xed3_capture_nt_XMM_B_32(xed_decoded_inst_t* d);
 
 static XED_INLINE void xed3_capture_nt_XMM_B_64(xed_decoded_inst_t* d);
 
+static XED_INLINE void xed3_capture_nt_VGPRy_R(xed_decoded_inst_t* d);
+
+static XED_INLINE void xed3_capture_nt_VGPRy_B(xed_decoded_inst_t* d);
+
+static XED_INLINE void xed3_capture_nt_VGPRy_N(xed_decoded_inst_t* d);
+
 static XED_INLINE void xed3_capture_nt_BND_R_CHECK(xed_decoded_inst_t* d);
 
 static XED_INLINE void xed3_capture_nt_BND_B_CHECK(xed_decoded_inst_t* d);
@@ -345,38 +375,6 @@ static XED_INLINE void xed3_capture_nt_VSIB_INDEX_XMM(xed_decoded_inst_t* d);
 
 static XED_INLINE void xed3_capture_nt_VSIB_BASE(xed_decoded_inst_t* d);
 
-static XED_INLINE void xed3_capture_nt_VGPRy_R(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_VGPRy_B(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_VGPRy_N(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_VGPR32_N(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_VGPR32_B(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_VGPR32_R(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_VGPR32_N_32(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_VGPR32_N_64(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_VGPR64_N(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_VGPR32_R_32(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_VGPR32_R_64(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_VGPR64_R(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_VGPR32_B_32(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_VGPR32_B_64(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_VGPR64_B(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_TUPLE1_4X(xed_decoded_inst_t* d);
-
 static XED_INLINE void xed3_capture_nt_AVX512_ROUND(xed_decoded_inst_t* d);
 
 static XED_INLINE void xed3_capture_nt_SAE(xed_decoded_inst_t* d);
@@ -409,39 +407,7 @@ static XED_INLINE void xed3_capture_nt_NELEM_QUARTERMEM(xed_decoded_inst_t* d);
 
 static XED_INLINE void xed3_capture_nt_NELEM_EIGHTHMEM(xed_decoded_inst_t* d);
 
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_READER_BYTE(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_READER_WORD(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_WRITER_LDOP_D(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_WRITER_LDOP_Q(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_WRITER_STORE_BYTE(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_WRITER_STORE_WORD(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_TUPLE1_BYTE(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_TUPLE1_WORD(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_SCALAR(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_TUPLE1_SUBDWORD(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_READER(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_READER_SUBDWORD(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_WRITER_LDOP(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_WRITER_STORE(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_WRITER_STORE_SUBDWORD(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_TUPLE1(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_NELEM_GSCAT(xed_decoded_inst_t* d);
+static XED_INLINE void xed3_capture_nt_NELEM_ONE(xed_decoded_inst_t* d);
 
 static XED_INLINE void xed3_capture_nt_NELEM_TUPLE2(xed_decoded_inst_t* d);
 
@@ -547,6 +513,8 @@ static XED_INLINE void xed3_capture_nt_ZMM_N3_32(xed_decoded_inst_t* d);
 
 static XED_INLINE void xed3_capture_nt_ZMM_N3_64(xed_decoded_inst_t* d);
 
+static XED_INLINE void xed3_capture_nt_NELEM_TUPLE1_4X(xed_decoded_inst_t* d);
+
 static XED_INLINE void xed3_capture_nt_TMM_R(xed_decoded_inst_t* d);
 
 static XED_INLINE void xed3_capture_nt_TMM_B(xed_decoded_inst_t* d);
@@ -554,14 +522,6 @@ static XED_INLINE void xed3_capture_nt_TMM_B(xed_decoded_inst_t* d);
 static XED_INLINE void xed3_capture_nt_TMM_N(xed_decoded_inst_t* d);
 
 static XED_INLINE void xed3_capture_nt_NELEM_QUARTER(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_XMM_L_R3(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_XMM_L_R3_64(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_XMM_L_B3(xed_decoded_inst_t* d);
-
-static XED_INLINE void xed3_capture_nt_XMM_L_B3_64(xed_decoded_inst_t* d);
 
 static XED_INLINE void xed3_capture_nt_GPRv_N(xed_decoded_inst_t* d);
 
@@ -577,13 +537,15 @@ static XED_INLINE void xed3_capture_nt_GPR64_N_NORSP(xed_decoded_inst_t* d);
 
 static XED_INLINE void xed3_capture_nt_GPR64_B_NORSP(xed_decoded_inst_t* d);
 
-static XED_INLINE void xed3_capture_nt_DFV(xed_decoded_inst_t* d);
-
 static XED_INLINE void xed3_capture_nt_TMM_R3(xed_decoded_inst_t* d);
 
 static XED_INLINE void xed3_capture_nt_EVAPX(xed_decoded_inst_t* d);
 
+static XED_INLINE void xed3_capture_nt_DFV_PARSER(xed_decoded_inst_t* d);
+
 static XED_INLINE void xed3_capture_nt_EVAPX_SCC(xed_decoded_inst_t* d);
+
+static XED_INLINE void xed3_capture_nt_TMM_B3(xed_decoded_inst_t* d);
 
 static XED_INLINE void xed3_capture_nt_REMOVE_SEGMENT(xed_decoded_inst_t* d)
 {
@@ -4866,6 +4828,789 @@ case 23: /*(7, 0, 1) -> REXR4=1                 | OUTREG=XED_REG_ERROR*/
 case 31: /*(7, 1, 1) -> REXR4=1                 | OUTREG=XED_REG_ERROR*/
     xed3_operand_set_outreg(d, XED_REG_ERROR);
     xed3_operand_set_error(d, XED_ERROR_BAD_REGISTER);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_VGPR32_N(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_mode(d)) << ((0));
+/* now switch code..*/
+switch(key) {
+case 0: /*(0,) -> mode16 | OUTREG=VGPR32_N_32()*/
+    xed3_capture_nt_VGPR32_N_32(d);
+/*pacify the compiler */
+(void)d;
+    break;
+case 1: /*(1,) -> mode32 | OUTREG=VGPR32_N_32()*/
+    xed3_capture_nt_VGPR32_N_32(d);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(2,) -> mode64 | OUTREG=VGPR32_N_64()*/
+    xed3_capture_nt_VGPR32_N_64(d);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_VGPR32_B(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_mode(d)) << ((0));
+/* now switch code..*/
+switch(key) {
+case 0: /*(0,) -> mode16 | OUTREG=VGPR32_B_32()*/
+    xed3_capture_nt_VGPR32_B_32(d);
+/*pacify the compiler */
+(void)d;
+    break;
+case 1: /*(1,) -> mode32 | OUTREG=VGPR32_B_32()*/
+    xed3_capture_nt_VGPR32_B_32(d);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(2,) -> mode64 | OUTREG=VGPR32_B_64()*/
+    xed3_capture_nt_VGPR32_B_64(d);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_VGPR32_R(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_mode(d)) << ((0));
+/* now switch code..*/
+switch(key) {
+case 0: /*(0,) -> mode16 | OUTREG=VGPR32_R_32()*/
+    xed3_capture_nt_VGPR32_R_32(d);
+/*pacify the compiler */
+(void)d;
+    break;
+case 1: /*(1,) -> mode32 | OUTREG=VGPR32_R_32()*/
+    xed3_capture_nt_VGPR32_R_32(d);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(2,) -> mode64 | OUTREG=VGPR32_R_64()*/
+    xed3_capture_nt_VGPR32_R_64(d);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_VGPR32_N_32(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_vexdest210(d)) << ((0));
+/* now switch code..*/
+switch(key) {
+case 0: /*(0,) -> VEXDEST210=0   | OUTREG=XED_REG_EDI*/
+    xed3_operand_set_outreg(d, XED_REG_EDI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 1: /*(1,) -> VEXDEST210=1   | OUTREG=XED_REG_ESI*/
+    xed3_operand_set_outreg(d, XED_REG_ESI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(2,) -> VEXDEST210=2   | OUTREG=XED_REG_EBP*/
+    xed3_operand_set_outreg(d, XED_REG_EBP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 3: /*(3,) -> VEXDEST210=3   | OUTREG=XED_REG_ESP*/
+    xed3_operand_set_outreg(d, XED_REG_ESP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 4: /*(4,) -> VEXDEST210=4   | OUTREG=XED_REG_EBX*/
+    xed3_operand_set_outreg(d, XED_REG_EBX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 5: /*(5,) -> VEXDEST210=5   | OUTREG=XED_REG_EDX*/
+    xed3_operand_set_outreg(d, XED_REG_EDX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 6: /*(6,) -> VEXDEST210=6   | OUTREG=XED_REG_ECX*/
+    xed3_operand_set_outreg(d, XED_REG_ECX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 7: /*(7,) -> VEXDEST210=7   | OUTREG=XED_REG_EAX*/
+    xed3_operand_set_outreg(d, XED_REG_EAX);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_VGPR32_N_64(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_vexdest210(d)) << ((0));
+key += (xed3_operand_get_vexdest3(d)) << ((3));
+/* now switch code..*/
+switch(key) {
+case 0: /*(0, 0) -> VEXDEST3=0 VEXDEST210=0   | OUTREG=XED_REG_R15D*/
+    xed3_operand_set_outreg(d, XED_REG_R15D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 1: /*(1, 0) -> VEXDEST3=0 VEXDEST210=1   | OUTREG=XED_REG_R14D*/
+    xed3_operand_set_outreg(d, XED_REG_R14D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(2, 0) -> VEXDEST3=0 VEXDEST210=2   | OUTREG=XED_REG_R13D*/
+    xed3_operand_set_outreg(d, XED_REG_R13D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 3: /*(3, 0) -> VEXDEST3=0 VEXDEST210=3   | OUTREG=XED_REG_R12D*/
+    xed3_operand_set_outreg(d, XED_REG_R12D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 4: /*(4, 0) -> VEXDEST3=0 VEXDEST210=4   | OUTREG=XED_REG_R11D*/
+    xed3_operand_set_outreg(d, XED_REG_R11D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 5: /*(5, 0) -> VEXDEST3=0 VEXDEST210=5   | OUTREG=XED_REG_R10D*/
+    xed3_operand_set_outreg(d, XED_REG_R10D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 6: /*(6, 0) -> VEXDEST3=0 VEXDEST210=6   | OUTREG=XED_REG_R9D*/
+    xed3_operand_set_outreg(d, XED_REG_R9D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 7: /*(7, 0) -> VEXDEST3=0 VEXDEST210=7   | OUTREG=XED_REG_R8D*/
+    xed3_operand_set_outreg(d, XED_REG_R8D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 8: /*(0, 1) -> VEXDEST3=1 VEXDEST210=0   | OUTREG=XED_REG_EDI*/
+    xed3_operand_set_outreg(d, XED_REG_EDI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 9: /*(1, 1) -> VEXDEST3=1 VEXDEST210=1   | OUTREG=XED_REG_ESI*/
+    xed3_operand_set_outreg(d, XED_REG_ESI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 10: /*(2, 1) -> VEXDEST3=1 VEXDEST210=2   | OUTREG=XED_REG_EBP*/
+    xed3_operand_set_outreg(d, XED_REG_EBP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 11: /*(3, 1) -> VEXDEST3=1 VEXDEST210=3   | OUTREG=XED_REG_ESP*/
+    xed3_operand_set_outreg(d, XED_REG_ESP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 12: /*(4, 1) -> VEXDEST3=1 VEXDEST210=4   | OUTREG=XED_REG_EBX*/
+    xed3_operand_set_outreg(d, XED_REG_EBX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 13: /*(5, 1) -> VEXDEST3=1 VEXDEST210=5   | OUTREG=XED_REG_EDX*/
+    xed3_operand_set_outreg(d, XED_REG_EDX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 14: /*(6, 1) -> VEXDEST3=1 VEXDEST210=6   | OUTREG=XED_REG_ECX*/
+    xed3_operand_set_outreg(d, XED_REG_ECX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 15: /*(7, 1) -> VEXDEST3=1 VEXDEST210=7   | OUTREG=XED_REG_EAX*/
+    xed3_operand_set_outreg(d, XED_REG_EAX);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_VGPR32_B_32(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_rm(d)) << ((0));
+/* now switch code..*/
+switch(key) {
+case 0: /*(0,) -> RM=0   | OUTREG=XED_REG_EAX*/
+    xed3_operand_set_outreg(d, XED_REG_EAX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 1: /*(1,) -> RM=1   | OUTREG=XED_REG_ECX*/
+    xed3_operand_set_outreg(d, XED_REG_ECX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(2,) -> RM=2   | OUTREG=XED_REG_EDX*/
+    xed3_operand_set_outreg(d, XED_REG_EDX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 3: /*(3,) -> RM=3   | OUTREG=XED_REG_EBX*/
+    xed3_operand_set_outreg(d, XED_REG_EBX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 4: /*(4,) -> RM=4   | OUTREG=XED_REG_ESP*/
+    xed3_operand_set_outreg(d, XED_REG_ESP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 5: /*(5,) -> RM=5   | OUTREG=XED_REG_EBP*/
+    xed3_operand_set_outreg(d, XED_REG_EBP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 6: /*(6,) -> RM=6   | OUTREG=XED_REG_ESI*/
+    xed3_operand_set_outreg(d, XED_REG_ESI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 7: /*(7,) -> RM=7   | OUTREG=XED_REG_EDI*/
+    xed3_operand_set_outreg(d, XED_REG_EDI);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_VGPR32_B_64(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_rexb(d)) << ((0));
+key += (xed3_operand_get_rm(d)) << ((1));
+/* now switch code..*/
+switch(key) {
+case 0: /*(0, 0) -> REXB=0 RM=0  | OUTREG=XED_REG_EAX*/
+    xed3_operand_set_outreg(d, XED_REG_EAX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 1: /*(1, 0) -> REXB=1 RM=0  | OUTREG=XED_REG_R8D*/
+    xed3_operand_set_outreg(d, XED_REG_R8D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(0, 1) -> REXB=0 RM=1  | OUTREG=XED_REG_ECX*/
+    xed3_operand_set_outreg(d, XED_REG_ECX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 3: /*(1, 1) -> REXB=1 RM=1  | OUTREG=XED_REG_R9D*/
+    xed3_operand_set_outreg(d, XED_REG_R9D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 4: /*(0, 2) -> REXB=0 RM=2  | OUTREG=XED_REG_EDX*/
+    xed3_operand_set_outreg(d, XED_REG_EDX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 5: /*(1, 2) -> REXB=1 RM=2  | OUTREG=XED_REG_R10D*/
+    xed3_operand_set_outreg(d, XED_REG_R10D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 6: /*(0, 3) -> REXB=0 RM=3  | OUTREG=XED_REG_EBX*/
+    xed3_operand_set_outreg(d, XED_REG_EBX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 7: /*(1, 3) -> REXB=1 RM=3  | OUTREG=XED_REG_R11D*/
+    xed3_operand_set_outreg(d, XED_REG_R11D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 8: /*(0, 4) -> REXB=0 RM=4  | OUTREG=XED_REG_ESP*/
+    xed3_operand_set_outreg(d, XED_REG_ESP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 9: /*(1, 4) -> REXB=1 RM=4  | OUTREG=XED_REG_R12D*/
+    xed3_operand_set_outreg(d, XED_REG_R12D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 10: /*(0, 5) -> REXB=0 RM=5  | OUTREG=XED_REG_EBP*/
+    xed3_operand_set_outreg(d, XED_REG_EBP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 11: /*(1, 5) -> REXB=1 RM=5  | OUTREG=XED_REG_R13D*/
+    xed3_operand_set_outreg(d, XED_REG_R13D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 12: /*(0, 6) -> REXB=0 RM=6  | OUTREG=XED_REG_ESI*/
+    xed3_operand_set_outreg(d, XED_REG_ESI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 13: /*(1, 6) -> REXB=1 RM=6  | OUTREG=XED_REG_R14D*/
+    xed3_operand_set_outreg(d, XED_REG_R14D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 14: /*(0, 7) -> REXB=0 RM=7  | OUTREG=XED_REG_EDI*/
+    xed3_operand_set_outreg(d, XED_REG_EDI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 15: /*(1, 7) -> REXB=1 RM=7  | OUTREG=XED_REG_R15D*/
+    xed3_operand_set_outreg(d, XED_REG_R15D);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_VGPR32_R_32(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_reg(d)) << ((0));
+/* now switch code..*/
+switch(key) {
+case 0: /*(0,) -> REG=0   | OUTREG=XED_REG_EAX*/
+    xed3_operand_set_outreg(d, XED_REG_EAX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 1: /*(1,) -> REG=1   | OUTREG=XED_REG_ECX*/
+    xed3_operand_set_outreg(d, XED_REG_ECX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(2,) -> REG=2   | OUTREG=XED_REG_EDX*/
+    xed3_operand_set_outreg(d, XED_REG_EDX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 3: /*(3,) -> REG=3   | OUTREG=XED_REG_EBX*/
+    xed3_operand_set_outreg(d, XED_REG_EBX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 4: /*(4,) -> REG=4   | OUTREG=XED_REG_ESP*/
+    xed3_operand_set_outreg(d, XED_REG_ESP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 5: /*(5,) -> REG=5   | OUTREG=XED_REG_EBP*/
+    xed3_operand_set_outreg(d, XED_REG_EBP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 6: /*(6,) -> REG=6   | OUTREG=XED_REG_ESI*/
+    xed3_operand_set_outreg(d, XED_REG_ESI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 7: /*(7,) -> REG=7   | OUTREG=XED_REG_EDI*/
+    xed3_operand_set_outreg(d, XED_REG_EDI);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_VGPR32_R_64(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_reg(d)) << ((0));
+key += (xed3_operand_get_rexr(d)) << ((3));
+/* now switch code..*/
+switch(key) {
+case 0: /*(0, 0) -> REXR=0 REG=0  | OUTREG=XED_REG_EAX*/
+    xed3_operand_set_outreg(d, XED_REG_EAX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 1: /*(1, 0) -> REXR=0 REG=1  | OUTREG=XED_REG_ECX*/
+    xed3_operand_set_outreg(d, XED_REG_ECX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(2, 0) -> REXR=0 REG=2  | OUTREG=XED_REG_EDX*/
+    xed3_operand_set_outreg(d, XED_REG_EDX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 3: /*(3, 0) -> REXR=0 REG=3  | OUTREG=XED_REG_EBX*/
+    xed3_operand_set_outreg(d, XED_REG_EBX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 4: /*(4, 0) -> REXR=0 REG=4  | OUTREG=XED_REG_ESP*/
+    xed3_operand_set_outreg(d, XED_REG_ESP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 5: /*(5, 0) -> REXR=0 REG=5  | OUTREG=XED_REG_EBP*/
+    xed3_operand_set_outreg(d, XED_REG_EBP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 6: /*(6, 0) -> REXR=0 REG=6  | OUTREG=XED_REG_ESI*/
+    xed3_operand_set_outreg(d, XED_REG_ESI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 7: /*(7, 0) -> REXR=0 REG=7  | OUTREG=XED_REG_EDI*/
+    xed3_operand_set_outreg(d, XED_REG_EDI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 8: /*(0, 1) -> REXR=1 REG=0  | OUTREG=XED_REG_R8D*/
+    xed3_operand_set_outreg(d, XED_REG_R8D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 9: /*(1, 1) -> REXR=1 REG=1  | OUTREG=XED_REG_R9D*/
+    xed3_operand_set_outreg(d, XED_REG_R9D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 10: /*(2, 1) -> REXR=1 REG=2  | OUTREG=XED_REG_R10D*/
+    xed3_operand_set_outreg(d, XED_REG_R10D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 11: /*(3, 1) -> REXR=1 REG=3  | OUTREG=XED_REG_R11D*/
+    xed3_operand_set_outreg(d, XED_REG_R11D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 12: /*(4, 1) -> REXR=1 REG=4  | OUTREG=XED_REG_R12D*/
+    xed3_operand_set_outreg(d, XED_REG_R12D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 13: /*(5, 1) -> REXR=1 REG=5  | OUTREG=XED_REG_R13D*/
+    xed3_operand_set_outreg(d, XED_REG_R13D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 14: /*(6, 1) -> REXR=1 REG=6  | OUTREG=XED_REG_R14D*/
+    xed3_operand_set_outreg(d, XED_REG_R14D);
+/*pacify the compiler */
+(void)d;
+    break;
+case 15: /*(7, 1) -> REXR=1 REG=7  | OUTREG=XED_REG_R15D*/
+    xed3_operand_set_outreg(d, XED_REG_R15D);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_VGPR64_N(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_vexdest210(d)) << ((0));
+key += (xed3_operand_get_vexdest3(d)) << ((3));
+/* now switch code..*/
+switch(key) {
+case 0: /*(0, 0) -> VEXDEST3=0 VEXDEST210=0  | OUTREG=XED_REG_R15*/
+    xed3_operand_set_outreg(d, XED_REG_R15);
+/*pacify the compiler */
+(void)d;
+    break;
+case 1: /*(1, 0) -> VEXDEST3=0 VEXDEST210=1  | OUTREG=XED_REG_R14*/
+    xed3_operand_set_outreg(d, XED_REG_R14);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(2, 0) -> VEXDEST3=0 VEXDEST210=2  | OUTREG=XED_REG_R13*/
+    xed3_operand_set_outreg(d, XED_REG_R13);
+/*pacify the compiler */
+(void)d;
+    break;
+case 3: /*(3, 0) -> VEXDEST3=0 VEXDEST210=3  | OUTREG=XED_REG_R12*/
+    xed3_operand_set_outreg(d, XED_REG_R12);
+/*pacify the compiler */
+(void)d;
+    break;
+case 4: /*(4, 0) -> VEXDEST3=0 VEXDEST210=4  | OUTREG=XED_REG_R11*/
+    xed3_operand_set_outreg(d, XED_REG_R11);
+/*pacify the compiler */
+(void)d;
+    break;
+case 5: /*(5, 0) -> VEXDEST3=0 VEXDEST210=5  | OUTREG=XED_REG_R10*/
+    xed3_operand_set_outreg(d, XED_REG_R10);
+/*pacify the compiler */
+(void)d;
+    break;
+case 6: /*(6, 0) -> VEXDEST3=0 VEXDEST210=6  | OUTREG=XED_REG_R9*/
+    xed3_operand_set_outreg(d, XED_REG_R9);
+/*pacify the compiler */
+(void)d;
+    break;
+case 7: /*(7, 0) -> VEXDEST3=0 VEXDEST210=7  | OUTREG=XED_REG_R8*/
+    xed3_operand_set_outreg(d, XED_REG_R8);
+/*pacify the compiler */
+(void)d;
+    break;
+case 8: /*(0, 1) -> VEXDEST3=1 VEXDEST210=0  | OUTREG=XED_REG_RDI*/
+    xed3_operand_set_outreg(d, XED_REG_RDI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 9: /*(1, 1) -> VEXDEST3=1 VEXDEST210=1  | OUTREG=XED_REG_RSI*/
+    xed3_operand_set_outreg(d, XED_REG_RSI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 10: /*(2, 1) -> VEXDEST3=1 VEXDEST210=2  | OUTREG=XED_REG_RBP*/
+    xed3_operand_set_outreg(d, XED_REG_RBP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 11: /*(3, 1) -> VEXDEST3=1 VEXDEST210=3  | OUTREG=XED_REG_RSP*/
+    xed3_operand_set_outreg(d, XED_REG_RSP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 12: /*(4, 1) -> VEXDEST3=1 VEXDEST210=4  | OUTREG=XED_REG_RBX*/
+    xed3_operand_set_outreg(d, XED_REG_RBX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 13: /*(5, 1) -> VEXDEST3=1 VEXDEST210=5  | OUTREG=XED_REG_RDX*/
+    xed3_operand_set_outreg(d, XED_REG_RDX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 14: /*(6, 1) -> VEXDEST3=1 VEXDEST210=6  | OUTREG=XED_REG_RCX*/
+    xed3_operand_set_outreg(d, XED_REG_RCX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 15: /*(7, 1) -> VEXDEST3=1 VEXDEST210=7  | OUTREG=XED_REG_RAX*/
+    xed3_operand_set_outreg(d, XED_REG_RAX);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_VGPR64_B(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_rexb(d)) << ((0));
+key += (xed3_operand_get_rm(d)) << ((1));
+/* now switch code..*/
+switch(key) {
+case 0: /*(0, 0) -> REXB=0 RM=0  | OUTREG=XED_REG_RAX*/
+    xed3_operand_set_outreg(d, XED_REG_RAX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 1: /*(1, 0) -> REXB=1 RM=0  | OUTREG=XED_REG_R8*/
+    xed3_operand_set_outreg(d, XED_REG_R8);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(0, 1) -> REXB=0 RM=1  | OUTREG=XED_REG_RCX*/
+    xed3_operand_set_outreg(d, XED_REG_RCX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 3: /*(1, 1) -> REXB=1 RM=1  | OUTREG=XED_REG_R9*/
+    xed3_operand_set_outreg(d, XED_REG_R9);
+/*pacify the compiler */
+(void)d;
+    break;
+case 4: /*(0, 2) -> REXB=0 RM=2  | OUTREG=XED_REG_RDX*/
+    xed3_operand_set_outreg(d, XED_REG_RDX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 5: /*(1, 2) -> REXB=1 RM=2  | OUTREG=XED_REG_R10*/
+    xed3_operand_set_outreg(d, XED_REG_R10);
+/*pacify the compiler */
+(void)d;
+    break;
+case 6: /*(0, 3) -> REXB=0 RM=3  | OUTREG=XED_REG_RBX*/
+    xed3_operand_set_outreg(d, XED_REG_RBX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 7: /*(1, 3) -> REXB=1 RM=3  | OUTREG=XED_REG_R11*/
+    xed3_operand_set_outreg(d, XED_REG_R11);
+/*pacify the compiler */
+(void)d;
+    break;
+case 8: /*(0, 4) -> REXB=0 RM=4  | OUTREG=XED_REG_RSP*/
+    xed3_operand_set_outreg(d, XED_REG_RSP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 9: /*(1, 4) -> REXB=1 RM=4  | OUTREG=XED_REG_R12*/
+    xed3_operand_set_outreg(d, XED_REG_R12);
+/*pacify the compiler */
+(void)d;
+    break;
+case 10: /*(0, 5) -> REXB=0 RM=5  | OUTREG=XED_REG_RBP*/
+    xed3_operand_set_outreg(d, XED_REG_RBP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 11: /*(1, 5) -> REXB=1 RM=5  | OUTREG=XED_REG_R13*/
+    xed3_operand_set_outreg(d, XED_REG_R13);
+/*pacify the compiler */
+(void)d;
+    break;
+case 12: /*(0, 6) -> REXB=0 RM=6  | OUTREG=XED_REG_RSI*/
+    xed3_operand_set_outreg(d, XED_REG_RSI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 13: /*(1, 6) -> REXB=1 RM=6  | OUTREG=XED_REG_R14*/
+    xed3_operand_set_outreg(d, XED_REG_R14);
+/*pacify the compiler */
+(void)d;
+    break;
+case 14: /*(0, 7) -> REXB=0 RM=7  | OUTREG=XED_REG_RDI*/
+    xed3_operand_set_outreg(d, XED_REG_RDI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 15: /*(1, 7) -> REXB=1 RM=7  | OUTREG=XED_REG_R15*/
+    xed3_operand_set_outreg(d, XED_REG_R15);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_VGPR64_R(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_reg(d)) << ((0));
+key += (xed3_operand_get_rexr(d)) << ((3));
+/* now switch code..*/
+switch(key) {
+case 0: /*(0, 0) -> REXR=0 REG=0  | OUTREG=XED_REG_RAX*/
+    xed3_operand_set_outreg(d, XED_REG_RAX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 1: /*(1, 0) -> REXR=0 REG=1  | OUTREG=XED_REG_RCX*/
+    xed3_operand_set_outreg(d, XED_REG_RCX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(2, 0) -> REXR=0 REG=2  | OUTREG=XED_REG_RDX*/
+    xed3_operand_set_outreg(d, XED_REG_RDX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 3: /*(3, 0) -> REXR=0 REG=3  | OUTREG=XED_REG_RBX*/
+    xed3_operand_set_outreg(d, XED_REG_RBX);
+/*pacify the compiler */
+(void)d;
+    break;
+case 4: /*(4, 0) -> REXR=0 REG=4  | OUTREG=XED_REG_RSP*/
+    xed3_operand_set_outreg(d, XED_REG_RSP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 5: /*(5, 0) -> REXR=0 REG=5  | OUTREG=XED_REG_RBP*/
+    xed3_operand_set_outreg(d, XED_REG_RBP);
+/*pacify the compiler */
+(void)d;
+    break;
+case 6: /*(6, 0) -> REXR=0 REG=6  | OUTREG=XED_REG_RSI*/
+    xed3_operand_set_outreg(d, XED_REG_RSI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 7: /*(7, 0) -> REXR=0 REG=7  | OUTREG=XED_REG_RDI*/
+    xed3_operand_set_outreg(d, XED_REG_RDI);
+/*pacify the compiler */
+(void)d;
+    break;
+case 8: /*(0, 1) -> REXR=1 REG=0  | OUTREG=XED_REG_R8*/
+    xed3_operand_set_outreg(d, XED_REG_R8);
+/*pacify the compiler */
+(void)d;
+    break;
+case 9: /*(1, 1) -> REXR=1 REG=1  | OUTREG=XED_REG_R9*/
+    xed3_operand_set_outreg(d, XED_REG_R9);
+/*pacify the compiler */
+(void)d;
+    break;
+case 10: /*(2, 1) -> REXR=1 REG=2  | OUTREG=XED_REG_R10*/
+    xed3_operand_set_outreg(d, XED_REG_R10);
+/*pacify the compiler */
+(void)d;
+    break;
+case 11: /*(3, 1) -> REXR=1 REG=3  | OUTREG=XED_REG_R11*/
+    xed3_operand_set_outreg(d, XED_REG_R11);
+/*pacify the compiler */
+(void)d;
+    break;
+case 12: /*(4, 1) -> REXR=1 REG=4  | OUTREG=XED_REG_R12*/
+    xed3_operand_set_outreg(d, XED_REG_R12);
+/*pacify the compiler */
+(void)d;
+    break;
+case 13: /*(5, 1) -> REXR=1 REG=5  | OUTREG=XED_REG_R13*/
+    xed3_operand_set_outreg(d, XED_REG_R13);
+/*pacify the compiler */
+(void)d;
+    break;
+case 14: /*(6, 1) -> REXR=1 REG=6  | OUTREG=XED_REG_R14*/
+    xed3_operand_set_outreg(d, XED_REG_R14);
+/*pacify the compiler */
+(void)d;
+    break;
+case 15: /*(7, 1) -> REXR=1 REG=7  | OUTREG=XED_REG_R15*/
+    xed3_operand_set_outreg(d, XED_REG_R15);
 /*pacify the compiler */
 (void)d;
     break;
@@ -10257,19 +11002,19 @@ case 88: /*(0, 0, 1, 5) -> REXB4=1 REXB=0 SIBBASE=0b101  MOD=0b00 | NEED_MEMDISP
 /*pacify the compiler */
 (void)d;
     break;
-case 89: /*(1, 0, 1, 5) -> REXB4=1 REXB=0 SIBBASE=0b101  MOD=0b01      | BASE0=Ar21() SEG0=FINAL_SSEG() DISP_WIDTH=8*/
+case 89: /*(1, 0, 1, 5) -> REXB4=1 REXB=0 SIBBASE=0b101  MOD=0b01      | BASE0=Ar21() SEG0=FINAL_DSEG() DISP_WIDTH=8*/
     xed3_capture_nt_Ar21(d);
     xed3_operand_set_base0(d, xed3_operand_get_outreg(d));
-    xed3_capture_nt_FINAL_SSEG(d);
+    xed3_capture_nt_FINAL_DSEG(d);
     xed3_operand_set_seg0(d, xed3_operand_get_outreg(d));
     xed3_operand_set_disp_width(d, 0x8);
 /*pacify the compiler */
 (void)d;
     break;
-case 90: /*(2, 0, 1, 5) -> REXB4=1 REXB=0 SIBBASE=0b101  MOD=0b10      | BASE0=Ar21() SEG0=FINAL_SSEG() DISP_WIDTH=32*/
+case 90: /*(2, 0, 1, 5) -> REXB4=1 REXB=0 SIBBASE=0b101  MOD=0b10      | BASE0=Ar21() SEG0=FINAL_DSEG() DISP_WIDTH=32*/
     xed3_capture_nt_Ar21(d);
     xed3_operand_set_base0(d, xed3_operand_get_outreg(d));
-    xed3_capture_nt_FINAL_SSEG(d);
+    xed3_capture_nt_FINAL_DSEG(d);
     xed3_operand_set_seg0(d, xed3_operand_get_outreg(d));
     xed3_operand_set_disp_width(d, 0x20);
 /*pacify the compiler */
@@ -10770,6 +11515,84 @@ case 14: /*(0, 7) -> REXB=0 RM=0x7  | OUTREG=XED_REG_XMM7*/
     break;
 case 15: /*(1, 7) -> REXB=1 RM=0x7  | OUTREG=XED_REG_XMM15*/
     xed3_operand_set_outreg(d, XED_REG_XMM15);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_VGPRy_R(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_eosz(d)) << ((0));
+/* now switch code..*/
+switch(key) {
+case 1: /*(1,) -> EOSZ=1 | OUTREG=VGPR32_R()*/
+    xed3_capture_nt_VGPR32_R(d);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(2,) -> EOSZ=2 | OUTREG=VGPR32_R()*/
+    xed3_capture_nt_VGPR32_R(d);
+/*pacify the compiler */
+(void)d;
+    break;
+case 3: /*(3,) -> EOSZ=3 | OUTREG=VGPR64_R()*/
+    xed3_capture_nt_VGPR64_R(d);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_VGPRy_B(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_eosz(d)) << ((0));
+/* now switch code..*/
+switch(key) {
+case 1: /*(1,) -> EOSZ=1 | OUTREG=VGPR32_B()*/
+    xed3_capture_nt_VGPR32_B(d);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(2,) -> EOSZ=2 | OUTREG=VGPR32_B()*/
+    xed3_capture_nt_VGPR32_B(d);
+/*pacify the compiler */
+(void)d;
+    break;
+case 3: /*(3,) -> EOSZ=3 | OUTREG=VGPR64_B()*/
+    xed3_capture_nt_VGPR64_B(d);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_VGPRy_N(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_eosz(d)) << ((0));
+/* now switch code..*/
+switch(key) {
+case 1: /*(1,) -> EOSZ=1 | OUTREG=VGPR32_N()*/
+    xed3_capture_nt_VGPR32_N(d);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(2,) -> EOSZ=2 | OUTREG=VGPR32_N()*/
+    xed3_capture_nt_VGPR32_N(d);
+/*pacify the compiler */
+(void)d;
+    break;
+case 3: /*(3,) -> EOSZ=3 | OUTREG=VGPR64_N()*/
+    xed3_capture_nt_VGPR64_N(d);
 /*pacify the compiler */
 (void)d;
     break;
@@ -13087,893 +13910,6 @@ default:
     break;
 }
 }
-static XED_INLINE void xed3_capture_nt_VGPRy_R(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_eosz(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 1: /*(1,) -> EOSZ=1 | OUTREG=VGPR32_R()*/
-    xed3_capture_nt_VGPR32_R(d);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> EOSZ=2 | OUTREG=VGPR32_R()*/
-    xed3_capture_nt_VGPR32_R(d);
-/*pacify the compiler */
-(void)d;
-    break;
-case 3: /*(3,) -> EOSZ=3 | OUTREG=VGPR64_R()*/
-    xed3_capture_nt_VGPR64_R(d);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_VGPRy_B(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_eosz(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 1: /*(1,) -> EOSZ=1 | OUTREG=VGPR32_B()*/
-    xed3_capture_nt_VGPR32_B(d);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> EOSZ=2 | OUTREG=VGPR32_B()*/
-    xed3_capture_nt_VGPR32_B(d);
-/*pacify the compiler */
-(void)d;
-    break;
-case 3: /*(3,) -> EOSZ=3 | OUTREG=VGPR64_B()*/
-    xed3_capture_nt_VGPR64_B(d);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_VGPRy_N(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_eosz(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 1: /*(1,) -> EOSZ=1 | OUTREG=VGPR32_N()*/
-    xed3_capture_nt_VGPR32_N(d);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> EOSZ=2 | OUTREG=VGPR32_N()*/
-    xed3_capture_nt_VGPR32_N(d);
-/*pacify the compiler */
-(void)d;
-    break;
-case 3: /*(3,) -> EOSZ=3 | OUTREG=VGPR64_N()*/
-    xed3_capture_nt_VGPR64_N(d);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_VGPR32_N(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_mode(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> mode16 | OUTREG=VGPR32_N_32()*/
-    xed3_capture_nt_VGPR32_N_32(d);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> mode32 | OUTREG=VGPR32_N_32()*/
-    xed3_capture_nt_VGPR32_N_32(d);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> mode64 | OUTREG=VGPR32_N_64()*/
-    xed3_capture_nt_VGPR32_N_64(d);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_VGPR32_B(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_mode(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> mode16 | OUTREG=VGPR32_B_32()*/
-    xed3_capture_nt_VGPR32_B_32(d);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> mode32 | OUTREG=VGPR32_B_32()*/
-    xed3_capture_nt_VGPR32_B_32(d);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> mode64 | OUTREG=VGPR32_B_64()*/
-    xed3_capture_nt_VGPR32_B_64(d);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_VGPR32_R(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_mode(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> mode16 | OUTREG=VGPR32_R_32()*/
-    xed3_capture_nt_VGPR32_R_32(d);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> mode32 | OUTREG=VGPR32_R_32()*/
-    xed3_capture_nt_VGPR32_R_32(d);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> mode64 | OUTREG=VGPR32_R_64()*/
-    xed3_capture_nt_VGPR32_R_64(d);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_VGPR32_N_32(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vexdest210(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VEXDEST210=0   | OUTREG=XED_REG_EDI*/
-    xed3_operand_set_outreg(d, XED_REG_EDI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VEXDEST210=1   | OUTREG=XED_REG_ESI*/
-    xed3_operand_set_outreg(d, XED_REG_ESI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VEXDEST210=2   | OUTREG=XED_REG_EBP*/
-    xed3_operand_set_outreg(d, XED_REG_EBP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 3: /*(3,) -> VEXDEST210=3   | OUTREG=XED_REG_ESP*/
-    xed3_operand_set_outreg(d, XED_REG_ESP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 4: /*(4,) -> VEXDEST210=4   | OUTREG=XED_REG_EBX*/
-    xed3_operand_set_outreg(d, XED_REG_EBX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 5: /*(5,) -> VEXDEST210=5   | OUTREG=XED_REG_EDX*/
-    xed3_operand_set_outreg(d, XED_REG_EDX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 6: /*(6,) -> VEXDEST210=6   | OUTREG=XED_REG_ECX*/
-    xed3_operand_set_outreg(d, XED_REG_ECX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 7: /*(7,) -> VEXDEST210=7   | OUTREG=XED_REG_EAX*/
-    xed3_operand_set_outreg(d, XED_REG_EAX);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_VGPR32_N_64(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vexdest210(d)) << ((0));
-key += (xed3_operand_get_vexdest3(d)) << ((3));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0, 0) -> VEXDEST3=0 VEXDEST210=0   | OUTREG=XED_REG_R15D*/
-    xed3_operand_set_outreg(d, XED_REG_R15D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1, 0) -> VEXDEST3=0 VEXDEST210=1   | OUTREG=XED_REG_R14D*/
-    xed3_operand_set_outreg(d, XED_REG_R14D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2, 0) -> VEXDEST3=0 VEXDEST210=2   | OUTREG=XED_REG_R13D*/
-    xed3_operand_set_outreg(d, XED_REG_R13D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 3: /*(3, 0) -> VEXDEST3=0 VEXDEST210=3   | OUTREG=XED_REG_R12D*/
-    xed3_operand_set_outreg(d, XED_REG_R12D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 4: /*(4, 0) -> VEXDEST3=0 VEXDEST210=4   | OUTREG=XED_REG_R11D*/
-    xed3_operand_set_outreg(d, XED_REG_R11D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 5: /*(5, 0) -> VEXDEST3=0 VEXDEST210=5   | OUTREG=XED_REG_R10D*/
-    xed3_operand_set_outreg(d, XED_REG_R10D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 6: /*(6, 0) -> VEXDEST3=0 VEXDEST210=6   | OUTREG=XED_REG_R9D*/
-    xed3_operand_set_outreg(d, XED_REG_R9D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 7: /*(7, 0) -> VEXDEST3=0 VEXDEST210=7   | OUTREG=XED_REG_R8D*/
-    xed3_operand_set_outreg(d, XED_REG_R8D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 8: /*(0, 1) -> VEXDEST3=1 VEXDEST210=0   | OUTREG=XED_REG_EDI*/
-    xed3_operand_set_outreg(d, XED_REG_EDI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 9: /*(1, 1) -> VEXDEST3=1 VEXDEST210=1   | OUTREG=XED_REG_ESI*/
-    xed3_operand_set_outreg(d, XED_REG_ESI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 10: /*(2, 1) -> VEXDEST3=1 VEXDEST210=2   | OUTREG=XED_REG_EBP*/
-    xed3_operand_set_outreg(d, XED_REG_EBP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 11: /*(3, 1) -> VEXDEST3=1 VEXDEST210=3   | OUTREG=XED_REG_ESP*/
-    xed3_operand_set_outreg(d, XED_REG_ESP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 12: /*(4, 1) -> VEXDEST3=1 VEXDEST210=4   | OUTREG=XED_REG_EBX*/
-    xed3_operand_set_outreg(d, XED_REG_EBX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 13: /*(5, 1) -> VEXDEST3=1 VEXDEST210=5   | OUTREG=XED_REG_EDX*/
-    xed3_operand_set_outreg(d, XED_REG_EDX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 14: /*(6, 1) -> VEXDEST3=1 VEXDEST210=6   | OUTREG=XED_REG_ECX*/
-    xed3_operand_set_outreg(d, XED_REG_ECX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 15: /*(7, 1) -> VEXDEST3=1 VEXDEST210=7   | OUTREG=XED_REG_EAX*/
-    xed3_operand_set_outreg(d, XED_REG_EAX);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_VGPR64_N(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vexdest210(d)) << ((0));
-key += (xed3_operand_get_vexdest3(d)) << ((3));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0, 0) -> VEXDEST3=0 VEXDEST210=0  | OUTREG=XED_REG_R15*/
-    xed3_operand_set_outreg(d, XED_REG_R15);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1, 0) -> VEXDEST3=0 VEXDEST210=1  | OUTREG=XED_REG_R14*/
-    xed3_operand_set_outreg(d, XED_REG_R14);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2, 0) -> VEXDEST3=0 VEXDEST210=2  | OUTREG=XED_REG_R13*/
-    xed3_operand_set_outreg(d, XED_REG_R13);
-/*pacify the compiler */
-(void)d;
-    break;
-case 3: /*(3, 0) -> VEXDEST3=0 VEXDEST210=3  | OUTREG=XED_REG_R12*/
-    xed3_operand_set_outreg(d, XED_REG_R12);
-/*pacify the compiler */
-(void)d;
-    break;
-case 4: /*(4, 0) -> VEXDEST3=0 VEXDEST210=4  | OUTREG=XED_REG_R11*/
-    xed3_operand_set_outreg(d, XED_REG_R11);
-/*pacify the compiler */
-(void)d;
-    break;
-case 5: /*(5, 0) -> VEXDEST3=0 VEXDEST210=5  | OUTREG=XED_REG_R10*/
-    xed3_operand_set_outreg(d, XED_REG_R10);
-/*pacify the compiler */
-(void)d;
-    break;
-case 6: /*(6, 0) -> VEXDEST3=0 VEXDEST210=6  | OUTREG=XED_REG_R9*/
-    xed3_operand_set_outreg(d, XED_REG_R9);
-/*pacify the compiler */
-(void)d;
-    break;
-case 7: /*(7, 0) -> VEXDEST3=0 VEXDEST210=7  | OUTREG=XED_REG_R8*/
-    xed3_operand_set_outreg(d, XED_REG_R8);
-/*pacify the compiler */
-(void)d;
-    break;
-case 8: /*(0, 1) -> VEXDEST3=1 VEXDEST210=0  | OUTREG=XED_REG_RDI*/
-    xed3_operand_set_outreg(d, XED_REG_RDI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 9: /*(1, 1) -> VEXDEST3=1 VEXDEST210=1  | OUTREG=XED_REG_RSI*/
-    xed3_operand_set_outreg(d, XED_REG_RSI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 10: /*(2, 1) -> VEXDEST3=1 VEXDEST210=2  | OUTREG=XED_REG_RBP*/
-    xed3_operand_set_outreg(d, XED_REG_RBP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 11: /*(3, 1) -> VEXDEST3=1 VEXDEST210=3  | OUTREG=XED_REG_RSP*/
-    xed3_operand_set_outreg(d, XED_REG_RSP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 12: /*(4, 1) -> VEXDEST3=1 VEXDEST210=4  | OUTREG=XED_REG_RBX*/
-    xed3_operand_set_outreg(d, XED_REG_RBX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 13: /*(5, 1) -> VEXDEST3=1 VEXDEST210=5  | OUTREG=XED_REG_RDX*/
-    xed3_operand_set_outreg(d, XED_REG_RDX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 14: /*(6, 1) -> VEXDEST3=1 VEXDEST210=6  | OUTREG=XED_REG_RCX*/
-    xed3_operand_set_outreg(d, XED_REG_RCX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 15: /*(7, 1) -> VEXDEST3=1 VEXDEST210=7  | OUTREG=XED_REG_RAX*/
-    xed3_operand_set_outreg(d, XED_REG_RAX);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_VGPR32_R_32(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_reg(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> REG=0   | OUTREG=XED_REG_EAX*/
-    xed3_operand_set_outreg(d, XED_REG_EAX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> REG=1   | OUTREG=XED_REG_ECX*/
-    xed3_operand_set_outreg(d, XED_REG_ECX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> REG=2   | OUTREG=XED_REG_EDX*/
-    xed3_operand_set_outreg(d, XED_REG_EDX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 3: /*(3,) -> REG=3   | OUTREG=XED_REG_EBX*/
-    xed3_operand_set_outreg(d, XED_REG_EBX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 4: /*(4,) -> REG=4   | OUTREG=XED_REG_ESP*/
-    xed3_operand_set_outreg(d, XED_REG_ESP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 5: /*(5,) -> REG=5   | OUTREG=XED_REG_EBP*/
-    xed3_operand_set_outreg(d, XED_REG_EBP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 6: /*(6,) -> REG=6   | OUTREG=XED_REG_ESI*/
-    xed3_operand_set_outreg(d, XED_REG_ESI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 7: /*(7,) -> REG=7   | OUTREG=XED_REG_EDI*/
-    xed3_operand_set_outreg(d, XED_REG_EDI);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_VGPR32_R_64(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_reg(d)) << ((0));
-key += (xed3_operand_get_rexr(d)) << ((3));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0, 0) -> REXR=0 REG=0  | OUTREG=XED_REG_EAX*/
-    xed3_operand_set_outreg(d, XED_REG_EAX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1, 0) -> REXR=0 REG=1  | OUTREG=XED_REG_ECX*/
-    xed3_operand_set_outreg(d, XED_REG_ECX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2, 0) -> REXR=0 REG=2  | OUTREG=XED_REG_EDX*/
-    xed3_operand_set_outreg(d, XED_REG_EDX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 3: /*(3, 0) -> REXR=0 REG=3  | OUTREG=XED_REG_EBX*/
-    xed3_operand_set_outreg(d, XED_REG_EBX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 4: /*(4, 0) -> REXR=0 REG=4  | OUTREG=XED_REG_ESP*/
-    xed3_operand_set_outreg(d, XED_REG_ESP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 5: /*(5, 0) -> REXR=0 REG=5  | OUTREG=XED_REG_EBP*/
-    xed3_operand_set_outreg(d, XED_REG_EBP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 6: /*(6, 0) -> REXR=0 REG=6  | OUTREG=XED_REG_ESI*/
-    xed3_operand_set_outreg(d, XED_REG_ESI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 7: /*(7, 0) -> REXR=0 REG=7  | OUTREG=XED_REG_EDI*/
-    xed3_operand_set_outreg(d, XED_REG_EDI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 8: /*(0, 1) -> REXR=1 REG=0  | OUTREG=XED_REG_R8D*/
-    xed3_operand_set_outreg(d, XED_REG_R8D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 9: /*(1, 1) -> REXR=1 REG=1  | OUTREG=XED_REG_R9D*/
-    xed3_operand_set_outreg(d, XED_REG_R9D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 10: /*(2, 1) -> REXR=1 REG=2  | OUTREG=XED_REG_R10D*/
-    xed3_operand_set_outreg(d, XED_REG_R10D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 11: /*(3, 1) -> REXR=1 REG=3  | OUTREG=XED_REG_R11D*/
-    xed3_operand_set_outreg(d, XED_REG_R11D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 12: /*(4, 1) -> REXR=1 REG=4  | OUTREG=XED_REG_R12D*/
-    xed3_operand_set_outreg(d, XED_REG_R12D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 13: /*(5, 1) -> REXR=1 REG=5  | OUTREG=XED_REG_R13D*/
-    xed3_operand_set_outreg(d, XED_REG_R13D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 14: /*(6, 1) -> REXR=1 REG=6  | OUTREG=XED_REG_R14D*/
-    xed3_operand_set_outreg(d, XED_REG_R14D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 15: /*(7, 1) -> REXR=1 REG=7  | OUTREG=XED_REG_R15D*/
-    xed3_operand_set_outreg(d, XED_REG_R15D);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_VGPR64_R(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_reg(d)) << ((0));
-key += (xed3_operand_get_rexr(d)) << ((3));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0, 0) -> REXR=0 REG=0  | OUTREG=XED_REG_RAX*/
-    xed3_operand_set_outreg(d, XED_REG_RAX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1, 0) -> REXR=0 REG=1  | OUTREG=XED_REG_RCX*/
-    xed3_operand_set_outreg(d, XED_REG_RCX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2, 0) -> REXR=0 REG=2  | OUTREG=XED_REG_RDX*/
-    xed3_operand_set_outreg(d, XED_REG_RDX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 3: /*(3, 0) -> REXR=0 REG=3  | OUTREG=XED_REG_RBX*/
-    xed3_operand_set_outreg(d, XED_REG_RBX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 4: /*(4, 0) -> REXR=0 REG=4  | OUTREG=XED_REG_RSP*/
-    xed3_operand_set_outreg(d, XED_REG_RSP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 5: /*(5, 0) -> REXR=0 REG=5  | OUTREG=XED_REG_RBP*/
-    xed3_operand_set_outreg(d, XED_REG_RBP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 6: /*(6, 0) -> REXR=0 REG=6  | OUTREG=XED_REG_RSI*/
-    xed3_operand_set_outreg(d, XED_REG_RSI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 7: /*(7, 0) -> REXR=0 REG=7  | OUTREG=XED_REG_RDI*/
-    xed3_operand_set_outreg(d, XED_REG_RDI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 8: /*(0, 1) -> REXR=1 REG=0  | OUTREG=XED_REG_R8*/
-    xed3_operand_set_outreg(d, XED_REG_R8);
-/*pacify the compiler */
-(void)d;
-    break;
-case 9: /*(1, 1) -> REXR=1 REG=1  | OUTREG=XED_REG_R9*/
-    xed3_operand_set_outreg(d, XED_REG_R9);
-/*pacify the compiler */
-(void)d;
-    break;
-case 10: /*(2, 1) -> REXR=1 REG=2  | OUTREG=XED_REG_R10*/
-    xed3_operand_set_outreg(d, XED_REG_R10);
-/*pacify the compiler */
-(void)d;
-    break;
-case 11: /*(3, 1) -> REXR=1 REG=3  | OUTREG=XED_REG_R11*/
-    xed3_operand_set_outreg(d, XED_REG_R11);
-/*pacify the compiler */
-(void)d;
-    break;
-case 12: /*(4, 1) -> REXR=1 REG=4  | OUTREG=XED_REG_R12*/
-    xed3_operand_set_outreg(d, XED_REG_R12);
-/*pacify the compiler */
-(void)d;
-    break;
-case 13: /*(5, 1) -> REXR=1 REG=5  | OUTREG=XED_REG_R13*/
-    xed3_operand_set_outreg(d, XED_REG_R13);
-/*pacify the compiler */
-(void)d;
-    break;
-case 14: /*(6, 1) -> REXR=1 REG=6  | OUTREG=XED_REG_R14*/
-    xed3_operand_set_outreg(d, XED_REG_R14);
-/*pacify the compiler */
-(void)d;
-    break;
-case 15: /*(7, 1) -> REXR=1 REG=7  | OUTREG=XED_REG_R15*/
-    xed3_operand_set_outreg(d, XED_REG_R15);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_VGPR32_B_32(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_rm(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> RM=0   | OUTREG=XED_REG_EAX*/
-    xed3_operand_set_outreg(d, XED_REG_EAX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> RM=1   | OUTREG=XED_REG_ECX*/
-    xed3_operand_set_outreg(d, XED_REG_ECX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> RM=2   | OUTREG=XED_REG_EDX*/
-    xed3_operand_set_outreg(d, XED_REG_EDX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 3: /*(3,) -> RM=3   | OUTREG=XED_REG_EBX*/
-    xed3_operand_set_outreg(d, XED_REG_EBX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 4: /*(4,) -> RM=4   | OUTREG=XED_REG_ESP*/
-    xed3_operand_set_outreg(d, XED_REG_ESP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 5: /*(5,) -> RM=5   | OUTREG=XED_REG_EBP*/
-    xed3_operand_set_outreg(d, XED_REG_EBP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 6: /*(6,) -> RM=6   | OUTREG=XED_REG_ESI*/
-    xed3_operand_set_outreg(d, XED_REG_ESI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 7: /*(7,) -> RM=7   | OUTREG=XED_REG_EDI*/
-    xed3_operand_set_outreg(d, XED_REG_EDI);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_VGPR32_B_64(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_rexb(d)) << ((0));
-key += (xed3_operand_get_rm(d)) << ((1));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0, 0) -> REXB=0 RM=0  | OUTREG=XED_REG_EAX*/
-    xed3_operand_set_outreg(d, XED_REG_EAX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1, 0) -> REXB=1 RM=0  | OUTREG=XED_REG_R8D*/
-    xed3_operand_set_outreg(d, XED_REG_R8D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(0, 1) -> REXB=0 RM=1  | OUTREG=XED_REG_ECX*/
-    xed3_operand_set_outreg(d, XED_REG_ECX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 3: /*(1, 1) -> REXB=1 RM=1  | OUTREG=XED_REG_R9D*/
-    xed3_operand_set_outreg(d, XED_REG_R9D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 4: /*(0, 2) -> REXB=0 RM=2  | OUTREG=XED_REG_EDX*/
-    xed3_operand_set_outreg(d, XED_REG_EDX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 5: /*(1, 2) -> REXB=1 RM=2  | OUTREG=XED_REG_R10D*/
-    xed3_operand_set_outreg(d, XED_REG_R10D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 6: /*(0, 3) -> REXB=0 RM=3  | OUTREG=XED_REG_EBX*/
-    xed3_operand_set_outreg(d, XED_REG_EBX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 7: /*(1, 3) -> REXB=1 RM=3  | OUTREG=XED_REG_R11D*/
-    xed3_operand_set_outreg(d, XED_REG_R11D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 8: /*(0, 4) -> REXB=0 RM=4  | OUTREG=XED_REG_ESP*/
-    xed3_operand_set_outreg(d, XED_REG_ESP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 9: /*(1, 4) -> REXB=1 RM=4  | OUTREG=XED_REG_R12D*/
-    xed3_operand_set_outreg(d, XED_REG_R12D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 10: /*(0, 5) -> REXB=0 RM=5  | OUTREG=XED_REG_EBP*/
-    xed3_operand_set_outreg(d, XED_REG_EBP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 11: /*(1, 5) -> REXB=1 RM=5  | OUTREG=XED_REG_R13D*/
-    xed3_operand_set_outreg(d, XED_REG_R13D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 12: /*(0, 6) -> REXB=0 RM=6  | OUTREG=XED_REG_ESI*/
-    xed3_operand_set_outreg(d, XED_REG_ESI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 13: /*(1, 6) -> REXB=1 RM=6  | OUTREG=XED_REG_R14D*/
-    xed3_operand_set_outreg(d, XED_REG_R14D);
-/*pacify the compiler */
-(void)d;
-    break;
-case 14: /*(0, 7) -> REXB=0 RM=7  | OUTREG=XED_REG_EDI*/
-    xed3_operand_set_outreg(d, XED_REG_EDI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 15: /*(1, 7) -> REXB=1 RM=7  | OUTREG=XED_REG_R15D*/
-    xed3_operand_set_outreg(d, XED_REG_R15D);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_VGPR64_B(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_rexb(d)) << ((0));
-key += (xed3_operand_get_rm(d)) << ((1));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0, 0) -> REXB=0 RM=0  | OUTREG=XED_REG_RAX*/
-    xed3_operand_set_outreg(d, XED_REG_RAX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1, 0) -> REXB=1 RM=0  | OUTREG=XED_REG_R8*/
-    xed3_operand_set_outreg(d, XED_REG_R8);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(0, 1) -> REXB=0 RM=1  | OUTREG=XED_REG_RCX*/
-    xed3_operand_set_outreg(d, XED_REG_RCX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 3: /*(1, 1) -> REXB=1 RM=1  | OUTREG=XED_REG_R9*/
-    xed3_operand_set_outreg(d, XED_REG_R9);
-/*pacify the compiler */
-(void)d;
-    break;
-case 4: /*(0, 2) -> REXB=0 RM=2  | OUTREG=XED_REG_RDX*/
-    xed3_operand_set_outreg(d, XED_REG_RDX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 5: /*(1, 2) -> REXB=1 RM=2  | OUTREG=XED_REG_R10*/
-    xed3_operand_set_outreg(d, XED_REG_R10);
-/*pacify the compiler */
-(void)d;
-    break;
-case 6: /*(0, 3) -> REXB=0 RM=3  | OUTREG=XED_REG_RBX*/
-    xed3_operand_set_outreg(d, XED_REG_RBX);
-/*pacify the compiler */
-(void)d;
-    break;
-case 7: /*(1, 3) -> REXB=1 RM=3  | OUTREG=XED_REG_R11*/
-    xed3_operand_set_outreg(d, XED_REG_R11);
-/*pacify the compiler */
-(void)d;
-    break;
-case 8: /*(0, 4) -> REXB=0 RM=4  | OUTREG=XED_REG_RSP*/
-    xed3_operand_set_outreg(d, XED_REG_RSP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 9: /*(1, 4) -> REXB=1 RM=4  | OUTREG=XED_REG_R12*/
-    xed3_operand_set_outreg(d, XED_REG_R12);
-/*pacify the compiler */
-(void)d;
-    break;
-case 10: /*(0, 5) -> REXB=0 RM=5  | OUTREG=XED_REG_RBP*/
-    xed3_operand_set_outreg(d, XED_REG_RBP);
-/*pacify the compiler */
-(void)d;
-    break;
-case 11: /*(1, 5) -> REXB=1 RM=5  | OUTREG=XED_REG_R13*/
-    xed3_operand_set_outreg(d, XED_REG_R13);
-/*pacify the compiler */
-(void)d;
-    break;
-case 12: /*(0, 6) -> REXB=0 RM=6  | OUTREG=XED_REG_RSI*/
-    xed3_operand_set_outreg(d, XED_REG_RSI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 13: /*(1, 6) -> REXB=1 RM=6  | OUTREG=XED_REG_R14*/
-    xed3_operand_set_outreg(d, XED_REG_R14);
-/*pacify the compiler */
-(void)d;
-    break;
-case 14: /*(0, 7) -> REXB=0 RM=7  | OUTREG=XED_REG_RDI*/
-    xed3_operand_set_outreg(d, XED_REG_RDI);
-/*pacify the compiler */
-(void)d;
-    break;
-case 15: /*(1, 7) -> REXB=1 RM=7  | OUTREG=XED_REG_R15*/
-    xed3_operand_set_outreg(d, XED_REG_R15);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_TUPLE1_4X(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=4*/
-    xed3_operand_set_nelem(d, 0x4);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=4*/
-    xed3_operand_set_nelem(d, 0x4);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=4*/
-    xed3_operand_set_nelem(d, 0x4);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
 static XED_INLINE void xed3_capture_nt_AVX512_ROUND(xed_decoded_inst_t* d)
 {
 xed_uint32_t key = 0;
@@ -14795,423 +14731,7 @@ default:
     break;
 }
 }
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_READER_BYTE(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_READER_WORD(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_WRITER_LDOP_D(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_WRITER_LDOP_Q(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_WRITER_STORE_BYTE(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_WRITER_STORE_WORD(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_TUPLE1_BYTE(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_TUPLE1_WORD(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_SCALAR(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_TUPLE1_SUBDWORD(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_READER(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_READER_SUBDWORD(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_WRITER_LDOP(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_WRITER_STORE(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_GPR_WRITER_STORE_SUBDWORD(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_TUPLE1(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vl(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0,) -> VL128  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1,) -> VL256  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2,) -> VL512  | NELEM=1*/
-    xed3_operand_set_nelem(d, 0x1);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_NELEM_GSCAT(xed_decoded_inst_t* d)
+static XED_INLINE void xed3_capture_nt_NELEM_ONE(xed_decoded_inst_t* d)
 {
 xed_uint32_t key = 0;
 key += (xed3_operand_get_vl(d)) << ((0));
@@ -15455,6 +14975,17 @@ key += (xed3_operand_get_element_size(d)) << ((1));
 key += (xed3_operand_get_vl(d)) << ((10));
 /* now switch code..*/
 switch(key) {
+case 16: /*(0, 8, 0) -> BCRC=0b0  ELEMENT_SIZE=8 VL128 | NELEM=8*/
+    xed3_operand_set_nelem(d, 0x8);
+/*pacify the compiler */
+(void)d;
+    break;
+case 17: /*(1, 8, 0) -> BCRC=0b1  ELEMENT_SIZE=8 VL128 | NELEM=1    EMX_BROADCAST_1TO8_8*/
+    xed3_operand_set_nelem(d, 0x1);
+    xed3_operand_set_bcast(d, 0x19);
+/*pacify the compiler */
+(void)d;
+    break;
 case 32: /*(0, 16, 0) -> BCRC=0b0  ELEMENT_SIZE=16 VL128 | NELEM=4*/
     xed3_operand_set_nelem(d, 0x4);
 /*pacify the compiler */
@@ -15477,6 +15008,17 @@ case 65: /*(1, 32, 0) -> BCRC=0b1  ELEMENT_SIZE=32 VL128 | NELEM=1    EMX_BROADC
 /*pacify the compiler */
 (void)d;
     break;
+case 1040: /*(0, 8, 1) -> BCRC=0b0  ELEMENT_SIZE=8 VL256 | NELEM=16*/
+    xed3_operand_set_nelem(d, 0x10);
+/*pacify the compiler */
+(void)d;
+    break;
+case 1041: /*(1, 8, 1) -> BCRC=0b1  ELEMENT_SIZE=8 VL256 | NELEM=1    EMX_BROADCAST_1TO16_8*/
+    xed3_operand_set_nelem(d, 0x1);
+    xed3_operand_set_bcast(d, 0x11);
+/*pacify the compiler */
+(void)d;
+    break;
 case 1056: /*(0, 16, 1) -> BCRC=0b0  ELEMENT_SIZE=16 VL256 | NELEM=8*/
     xed3_operand_set_nelem(d, 0x8);
 /*pacify the compiler */
@@ -15496,6 +15038,17 @@ case 1088: /*(0, 32, 1) -> BCRC=0b0  ELEMENT_SIZE=32 VL256 | NELEM=4*/
 case 1089: /*(1, 32, 1) -> BCRC=0b1  ELEMENT_SIZE=32 VL256 | NELEM=1    EMX_BROADCAST_1TO4_32*/
     xed3_operand_set_nelem(d, 0x1);
     xed3_operand_set_bcast(d, 0xa);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2064: /*(0, 8, 2) -> BCRC=0b0  ELEMENT_SIZE=8 VL512 | NELEM=32*/
+    xed3_operand_set_nelem(d, 0x20);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2065: /*(1, 8, 2) -> BCRC=0b1  ELEMENT_SIZE=8 VL512 | NELEM=1    EMX_BROADCAST_1TO32_8*/
+    xed3_operand_set_nelem(d, 0x1);
+    xed3_operand_set_bcast(d, 0x12);
 /*pacify the compiler */
 (void)d;
     break;
@@ -19296,6 +18849,32 @@ default:
     break;
 }
 }
+static XED_INLINE void xed3_capture_nt_NELEM_TUPLE1_4X(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_vl(d)) << ((0));
+/* now switch code..*/
+switch(key) {
+case 0: /*(0,) -> VL128  | NELEM=4*/
+    xed3_operand_set_nelem(d, 0x4);
+/*pacify the compiler */
+(void)d;
+    break;
+case 1: /*(1,) -> VL256  | NELEM=4*/
+    xed3_operand_set_nelem(d, 0x4);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(2,) -> VL512  | NELEM=4*/
+    xed3_operand_set_nelem(d, 0x4);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
 static XED_INLINE void xed3_capture_nt_TMM_R(xed_decoded_inst_t* d)
 {
 xed_uint32_t key = 0;
@@ -19490,224 +19069,6 @@ case 2080: /*(0, 16, 2) -> BCRC=0b0  ELEMENT_SIZE=16 VL512 | NELEM=8*/
 case 2081: /*(1, 16, 2) -> BCRC=0b1  ELEMENT_SIZE=16 VL512 | NELEM=1    EMX_BROADCAST_1TO8_16*/
     xed3_operand_set_nelem(d, 0x1);
     xed3_operand_set_bcast(d, 0xe);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_XMM_L_R3(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_mode(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 2: /*(2,) -> mode64 | OUTREG=XMM_L_R3_64()*/
-    xed3_capture_nt_XMM_L_R3_64(d);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_XMM_L_R3_64(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_reg(d)) << ((0));
-key += (xed3_operand_get_rexr(d)) << ((3));
-key += (xed3_operand_get_rexr4(d)) << ((4));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0, 0, 0) -> REXR4=0 REXR=0 REG=0 | OUTREG=XED_REG_XMM0*/
-    xed3_operand_set_outreg(d, XED_REG_XMM0);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1, 0, 0) -> REXR4=0 REXR=0 REG=1 | OUTREG=XED_REG_XMM1*/
-    xed3_operand_set_outreg(d, XED_REG_XMM1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2, 0, 0) -> REXR4=0 REXR=0 REG=2 | OUTREG=XED_REG_XMM2*/
-    xed3_operand_set_outreg(d, XED_REG_XMM2);
-/*pacify the compiler */
-(void)d;
-    break;
-case 3: /*(3, 0, 0) -> REXR4=0 REXR=0 REG=3 | OUTREG=XED_REG_XMM3*/
-    xed3_operand_set_outreg(d, XED_REG_XMM3);
-/*pacify the compiler */
-(void)d;
-    break;
-case 4: /*(4, 0, 0) -> REXR4=0 REXR=0 REG=4 | OUTREG=XED_REG_XMM4*/
-    xed3_operand_set_outreg(d, XED_REG_XMM4);
-/*pacify the compiler */
-(void)d;
-    break;
-case 5: /*(5, 0, 0) -> REXR4=0 REXR=0 REG=5 | OUTREG=XED_REG_XMM5*/
-    xed3_operand_set_outreg(d, XED_REG_XMM5);
-/*pacify the compiler */
-(void)d;
-    break;
-case 6: /*(6, 0, 0) -> REXR4=0 REXR=0 REG=6 | OUTREG=XED_REG_XMM6*/
-    xed3_operand_set_outreg(d, XED_REG_XMM6);
-/*pacify the compiler */
-(void)d;
-    break;
-case 7: /*(7, 0, 0) -> REXR4=0 REXR=0 REG=7 | OUTREG=XED_REG_XMM7*/
-    xed3_operand_set_outreg(d, XED_REG_XMM7);
-/*pacify the compiler */
-(void)d;
-    break;
-case 8: /*(0, 1, 0) -> REXR4=0 REXR=1 REG=0 | OUTREG=XED_REG_XMM8*/
-    xed3_operand_set_outreg(d, XED_REG_XMM8);
-/*pacify the compiler */
-(void)d;
-    break;
-case 9: /*(1, 1, 0) -> REXR4=0 REXR=1 REG=1 | OUTREG=XED_REG_XMM9*/
-    xed3_operand_set_outreg(d, XED_REG_XMM9);
-/*pacify the compiler */
-(void)d;
-    break;
-case 10: /*(2, 1, 0) -> REXR4=0 REXR=1 REG=2 | OUTREG=XED_REG_XMM10*/
-    xed3_operand_set_outreg(d, XED_REG_XMM10);
-/*pacify the compiler */
-(void)d;
-    break;
-case 11: /*(3, 1, 0) -> REXR4=0 REXR=1 REG=3 | OUTREG=XED_REG_XMM11*/
-    xed3_operand_set_outreg(d, XED_REG_XMM11);
-/*pacify the compiler */
-(void)d;
-    break;
-case 12: /*(4, 1, 0) -> REXR4=0 REXR=1 REG=4 | OUTREG=XED_REG_XMM12*/
-    xed3_operand_set_outreg(d, XED_REG_XMM12);
-/*pacify the compiler */
-(void)d;
-    break;
-case 13: /*(5, 1, 0) -> REXR4=0 REXR=1 REG=5 | OUTREG=XED_REG_XMM13*/
-    xed3_operand_set_outreg(d, XED_REG_XMM13);
-/*pacify the compiler */
-(void)d;
-    break;
-case 14: /*(6, 1, 0) -> REXR4=0 REXR=1 REG=6 | OUTREG=XED_REG_XMM14*/
-    xed3_operand_set_outreg(d, XED_REG_XMM14);
-/*pacify the compiler */
-(void)d;
-    break;
-case 15: /*(7, 1, 0) -> REXR4=0 REXR=1 REG=7 | OUTREG=XED_REG_XMM15*/
-    xed3_operand_set_outreg(d, XED_REG_XMM15);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_XMM_L_B3(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_mode(d)) << ((0));
-/* now switch code..*/
-switch(key) {
-case 2: /*(2,) -> mode64 | OUTREG=XMM_L_B3_64()*/
-    xed3_capture_nt_XMM_L_B3_64(d);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
-static XED_INLINE void xed3_capture_nt_XMM_L_B3_64(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_rexb(d)) << ((0));
-key += (xed3_operand_get_rexx(d)) << ((1));
-key += (xed3_operand_get_rm(d)) << ((2));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0, 0, 0) -> REXX=0 REXB=0 RM=0 | OUTREG=XED_REG_XMM0*/
-    xed3_operand_set_outreg(d, XED_REG_XMM0);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1, 0, 0) -> REXX=0 REXB=1 RM=0 | OUTREG=XED_REG_XMM8*/
-    xed3_operand_set_outreg(d, XED_REG_XMM8);
-/*pacify the compiler */
-(void)d;
-    break;
-case 4: /*(0, 0, 1) -> REXX=0 REXB=0 RM=1 | OUTREG=XED_REG_XMM1*/
-    xed3_operand_set_outreg(d, XED_REG_XMM1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 5: /*(1, 0, 1) -> REXX=0 REXB=1 RM=1 | OUTREG=XED_REG_XMM9*/
-    xed3_operand_set_outreg(d, XED_REG_XMM9);
-/*pacify the compiler */
-(void)d;
-    break;
-case 8: /*(0, 0, 2) -> REXX=0 REXB=0 RM=2 | OUTREG=XED_REG_XMM2*/
-    xed3_operand_set_outreg(d, XED_REG_XMM2);
-/*pacify the compiler */
-(void)d;
-    break;
-case 9: /*(1, 0, 2) -> REXX=0 REXB=1 RM=2 | OUTREG=XED_REG_XMM10*/
-    xed3_operand_set_outreg(d, XED_REG_XMM10);
-/*pacify the compiler */
-(void)d;
-    break;
-case 12: /*(0, 0, 3) -> REXX=0 REXB=0 RM=3 | OUTREG=XED_REG_XMM3*/
-    xed3_operand_set_outreg(d, XED_REG_XMM3);
-/*pacify the compiler */
-(void)d;
-    break;
-case 13: /*(1, 0, 3) -> REXX=0 REXB=1 RM=3 | OUTREG=XED_REG_XMM11*/
-    xed3_operand_set_outreg(d, XED_REG_XMM11);
-/*pacify the compiler */
-(void)d;
-    break;
-case 16: /*(0, 0, 4) -> REXX=0 REXB=0 RM=4 | OUTREG=XED_REG_XMM4*/
-    xed3_operand_set_outreg(d, XED_REG_XMM4);
-/*pacify the compiler */
-(void)d;
-    break;
-case 17: /*(1, 0, 4) -> REXX=0 REXB=1 RM=4 | OUTREG=XED_REG_XMM12*/
-    xed3_operand_set_outreg(d, XED_REG_XMM12);
-/*pacify the compiler */
-(void)d;
-    break;
-case 20: /*(0, 0, 5) -> REXX=0 REXB=0 RM=5 | OUTREG=XED_REG_XMM5*/
-    xed3_operand_set_outreg(d, XED_REG_XMM5);
-/*pacify the compiler */
-(void)d;
-    break;
-case 21: /*(1, 0, 5) -> REXX=0 REXB=1 RM=5 | OUTREG=XED_REG_XMM13*/
-    xed3_operand_set_outreg(d, XED_REG_XMM13);
-/*pacify the compiler */
-(void)d;
-    break;
-case 24: /*(0, 0, 6) -> REXX=0 REXB=0 RM=6 | OUTREG=XED_REG_XMM6*/
-    xed3_operand_set_outreg(d, XED_REG_XMM6);
-/*pacify the compiler */
-(void)d;
-    break;
-case 25: /*(1, 0, 6) -> REXX=0 REXB=1 RM=6 | OUTREG=XED_REG_XMM14*/
-    xed3_operand_set_outreg(d, XED_REG_XMM14);
-/*pacify the compiler */
-(void)d;
-    break;
-case 28: /*(0, 0, 7) -> REXX=0 REXB=0 RM=7 | OUTREG=XED_REG_XMM7*/
-    xed3_operand_set_outreg(d, XED_REG_XMM7);
-/*pacify the compiler */
-(void)d;
-    break;
-case 29: /*(1, 0, 7) -> REXX=0 REXB=1 RM=7 | OUTREG=XED_REG_XMM15*/
-    xed3_operand_set_outreg(d, XED_REG_XMM15);
 /*pacify the compiler */
 (void)d;
     break;
@@ -20878,98 +20239,6 @@ default:
     break;
 }
 }
-static XED_INLINE void xed3_capture_nt_DFV(xed_decoded_inst_t* d)
-{
-xed_uint32_t key = 0;
-key += (xed3_operand_get_vexdest210(d)) << ((0));
-key += (xed3_operand_get_vexdest3(d)) << ((3));
-/* now switch code..*/
-switch(key) {
-case 0: /*(0, 0) -> VEXDEST3=0 VEXDEST210=0 | OUTREG=XED_REG_DFV0*/
-    xed3_operand_set_outreg(d, XED_REG_DFV0);
-/*pacify the compiler */
-(void)d;
-    break;
-case 1: /*(1, 0) -> VEXDEST3=0 VEXDEST210=1 | OUTREG=XED_REG_DFV1*/
-    xed3_operand_set_outreg(d, XED_REG_DFV1);
-/*pacify the compiler */
-(void)d;
-    break;
-case 2: /*(2, 0) -> VEXDEST3=0 VEXDEST210=2 | OUTREG=XED_REG_DFV2*/
-    xed3_operand_set_outreg(d, XED_REG_DFV2);
-/*pacify the compiler */
-(void)d;
-    break;
-case 3: /*(3, 0) -> VEXDEST3=0 VEXDEST210=3 | OUTREG=XED_REG_DFV3*/
-    xed3_operand_set_outreg(d, XED_REG_DFV3);
-/*pacify the compiler */
-(void)d;
-    break;
-case 4: /*(4, 0) -> VEXDEST3=0 VEXDEST210=4 | OUTREG=XED_REG_DFV4*/
-    xed3_operand_set_outreg(d, XED_REG_DFV4);
-/*pacify the compiler */
-(void)d;
-    break;
-case 5: /*(5, 0) -> VEXDEST3=0 VEXDEST210=5 | OUTREG=XED_REG_DFV5*/
-    xed3_operand_set_outreg(d, XED_REG_DFV5);
-/*pacify the compiler */
-(void)d;
-    break;
-case 6: /*(6, 0) -> VEXDEST3=0 VEXDEST210=6 | OUTREG=XED_REG_DFV6*/
-    xed3_operand_set_outreg(d, XED_REG_DFV6);
-/*pacify the compiler */
-(void)d;
-    break;
-case 7: /*(7, 0) -> VEXDEST3=0 VEXDEST210=7 | OUTREG=XED_REG_DFV7*/
-    xed3_operand_set_outreg(d, XED_REG_DFV7);
-/*pacify the compiler */
-(void)d;
-    break;
-case 8: /*(0, 1) -> VEXDEST3=1 VEXDEST210=0 | OUTREG=XED_REG_DFV8*/
-    xed3_operand_set_outreg(d, XED_REG_DFV8);
-/*pacify the compiler */
-(void)d;
-    break;
-case 9: /*(1, 1) -> VEXDEST3=1 VEXDEST210=1 | OUTREG=XED_REG_DFV9*/
-    xed3_operand_set_outreg(d, XED_REG_DFV9);
-/*pacify the compiler */
-(void)d;
-    break;
-case 10: /*(2, 1) -> VEXDEST3=1 VEXDEST210=2 | OUTREG=XED_REG_DFV10*/
-    xed3_operand_set_outreg(d, XED_REG_DFV10);
-/*pacify the compiler */
-(void)d;
-    break;
-case 11: /*(3, 1) -> VEXDEST3=1 VEXDEST210=3 | OUTREG=XED_REG_DFV11*/
-    xed3_operand_set_outreg(d, XED_REG_DFV11);
-/*pacify the compiler */
-(void)d;
-    break;
-case 12: /*(4, 1) -> VEXDEST3=1 VEXDEST210=4 | OUTREG=XED_REG_DFV12*/
-    xed3_operand_set_outreg(d, XED_REG_DFV12);
-/*pacify the compiler */
-(void)d;
-    break;
-case 13: /*(5, 1) -> VEXDEST3=1 VEXDEST210=5 | OUTREG=XED_REG_DFV13*/
-    xed3_operand_set_outreg(d, XED_REG_DFV13);
-/*pacify the compiler */
-(void)d;
-    break;
-case 14: /*(6, 1) -> VEXDEST3=1 VEXDEST210=6 | OUTREG=XED_REG_DFV14*/
-    xed3_operand_set_outreg(d, XED_REG_DFV14);
-/*pacify the compiler */
-(void)d;
-    break;
-case 15: /*(7, 1) -> VEXDEST3=1 VEXDEST210=7 | OUTREG=XED_REG_DFV15*/
-    xed3_operand_set_outreg(d, XED_REG_DFV15);
-/*pacify the compiler */
-(void)d;
-    break;
-default:
-    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
-    break;
-}
-}
 static XED_INLINE void xed3_capture_nt_TMM_R3(xed_decoded_inst_t* d)
 {
 xed_uint32_t key = 0;
@@ -21051,18 +20320,164 @@ default:
     break;
 }
 }
+static XED_INLINE void xed3_capture_nt_DFV_PARSER(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_vexdest210(d)) << ((0));
+key += (xed3_operand_get_vexdest3(d)) << ((3));
+/* now switch code..*/
+switch(key) {
+case 0: /*(0, 0) -> VEXDEST3=0 VEXDEST210=0 | DFV=0*/
+    xed3_operand_set_dfv(d, 0x0);
+/*pacify the compiler */
+(void)d;
+    break;
+case 1: /*(1, 0) -> VEXDEST3=0 VEXDEST210=1 | DFV=1*/
+    xed3_operand_set_dfv(d, 0x1);
+/*pacify the compiler */
+(void)d;
+    break;
+case 2: /*(2, 0) -> VEXDEST3=0 VEXDEST210=2 | DFV=2*/
+    xed3_operand_set_dfv(d, 0x2);
+/*pacify the compiler */
+(void)d;
+    break;
+case 3: /*(3, 0) -> VEXDEST3=0 VEXDEST210=3 | DFV=3*/
+    xed3_operand_set_dfv(d, 0x3);
+/*pacify the compiler */
+(void)d;
+    break;
+case 4: /*(4, 0) -> VEXDEST3=0 VEXDEST210=4 | DFV=4*/
+    xed3_operand_set_dfv(d, 0x4);
+/*pacify the compiler */
+(void)d;
+    break;
+case 5: /*(5, 0) -> VEXDEST3=0 VEXDEST210=5 | DFV=5*/
+    xed3_operand_set_dfv(d, 0x5);
+/*pacify the compiler */
+(void)d;
+    break;
+case 6: /*(6, 0) -> VEXDEST3=0 VEXDEST210=6 | DFV=6*/
+    xed3_operand_set_dfv(d, 0x6);
+/*pacify the compiler */
+(void)d;
+    break;
+case 7: /*(7, 0) -> VEXDEST3=0 VEXDEST210=7 | DFV=7*/
+    xed3_operand_set_dfv(d, 0x7);
+/*pacify the compiler */
+(void)d;
+    break;
+case 8: /*(0, 1) -> VEXDEST3=1 VEXDEST210=0 | DFV=8*/
+    xed3_operand_set_dfv(d, 0x8);
+/*pacify the compiler */
+(void)d;
+    break;
+case 9: /*(1, 1) -> VEXDEST3=1 VEXDEST210=1 | DFV=9*/
+    xed3_operand_set_dfv(d, 0x9);
+/*pacify the compiler */
+(void)d;
+    break;
+case 10: /*(2, 1) -> VEXDEST3=1 VEXDEST210=2 | DFV=10*/
+    xed3_operand_set_dfv(d, 0xa);
+/*pacify the compiler */
+(void)d;
+    break;
+case 11: /*(3, 1) -> VEXDEST3=1 VEXDEST210=3 | DFV=11*/
+    xed3_operand_set_dfv(d, 0xb);
+/*pacify the compiler */
+(void)d;
+    break;
+case 12: /*(4, 1) -> VEXDEST3=1 VEXDEST210=4 | DFV=12*/
+    xed3_operand_set_dfv(d, 0xc);
+/*pacify the compiler */
+(void)d;
+    break;
+case 13: /*(5, 1) -> VEXDEST3=1 VEXDEST210=5 | DFV=13*/
+    xed3_operand_set_dfv(d, 0xd);
+/*pacify the compiler */
+(void)d;
+    break;
+case 14: /*(6, 1) -> VEXDEST3=1 VEXDEST210=6 | DFV=14*/
+    xed3_operand_set_dfv(d, 0xe);
+/*pacify the compiler */
+(void)d;
+    break;
+case 15: /*(7, 1) -> VEXDEST3=1 VEXDEST210=7 | DFV=15*/
+    xed3_operand_set_dfv(d, 0xf);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
 static XED_INLINE void xed3_capture_nt_EVAPX_SCC(xed_decoded_inst_t* d)
 {
 xed_uint32_t key = 0;
 key += (xed3_operand_get_dummy(d)) << ((0));
 /* now switch code..*/
 switch(key) {
-case 0: /*(0,) -> true  | EVEX_APX_SCC MASK=0 VEXDEST4=0 NF=0 BCRC=0*/
+case 0: /*(0,) -> true DFV_PARSER() | EVEX_APX_SCC MASK=0 VEXDEST4=0 NF=0 BCRC=0*/
+    xed3_capture_nt_DFV_PARSER(d);
     xed3_operand_set_evvspace(d, 0x2);
     xed3_operand_set_mask(d, 0x0);
     xed3_operand_set_vexdest4(d, 0x0);
     xed3_operand_set_nf(d, 0x0);
     xed3_operand_set_bcrc(d, 0x0);
+/*pacify the compiler */
+(void)d;
+    break;
+default:
+    xed3_operand_set_error(d, XED_ERROR_GENERAL_ERROR);
+    break;
+}
+}
+static XED_INLINE void xed3_capture_nt_TMM_B3(xed_decoded_inst_t* d)
+{
+xed_uint32_t key = 0;
+key += (xed3_operand_get_rexb(d)) << ((0));
+key += (xed3_operand_get_rexx(d)) << ((1));
+key += (xed3_operand_get_rm(d)) << ((2));
+/* now switch code..*/
+switch(key) {
+case 0: /*(0, 0, 0) -> REXX=0 REXB=0 RM=0 | OUTREG=XED_REG_TMM0*/
+    xed3_operand_set_outreg(d, XED_REG_TMM0);
+/*pacify the compiler */
+(void)d;
+    break;
+case 4: /*(0, 0, 1) -> REXX=0 REXB=0 RM=1 | OUTREG=XED_REG_TMM1*/
+    xed3_operand_set_outreg(d, XED_REG_TMM1);
+/*pacify the compiler */
+(void)d;
+    break;
+case 8: /*(0, 0, 2) -> REXX=0 REXB=0 RM=2 | OUTREG=XED_REG_TMM2*/
+    xed3_operand_set_outreg(d, XED_REG_TMM2);
+/*pacify the compiler */
+(void)d;
+    break;
+case 12: /*(0, 0, 3) -> REXX=0 REXB=0 RM=3 | OUTREG=XED_REG_TMM3*/
+    xed3_operand_set_outreg(d, XED_REG_TMM3);
+/*pacify the compiler */
+(void)d;
+    break;
+case 16: /*(0, 0, 4) -> REXX=0 REXB=0 RM=4 | OUTREG=XED_REG_TMM4*/
+    xed3_operand_set_outreg(d, XED_REG_TMM4);
+/*pacify the compiler */
+(void)d;
+    break;
+case 20: /*(0, 0, 5) -> REXX=0 REXB=0 RM=5 | OUTREG=XED_REG_TMM5*/
+    xed3_operand_set_outreg(d, XED_REG_TMM5);
+/*pacify the compiler */
+(void)d;
+    break;
+case 24: /*(0, 0, 6) -> REXX=0 REXB=0 RM=6 | OUTREG=XED_REG_TMM6*/
+    xed3_operand_set_outreg(d, XED_REG_TMM6);
+/*pacify the compiler */
+(void)d;
+    break;
+case 28: /*(0, 0, 7) -> REXX=0 REXB=0 RM=7 | OUTREG=XED_REG_TMM7*/
+    xed3_operand_set_outreg(d, XED_REG_TMM7);
 /*pacify the compiler */
 (void)d;
     break;

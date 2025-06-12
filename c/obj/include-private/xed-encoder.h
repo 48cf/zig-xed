@@ -7,7 +7,7 @@
 # define XED_ENCODER_H
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -234,7 +234,6 @@ xed_uint32_t xed_encode_nonterminal_VSIB_ENC_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_VSIB_ENC_INDEX_XMM_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_VSIB_ENC_INDEX_YMM_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_DISP_WIDTH_8_32_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_TUPLE1_4X_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_EVEX_62_REXR_ENC_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_EVEX_REXX_ENC_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_EVEX_REXB_ENC_BIND(xed_encoder_request_t* xes);
@@ -261,24 +260,8 @@ xed_uint32_t xed_encode_nonterminal_NELEM_FULLMEM_BIND(xed_encoder_request_t* xe
 xed_uint32_t xed_encode_nonterminal_NELEM_HALFMEM_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_NELEM_QUARTERMEM_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_NELEM_EIGHTHMEM_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_READER_BYTE_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_READER_WORD_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_D_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_Q_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_BYTE_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_WORD_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_TUPLE1_BYTE_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_TUPLE1_WORD_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_SCALAR_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_TUPLE1_SUBDWORD_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_READER_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_READER_SUBDWORD_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_SUBDWORD_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_NELEM_MEM128_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_TUPLE1_BIND(xed_encoder_request_t* xes);
-xed_uint32_t xed_encode_nonterminal_NELEM_GSCAT_BIND(xed_encoder_request_t* xes);
+xed_uint32_t xed_encode_nonterminal_NELEM_ONE_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_NELEM_TUPLE2_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_NELEM_TUPLE4_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_NELEM_TUPLE8_BIND(xed_encoder_request_t* xes);
@@ -289,6 +272,7 @@ xed_uint32_t xed_encode_nonterminal_FIX_ROUND_LEN128_BIND(xed_encoder_request_t*
 xed_uint32_t xed_encode_nonterminal_UISA_ENC_INDEX_ZMM_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_UISA_ENC_INDEX_YMM_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_UISA_ENC_INDEX_XMM_BIND(xed_encoder_request_t* xes);
+xed_uint32_t xed_encode_nonterminal_NELEM_TUPLE1_4X_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_NELEM_QUARTER_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_EVEX_BYTE3_ENC_BIND(xed_encoder_request_t* xes);
 xed_uint32_t xed_encode_nonterminal_APX_EVEX_BYTE3_ENC_BIND(xed_encoder_request_t* xes);
@@ -403,12 +387,27 @@ xed_uint32_t xed_encode_ntluf_GPR16_SB(xed_encoder_request_t* xes, xed_reg_enum_
 xed_uint32_t xed_encode_ntluf_CR_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_CR_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_DR_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_VGPR32_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_VGPR32_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_VGPR32_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_VGPR32_N_32(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_VGPR32_N_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_VGPR32_B_32(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_VGPR32_B_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_VGPR32_R_32(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_VGPR32_R_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_VGPR64_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_VGPR64_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_VGPR64_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_XMM_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_XMM_R_32(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_XMM_R_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_XMM_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_XMM_B_32(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_XMM_B_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_VGPRy_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_VGPRy_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_VGPRy_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_BND_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_BND_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_A_GPR_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
@@ -431,21 +430,6 @@ xed_uint32_t xed_encode_ntluf_YMM_R_64(xed_encoder_request_t* xes, xed_reg_enum_
 xed_uint32_t xed_encode_ntluf_YMM_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_YMM_B_32(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_YMM_B_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_VGPRy_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_VGPRy_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_VGPRy_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_VGPR32_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_VGPR32_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_VGPR32_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_VGPR32_N_32(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_VGPR32_N_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_VGPR64_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_VGPR32_R_32(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_VGPR32_R_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_VGPR64_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_VGPR32_B_32(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_VGPR32_B_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_VGPR64_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_MASK1(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_MASKNOT0(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_MASK_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
@@ -483,10 +467,6 @@ xed_uint32_t xed_encode_ntluf_ZMM_N3_64(xed_encoder_request_t* xes, xed_reg_enum
 xed_uint32_t xed_encode_ntluf_TMM_R(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_TMM_B(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_TMM_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_XMM_L_R3(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_XMM_L_R3_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_XMM_L_B3(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_XMM_L_B3_64(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_GPRv_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_GPR64_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_GPR32_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
@@ -494,8 +474,8 @@ xed_uint32_t xed_encode_ntluf_GPR16_N(xed_encoder_request_t* xes, xed_reg_enum_t
 xed_uint32_t xed_encode_ntluf_GPR8_N(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_GPR64_N_NORSP(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_GPR64_B_NORSP(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
-xed_uint32_t xed_encode_ntluf_DFV(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint32_t xed_encode_ntluf_TMM_R3(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
+xed_uint32_t xed_encode_ntluf_TMM_B3(xed_encoder_request_t* xes, xed_reg_enum_t arg_reg);
 xed_uint_t xed_encode_nonterminal_SEGMENT_DEFAULT_ENCODE_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_SEGMENT_ENCODE_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_SIB_REQUIRED_ENCODE_BIND(xed_encoder_request_t* xes);
@@ -573,7 +553,6 @@ xed_uint_t xed_encode_nonterminal_VSIB_ENC_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_VSIB_ENC_INDEX_XMM_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_VSIB_ENC_INDEX_YMM_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_DISP_WIDTH_8_32_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_TUPLE1_4X_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_EVEX_62_REXR_ENC_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_EVEX_REXX_ENC_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_EVEX_REXB_ENC_EMIT(xed_encoder_request_t* xes);
@@ -600,24 +579,8 @@ xed_uint_t xed_encode_nonterminal_NELEM_FULLMEM_EMIT(xed_encoder_request_t* xes)
 xed_uint_t xed_encode_nonterminal_NELEM_HALFMEM_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_NELEM_QUARTERMEM_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_NELEM_EIGHTHMEM_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_READER_BYTE_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_READER_WORD_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_D_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_Q_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_BYTE_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_WORD_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_TUPLE1_BYTE_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_TUPLE1_WORD_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_SCALAR_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_TUPLE1_SUBDWORD_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_READER_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_READER_SUBDWORD_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_WRITER_LDOP_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_GPR_WRITER_STORE_SUBDWORD_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_NELEM_MEM128_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_TUPLE1_EMIT(xed_encoder_request_t* xes);
-xed_uint_t xed_encode_nonterminal_NELEM_GSCAT_EMIT(xed_encoder_request_t* xes);
+xed_uint_t xed_encode_nonterminal_NELEM_ONE_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_NELEM_TUPLE2_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_NELEM_TUPLE4_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_NELEM_TUPLE8_EMIT(xed_encoder_request_t* xes);
@@ -628,6 +591,7 @@ xed_uint_t xed_encode_nonterminal_FIX_ROUND_LEN128_EMIT(xed_encoder_request_t* x
 xed_uint_t xed_encode_nonterminal_UISA_ENC_INDEX_ZMM_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_UISA_ENC_INDEX_YMM_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_UISA_ENC_INDEX_XMM_EMIT(xed_encoder_request_t* xes);
+xed_uint_t xed_encode_nonterminal_NELEM_TUPLE1_4X_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_NELEM_QUARTER_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_EVEX_BYTE3_ENC_EMIT(xed_encoder_request_t* xes);
 xed_uint_t xed_encode_nonterminal_APX_EVEX_BYTE3_ENC_EMIT(xed_encoder_request_t* xes);

@@ -5,7 +5,7 @@
 
 /*BEGIN_LEGAL
 
-Copyright (c) 2024 Intel Corporation
+Copyright (c) 2025 Intel Corporation
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -361,7 +361,6 @@ void xed_init_reg_mappings(void)
    xed_reg_class_array[XED_REG_K5]= XED_REG_CLASS_MASK;
    xed_reg_class_array[XED_REG_K6]= XED_REG_CLASS_MASK;
    xed_reg_class_array[XED_REG_K7]= XED_REG_CLASS_MASK;
-   xed_reg_class_array[XED_REG_UIF]= XED_REG_CLASS_UIF;
    xed_reg_class_array[XED_REG_TMM0]= XED_REG_CLASS_TREG;
    xed_reg_class_array[XED_REG_TMM1]= XED_REG_CLASS_TREG;
    xed_reg_class_array[XED_REG_TMM2]= XED_REG_CLASS_TREG;
@@ -371,7 +370,6 @@ void xed_init_reg_mappings(void)
    xed_reg_class_array[XED_REG_TMM6]= XED_REG_CLASS_TREG;
    xed_reg_class_array[XED_REG_TMM7]= XED_REG_CLASS_TREG;
    xed_reg_class_array[XED_REG_TILECONFIG]= XED_REG_CLASS_PSEUDO;
-   xed_reg_class_array[XED_REG_IA32_KERNEL_GS_BASE]= XED_REG_CLASS_PSEUDO;
    xed_reg_class_array[XED_REG_DFV0]= XED_REG_CLASS_PSEUDO;
    xed_reg_class_array[XED_REG_DFV1]= XED_REG_CLASS_PSEUDO;
    xed_reg_class_array[XED_REG_DFV2]= XED_REG_CLASS_PSEUDO;
@@ -388,6 +386,8 @@ void xed_init_reg_mappings(void)
    xed_reg_class_array[XED_REG_DFV13]= XED_REG_CLASS_PSEUDO;
    xed_reg_class_array[XED_REG_DFV14]= XED_REG_CLASS_PSEUDO;
    xed_reg_class_array[XED_REG_DFV15]= XED_REG_CLASS_PSEUDO;
+   xed_reg_class_array[XED_REG_UIF]= XED_REG_CLASS_UIF;
+   xed_reg_class_array[XED_REG_IA32_KERNEL_GS_BASE]= XED_REG_CLASS_PSEUDO;
    xed_largest_enclosing_register_array[XED_REG_INVALID]= XED_REG_INVALID;
    xed_largest_enclosing_register_array_32[XED_REG_INVALID]= XED_REG_INVALID;
    xed_largest_enclosing_register_array[XED_REG_ERROR]= XED_REG_ERROR;
@@ -1064,8 +1064,6 @@ void xed_init_reg_mappings(void)
    xed_largest_enclosing_register_array_32[XED_REG_K6]= XED_REG_INVALID;
    xed_largest_enclosing_register_array[XED_REG_K7]= XED_REG_K7;
    xed_largest_enclosing_register_array_32[XED_REG_K7]= XED_REG_INVALID;
-   xed_largest_enclosing_register_array[XED_REG_UIF]= XED_REG_UIF;
-   xed_largest_enclosing_register_array_32[XED_REG_UIF]= XED_REG_INVALID;
    xed_largest_enclosing_register_array[XED_REG_TMM0]= XED_REG_TMM0;
    xed_largest_enclosing_register_array_32[XED_REG_TMM0]= XED_REG_INVALID;
    xed_largest_enclosing_register_array[XED_REG_TMM1]= XED_REG_TMM1;
@@ -1084,8 +1082,6 @@ void xed_init_reg_mappings(void)
    xed_largest_enclosing_register_array_32[XED_REG_TMM7]= XED_REG_INVALID;
    xed_largest_enclosing_register_array[XED_REG_TILECONFIG]= XED_REG_TILECONFIG;
    xed_largest_enclosing_register_array_32[XED_REG_TILECONFIG]= XED_REG_INVALID;
-   xed_largest_enclosing_register_array[XED_REG_IA32_KERNEL_GS_BASE]= XED_REG_IA32_KERNEL_GS_BASE;
-   xed_largest_enclosing_register_array_32[XED_REG_IA32_KERNEL_GS_BASE]= XED_REG_INVALID;
    xed_largest_enclosing_register_array[XED_REG_DFV0]= XED_REG_DFV0;
    xed_largest_enclosing_register_array_32[XED_REG_DFV0]= XED_REG_INVALID;
    xed_largest_enclosing_register_array[XED_REG_DFV1]= XED_REG_DFV1;
@@ -1118,6 +1114,10 @@ void xed_init_reg_mappings(void)
    xed_largest_enclosing_register_array_32[XED_REG_DFV14]= XED_REG_INVALID;
    xed_largest_enclosing_register_array[XED_REG_DFV15]= XED_REG_DFV15;
    xed_largest_enclosing_register_array_32[XED_REG_DFV15]= XED_REG_INVALID;
+   xed_largest_enclosing_register_array[XED_REG_UIF]= XED_REG_UIF;
+   xed_largest_enclosing_register_array_32[XED_REG_UIF]= XED_REG_INVALID;
+   xed_largest_enclosing_register_array[XED_REG_IA32_KERNEL_GS_BASE]= XED_REG_IA32_KERNEL_GS_BASE;
+   xed_largest_enclosing_register_array_32[XED_REG_IA32_KERNEL_GS_BASE]= XED_REG_INVALID;
    xed_gpr_reg_class_array[XED_REG_RAX]= XED_REG_CLASS_GPR64;
    xed_gpr_reg_class_array[XED_REG_EAX]= XED_REG_CLASS_GPR32;
    xed_gpr_reg_class_array[XED_REG_AX]= XED_REG_CLASS_GPR16;
@@ -1926,8 +1926,6 @@ void xed_init_reg_mappings(void)
    xed_reg_width_bits[XED_REG_K6][1] = 64;
    xed_reg_width_bits[XED_REG_K7][0] = 64;
    xed_reg_width_bits[XED_REG_K7][1] = 64;
-   xed_reg_width_bits[XED_REG_UIF][0] = 1;
-   xed_reg_width_bits[XED_REG_UIF][1] = 1;
    xed_reg_width_bits[XED_REG_TMM0][0] = 8192;
    xed_reg_width_bits[XED_REG_TMM0][1] = 8192;
    xed_reg_width_bits[XED_REG_TMM1][0] = 8192;
@@ -1946,8 +1944,6 @@ void xed_init_reg_mappings(void)
    xed_reg_width_bits[XED_REG_TMM7][1] = 8192;
    xed_reg_width_bits[XED_REG_TILECONFIG][0] = 512;
    xed_reg_width_bits[XED_REG_TILECONFIG][1] = 512;
-   xed_reg_width_bits[XED_REG_IA32_KERNEL_GS_BASE][0] = 0;
-   xed_reg_width_bits[XED_REG_IA32_KERNEL_GS_BASE][1] = 0;
    xed_reg_width_bits[XED_REG_DFV0][0] = 4;
    xed_reg_width_bits[XED_REG_DFV0][1] = 4;
    xed_reg_width_bits[XED_REG_DFV1][0] = 4;
@@ -1980,4 +1976,8 @@ void xed_init_reg_mappings(void)
    xed_reg_width_bits[XED_REG_DFV14][1] = 4;
    xed_reg_width_bits[XED_REG_DFV15][0] = 4;
    xed_reg_width_bits[XED_REG_DFV15][1] = 4;
+   xed_reg_width_bits[XED_REG_UIF][0] = 1;
+   xed_reg_width_bits[XED_REG_UIF][1] = 1;
+   xed_reg_width_bits[XED_REG_IA32_KERNEL_GS_BASE][0] = 0;
+   xed_reg_width_bits[XED_REG_IA32_KERNEL_GS_BASE][1] = 0;
 }
